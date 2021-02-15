@@ -1,0 +1,16 @@
+#btn1{
+    font-weight:600;
+    color:white;
+    background-color: orange;
+    width:150px;
+}
+#btn1:hover{
+    background-color: white;
+    color:orange;
+}
+@media screen and (max-width: 600px) {
+    .grid-container{
+      margin-left:-300px;
+      
+    }
+}

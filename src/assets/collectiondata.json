@@ -1,0 +1,146 @@
+[
+    {
+        "cat" : "All",
+        "ProductName" : "Lee Cooper",
+        "OrgPrice" : 1339,
+        "DiscPrice" : 1200
+    },
+    {
+        "cat": "All",
+        "ProductName": "Denim",
+        "OrgPrice": 750,
+        "DiscPrice": 670
+    },
+    {
+        "cat": "All",
+        "ProductName": "Arrow",
+        "OrgPrice": 1200,
+        "DiscPrice": 1000
+    },
+    {
+        "cat": "All",
+        "ProductName": "Puma",
+        "OrgPrice": 1499,
+        "DiscPrice": 999
+    },
+    {
+        "cat": "All",
+        "ProductName": "Batman",
+        "OrgPrice": 699,
+        "DiscPrice": 550
+    },
+    {
+        "cat": "All",
+        "ProductName": "Duke",
+        "OrgPrice": 865,
+        "DiscPrice": 599
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Marvel",
+        "OrgPrice": 1339,
+        "DiscPrice": 800
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Duke",
+        "OrgPrice": 850,
+        "DiscPrice": 699
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Celio",
+        "OrgPrice": 765,
+        "DiscPrice": 550
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Arrow",
+        "OrgPrice": 999,
+        "DiscPrice": 699
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Fcuk",
+        "OrgPrice": 899,
+        "DiscPrice": 450
+    },
+    {
+        "cat": "NewArrival",
+        "ProductName": "Superman",
+        "OrgPrice": 599,
+        "DiscPrice": 329
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Pink Floyd",
+        "OrgPrice": 599,
+        "DiscPrice": 400
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Pink Floyd",
+        "OrgPrice": 950,
+        "DiscPrice": 770
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Duke",
+        "OrgPrice": 400,
+        "DiscPrice": 320
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Fcuk",
+        "OrgPrice": 899,
+        "DiscPrice": 450
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Spunk",
+        "OrgPrice": 499,
+        "DiscPrice": 249
+    },
+    {
+        "cat": "Popular",
+        "ProductName": "Joker",
+        "OrgPrice": 799,
+        "DiscPrice": 455
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "Marvel",
+        "OrgPrice": 1200,
+        "DiscPrice": 899
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "Superman",
+        "OrgPrice": 799,
+        "DiscPrice": 439
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "Champion",
+        "OrgPrice": 350,
+        "DiscPrice": 299
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "LeeCooper",
+        "OrgPrice": 599,
+        "DiscPrice": 419
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "Classic Polo",
+        "OrgPrice": 599,
+        "DiscPrice": 450
+    },
+    {
+        "cat": "BestOffers",
+        "ProductName": "Maspro",
+        "OrgPrice": 899,
+        "DiscPrice": 699
+    }
+]

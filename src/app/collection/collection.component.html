@@ -1,0 +1,30 @@
+<br><br><br>
+
+<h1 style="color:rgb(94, 91, 91);font-size:40px;margin-left:20px;font-family:Arial, Helvetica, sans-serif;font-weight:600px;text-decoration:underline;text-decoration-color:rgb(255, 217, 5);">Our Collection</h1>
+   <div class="container-fluid d-flex">
+       <div class="col-6" style="margin-right:0px;">
+        <img src="assets/essentials.png" style="margin-left: 70px; transform: translate(0px,60px);" alt="essentials">
+       </div>
+       <div class="col-5 d-block" style="margin-left: 0px;">
+            <mat-toolbar class="d-inline-flex" style="background-color:white;">
+                <span (click)="myClick(1)" [ngClass]="status1">All</span>
+                <span class="example-spacer"></span>
+                <span (click)="myClick(2)" [ngClass]="status2 ? 'success' : 'danger'">New Arrivals</span>
+                <span class="example-spacer"></span>
+                <span (click)="myClick(3)" [ngClass]="status3 ? 'success' : 'danger'">Popular</span>
+                <span class="example-spacer"></span>
+                <span (click)="myClick(4)" [ngClass]="status4 ? 'success' : 'danger'">Best Offers</span>
+            </mat-toolbar>
+            <img src="assets/men.png" style="margin-left:15px; margin-right: 25px;width:100px;height:150px;" alt="p1">
+            <img src="assets/women.png" alt="p1" style="margin-right: 25px;width:100px;height:150px;" alt="p2">
+            <img src="assets/men.png" alt="p1" style="margin-right: 25px;width:100px;height:150px;" alt="p3">
+             <br>
+             <img src="assets/men.png" style="margin-left:15px; margin-right: 25px;width:100px;height:150px;" alt="p1">
+             <img src="assets/women.png" alt="p1" style="margin-right: 25px;width:100px;height:150px;" alt="p2">
+             <img src="assets/men.png" alt="p1" style="margin-right: 25px;width:100px;height:150px;" alt="p3">
+        </div>
+       <a href="#"><button style="margin-top:450px;margin-left:-400px;" type="button" class="btn btn-light" id="btn3">
+        View More </button></a>
+   </div>
+
+   <br>
