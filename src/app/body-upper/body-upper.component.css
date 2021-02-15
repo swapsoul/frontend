@@ -1,0 +1,33 @@
+.btn{
+  border:3px solid white;
+  color:white;
+  width:150px;
+  height:60px;
+  margin-top:-650px;
+  margin-left:72px;
+  background-color:transparent;
+}
+.btn1:hover{
+background-color: white;
+  color:black;
+}
+#btn1{
+  border:3px solid white;
+  color:white;
+  width:150px;
+  height:60px;
+  margin-top:-520px;
+  margin-left:432px;
+  background-color:transparent;  
+}
+#btn1:hover{
+  background-color: white;
+  color:black;
+}
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    height:50%;
+  }

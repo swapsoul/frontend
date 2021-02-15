@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+      margin-top:0px;
+    flex: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  h1{
+      background-color:white;
+      color:orange;
+  }
+ #btn3{
+  border:3px solid white;color:white;
+  height:40px;
+  width:150px;
+  background-color: transparent;
+  font-weight: 700;
+ }
+ #btn3:hover{
+   background-color: white;
+   color:black;
+ }
+ @media screen and (max-width: 600px) {
+  .grid-container{
+    font-size:20px;
+    
+  }
+}

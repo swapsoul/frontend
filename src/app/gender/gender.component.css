@@ -1,0 +1,36 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  span{
+    cursor:pointer;
+  }
+  
+  .underline {
+      height: 3px;
+      background-color: transparent;
+      width: 0%;
+      transition: width 0.2s, background-color 0.5s;
+      margin: 0 auto;
+  }
+  
+  .success{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    text-underline-offset: 6px;
+  }
+  
+  span:active{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: orange;
+  }
+  
+  .td{
+    text-decoration: underline;
+    font-size: 28px;
+    text-decoration-color: orange;
+    text-underline-offset: 8px;
+    margin-left: 41px;
+    transform: translate(69px,37px);
+  }
