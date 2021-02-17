@@ -15,6 +15,8 @@ import { StoryComponent } from './story/story.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CorouselComponent } from './corousel/corousel.component';
 import { GenderComponent } from './gender/gender.component'
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { GenderComponent } from './gender/gender.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
