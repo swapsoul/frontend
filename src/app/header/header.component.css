@@ -1,4 +1,4 @@
-.topnav {
+/* .topnav {
     overflow: hidden;
     background-color: rgb(32, 30, 30);
     color: white;
@@ -108,7 +108,7 @@
   }
   
   /* Demo 2 */
-  #demo-2 input[type=search] {
+  /* #demo-2 input[type=search] {
     width: 15px;
     padding-left: 10px;
     color: transparent;
@@ -129,4 +129,4 @@
   }
   #demo-2 input::-webkit-input-placeholder {
     color: black;
-  } 
+  }  */ 

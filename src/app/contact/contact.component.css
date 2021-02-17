@@ -1,6 +1,56 @@
-@media screen and (max-width: 600px) {
-    .grid-container{
-      margin-left:-300px;
-      
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  font-size: 30px;
+  margin-left:270px;
+  color:grey;
+}
+img{
+  width:300px;
+  height:500px;
+  margin-left:50px;
+}
+h1{
+  color:black;
+  text-align:center;
+  font-weight:700px;
+}
+#Contact{
+  width:420px;
+  height:500px;
+  margin-left:-143px;
+  background-color:rgb(130, 190, 34);
+}
+@media only screen and (min-device-width : 320px) and (max-device-width: 480px) {
+  .grid-container{
+    margin-left:-280px;
+  }
+  h3{
+   margin-left:-50px;
+   font-size:8px;
+  }
+  h2{
+  font-size:15px;
+  margin-left:-50px;
+  }
+  #Contact{
+    margin-left:-130px;
+  }
+  #btn1{
+      margin-left:-50px;
+  }
+  img{
+    margin-left:-50px;
+    position:absolute;
+    width:300px;
+  }
+  #Contact{
+    margin-left:250px;
+  }
+  h1{
+    margin-left:40px;
+  }
 }
