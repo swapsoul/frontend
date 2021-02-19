@@ -4,16 +4,66 @@
       <div class="men">
         <img src="assets/img/men.png" class="img">
         <img src="assets/img/men-1.png" class="img-hover">
-        <a href="#"><button  type="button" class="btn btn-light" id="btn1">Shop
-          Now </button></a>
+        <a href="#">
+          <button type="button" class="btn btn-light" id="btn1">
+            Shop Now
+          </button>
+        </a>
       </div>
     </div>
     <div fxFlex="50" fxFlex.lt-md="100">
       <div class="women">
         <img src="assets/img/women.png" class="img">
         <img src="assets/img/women-1.png" class="img-hover">
-        <a href="#1"><button type="button"
-                             class="btn btn-light" id="btn2">Shop Now </button></a>
+        <a href="#1">
+          <button type="button" class="btn btn-light" id="btn2">
+            Shop Now
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <div fxFlex="5"></div>
+      <div fxFlex><h3 class="collection-heading">Our Collection</h3></div>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="50" fxFlex.lt-md="100" fxLayoutAlign="center center">
+        <img src="assets/img/essentials.png" alt="essentials"></div>
+      <div fxFlex="50" fxFlex.lt-md="100">
+        <mat-tab-group>
+          <mat-tab label="All">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+              <div class="product-li" *ngFor="let i of [].constructor(8)">
+                <img src="assets/img/p1.png" alt="p1" >
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="New Arrivals">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+              <div class="product-li" *ngFor="let i of [].constructor(8)">
+                <img src="assets/img/p1.png" alt="p1" >
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Popular">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+              <div class="product-li" *ngFor="let i of [].constructor(3)">
+                <img src="assets/img/p1.png" alt="p1">
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Best Offers">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+              <div class="product-li" *ngFor="let i of [].constructor(3)">
+                <img src="assets/img/p1.png" alt="p1">
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
       </div>
     </div>
   </div>

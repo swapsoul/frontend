@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FlexLayoutModule,
     MatToolbarModule,
     HttpClientModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
