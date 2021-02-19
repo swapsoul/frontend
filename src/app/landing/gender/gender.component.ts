@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroService} from 'src/app/hero.service'
+import {HeroService} from 'src/app/hero.service';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-gender',
