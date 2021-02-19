@@ -1,0 +1,62 @@
+#btn1{
+    font-weight:600;
+    color:white;
+    background-color: orange;
+    width:150px;
+    height:50px;
+    border:3px solid white;
+}
+#btn1:hover{
+    background-color: white;
+    color:orange;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    font-size: 30px;
+    text-align: center;
+    margin-left:250px;
+    background-color: white;
+  }
+  img{
+      width:400px;
+      height:500px;
+  }
+  h2{
+    color:gold;
+    margin-left:25px;
+  }
+  #Story{
+      width:420px;
+      height:500px;
+      margin-left:-70px;
+  }
+@media only screen and (min-device-width : 300px) and (max-device-width: 480px) {
+    .grid-container{
+      margin-left:-280px;
+    }
+    h3{
+     margin-left:50px;
+     font-size:8px;
+    }
+    h2{
+    font-size:15px;
+    margin-left:50px;
+    }
+    #Story{
+        margin-left:270px;
+        background-color: white;
+    }
+    #btn1{
+        margin-left:60px;
+    }
+    img{
+      position:Absolute;
+      width:290px;
+    }
+    
+    
+}

@@ -1,0 +1,92 @@
+/* .btn{
+  border:3px solid white;
+  color:white;
+  width:150px;
+  height:60px;
+  margin-top:-650px;
+  margin-left:72px;
+  background-color:transparent;
+}
+.btn1:hover{
+background-color: white;
+  color:black;
+}
+#btn1{
+  border:3px solid white;
+  color:white;
+  width:150px;
+  height:60px;
+  margin-top:-520px;
+  margin-left:432px;
+  background-color:transparent;  
+}
+#btn1:hover{
+  background-color: white;
+  color:black;
+}
+
+  /* Create two equal columns that floats next to each other */
+  /* .column {
+    float: left;
+    width: 50%;
+    height:50%;
+  } */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-device-width : 320px) {
+    .grid-item{
+      height:350px;
+    }
+    div.img{
+      width:330px;
+      height:350px;
+    }
+    div.img1{
+      width:330px;
+      height:350px;
+    }
+    #btn1{
+      margin:0px;
+     top:70%;
+     left:-10%;
+     -ms-transform: translateY(-10%);
+     transform: translateY(-10%);
+    }
+    #btn2{
+      margin:0px;
+      top:65%;
+      right:-55%;
+      -ms-transform: translateY(-10%);
+      transform: translateY(-10%);
+    }
+  }
+  
+
+
+
+
+

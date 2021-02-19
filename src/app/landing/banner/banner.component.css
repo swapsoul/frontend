@@ -1,0 +1,85 @@
+/* * {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+   .column {
+      margin-top:0px;
+    flex: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+   }
+  h1{
+      background-color:white;
+      color:orange;
+  } 
+
+ #btn3{
+  border:3px solid white;color:white;
+  height:40px;
+  width:150px;
+  background-color: transparent;
+  font-weight: 700;
+ }
+ #btn3:hover{
+   background-color: white;
+   color:black;
+ } 
+ img{
+  height:320px;
+  margin-left:370px;
+  position:absolute;
+  margin-top:-100px;
+ }
+ #head1{
+  width:550px;height:60px;padding:10px;margin-left:50px;margin-top:20px;font-size:50px;
+ }
+ #head2{
+  width:400px;margin-left:50px;font-size:50px;height:50px;padding:10px;
+ }
+ #head3{
+  margin-left:-780px;color:white;font-size:30px;
+ }
+ #head4{
+  width:300px;margin-left:-75px;margin-top:-14px;color:white;opacity:0.3;font-size:90px;
+ }
+ #head5{
+  width:300px;margin-left:800px;margin-top:-260px;color:white;opacity:0.3;font-size:100px;
+ }
+ #head6{
+  background-color: rgb(73, 71, 71); color:white;position:absolute;width:140px;height:40px;padding:5px;font-size:25px;margin-left:987px;margin-top:200px;opacity:1;
+ }
+ @media only screen and (min-device-width : 320px) and (max-device-width: 480px) {
+  img{
+    margin-left:300px;
+    position:absolute;
+    width:250px;
+  }
+  #head5{
+    margin-left:330px;
+    font-size:50px;
+  }
+ #head2{
+  margin-left:-10px;
+  width:300px;
+  font-size:35px;
+  }
+  #head1{
+    margin-left:-10px;
+    width:360px;
+    font-size:35px;
+  }
+  #head3{
+    margin-left:-1450px;
+  }
+  #btn3{
+    margin-right:150px;
+  }
+  #head6{
+    margin-left:430px;
+  }
+}
