@@ -1,0 +1,54 @@
+.men, .women {
+  .img, .img-hover {
+    width: 100%;
+    height: auto;
+  }
+  .img {
+    display: block;
+  }
+  .img-hover {
+    display: none;
+  }
+}
+.men:hover, .women:hover {
+  .img {
+    display: none;
+  }
+  .img-hover {
+    display: block;
+  }
+}
+
+#btn1 {
+  border: 3px solid white;
+  color: white;
+  width: 150px;
+  height: 60px;
+  margin-left: 50px;
+  background-color: transparent;
+  margin-top: -25%;
+  position: absolute;
+}
+
+#btn1:hover {
+  background-color: white;
+  color: black;
+  position: absolute;
+}
+
+#btn2 {
+  border: 3px solid white;
+  color: white;
+  width: 150px;
+  height: 60px;
+  margin-left: 80px;
+  background-color: transparent;
+  margin-top: -20%;
+  position: absolute;
+}
+
+#btn2:hover {
+  background-color: white;
+  color: black;
+  position: absolute;
+}
