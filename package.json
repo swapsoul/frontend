@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.1",
     "@angular/router": "~11.2.1",
     "awesome-typescript-loader": "^5.2.1",
+    "express": "^4.17.1",
     "rxjs": "~6.5.5",
     "source-map-loader": "^2.0.1",
     "tslib": "^2.0.0",
