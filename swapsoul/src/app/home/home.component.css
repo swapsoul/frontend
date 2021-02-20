@@ -1,0 +1,7 @@
+mat-grid-tile {
+    background: rgb(183, 187, 189);
+  }
+  .tile-image {
+  width:100%;
+  height: 100%;
+}
