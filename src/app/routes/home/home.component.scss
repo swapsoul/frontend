@@ -3,17 +3,21 @@
     width: 100%;
     height: auto;
   }
+
   .img {
     display: block;
   }
+
   .img-hover {
     display: none;
   }
 }
+
 .men:hover, .women:hover {
   .img {
     display: none;
   }
+
   .img-hover {
     display: block;
   }
@@ -53,71 +57,124 @@
   position: absolute;
 }
 
-.product-li {
-  padding: 5px;
-  margin-right: 15px;
+.collection {
+  .collection-heading {
+    text-decoration: underline;
+    font-size: 28px;
+    text-decoration-color: orange;
+    text-underline-offset: 8px;
+    margin: 100px 0 40px 0;
+  }
+
+  .product-li {
+    padding: 5px;
+    margin-right: 15px;
+  }
 }
 
-.collection-heading {
-  text-decoration: underline;
-  font-size: 28px;
-  text-decoration-color: orange;
-  text-underline-offset: 8px;
-  margin: 100px 0 40px 0 ;
+#head1 {
+  width: 550px;
+  height: 60px;
+  padding: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 50px;
 }
 
-#head1{
-  width:550px;height:60px;padding:10px;margin-left:50px;margin-top:20px;font-size:50px;
+#head2 {
+  width: 400px;
+  margin-left: 50px;
+  font-size: 50px;
+  height: 50px;
+  padding: 10px;
 }
-#head2{
-  width:400px;margin-left:50px;font-size:50px;height:50px;padding:10px;
+
+#head3 {
+  margin-left: 80px;
+  color: white;
+  font-size: 30px;
+  text-align: left;
 }
-#head3{
-  margin-left:-780px;color:white;font-size:30px;
+
+#head4 {
+  width: 300px;
+  margin-left: -75px;
+  margin-top: -14px;
+  color: white;
+  opacity: 0.3;
+  font-size: 90px;
 }
-#head4{
-  width:300px;margin-left:-75px;margin-top:-14px;color:white;opacity:0.3;font-size:90px;
+
+#head5 {
+  color: white;
+  opacity: 0.3;
+  position: absolute;
+  font-size: 100px;
+  right: 10%;
+  margin-top: -3vh;
 }
-#head5{
-  width:300px;margin-left:800px;margin-top:-260px;color:white;opacity:0.3;font-size:100px;
-}
-#head6{
-  background-color: rgb(73, 71, 71); color:white;position:absolute;width:140px;height:40px;padding:5px;font-size:25px;margin-left:987px;margin-top:200px;opacity:1;
+
+#head6 {
+  width: 100%;
+  span {
+    background-color: rgb(73, 71, 71);
+    color: white;
+    position: relative;
+    font-size: 25px;
+    float: right;
+    top: -30px;
+    padding: 5px;
+  }
 }
 
 .banner {
   margin: 20px 0;
-  h1{
-    background-color:white;
-    color:orange;
+
+  h1 {
+    background-color: white;
+    color: orange;
   }
+
   .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color:orange;
+    background-color: orange;
   }
+
   .grid-item {
     background-color: orange;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    height: 300px;
   }
-  img{
-    height:320px;
-    margin-left:370px;
-    position:absolute;
-    margin-top:-100px;
+
+  .crop {
+    width: 230px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    margin-top: -298px;
+  }
+
+  img {
+    height: 370px;
+    margin-left: -170px;
+    //position: absolute;
+    margin-top: -36px;
   }
 }
 
-#btn3{
-  border:3px solid white;color:white;
-  height:40px;
-  width:150px;
+#btn3 {
+  border: 3px solid white;
+  color: white;
+  height: 40px;
+  width: 150px;
   background-color: transparent;
   font-weight: 700;
 }
-#btn3:hover{
+
+#btn3:hover {
   background-color: white;
-  color:black;
+  color: black;
 }

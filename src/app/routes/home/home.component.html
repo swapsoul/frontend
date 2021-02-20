@@ -34,30 +34,34 @@
       <div fxFlex="50" fxFlex.lt-md="100">
         <mat-tab-group>
           <mat-tab label="All">
-            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px"
+                 fxLayoutAlign="space-evenly center">
               <div class="product-li" *ngFor="let i of [].constructor(8)">
-                <img src="assets/img/p1.png" alt="p1" >
+                <img src="assets/img/p1.png" alt="p1">
               </div>
             </div>
           </mat-tab>
 
           <mat-tab label="New Arrivals">
-            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px"
+                 fxLayoutAlign="space-evenly center">
               <div class="product-li" *ngFor="let i of [].constructor(8)">
-                <img src="assets/img/p1.png" alt="p1" >
+                <img src="assets/img/p1.png" alt="p1">
               </div>
             </div>
           </mat-tab>
 
           <mat-tab label="Popular">
-            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px"
+                 fxLayoutAlign="space-evenly center">
               <div class="product-li" *ngFor="let i of [].constructor(3)">
                 <img src="assets/img/p1.png" alt="p1">
               </div>
             </div>
           </mat-tab>
           <mat-tab label="Best Offers">
-            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="space-evenly center">
+            <div class="example-large-box mat-elevation-z4" fxLayout="row wrap" fxLayoutGap="15px"
+                 fxLayoutAlign="space-evenly center">
               <div class="product-li" *ngFor="let i of [].constructor(3)">
                 <img src="assets/img/p1.png" alt="p1">
               </div>
@@ -68,20 +72,34 @@
     </div>
   </div>
   <div class="banner">
-    <div class="grid-container">
-    <div class="grid-item" style="height:300px;">
-      <h1 id="head1">&nbsp;Summer Sale is here</h1>
-      <h1 id="head2"> &nbsp;&nbsp;UPTO 40% OFF</h1>
-      <h2 id="head3">JAN 26-FEB 12</h2>
-      <h2 id="head4">SALE</h2>
-      <h2 id="head5">SUMMER
-      </h2>
-      <img src="assets/img/banner.png" alt="banner">
-      <p id="head6">
-        &nbsp;#supersale</p>
-      <a href="#"><button style=" margin-left:150px;margin-top:150px;" type="button" class="btn btn-light" id="btn3">
-        Know More </button></a>
-    </div>
+    <div id="banner-parent">
+      <div fxFlex="0 0 100%" id="banner-child">
+        <div fxLayout="column">
+          <div style="height: 40px"></div>
+          <div class="grid-item">
+            <div class="banner-text">
+              <h2 id="head5">SUMMER</h2>
+              <h1 id="head1">&nbsp;Summer Sale is here</h1>
+              <h1 id="head2"> &nbsp;&nbsp;UPTO 40% OFF</h1>
+              <h2 id="head3">JAN 26-FEB 12</h2>
+              <h2 id="head4">SALE</h2>
+
+            </div>
+            <div class="banner-img">
+              <div class="crop">
+                <img src="assets/img/banner.png" alt="banner">
+              </div>
+            </div>
+
+            <a href="#">
+              <button type="button" class="btn btn-light" id="btn3">
+                Know More
+              </button>
+            </a>
+          </div>
+          <div id="head6"><span>#supersale</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
