@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatToolbarModule,
     HttpClientModule,
     MatTabsModule,
+    MatIconModule,
+    MatGridListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
