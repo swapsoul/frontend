@@ -116,6 +116,7 @@
 
 #head6 {
   width: 100%;
+
   span {
     background-color: rgb(73, 71, 71);
     color: white;
@@ -182,4 +183,23 @@
 
 .gender-heading {
   font-size: 25px;
+}
+
+.carousel {
+  padding: 30px 0;
+
+  .carousal-heading {
+    color: grey;
+    text-align: Center;
+    font-size: 40px;
+  }
+
+  .item {
+    padding: 10px 0;
+    margin-right: 20px;
+    img {
+      height: 440px;
+      width: 340px;
+    }
+  }
 }
