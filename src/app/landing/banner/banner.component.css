@@ -1,9 +1,11 @@
 /* * {
     box-sizing: border-box;
   }
+**/
   
   .row {
-    display: flex;
+    margin: auto;
+    background-color: orange;
   }
   
   /* Create two equal columns that sits next to each other */
@@ -53,6 +55,8 @@
  #head6{
   background-color: rgb(73, 71, 71); color:white;position:absolute;width:140px;height:40px;padding:5px;font-size:25px;margin-left:987px;margin-top:200px;opacity:1;
  }
+
+ /**
  @media only screen and (min-device-width : 320px) and (max-device-width: 480px) {
   img{
     margin-left:300px;
@@ -82,4 +86,11 @@
   #head6{
     margin-left:430px;
   }
+}
+**/
+.grid-item {
+  background-color: orange;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
