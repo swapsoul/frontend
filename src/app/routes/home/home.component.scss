@@ -128,7 +128,7 @@
   }
 }
 
-#banner {
+.banner {
   margin: 20px 0;
   background-color: orange;
   h1{
@@ -147,20 +147,21 @@
     font-size:80px;
     opacity:0.3;
   }
-  
+
  h3{
    float:right;
    font-size:80px;
     opacity:0.1;
  }
-#btn5{
-  color:white;
-  border:3px solid white;
-}
   img {
     height: 280px;
     width:100%;
   }
+}
+
+#btn5{
+  color:white;
+  border:3px solid white;
 }
 
 #btn3 {
@@ -205,9 +206,8 @@
   width:100%;
   height:auto;
 }
-#btn4{
+.btn4{
   transform: translate(-300px,150px);
   color:white;
   border:3px solid white;
-  
 }

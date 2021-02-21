@@ -1,27 +1,40 @@
-
-#logo{
-background-color: white;
-height:auto;
-color:grey;
-}
-svg,a{
-    color:white;
-}
-a:hover{
-    color:grey;
+#our-navbar {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  width: 100%;
 }
 
-.float-left{
-    display: flex;
-    text-align: center;
-    float: left;
-    margin-left: auto;
-  }
-  .float-right {
-    display: flex;
-    text-align: center;
-    float:right;
-    margin-right: auto;
-    
-  }
+#psuedo-navbar {
+  height: 102px;
+  position: relative;
+}
+
+#logo {
+  background-color: white;
+  height: auto;
+  color: grey;
+}
+
+svg, a {
+  color: white;
+}
+
+a:hover {
+  color: grey;
+}
+
+.float-left {
+  display: flex;
+  text-align: center;
+  float: left;
+  margin-left: auto;
+}
+
+.float-right {
+  display: flex;
+  text-align: center;
+  float: right;
+  margin-right: auto;
+}
 
