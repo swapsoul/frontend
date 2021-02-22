@@ -211,3 +211,20 @@
   color:white;
   border:3px solid white;
 }
+.mat-tab-body-content {
+  display:flex;
+}
+.dy{
+  font-size: 30px;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color:#ee2925 !important;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
