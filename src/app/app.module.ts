@@ -16,6 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { WomenComponent } from './routes/women/women.component';
 import { MenComponent } from './routes/men/men.component';
 import { EssentialsComponent } from './routes/essentials/essentials.component';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -37,7 +39,10 @@ import { EssentialsComponent } from './routes/essentials/essentials.component';
     MatTabsModule,
     MatIconModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

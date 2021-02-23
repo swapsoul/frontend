@@ -5,27 +5,33 @@
 
       </mat-grid-tile>
       <mat-grid-tile [colspan]="8" [rowspan]="12" [style.background]="'white'">
-        LOGO
+        <button mat-button onclick="location.href='home';">LOGO</button>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="31" [rowspan]="12" [style.background]="'grey'">
         <div class="float-right">
           <div class="example-button-row">
-            <button mat-button>Mens</button>
-            <button mat-button>Womens</button>
-            <button mat-button>Essentials</button>
+            <button mat-button>Men</button>
+            <button mat-button onclick="location.href='women';">Women</button>
+            <button mat-button disabled>Essentials</button>
             <button mat-button>About</button>
             
           </div>
         </div>
         <div class="float-right">
-          <div class="example-flex-container">
-            <button mat-mini-fab disabled aria-label="search">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-icon-button aria-label="favorite">
+          <div class="d-flex example-flex-container">
+            
+            <div class="d-none d-md-block">
+            <form class="form-inline md-form mr-4 mb-2">
+              <input class="form-control mr-sm-2 mt-2" type="text" placeholder="Search" aria-label="Search">
+              <button mdbBtn size="sm" color="elegant" rounded="true" class="my-0 waves-light mt-1" mdbWavesEffect
+                type="submit"><mat-icon style="cursor: pointer;">search</mat-icon></button>
+            </form>
+            </div>
+
+            <button mat-icon-button aria-label="favorite" class="mr-4 mt-1">
               <mat-icon>favorite_border</mat-icon>
             </button>
-            <button mat-icon-button aria-label="cart">
+            <button mat-icon-button aria-label="cart" class="mt-1">
               <mat-icon>work_outliner</mat-icon>
             </button>
             <a mat-button href="https://www.google.com/" target="_blank">Login/SignUp</a>
