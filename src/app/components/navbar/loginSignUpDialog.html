@@ -1,0 +1,72 @@
+<button mat-icon-button style="margin-left: 660px; margin-top: -50px; margin-bottom: -100px;" aria-label="Close"
+  (click)="onNoClick()">
+  <mat-icon>clear</mat-icon>
+</button>
+<mat-grid-list cols="3" rowHeight="35px">
+  <mat-grid-tile [colspan]="1" [rowspan]="12">
+    <img class="tile-image" src="assets/img/contact.jpg">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="12">
+    <mat-tab-group>
+      <mat-tab label="Log In">
+        <div class="card-layout">
+          <div class="card-column-1">
+            <mat-form-field fxFlex appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="card-column-2">
+            <mat-form-field fxFlex appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="card-column-3">
+            <mat-checkbox class="example-margin">Remember me</mat-checkbox>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <button mat-button>Forget password?</button>
+          </div>
+          <div class="card-column-4">
+            <button mat-button class="yellow-button">Login In</button>
+          </div>
+        </div>
+
+
+
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <div class="card-layout">
+          <div class="card-column-1">
+            <mat-form-field fxFlex appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="card-column-2">
+            <mat-form-field fxFlex appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="card-column-3">
+            <mat-checkbox class="example-margin">I agree to Terms & Conditions</mat-checkbox>
+          </div>
+          <div class="card-column-4">
+            <button mat-button class="yellow-button">Create Account</button>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-grid-tile>
+</mat-grid-list>
