@@ -9,6 +9,9 @@ import { FormControl, Validators } from '@angular/forms';
 
 export class NavbarComponent implements OnInit {
 
+  term: string;
+  hasValue: boolean;
+
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
