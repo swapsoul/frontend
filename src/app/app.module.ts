@@ -9,15 +9,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { loginSignUpDialog } from './components/navbar/navbar.component'
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
 import { WomenComponent } from './routes/women/women.component';
 import { MenComponent } from './routes/men/men.component';
 import { EssentialsComponent } from './routes/essentials/essentials.component';
-import {MatSelectModule} from '@angular/material/select';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -28,6 +33,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     WomenComponent,
     MenComponent,
     EssentialsComponent,
+    loginSignUpDialog
   ],
   imports: [
     BrowserModule,
@@ -40,12 +46,16 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     MatIconModule,
     MatGridListModule,
     MatButtonModule,
-    MatSelectModule,
+    MatDialogModule,
+    MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
