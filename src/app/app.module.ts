@@ -13,7 +13,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
-import { ProductlistComponent } from './routes/productlist/productlist.component';
+import { WomenComponent } from './routes/women/women.component';
+import { MenComponent } from './routes/men/men.component';
+import { EssentialsComponent } from './routes/essentials/essentials.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ProductlistComponent } from './routes/productlist/productlist.component
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ProductlistComponent,
+    WomenComponent,
+    MenComponent,
+    EssentialsComponent,
   ],
   imports: [
     BrowserModule,
