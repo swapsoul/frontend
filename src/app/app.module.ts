@@ -25,6 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
     MenComponent,
     EssentialsComponent,
     loginSignUpDialog
+
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
 }

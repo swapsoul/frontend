@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+
 @Component({
   selector: 'loginSignUpDialog',
   templateUrl: 'loginSignUpDialog.html',
