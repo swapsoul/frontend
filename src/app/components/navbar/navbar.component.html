@@ -10,7 +10,7 @@
       <div class="example-button-row">
         <button mat-button onclick="location.href='men'">Mens</button>
         <button mat-button onclick="location.href='women'">Womens</button>
-        <button mat-button disabled>Essentials</button>
+        <button mat-button onclick="location.href='essentials'">Essentials</button>
         <button mat-button>About</button>
       </div>
     </div>
@@ -22,7 +22,7 @@
         </mat-form-field>
         <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
           <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
-          <mat-icon *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
+          <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
         </button>
         &nbsp; &nbsp; 
         <button mat-icon-button aria-label="favorite">
@@ -32,7 +32,7 @@
         <button mat-icon-button aria-label="cart">
           <mat-icon>work_outliner</mat-icon>
         </button>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp;
         <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
       </div>
     </div>

@@ -1,10 +1,12 @@
 #our-navbar {
-  position: fixed;
+  position:static;
   z-index: 999999;
   top: 0;
   width: 100%;
 }
-
+button{
+  color:white;
+}
 #psuedo-navbar {
   height: 48px;
   position: relative;
