@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-essentials',
@@ -12,4 +13,7 @@ export class EssentialsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toppings = new FormControl();
+
+  toppingList: string[] = ['Popularity', 'Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
 }
