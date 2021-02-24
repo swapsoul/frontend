@@ -8,13 +8,14 @@
   <mat-grid-tile [colspan]="31" [rowspan]="12" [style.background]="'grey'">
     <div class="float-right">
       <div class="example-button-row">
-        <button mat-button onclick="location.href='men'">Mens</button>
-        <button mat-button onclick="location.href='women'">Womens</button>
-        <button mat-button disabled>Essentials</button>
+        &nbsp; &nbsp; 
+        <button mat-button onclick="location.href='men'">Mens</button> &nbsp; 
+        <button mat-button onclick="location.href='women'">Womens</button> &nbsp; 
+        <button mat-button disabled>Essentials</button> &nbsp; 
         <button mat-button>About</button>
       </div>
     </div>
-    <div class="float-right">
+    <div class="float-right" style="margin-left: 280px;">
       <div class="example-flex-container" class="search-container" [ngClass]="{'hasValue':hasValue}">
         <mat-form-field floatLabel="never">
           <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
@@ -24,19 +25,18 @@
           <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
           <mat-icon *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
         </button>
-        &nbsp; &nbsp; 
+        &nbsp; 
         <button mat-icon-button aria-label="favorite">
           <mat-icon>favorite_border</mat-icon>
         </button>
-        &nbsp; &nbsp;
+        &nbsp; 
         <button mat-icon-button aria-label="cart">
           <mat-icon>work_outliner</mat-icon>
         </button>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; 
         <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
       </div>
     </div>
-
   </mat-grid-tile>
 
 </mat-grid-list>
