@@ -9,11 +9,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { loginSignUpDialog } from './components/navbar/navbar.component'
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
-import { ProductlistComponent } from './routes/productlist/productlist.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { WomenComponent } from './routes/women/women.component';
+import { MenComponent } from './routes/men/men.component';
+import { EssentialsComponent } from './routes/essentials/essentials.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 @NgModule({
@@ -21,7 +31,11 @@ import { ProductlistComponent } from './routes/productlist/productlist.component
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ProductlistComponent,
+    WomenComponent,
+    MenComponent,
+    EssentialsComponent,
+    loginSignUpDialog
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +47,14 @@ import { ProductlistComponent } from './routes/productlist/productlist.component
     MatTabsModule,
     MatIconModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
