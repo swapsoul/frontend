@@ -10,8 +10,7 @@ const routes: Routes = [
   { path: 'men', component: MenComponent},
   { path: 'women', component: WomenComponent},
   { path: 'essentials', component: EssentialsComponent}
-]
-
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
