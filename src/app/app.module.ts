@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 
 
 
@@ -34,7 +35,8 @@ import { MatSelectModule } from '@angular/material/select';
     WomenComponent,
     MenComponent,
     EssentialsComponent,
-    loginSignUpDialog
+    loginSignUpDialog,
+    SingleproductpagesampleComponent
 
   ],
   imports: [
