@@ -3,7 +3,10 @@
     
     svg:hover{
         color:white;
+        
     }
+    
+
 }
 
 h1{
@@ -17,4 +20,15 @@ h1{
 h2{
     cursor: pointer;
     color: darkorchid;
+}
+#f1{
+    float:right;
+    font-size: large;
+}
+#f1:hover{
+    color:white;
+    text-decoration: none;
+}
+h3{
+    font-size:larger;
 }
