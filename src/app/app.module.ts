@@ -27,6 +27,7 @@ import { ProductComponent } from './routes/product/product.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,7 @@ import { ProductComponent } from './routes/product/product.component';
     MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
 }

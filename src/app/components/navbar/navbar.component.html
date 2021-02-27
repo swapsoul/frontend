@@ -1,46 +1,51 @@
-<mat-grid-list cols="40" rowHeight="4px">
-  <mat-grid-tile [colspan]="1" [rowspan]="12" [style.background]="'grey'">
+<div id="our-navbar" class="swapsoul-navbar">
+  <mat-grid-list cols="40" rowHeight="4px" [gutterSize]="0">
+    <mat-grid-tile [colspan]="1" [rowspan]="12" [style.background]="'grey'">
 
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="8" [rowspan]="12" [style.background]="'black'">
-    <button mat-button onclick="location.href='home'">LOGO</button> &nbsp;
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="31" [rowspan]="12" [style.background]="'grey'">
-    <div class="float-right">
-      <div class="example-button-row">
-        &nbsp; &nbsp;
-        <button mat-button onclick="location.href='men'">Men</button> &nbsp;
-        <button mat-button onclick="location.href='women'">Women</button> &nbsp;
-        <button mat-button onclick="location.href='essentials'">Essential</button> &nbsp;
-        <button mat-button>About</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="8" [rowspan]="12" [style.background]="'black'">
+      <button mat-button onclick="location.href='home'">LOGO</button> &nbsp;
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="31" [rowspan]="12" [style.background]="'grey'">
+      <div class="float-right">
+        <div class="example-button-row">
+          &nbsp; &nbsp;
+          <button mat-button onclick="location.href='men'">Men</button> &nbsp;
+          <button mat-button onclick="location.href='women'">Women</button> &nbsp;
+          <button mat-button onclick="location.href='essentials'">Essential</button> &nbsp;
+          <button mat-button>About</button>
+        </div>
       </div>
-    </div>
-    <div class="float-right" style="margin-left: 200px;">
-      <div class="example-flex-container" class="search-container" [ngClass]="{'hasValue':hasValue}">
-        <mat-form-field floatLabel="never">
-          <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
-            (blur)="hasValue=term?true:false">
-        </mat-form-field>
-        <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
-          <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
-          <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
-        </button>
-        &nbsp;
-        <button mat-icon-button aria-label="favorite">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
-        &nbsp;
-        <button mat-icon-button aria-label="cart">
-          <mat-icon>work_outliner</mat-icon>
-        </button>
+      <div class="float-right" style="margin-left: 200px;">
+        <div class="example-flex-container" class="search-container" [ngClass]="{'hasValue':hasValue}">
+          <mat-form-field floatLabel="never">
+            <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
+                   (blur)="hasValue=term?true:false">
+          </mat-form-field>
+          <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
+            <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
+            <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
+          </button>
+          &nbsp;
+          <button mat-icon-button aria-label="favorite">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+          &nbsp;
+          <button mat-icon-button aria-label="cart">
+            <mat-icon>work_outliner</mat-icon>
+          </button>
 
-        &nbsp; &nbsp;
+          &nbsp; &nbsp;
 
-        &nbsp;
+          &nbsp;
 
-        <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
+          <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
+        </div>
       </div>
-    </div>
-  </mat-grid-tile>
+    </mat-grid-tile>
 
-</mat-grid-list>
+  </mat-grid-list>
+
+</div>
+<div id="psuedo-navbar"></div>
+
