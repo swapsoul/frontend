@@ -27,9 +27,12 @@
   </div>
 
     <mat-grid-list cols="3" rowHeight="2:1">
-      <div *ngFor="let i of [].constructor(12)">
-        <mat-grid-tile>
-          <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
+      <div *ngFor="let data of allData">
+        <mat-grid-tile *ngIf="data.id<=12">
+          <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) onclick="location.href='product'">
+          <h3>{{data.ProductName}}</h3>
+          <h3 class="strike">{{data.OrgPrice}}</h3>
+          <h3>{{data.DiscPrice}}</h3>
         </mat-grid-tile>
       </div>
     </mat-grid-list>
@@ -53,9 +56,12 @@
       </div>
     
       <mat-grid-list cols="3" rowHeight="2:1">
-        <div *ngFor="let i of [].constructor(9)">
-          <mat-grid-tile>
-            <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
+        <div *ngFor="let data of allData">
+          <mat-grid-tile *ngIf="data.id<=12">
+            <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) onclick="location.href='product'">
+            <h3>{{data.ProductName}}</h3>
+            <h3 class="strike">{{data.OrgPrice}}</h3>
+            <h3>{{data.DiscPrice}}</h3>
           </mat-grid-tile>
         </div>
       </mat-grid-list>
@@ -79,9 +85,12 @@
       </div>
     
       <mat-grid-list cols="3" rowHeight="2:1">
-        <div *ngFor="let i of [].constructor(9)">
-          <mat-grid-tile>
-            <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
+        <div *ngFor="let data of allData">
+          <mat-grid-tile *ngIf="data.id<=12">
+            <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) onclick="location.href='product'">
+            <h3>{{data.ProductName}}</h3>
+            <h3 class="strike">{{data.OrgPrice}}</h3>
+            <h3>{{data.DiscPrice}}</h3>
           </mat-grid-tile>
         </div>
       </mat-grid-list>
@@ -105,9 +114,12 @@
       </div>
     
       <mat-grid-list cols="3" rowHeight="2:1">
-        <div *ngFor="let i of [].constructor(9)">
-          <mat-grid-tile>
-            <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
+        <div *ngFor="let data of allData">
+          <mat-grid-tile *ngIf="data.id<=12">
+            <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) onclick="location.href='product'">
+            <h3>{{data.ProductName}}</h3>
+            <h3 class="strike">{{data.OrgPrice}}</h3>
+            <h3>{{data.DiscPrice}}</h3>
           </mat-grid-tile>
         </div>
       </mat-grid-list>
@@ -124,9 +136,12 @@
 <h1 class="text-center">More you might like</h1>
 
 <mat-grid-list cols="3" rowHeight="2:1">
-  <div *ngFor="let i of [].constructor(6)">
-    <mat-grid-tile>
-      <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
+  <div *ngFor="let data of allData">
+    <mat-grid-tile *ngIf="data.id>12 && data.id<19">
+      <img src="assets/img/sampleimage1.png" alt="p1">
+      <h3>{{data.ProductName}}</h3>
+      <h3 class="strike">{{data.OrgPrice}}</h3>
+      <h3>{{data.DiscPrice}}</h3>
     </mat-grid-tile>
   </div>
 </mat-grid-list>
