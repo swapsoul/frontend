@@ -1,16 +1,79 @@
 h2{
     color:rgb(92, 89, 89);
 }
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
+img{
+    width:100px;
+    height:auto;
+}
+th{
+    width:100px;
+}
+#img{
+    width:300px;
+    height:auto;
+}
+#td{
+    width:300px;
+}
+svg{
+    color:grey;
+}
+svg:hover{
+    color:blue;
+}
+td,th,tr{
+    border:none;
+}
+table{
+    border:transparent;
+}
+.btn{
+    width:200px;
+    color:white;
+}
+#heart{
+    color:red;
+}
+#button{
+    border:1px solid black;
+    background-color: transparent;
+    color:black;
+}
+h1{
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    text-underline-offset: 7px;
+    cursor: pointer;
+    
+}
+
+h2{
+    cursor: pointer;
+    color: darkorchid;
+}
+#f1{
+    float:right;
+    font-size: large;
+}
+#f1:hover{
+    color:white;
+    text-decoration: none;
+}
+h3{
+    color:white;
+    font-size:larger;
+}
+h4{
+    font-size:25px;
+    color:white;
+}
+
+#footer{
+    svg{
+        color:white;
+    }
+    svg:hover{
+        color:blue;
+    }
+}

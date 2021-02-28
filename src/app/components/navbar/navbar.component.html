@@ -13,11 +13,12 @@
           &nbsp; &nbsp;
           <button mat-button onclick="location.href='men'">Men</button> &nbsp;
           <button mat-button onclick="location.href='women'">Women</button> &nbsp;
-          <button mat-button onclick="location.href='essentials'">Essential</button> &nbsp;
-          <button mat-button>About</button>
+          <button mat-button onclick="location.href='essentials'">Essentials</button> &nbsp;
+          <button mat-button>Blog</button>&nbsp;
+          <button mat-button onclick="location.href='about'">About</button>
         </div>
       </div>
-      <div class="float-right" style="margin-left: 200px;">
+      <div class="float-right" style="margin-left: 150px;">
         <div class="example-flex-container" class="search-container" [ngClass]="{'hasValue':hasValue}">
           <mat-form-field floatLabel="never">
             <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"

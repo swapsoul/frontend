@@ -218,7 +218,11 @@
     height:450px;
   }
 }
-
+.story_heading{
+  color:grey;
+  font-size:50px;
+  margin-left:20px;
+}
 #footer{
   color:white;
   border:3px solid white;
@@ -250,4 +254,26 @@
 }
 h3{
   font-size:larger;
+}
+.thumb-content{
+.btn{
+  top:82%;
+  left:15%;
+  position:absolute;
+  width:150px;
+  background-color: transparent;
+  color:white;
+  border:1px solid white;
+}
+}
+.carousel-control-prev, .carousel-control-next {
+  height: 44px;
+  width: 40px;
+  background: black;	
+  color:white;
+  margin: auto 0;
+  border-radius: 4px;
+  opacity: 0.8;
+  font-size:25px;
+  top:10%;
 }

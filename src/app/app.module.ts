@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
+import { AboutComponent } from './routes/about/about.component';
 
 
 
@@ -36,7 +37,8 @@ import { SingleproductpagesampleComponent } from './routes/singleproductpagesamp
     MenComponent,
     EssentialsComponent,
     loginSignUpDialog,
-    SingleproductpagesampleComponent
+    SingleproductpagesampleComponent,
+    AboutComponent
 
   ],
   imports: [
