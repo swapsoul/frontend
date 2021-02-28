@@ -25,6 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 import { AboutComponent } from './routes/about/about.component';
+import { ProductComponent } from './routes/product/product.component';
 
 
 
@@ -38,9 +39,9 @@ import { AboutComponent } from './routes/about/about.component';
     EssentialsComponent,
     loginSignUpDialog,
     SingleproductpagesampleComponent,
-    AboutComponent
-
-  ],
+    AboutComponent,
+    ProductComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

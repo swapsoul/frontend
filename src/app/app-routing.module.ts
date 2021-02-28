@@ -6,6 +6,8 @@ import { WomenComponent } from './routes/women/women.component';
 import { EssentialsComponent } from './routes/essentials/essentials.component';
 import {SingleproductpagesampleComponent} from './routes/singleproductpagesample/singleproductpagesample.component';
 import {AboutComponent} from './routes/about/about.component';
+import { ProductComponent} from './routes/product/product.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -13,7 +15,8 @@ const routes: Routes = [
   { path: 'women', component: WomenComponent},
   { path: 'essentials', component: EssentialsComponent},
   { path: 'sample', component: SingleproductpagesampleComponent},
-  { path: 'about', component: AboutComponent}
+  { path: 'about', component: AboutComponent},
+  { path: 'product', component: ProductComponent }
 ];
 
 @NgModule({
