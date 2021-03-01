@@ -8,6 +8,9 @@
 button {
   color: white;
 }
+button:hover{
+  color:grey;
+}
 
 #psuedo-navbar {
   height: 48px;
@@ -24,7 +27,8 @@ svg, a {
 }
 
 a:hover {
-  color: black;
+  color: grey;
+  text-decoration:none;
 }
 
 .float-left {
