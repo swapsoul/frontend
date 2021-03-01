@@ -1,79 +1,88 @@
-h2{
-    color:rgb(92, 89, 89);
+
+
+.bg-codeblocks {
+	position: absolute;	
+width: 100%;
+height: 100vh;
+
 }
-img{
-    width:100px;
-    height:auto;
+
+.main-box-codeblocks	{
+	
+	border-radius: 20px;
+	width:90%;
+	height: auto;
+	position: relative;
+	display: block;
+	
+	
 }
-th{
-    width:100px;
-}
-#img{
-    width:300px;
-    height:auto;
-}
-#td{
-    width:300px;
-}
-svg{
+
+
+.zoom {
+    transition: transform .2s;
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+  }
+  #size {
+    border-radius:50%;
+    border-color: grey;
     color:grey;
-}
-svg:hover{
-    color:blue;
-}
-td,th,tr{
-    border:none;
-}
-table{
-    border:transparent;
-}
-.btn{
-    width:200px;
-    color:white;
-}
-#heart{
-    color:red;
-}
-#button{
-    border:1px solid black;
-    background-color: transparent;
-    color:black;
-}
-h1{
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: orange;
-    text-underline-offset: 7px;
-    cursor: pointer;
     
+  }
+  #size:hover{
+      color:black;
+      background-color:grey;
+  }
+  #colors{
+      border-radius:0%;
+      width:30px;
+      height:30px;
+      border:none;
+      background-color: yellow;
+  }
+  #colors:hover{
+      border:3px solid red;
+  }
+  #colors1{
+    border-radius:0%;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color: green;
 }
-
-h2{
-    cursor: pointer;
-    color: darkorchid;
+#colors1:hover{
+    border:3px solid red;
 }
-#f1{
-    float:right;
-    font-size: large;
+#colors2{
+    border-radius:0%;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color:orange;
 }
-#f1:hover{
-    color:white;
-    text-decoration: none;
+#colors2:hover{
+    border:3px solid red;
 }
-h3{
-    color:white;
-    font-size:larger;
-}
-h4{
-    font-size:25px;
-    color:white;
-}
-
-#footer{
-    svg{
-        color:white;
-    }
-    svg:hover{
-        color:blue;
-    }
-}
+  #pincode{
+      color:white;
+      height:35px;
+      width:80px;
+      background-color: orange;
+      font-size:20px;
+      border-color: black;
+      
+  }
+  .zoom1 {
+    transition: transform .2s;
+  }
+  
+  .zoom1:hover {
+    -ms-transform: scale(2.0); /* IE 9 */
+    -webkit-transform: scale(2.0); /* Safari 3-8 */
+    transform: scale(2.0); 
+  }
