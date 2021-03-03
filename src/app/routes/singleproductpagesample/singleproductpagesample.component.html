@@ -21,7 +21,7 @@
 								<div class="swiper-slide">
 									<div class="zoom">
                     
-                    <img style="width:100%; height:auto;left:50%;" src="assets/img/about_us_1.png"><br><br><br>
+                    <img style="width:100%; height:auto;left:50%;" src="assets/img/productimage1.jpg"><br><br><br>
                   </div>
 								</div>
 							</div>
@@ -31,17 +31,17 @@
             <div class="row">
               <div class="col">
                 <div class="zoom1">
-                <img src="assets/img/black.jpg" width="100">
+                <img src="assets/img/productimage1.jpg" width="100">
               </div>
               </div>
               <div class="col">
                 <div class="zoom1">
-                <img src="assets/img/green.jpg" width="100">
+                <img src="assets/img/pi1.PNG" width="100">
               </div>
               </div>
               <div class="col">
                 <div class="zoom1">
-                <img src="assets/img/orange.jpeg" width="100">
+                <img src="assets/img/productimage3.jpg" width="100">
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
 			  <section>
 				<div class="example-button-row">
 				  <div class="example-flex-container">
-					<div class="example-button-container">
+					<div class="example-button-container" PLACEHOLDER="choose a size" REQUIRED>
 					  <button style="background-color:transparent;color:grey;border:2px solid grey;" mat-fab aria-label="Example icon button with a bookmark icon">
 						<mat-icon>S</mat-icon>
 					  </button>
@@ -82,19 +82,22 @@
 			  </section>
               <span style="color:#F22579;font-size:16px;"> Only few Left!</span><br>
               <span style="color:black; font-size:24px;"> Colors</span><br>
+              <form>
 			  <section>
-				<div class="example-button-row">
+				<div class="example-button-row" required>
 				  <button mat-button style="background-color:yellow;"></button>
 				  <button mat-button style="background-color:green;"></button>
 				  <button mat-button style="background-color:orange;"></button>
 				</div>
 			  </section>
+        </form>
 							</h1>
 					</span>
+          
 					<span class="buy-form-codeblocks">
 						<form action="" class="form-inline" style="width:165px;">
-							<label for=""> Quantity <br>
-								<select name="quantity" id="quantity-codeblocks" class="form-control mx-2">
+							<label for="" style="font-size:18px;font-family: poppins;"> Quantity </label>
+								<select name="quantity" id="quantity-codeblocks" class="form-control mx-2" style="border:3px solid black;" REQUIRED>
 									<option value="0">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -107,8 +110,8 @@
 									<option value="3">9</option>
 									<option value="4">10</option>
 								</select>
-							</label>
               </form>
+              
                <br>
 			  <button mat-raised-button style="background-color:orange;border:2px solid orange;width:250px; height:48px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
@@ -121,8 +124,8 @@
             <br><br>
             <span style="color:black;font-size:24px;"> Delivery Details</span><br>
               <span style="color:black;font-size:18px;opacity:50%;">Enter Pincode</span><br>
-              <input style="color:black;width:340px;height:48px;" type="pincode" name="pincode"> &nbsp;<button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
-              <span style="color:black;font-size:18px;">Please Enter PIN code and check delivery time and Pay on Delivery Availability</span><br>
+              <input style="color:black;width:340px;height:48px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;<button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
+              <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
           </span>
           <br><br>
 					<span class="extras-codeblocks ">
@@ -174,7 +177,7 @@
 
 				</div>
 			</div>
-<br>
+<br><br><br>
 			<div class="row">
         <h2 style="font-size:28px;color:rgb(158, 150, 150);">More like this</h2>
 <br><br><br>
