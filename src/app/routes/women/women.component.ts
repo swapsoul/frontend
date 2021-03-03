@@ -12,6 +12,7 @@ export class WomenComponent implements OnInit {
   allData: any[];
   productnames: string[] = []
   pint: any;
+  selected: string;
 
 
   ngOnInit(): void {
@@ -43,4 +44,24 @@ pro(id)
     }
   }
 }
+
+  sort(event) {
+    if (event.value === this.toppingList[0]) {
+
+    }
+
+    else if (event.value == this.toppingList[1]) {
+      this.allData.sort((a, b) => (a.DiscPrice > b.DiscPrice) ? 1 : -1)
+    }
+
+    else if (event.value == this.toppingList[2]) {
+      this.allData.sort((a, b) => (a.DiscPrice < b.DiscPrice) ? 1 : -1)
+    }
+    else if (event.value == this.toppingList[3]) {
+      this.allData.sort((a, b) => (a.stock > b.stock) ? 1 : -1)
+    }
+    else if (event.value == this.toppingList[4]) {
+      this.allData.sort((a, b) => (a.rating < b.rating) ? 1 : -1)
+    }
+  }
 }
