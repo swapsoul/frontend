@@ -1,106 +1,543 @@
-<!DOCTYPE html>
-<br>
-<h5 style="font-size: 20px;">Home > Men > Shirt > <span style="color:blue;">XYZ</span></h5>
-<table class="table table-bordered">
+<div class="bg-codeblocks">
+	<div class="main-box-codeblocks">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#" style="font-size:24px;">Home</a></li>
+							<li class="breadcrumb-item"><a href="#" style="font-size:24px;">Products</a></li>
+							<li class="breadcrumb-item active" aria-current="page" style="font-size:24px;">Product Name</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
 
-    <tbody>
-      <tr>
-        <th scope="row">
-         <img src="assets/img/pi3.PNG">
-        </th>
-        <td id="td" rowspan="3">
-         <img id="img" src="assets/img/productimage1.jpg"> 
-        </td>
-        <td><h1>Product Name</h1> <br> Rs 456 <br> <del>Rs 486</del> &nbsp;<span style="color:rgb(226, 70, 96);"> 30% OFF <br> Inclusive all taxes</span></td>
-        <td>
-      <h1>Share</h1>
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-      </svg></a>&nbsp;&nbsp;
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-      </svg></a> &nbsp;&nbsp;
-     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-      </svg></a>&nbsp;&nbsp;
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-      </svg></a><br>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">
-    <img src="assets/img/pi2.PNG">
-        </th>
-        <td colspan="2"><b>Size</b><br>
-          Sizes are displayed here <br> colors are displayed here<br>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="box-image-codeblocks">
+						<div class="swiper-container gallery-thumbs">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="zoom">
+                    
+                    <img style="width:100%; height:auto;left:50%;" src="assets/img/productimage1.jpg"><br><br><br>
+                  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="zoom1">
+                <img src="assets/img/productimage1.jpg" width="100">
+              </div>
+              </div>
+              <div class="col">
+                <div class="zoom1">
+                <img src="assets/img/pi1.PNG" width="100">
+              </div>
+              </div>
+              <div class="col">
+                <div class="zoom1">
+                <img src="assets/img/productimage3.jpg" width="100">
+              </div>
+            </div>
+          </div>
+				</div>
+        </div>
+				<div class="col-md-6">
+					<h2 class="text-bold text-strong" style="font-size:36px;">Product Name</h2>
+					<span>
+						<h1 style="font-family:roboto;color:black;font-size:24px;">Rs 456<br>
+              <del style="font-size:22px;">Rs 486</del> &nbsp; <span style="color:#F22579;font-size:18px;"> 20% OFF</span><br>
+              <span style="color:#F22579;font-size:16px;">Inclusive of taxes</span><br>
+              <span style="color:black;font-size:24px;">Size</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#EBB520;font-size:15px;">Check Size Chart</span>
+			  <section>
+				<div class="example-button-row">
+				  <div class="example-flex-container">
+					<div class="example-button-container" PLACEHOLDER="choose a size" REQUIRED>
+					  <button style="background-color:transparent;color:grey;border:2px solid grey;" mat-fab aria-label="Example icon button with a bookmark icon">
+						<mat-icon>S</mat-icon>
+					  </button>
+					</div>
+					<div class="example-button-container">
+						<button style="background-color:transparent;color:grey;border:2px solid grey;width:50px;height:50px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						  <mat-icon>M</mat-icon>
+						</button>
+					  </div>
+					  <div class="example-button-container">
+						<button style="background-color:transparent;color:grey;border:2px solid grey;width:50px;height:50px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						  <mat-icon>L</mat-icon>
+						</button>
+					  </div>
+					  <div class="example-button-container">
+						<button style="background-color:transparent;color:grey;border:2px solid grey;width:50px;height:50px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						  <mat-icon>XL</mat-icon>
+						</button>
+					  </div>
+				  </div>
+				</div>
+			  </section>
+              <span style="color:#F22579;font-size:16px;"> Only few Left!</span><br>
+              <span style="color:black; font-size:24px;"> Colors</span><br>
+              <form>
+			  <section>
+				<div class="example-button-row" required>
+				  <button mat-button style="background-color:yellow;"></button>
+				  <button mat-button style="background-color:green;"></button>
+				  <button mat-button style="background-color:orange;"></button>
+				</div>
+			  </section>
+        </form>
+							</h1>
+					</span>
           
-<div class="container">
-  <input type="button" click="decrementValue()" value="-" />
-  <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
-  <input type="button" click="incrementValue()" value="+" />
-  </div>
+					<span class="buy-form-codeblocks">
+						<form action="" class="form-inline" style="width:165px;">
+							<label for="" style="font-size:18px;font-family: poppins;"> Quantity </label>
+								<select name="quantity" id="quantity-codeblocks" class="form-control mx-2" style="border:3px solid black;" REQUIRED>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+                  <option value="0">6</option>
+									<option value="1">7</option>
+									<option value="2">8</option>
+									<option value="3">9</option>
+									<option value="4">10</option>
+								</select>
+              </form>
+              
+               <br>
+			  <button mat-raised-button style="background-color:orange;border:2px solid orange;width:250px; height:48px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button mat-raised-button style="border:2px solid black;width:250px;height:48px;"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg>&nbsp;&nbsp;WISHLIST</button>		<br>	
+					</span>
+          <span>
+            <br><br>
+            <span style="color:black;font-size:24px;"> Delivery Details</span><br>
+              <span style="color:black;font-size:18px;opacity:50%;">Enter Pincode</span><br>
+              <input style="color:black;width:340px;height:48px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;<button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
+              <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
+          </span>
+          <br><br>
+					<span class="extras-codeblocks ">
+						<ul class="nav nav-tabs my-2" id="myTab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="font-size:24px;">Full Description</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="font-size:24px;">Instructions</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="font-size:24px;">Share</a>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<p style="font-family:roboto;font-size:18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nostrum quam accusantium dolore ipsa beatae, autem illum libero, repudiandae, nihil cupiditate excepturi sequi eveniet? Incidunt maiores veniam atque cumque placeat!</p>
+
+								<p style="font-family:roboto;font-size:18px;">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro consectetur quibusdam nulla officia tempore animi saepe perspiciatis harum inventore corrupti? Quidem odit consequatur fugiat earum odio explicabo! Quam, quisquam dolorum.
+								</p>
+							</div>
+							<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+								<div class="media">
+									<div class="media-body">
+                    <p style="font-size:18px;">
+                      <b>Fit Size</b><br>
+										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.<br>
+                  <b>Washing Instructions</b><br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, sequi, distinctio inventore ipsa provident ea, reprehenderit molestias neque facere laborum quisquam porro ut quaerat. Numquam, obcaecati eum. Iste, officia ducimus</p>
+									</div>
+								</div>
+
+							</div>
+							<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg></a>&nbsp;&nbsp;
+               <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg></a>&nbsp;&nbsp;
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg></a>
+								<div id="share"></div>
+							</div>
+						</div>
+					</span>
+
+				</div>
+			</div>
+<br><br><br>
+			<div class="row">
+        <h2 style="font-size:28px;color:rgb(158, 150, 150);">More like this</h2>
+<br><br><br>
+        <!--Section: Products v.3-->
+        <section class="text-center mb-4">
   
-        <button type="button" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-          <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-        </svg> &nbsp; ADD TO BAG</button> &nbsp; <button id="button" type="button" class="btn btn-light"><svg id="heart" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-        </svg> &nbsp;Added to Wishlist</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">
-         <img src="assets/img/pi1.PNG">
-        </th>
-        <td colspan="2"> delivery details here<br> description here<br>fit and size here <br> material and washing instruction </td>
-        
-      </tr>
-    </tbody>
-  </table>
-  <p style="font-size: 25px;font-weight: bolder;">return policies and reviews sections goes here</p>
-  <h1 class="text-center">More like this </h1>
+          <!--Grid row-->
+          <div class="row wow fadeIn">
   
-  <mat-grid-list cols="3" rowHeight="2:1">
-    <div *ngFor="let i of [].constructor(6)">
-      <mat-grid-tile>
-        <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
-      </mat-grid-tile>
-    </div>
-  </mat-grid-list>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
   
-  <h2 class="text-center">View More >></h2>
-  <h1 class="text-center">Mix and Match </h1>
+              <!--Card-->
+              <div class="card">
   
-  <mat-grid-list cols="3" rowHeight="2:1">
-    <div *ngFor="let i of [].constructor(6)">
-      <mat-grid-tile>
-        <img src="assets/img/sampleimage1.png" alt="p1" style="cursor: pointer;">
-      </mat-grid-tile>
-    </div>
-  </mat-grid-list>
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
   
-  <h2 class="text-center">View More >></h2>
-  <div class="container px-lg-5">
-    <div class="row mx-lg-n5">
-      <div class="col py-3 px-lg-5 border bg-dark" id="footer"><h4><b>Footer</b></h4>
-        <h3><b>Follow us on:</b><br></h3>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-          </svg></a>&nbsp;&nbsp;
-         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-          </svg></a>&nbsp;&nbsp;
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-          </svg></a>
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                  
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text" >Product Name
+                        <span class="badge badge-pill danger-color">NEW</span>
+                      </a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+                    <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                  
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name</a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                  
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name
+                        <span class="badge badge-pill primary-color">bestseller</span>
+                      </a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Fourth column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                  
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name</a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Fourth column-->
+  
+          </div>
+          <!--Grid row-->
+  
+          <!--Grid row-->
+          <div class="row wow fadeIn">
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                 
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name
+                        <span class="badge badge-pill danger-color">NEW</span>
+                      </a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                 
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name</a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name
+                        <span class="badge badge-pill primary-color">bestseller</span>
+                      </a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Grid column-->
+  
+            <!--Fourth column-->
+            <div class="col-lg-3 col-md-6 mb-4">
+  
+              <!--Card-->
+              <div class="card">
+  
+                <!--Card image-->
+                <div class="view overlay">
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt="">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card image-->
+  
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Category & Title-->
+                 
+                  <h5>
+                    <strong>
+                      <a href="" class="dark-grey-text">Product Name</a>
+                    </strong>
+                  </h5>
+  
+                  <h4 class="font-weight-bold blue-text">
+            <strong>$ 120 <del>$240</del> (18% OFF)</strong>
+                  </h4>
+  
+                </div>
+                <!--Card content-->
+  
+              </div>
+              <!--Card-->
+  
+            </div>
+            <!--Fourth column-->
+  
+          </div>
+          <!--Grid row-->
+          <a href="#" class="text" style="font-size:24px;color:#1492E6;font-family:roboto;text-align:center;text-decoration:none;">View More >></a>
+        </section>
+        <!--Section: Products v.3-->
         <br><br>
-       
-        <a id="f1" href="#"> &nbsp;Terms and Conditions</a>
-        <a id="f1" href="#">&nbsp; Cookie Policy</a>
-        <a id="f1" href="#"> &nbsp;Privacy Policy</a>
-        <h3>Copyrights &copy; 2020-21 All rights reserved to Swapsoul.com </h3>
-      </div>
-      <script type="text/javascript" src="script.js">
-      console.log("success")
-      </script>
+        
+        <div class="container px-lg-5">
+          <div class="row mx-lg-n5">
+            <div class="col py-3 px-lg-5 border bg-dark" id="footer"><h1 style="font-family:poppins;font-size:36px;">Footer</h1>
+              <h3><b>Follow us on:</b><br></h3>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg></a>&nbsp;&nbsp;
+               <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg></a>&nbsp;&nbsp;
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg></a>
+              <br><br>
+              <a id="f1" href="#"> &nbsp;Terms and Conditions</a>
+              <a id="f1" href="#">&nbsp; Cookie Policy</a>
+              <a id="f1" href="#"> &nbsp;Privacy Policy</a>
+              <h3>Copyrights &copy; 2020-21 All rights reserved to Swapsoul.com </h3>
+            </div>
+          
+     
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+      

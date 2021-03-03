@@ -4,9 +4,11 @@
   aria-controls="navbarToggler" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
+  <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <button mat-button onclick="location.href='home'">Home</button> &nbsp;
+      </li>
       <li class="nav-item">
         <button mat-button onclick="location.href='men'">Men</button> &nbsp;
       </li>
@@ -14,10 +16,13 @@
         <button mat-button onclick="location.href='women'">Women</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button onclick="location.href='essentials'">Essential</button> &nbsp;
+        <button mat-button onclick="location.href='essentials'">Essentials</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button>About</button>
+        <button mat-button>Blog</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button onclick="location.href='about'">About</button> &nbsp;
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
