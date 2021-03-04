@@ -10,7 +10,10 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <mat-tab-group mat-align-tabs="start">
-      <mat-tab label="All">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>All</span>
+          </ng-template>
         <div class="container-fluid">
           <div class="row">
             <div class="d-none d-md-block d-flex col-md-9" style="height: 60px;"></div>
@@ -62,7 +65,10 @@
         </div>
       </mat-tab>
 
-      <mat-tab label="Hoodies">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>Hoodies</span>
+          </ng-template>
         <div class="container-fluid">
           <div class="row">
             <div class="d-flex col-md-9" style="height: 60px;"></div>
@@ -113,7 +119,10 @@
 
         </div>
       </mat-tab>
-      <mat-tab label="T-shirts">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>T-Shirts</span>
+          </ng-template>
         <div class="container-fluid">
           <div class="row">
             <div class="d-flex col-md-9" style="height: 60px;"></div>
@@ -164,7 +173,10 @@
 
         </div>
       </mat-tab>
-      <mat-tab label="Dresses">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>Dresses</span>
+          </ng-template>
         <div class="container-fluid">
           <div class="row">
             <div class="d-flex col-md-9" style="height: 60px;"></div>
@@ -222,7 +234,7 @@
 <br />
 <br />
 
-<h1 class="text-center">More you might like</h1>
+<h1>More you might like</h1>
 
 <mat-grid-list cols="3" rowHeight="2:1">
   <div *ngFor="let data of allData">
@@ -262,7 +274,7 @@
 <div class="container px-lg-5">
   <div class="row mx-lg-n5">
     <div class="col py-3 px-lg-5 border bg-dark" id="footer">
-      <h1><b>Footer</b></h1>
+      <h1 style="font-family:poppins;font-size:36px;margin-left:0px;">Footer</h1>
       <h3><b>Follow us on:</b><br></h3>
       <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
           class="bi bi-instagram" viewBox="0 0 16 16">

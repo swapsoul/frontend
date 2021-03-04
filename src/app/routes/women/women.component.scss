@@ -5,16 +5,22 @@
     }
 }
 h1{
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: orange;
-    text-underline-offset: 7px;
-    cursor: pointer;
+        font-weight: 500px;
+        cursor: pointer;
+        font-family:poppins;
+        font-size:28px;
+        margin-left:50px;
+    
 }
 
 h2{
     cursor: pointer;
-    color: darkorchid;
+    font-size:24px;
+    color:#1492E6;
+    font-family:roboto;
+    align-self:center ;
+    text-decoration:none;
+    font-weight:500px;
 }
 
 #f1{
@@ -31,4 +37,11 @@ h3{
 .strike{
     text-decoration: line-through;
 }
-
+span{
+    font-family:roboto;
+    font-size:24px;
+}
+mat-label{
+    font-size:18px;
+    font-family:roboto;
+}
