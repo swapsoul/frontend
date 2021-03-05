@@ -1,3 +1,11 @@
+button{
+  font-family:roboto;
+  font-size:20px;
+}
+a{
+  font-family:poppins;
+  font-size:23px;
+}
 #our-navbar {
   position: fixed;
   z-index: 999999;
@@ -8,6 +16,9 @@
 button {
   color: white;
 }
+button:hover{
+  color:grey;
+}
 
 #psuedo-navbar {
   height: 48px;
@@ -15,7 +26,6 @@ button {
 }
 
 #logo {
-  background-color: white;
   height: auto;
   color: grey;
 }
@@ -25,7 +35,8 @@ svg, a {
 }
 
 a:hover {
-  color: black;
+  color: grey;
+  text-decoration:none;
 }
 
 .float-left {
@@ -96,4 +107,8 @@ a:hover {
   .searchIcon {
     background: #e2e9eb;
   }
+}
+
+.navbar-custom {
+  background-image: linear-gradient(to right, black,black, #804d00,#1a0f00  );
 }

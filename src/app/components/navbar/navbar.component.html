@@ -1,51 +1,54 @@
-<div id="our-navbar" class="swapsoul-navbar">
-  <mat-grid-list cols="40" rowHeight="4px" [gutterSize]="0">
-    <mat-grid-tile [colspan]="1" [rowspan]="12" [style.background]="'grey'">
+<nav class="navbar navbar-expand-lg navbar-custom mb-0">
+  <a class="navbar-brand" style="margin-right: 150px; margin-left: 120px;" href="#">LOGO</a>
+  <button class="navbar-toggler navbar-dark" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+  aria-controls="navbarToggler" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <button mat-button onclick="location.href='home'">Home</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button onclick="location.href='men'">Men</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button onclick="location.href='women'">Women</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button onclick="location.href='essentials'">Essentials</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button>Blog</button> &nbsp;
+      </li>
+      <li class="nav-item">
+        <button mat-button onclick="location.href='about'">About</button> &nbsp;
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
+      <mat-form-field floatLabel="never">
+        <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
+          (blur)="hasValue=term?true:false">
+      </mat-form-field>
+      <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
+        <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
+        <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
+      </button>
+      &nbsp;
+      &nbsp;
+      <button mat-icon-button aria-label="favorite">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      &nbsp;
+      <button mat-icon-button aria-label="cart">
+        <mat-icon>work_outliner</mat-icon>
+      </button>
 
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="8" [rowspan]="12" [style.background]="'black'">
-      <button mat-button onclick="location.href='home'">LOGO</button> &nbsp;
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="31" [rowspan]="12" [style.background]="'grey'">
-      <div class="float-right">
-        <div class="example-button-row">
-          &nbsp; &nbsp;
-          <button mat-button onclick="location.href='men'">Men</button> &nbsp;
-          <button mat-button onclick="location.href='women'">Women</button> &nbsp;
-          <button mat-button onclick="location.href='essentials'">Essential</button> &nbsp;
-          <button mat-button>About</button>
-        </div>
-      </div>
-      <div class="float-right" style="margin-left: 200px;">
-        <div class="example-flex-container" class="search-container" [ngClass]="{'hasValue':hasValue}">
-          <mat-form-field floatLabel="never">
-            <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
-                   (blur)="hasValue=term?true:false">
-          </mat-form-field>
-          <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
-            <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
-            <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
-          </button>
-          &nbsp;
-          <button mat-icon-button aria-label="favorite">
-            <mat-icon>favorite_border</mat-icon>
-          </button>
-          &nbsp;
-          <button mat-icon-button aria-label="cart">
-            <mat-icon>work_outliner</mat-icon>
-          </button>
+      &nbsp; &nbsp;
 
-          &nbsp; &nbsp;
-
-          &nbsp;
-
-          <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
-        </div>
-      </div>
-    </mat-grid-tile>
-
-  </mat-grid-list>
-
-</div>
-<div id="psuedo-navbar"></div>
+      &nbsp;
+      <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
+    </form>
+  </div>
+</nav>
 

@@ -1,0 +1,218 @@
+h1 {
+    font-family:poppins;
+    position: absolute;
+    top: 70px;
+    font-weight:500px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    width: 300px;
+    height: 50px;
+    color:orange;
+    font-size: 36px;
+ }
+ 
+    h2 {
+        font-family:poppins;
+        font-size:22px;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        width: 300px;
+        height: 50px;
+       font-weight:500px;
+     }
+     p {
+         font-family:roboto;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        width: 300px;
+        height: 50px;
+        font-size:16px;
+     }
+ h3{
+     font-family:poppins;
+    text-align:center;
+    color:#EBB520;
+    font-size: 36px;
+    font-weight: 500px;
+ }
+ h4{
+     font-family:poppins;
+     color:white;
+     font-size:22px;
+     text-align:center;
+     font-weight:500px;
+ }
+ #f1{
+    float:right;
+    font-size: large;
+  }
+  #f1:hover{
+    color:white;
+    text-decoration: none;
+  }
+  h6,h5{
+      color:white;
+    font-weight:500px;
+    font-family: roboto;
+    font-size:18px;
+  }
+  svg{
+      color:rgb(79, 79, 238);
+  }
+  svg:hover{
+      color:white;
+  }
+  .header{
+      font-size:28px;
+      color:black;
+      font-family:poppins;
+      margin-left:113px;
+  }
+
+  .under {
+    position: absolute;
+    left: 45px;
+    top: -70px;
+    z-index: -1;
+  }
+  
+  .over {
+    
+    left: 45px;
+    top: 10px;
+    z-index: -1;
+    width:240px;
+    height:240px;
+  }
+  
+  .image_header{
+      color:#EBB520;
+      right:-330px;
+      top:15px;
+      font-family:roboto;
+      font-size:24px;
+  }
+  .image_header1{
+      font-family:roboto;
+      font-size:18px;
+      right:-330px;
+      top:50px;
+  }
+  .image_para{
+     right:-330px;
+     top:80px;
+     font-family:roboto;
+     font-size:16px;
+     svg{
+         color:grey;
+     }
+     svg:hover{
+         color:blue;
+     }
+  }
+.btn{
+    margin: 0;
+     position: absolute;
+     top: 50%;
+     left:40%;
+     background-color: transparent;
+     border:1px solid white;
+     width:200px;
+     height:50px;
+     font-size:22px;
+}
+.btn:hover{
+    color:white;
+    background-color: rgb(116, 113, 113);
+}
+.card-body{
+    padding:0px;
+    margin:0px;
+    img{
+        
+        width:100%;
+        height:auto;
+    }
+}
+.card{
+    border:transparent;
+}
+
+    // .carousel {
+    //     margin: 50px auto;
+    //     padding: 0 70px;
+    //     background-color: transparent;
+    // }
+    // .carousel .item {
+    //     color: #747d89;
+    //     min-height: 325px;
+    //     text-align: center;
+    //     overflow: hidden;
+    //     background-color: transparent;
+    // }
+    // .carousel .thumb-wrapper {
+    //     padding: 25px 15px;
+    //     background:transparent;
+    //     border:transparent;
+    //     border-radius: 6px;
+    //     text-align: center;
+    //     position: relative;
+    // }
+    // .carousel .item .img-box {
+    //     height: 150px;
+    //     margin-bottom: 20px;
+    //     width: 100%;
+    //     position: relative;
+    //     background-color:transparent;
+    // }
+    // .carousel .item img {	
+    //     max-width: 100%;
+    //     max-height: 100%;
+    //     display: inline-block;
+    //     position: absolute;
+    //     bottom: 0;
+    //     margin: 0 auto;
+    //     left: 0;
+    //     right: 0;
+    // }
+    .carousel-control-prev, .carousel-control-next {
+        height: 44px;
+        width: 40px;
+        background: black;	
+        color:white;
+        margin: auto 0;
+        border-radius: 4px;
+        opacity: 0.8;
+        font-size:25px;
+        top:10%;
+    }
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+        background: #78bf00;
+        opacity: 1;
+    }
+    .fling-minislide {width:100%; height:0px; padding-bottom: 50%; overflow:hidden; position:relative; }
+    .fling-minislide img{ left:25%; position:absolute; animation:fling-minislide 20s infinite; opacity:0; width: 50%; height: auto;}
+    
+    @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+    .fling-minislide img:nth-child(4){animation-delay:0s;}
+    .fling-minislide img:nth-child(3){animation-delay:5s;}
+    .fling-minislide img:nth-child(2){animation-delay:10s;}
+    .fling-minislide img:nth-child(1){animation-delay:15s;}
+    
+     .company{
+         h1{
+             font-size:40px;
+             color:grey;
+         }
+     }
+    // .carousel-indicators {
+    //     bottom: -50px;
+    // }
+   

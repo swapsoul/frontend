@@ -1,0 +1,185 @@
+li,del,span,button,mat-icon,p,a,strong{
+  font-family:roboto;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:poppins;
+  font-weight:500;
+}
+.head{
+  font-family:roboto;
+  font-size:24px;
+  color:black;
+}
+.size{
+  width:50px;
+  height:50px;
+  background-color:transparent;color:grey;border:2px solid grey;
+}
+.colors{
+  width:50px;
+  height:50px;
+}
+p{
+  font-size:18px;
+}
+.bg-codeblocks {
+	position: absolute;	
+width: 100%;
+height: 100vh;
+
+}
+
+.main-box-codeblocks	{
+	
+	border-radius: 20px;
+	width:90%;
+	height: auto;
+	position: relative;
+	display: block;
+	
+	
+}
+
+
+.zoom {
+    transition: transform .2s;
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05); 
+  }
+  #size {
+    border-radius:50%;
+    border-color: grey;
+    color:grey;
+    
+  }
+  #size:hover{
+      color:black;
+      background-color:grey;
+  }
+  #colors{
+      border-radius:0%;
+      width:30px;
+      height:30px;
+      border:none;
+      background-color: yellow;
+  }
+  #colors:hover{
+      border:3px solid red;
+  }
+  #colors1{
+    border-radius:0%;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color: green;
+}
+#colors1:hover{
+    border:3px solid red;
+}
+#colors2{
+    border-radius:0%;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color:orange;
+}
+#colors2:hover{
+    border:3px solid red;
+}
+  #pincode{
+      color:white;
+      height:35px;
+      width:80px;
+      background-color: orange;
+      font-size:20px;
+      border-color: black;
+      
+  }
+  .zoom1 {
+    transition: transform .2s;
+  }
+  
+  .zoom1:hover {
+    -ms-transform: scale(2.0); /* IE 9 */
+    -webkit-transform: scale(2.0); /* Safari 3-8 */
+    transform: scale(2.0); 
+  }
+
+.dark-grey-text
+{
+  font-family:roboto;
+  font-size:24px;
+  color:black;
+}
+.dark-grey-text:hover{
+  text-decoration: none;
+}
+ strong{
+  color:#F22579;
+  font-size:22px;
+ }
+ del{
+   color:grey;
+   font-size:22px;
+   font-family:roboto;
+ }
+ .card{
+   width:310px;
+   height:512px;
+   left:20%;
+   position:relative;
+ }
+ section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;  
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  
+}
+mat-icon{
+  font-size:18px;
+  color:black;
+}
+#f1{
+  float:right;
+  font-size: large;
+}
+#f1:hover{
+  color:white;
+  text-decoration: none;
+}
+#footer{
+  left:6%;
+}
+a{
+
+  font-size:20px;
+}
+h1,h3{
+  color:white;
+}

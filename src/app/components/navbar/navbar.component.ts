@@ -9,6 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 
 export class NavbarComponent implements OnInit {
+  public isCollapsed = true;
 
   term: string;
   hasValue: boolean;
