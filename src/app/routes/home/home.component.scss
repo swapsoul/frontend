@@ -301,3 +301,60 @@ span{
     color:black;
   }
 }
+
+.containera {
+  position: relative;
+  width: 100%;
+}
+
+.containera img {
+  width: 100%;
+  height: auto;
+}
+
+.containera .btn {
+  position: absolute;
+  top: 84%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.containera .btn:hover {
+  background-color: black;
+}
+
+.rwdcontainer {
+  position: relative;
+  width: 100%;
+}
+
+.rwdcontainer img {
+  width: 100%;
+}
+
+.rwdcontainer .btn {
+  position: absolute;
+  top: 84%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 13px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.rwdcontainer .btn:hover {
+  background-color: black;
+}
