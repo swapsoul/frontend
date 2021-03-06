@@ -13,8 +13,15 @@ export class NavbarComponent implements OnInit {
 
   term: string;
   hasValue: boolean;
+  placeholdervalue = 'Search'
 
   constructor(public dialog: MatDialog) { }
+
+  searchclick()
+  {
+    this.hasValue=!this.hasValue
+    this.placeholdervalue=' ';
+  }
 
   openDialog(): void {
 

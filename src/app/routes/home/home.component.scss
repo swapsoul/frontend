@@ -32,8 +32,8 @@
   background-color: transparent;
   margin-top: -25%;
   position: absolute;
-  font-family: roboto;
-  font-size:22px;
+  //font-family: roboto;
+  //font-size:22px;
 }
 
 #btn1:hover {
@@ -51,8 +51,8 @@
   background-color: transparent;
   margin-top: -20%;
   position: absolute;
-  font-family:roboto;
-  font-size:22px;
+  //font-family:roboto;
+  //font-size:22px;
 }
 
 #btn2:hover {
@@ -63,11 +63,11 @@
 
 .collection {
   .collection-heading {
-    font-family:poppins;
-    font-size: 56px;
+    //font-family:poppins;
+    //font-size: 56px;
     text-underline-offset: 8px;
     margin: 100px 0 40px 0;
-    margin-left:40px;
+    //margin-left:40px;
   }
 
   .product-li {
@@ -176,10 +176,10 @@
   padding: 30px 0;
 
   .carousal-heading {
-    font-family:poppins;
+    //font-family:poppins;
     color: black;
     text-align: Center;
-    font-size: 56px;
+    //font-size: 56px;
   }
 
   .item {
@@ -208,7 +208,7 @@
   .story{
     text-align:center;
     color:orange;
-    font-family:poppins;
+    //font-family:poppins;
     font-size:22px;
   }
   p{
@@ -284,20 +284,20 @@ h3{
   font-size:25px;
   top:10%;
 }
-span{
+/*span{
   font-family:roboto;
   font-size:24px;
-}
+}*/
 #contact{
   text-align:center;
   h3{
-    font-size:36px;
-    font-family:poppins;
+    //font-size:36px;
+    //font-family:poppins;
     color:orange;
   }
   .sub_data{
-    font-family:roboto;
-    font-size:18px;
+    //font-family:roboto;
+    //font-size:18px;
     color:black;
   }
 }
