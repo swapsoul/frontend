@@ -4,7 +4,7 @@
   aria-controls="navbarToggler" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarToggler">
+  <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
         <button mat-button onclick="location.href='home'">Home</button> &nbsp;
@@ -27,10 +27,10 @@
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
       <mat-form-field floatLabel="never">
-        <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
+        <input matInput type="search" [(ngModel)]="term" [placeholder]="placeholdervalue" autocomplete="off"
           (blur)="hasValue=term?true:false">
       </mat-form-field>
-      <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
+      <button type="button" class="searchIcon" mat-icon-button (click)="searchclick">
         <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
         <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
       </button>
