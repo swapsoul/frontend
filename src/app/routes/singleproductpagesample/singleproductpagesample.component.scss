@@ -44,6 +44,11 @@ height: 100vh;
 
 .zoom {
     transition: transform .2s;
+    img{
+      width:500px;
+      height:800px;
+      
+    }
   }
   
   .zoom:hover {
@@ -102,6 +107,10 @@ height: 100vh;
   }
   .zoom1 {
     transition: transform .2s;
+    img{
+      width:100px;
+      height:150px;
+    }
   }
   
   .zoom1:hover {
@@ -182,4 +191,18 @@ a{
 }
 h1,h3{
   color:white;
+}
+.view{
+  img{
+    width:320px;
+    height:400px;
+}
+}
+button{
+  border:1px solid black;
+  color:grey;
+}
+button:hover{
+  border:1px solid red;
+  color:green;
 }

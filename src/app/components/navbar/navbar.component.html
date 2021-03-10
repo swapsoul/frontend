@@ -27,10 +27,10 @@
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
       <mat-form-field floatLabel="never">
-        <input matInput type="search" [(ngModel)]="term" [placeholder]="placeholdervalue" autocomplete="off"
+        <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
           (blur)="hasValue=term?true:false">
       </mat-form-field>
-      <button type="button" class="searchIcon" mat-icon-button (click)="searchclick">
+      <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
         <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
         <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
       </button>
