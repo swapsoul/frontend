@@ -7,5 +7,5 @@ import{NavbarComponent} from './components/navbar/navbar.component'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'swapsoul-frontend';
+  title = 'swapsoul';
 }
