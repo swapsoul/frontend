@@ -62,14 +62,6 @@
 }
 
 .collection {
-  .collection-heading {
-    font-family:poppins;
-    font-size: 56px;
-    text-underline-offset: 8px;
-    margin: 100px 0 40px 0;
-    margin-left:40px;
-  }
-
   .product-li {
     padding: 5px;
     margin-right: 15px;
@@ -132,6 +124,7 @@
     float: right;
     top: -30px;
     padding: 5px;
+    
   }
 }
 
@@ -152,7 +145,10 @@
 }
 
 
-
+/*span{
+  font-family:roboto;
+  font-size:18px;
+}*/
 #btn3 {
   border: 3px solid white;
   color: white;
@@ -179,7 +175,7 @@
     font-family:poppins;
     color: black;
     text-align: Center;
-    font-size: 56px;
+    font-size: 28px;
   }
 
   .item {
@@ -217,8 +213,8 @@
     text-align:center;
   }
   button{
-    width:200px;
-    height:50px;
+    width:180px;
+    height:40px;
     background-color: orange;
     color:white;
     left:0%;
@@ -284,14 +280,14 @@ h3{
   font-size:25px;
   top:10%;
 }
-span{
-  font-family:roboto;
-  font-size:24px;
-}
-#contact{
-  text-align:center;
+
+#contact1{
+  text-align: center;
+  font-family: poppins;
+    font-size:28px;
+    font-weight:500px;
   h3{
-    font-size:36px;
+    font-size:28px;
     font-family:poppins;
     color:orange;
   }
@@ -300,6 +296,7 @@ span{
     font-size:18px;
     color:black;
   }
+  
 }
 
 .containera {
@@ -358,3 +355,4 @@ span{
 .rwdcontainer .btn:hover {
   background-color: black;
 }
+

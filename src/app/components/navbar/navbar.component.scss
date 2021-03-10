@@ -1,11 +1,4 @@
-button{
-  font-family:roboto;
-  font-size:20px;
-}
-a{
-  font-family:poppins;
-  font-size:23px;
-}
+
 #our-navbar {
   position: fixed;
   z-index: 999999;
@@ -15,6 +8,7 @@ a{
 
 button {
   color: white;
+  font-size:18px;
 }
 button:hover{
   color:grey;
@@ -55,6 +49,10 @@ a:hover {
 
 .button-white {
   color: white;
+}
+
+.button-black {
+  color: black;
 }
 
 .yellow-button {

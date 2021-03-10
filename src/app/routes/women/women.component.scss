@@ -37,11 +37,28 @@ h3{
 .strike{
     text-decoration: line-through;
 }
-span{
+/*span{
     font-family:roboto;
     font-size:24px;
-}
+}*/
 mat-label{
     font-size:18px;
     font-family:roboto;
+}
+
+.blu{
+    color: #1492E6;
+    cursor:pointer;
+}
+
+.im{
+    cursor: pointer;
+}
+
+.purp
+{
+    color: purple;
+}
+.org{
+    color: orange;
 }
