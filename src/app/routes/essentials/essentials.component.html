@@ -33,7 +33,7 @@
               <div *ngFor="let data of allData">
                 <mat-grid-tile *ngIf="data.id<=3">
                   <mat-card class="product-card">
-                  <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im" onclick="location.href='product'">
+                  <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im" onclick="location.href='product'">
                   <mat-card-content>
                     <div class="row">
                   <h3><strong>{{data.ProductName}}</strong></h3>
@@ -60,17 +60,19 @@
               </div>
             </mat-grid-list>-->
 
-          <mat-grid-list cols="3" rowHeight="1:0.7">
+          <mat-grid-list cols="3" rowHeight="1:1.1">
             <div *ngFor="let data of allData">
               <mat-grid-tile *ngIf="data.id<=12">
                 <mat-card>
                   <mat-card-header>
-                    <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im"
+                    <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
                       onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
-                    <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
-                      {{data.rating}}({{data.norev}})</h3>
+                    <h3 class="mt-2"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">
+                        &#x2605;</div>
+                      <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+                    </h3>
                   </mat-card-content>
                   <mat-card-footer>
                     <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
@@ -104,12 +106,12 @@
             <br />
           </div>
 
-          <mat-grid-list cols="3" rowHeight="1:0.7">
+          <mat-grid-list cols="3" rowHeight="1:1.1">
             <div *ngFor="let data of allData">
               <mat-grid-tile *ngIf="data.id<=12">
                 <mat-card>
                   <mat-card-header>
-                    <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im"
+                    <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
                       onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
@@ -147,12 +149,12 @@
             <br />
           </div>
 
-          <mat-grid-list cols="3" rowHeight="1:0.7">
+          <mat-grid-list cols="3" rowHeight="1:1.1">
             <div *ngFor="let data of allData">
               <mat-grid-tile *ngIf="data.id<=12">
                 <mat-card>
                   <mat-card-header>
-                    <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im"
+                    <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
                       onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
@@ -190,12 +192,12 @@
             <br />
           </div>
 
-          <mat-grid-list cols="3" rowHeight="1:0.7">
+          <mat-grid-list cols="3" rowHeight="1:1.1">
             <div *ngFor="let data of allData">
               <mat-grid-tile *ngIf="data.id<=12">
                 <mat-card>
                   <mat-card-header>
-                    <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im"
+                    <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
                       onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
@@ -222,13 +224,12 @@
 
 <h1>More you might like</h1>
 
-<mat-grid-list cols="3" rowHeight="1:0.7">
+<mat-grid-list cols="3" rowHeight="1:0.9">
   <div *ngFor="let data of allData">
     <mat-grid-tile *ngIf="data.id<=6">
       <mat-card>
         <mat-card-header>
-          <img src="assets/img/sampleimage1.png" alt="p1" (click)=pro(data.id) class="im"
-            onclick="location.href='sample'">
+          <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im" onclick="location.href='sample'">
         </mat-card-header>
         <mat-card-content>
           <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
