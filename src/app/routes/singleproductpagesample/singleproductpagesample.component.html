@@ -124,7 +124,8 @@
             <br><br>
             <span style="color:black;font-size:24px;"> Delivery Details</span><br>
               <span style="color:black;font-size:18px;opacity:50%;">Enter Pincode</span><br>
-              <input style="color:black;width:340px;height:48px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;<button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
+              <input (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:340px;height:48px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;
+              <button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
               <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
           </span>
           <br><br>
