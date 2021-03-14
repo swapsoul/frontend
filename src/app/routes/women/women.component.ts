@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from 'src/app/services/product.service'
+import { ProductService } from 'src/app/services/product.service';
+import { InteractionService } from 'src/app/interaction.service';
 
 @Component({
   selector: 'app-women',

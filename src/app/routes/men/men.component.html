@@ -68,7 +68,7 @@
                     <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im" onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
-                    <h3 class="mt-2"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div><div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div></h3>
+                    <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div><div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div></h3>
                   </mat-card-content>
                   <mat-card-footer><div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;   <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp"> ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div></mat-card-footer>
                 </mat-card>
@@ -107,7 +107,7 @@
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
-                      <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
+                      <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
                         {{data.rating}}({{data.norev}})</h3>
                     </mat-card-content>
                     <mat-card-footer>
@@ -150,7 +150,7 @@
             onclick="location.href='sample'">
         </mat-card-header>
         <mat-card-content>
-          <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
+          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
             {{data.rating}}({{data.norev}})</h3>
         </mat-card-content>
         <mat-card-footer>
@@ -193,7 +193,7 @@
             onclick="location.href='sample'">
         </mat-card-header>
         <mat-card-content>
-          <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
+          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
             {{data.rating}}({{data.norev}})</h3>
         </mat-card-content>
         <mat-card-footer>
@@ -225,7 +225,7 @@
             onclick="location.href='sample'">
         </mat-card-header>
         <mat-card-content>
-          <h3><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
+          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
             {{data.rating}}({{data.norev}})</h3>
         </mat-card-content>
         <mat-card-footer>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from 'src/app/services/product.service'
+import { ProductService } from 'src/app/services/product.service';
+import { InteractionService } from 'src/app/interaction.service';
 
 @Component({
   selector: 'app-men',
@@ -25,9 +26,14 @@ export class MenComponent implements OnInit {
     })
   }
 
-  constructor(private data_service: ProductService) {
+  constructor(private data_service: ProductService, private cartService: InteractionService) {
     console.log(this.allData);
    }
+
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
 
   
 
