@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
+import { FooterComponent } from './routes/footer/footer.component';
 
 
 
@@ -44,7 +45,8 @@ import { ProductComponent } from './routes/product/product.component';
     loginSignUpDialog,
     SingleproductpagesampleComponent,
     AboutComponent,
-    ProductComponent
+    ProductComponent,
+    FooterComponent,
     ],
   imports: [
     
