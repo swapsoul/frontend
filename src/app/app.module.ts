@@ -27,6 +27,8 @@ import { SingleproductpagesampleComponent } from './routes/singleproductpagesamp
 import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
 import { FooterComponent } from './routes/footer/footer.component';
+import { TcComponent } from './routes/footer/tc/tc.component';
+import { PrivacyComponent } from './routes/footer/privacy/privacy.component';
 
 
 
@@ -47,6 +49,8 @@ import { FooterComponent } from './routes/footer/footer.component';
     AboutComponent,
     ProductComponent,
     FooterComponent,
+    TcComponent,
+    PrivacyComponent,
     ],
   imports: [
     

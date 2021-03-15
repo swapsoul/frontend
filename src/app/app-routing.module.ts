@@ -7,6 +7,8 @@ import { EssentialsComponent } from './routes/essentials/essentials.component';
 import {SingleproductpagesampleComponent} from './routes/singleproductpagesample/singleproductpagesample.component';
 import {AboutComponent} from './routes/about/about.component';
 import { ProductComponent} from './routes/product/product.component';
+import {TcComponent} from './routes/footer/tc/tc.component';
+import {PrivacyComponent} from './routes/footer/privacy/privacy.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +18,10 @@ const routes: Routes = [
   { path: 'essentials', component: EssentialsComponent},
   { path: 'sample', component: SingleproductpagesampleComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'product', component: ProductComponent }
+  { path: 'product', component: ProductComponent },
+  {path :'terms', component: TcComponent},
+  {path :'privacy', component: PrivacyComponent}
+
 ];
 
 @NgModule({
