@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, Validators } from '@angular/forms';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-navbar',
@@ -51,8 +52,15 @@ export class loginSignUpDialog {
 
 
   constructor(
+    private globalService: GlobalService,
     public dialogRef: MatDialogRef<loginSignUpDialog>,
     @Inject(MAT_DIALOG_DATA) public data: null) { }
+
+    ngOnInit() {
+    this.globalService.getServiceCall('/api/users', (result) => {
+      console.log("***************************" + JSON.stringify(result.data));
+    });
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

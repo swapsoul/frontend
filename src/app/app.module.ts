@@ -3,7 +3,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { GlobalService } from './services/global.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
@@ -72,7 +72,7 @@ import { PrivacyComponent } from './routes/footer/privacy/privacy.component';
     MatSelectModule,
     NgbCollapseModule
   ],
-  providers: [],
+providers: [GlobalService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
