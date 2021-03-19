@@ -32,6 +32,7 @@ h2{
 
 h3{
     font-size:larger;
+    color: black;
 }
 .strike{
     text-decoration: line-through;
@@ -69,9 +70,7 @@ f1{
     color:white;
     text-decoration: none;
   }
-  h1,h3{
-    color:white;
-  }
+  
   .foo{
     float:right;
     color:white;
@@ -79,7 +78,3 @@ f1{
     font-size:15px;
   }
   
-
-h3{
-    font-size:larger;
-}

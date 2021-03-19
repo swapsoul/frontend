@@ -40,8 +40,8 @@ font-weight:500px;
     color:white;
     text-decoration: none;
   }
-  h1,h3{
-    color:white;
+ .text-white{
+      color:white;
   }
   .foo{
     float:right;
@@ -53,6 +53,7 @@ font-weight:500px;
 
 h3{
     font-size:larger;
+    color: black;
 }
 .strike{
     text-decoration: line-through;
