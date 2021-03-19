@@ -1,7 +1,9 @@
 li,del,span,button,mat-icon,p,a,strong{
   font-family:roboto;
 }
-
+.breadcrumb{
+  background-color: transparent;
+}
 h1,h2,h3,h4,h5,h6{
   font-family:poppins;
   font-weight:500;
@@ -14,20 +16,22 @@ h1,h2,h3,h4,h5,h6{
 .size{
   width:50px;
   height:50px;
-  background-color:transparent;color:grey;border:2px solid grey;
+  background-color:transparent;
+  color:grey;
+  border:2px solid grey;
 }
 .colors{
-  width:50px;
-  height:50px;
+  width:30px;
+  height:40px;
+  border-radius: 0em;
+  border:transparent;
 }
 p{
   font-size:18px;
 }
 .bg-codeblocks {
-	position: absolute;	
 width: 100%;
 height: 100vh;
-
 }
 
 .main-box-codeblocks	{
@@ -40,14 +44,38 @@ height: 100vh;
 	
 	
 }
-
+#f1{
+  float:right;
+  font-size: large;
+}
+.foo{
+  border:transparent;
+}
+.foo:hover{
+  border:transparent;
+  color:white;
+}
+#f1:hover{
+  color:white;
+  text-decoration: none;
+}
+h1,h3{
+  color:white;
+}
+.foo{
+  float:right;
+  color:white;
+  background-color: transparent;
+  font-size:15px;
+}
 
 .zoom {
     transition: transform .2s;
     img{
-      width:100%;
-      height:800px;
-      
+      width:80%;
+      height:auto;
+    margin-left:120px;
+    margin-top:-360px;
     }
   }
   
@@ -72,6 +100,7 @@ height: 100vh;
       height:30px;
       border:none;
       background-color: yellow;
+      
   }
   #colors:hover{
       border:3px solid red;
@@ -108,15 +137,15 @@ height: 100vh;
   .zoom1 {
     transition: transform .2s;
     img{
-      width:100px;
-      height:150px;
+      width:70px;
+      height:100px;
     }
   }
   
   .zoom1:hover {
-    -ms-transform: scale(1.3); /* IE 9 */
-    -webkit-transform: scale(1.3); /* Safari 3-8 */
-    transform: scale(1.3); 
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
   }
 
 .dark-grey-text
@@ -174,17 +203,7 @@ mat-icon{
   font-size:18px;
   color:black;
 }
-#f1{
-  float:right;
-  font-size: large;
-}
-#f1:hover{
-  color:white;
-  text-decoration: none;
-}
-#footer{
-  left:6%;
-}
+
 a{
 
   font-size:20px;

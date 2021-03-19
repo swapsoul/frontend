@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InteractionService } from 'src/app/interaction.service';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleproductpagesampleComponent implements OnInit {
  
-  constructor() { }
+  constructor(private _interactionService: InteractionService, private cartService: InteractionService ) { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
   numberOnly(event): boolean {
