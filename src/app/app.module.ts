@@ -26,9 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
-import { FooterComponent } from './routes/footer/footer.component';
-import { TcComponent } from './routes/footer/tc/tc.component';
-import { PrivacyComponent } from './routes/footer/privacy/privacy.component';
+import { TcComponent } from './routes/tc/tc.component';
+import { PrivacyComponent } from './routes/privacy/privacy.component';
 
 
 
@@ -48,7 +47,6 @@ import { PrivacyComponent } from './routes/footer/privacy/privacy.component';
     SingleproductpagesampleComponent,
     AboutComponent,
     ProductComponent,
-    FooterComponent,
     TcComponent,
     PrivacyComponent,
     ],

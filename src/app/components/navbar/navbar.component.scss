@@ -11,7 +11,7 @@ button {
   font-size:18px;
 }
 button:hover{
-  color:rgb(238, 39, 39);
+  color:#ED3237;
 }
 
 #psuedo-navbar {
@@ -29,7 +29,7 @@ svg, a {
 }
 
 a:hover {
-  color:rgb(238, 39, 39);
+  color:#ED3237;
   text-decoration:none;
 }
 
@@ -109,5 +109,5 @@ a:hover {
 }
 
 .navbar-custom {
-  background-image: linear-gradient(to right, black,black, #804d00,#1a0f00  );
+  background-color: black;
 }

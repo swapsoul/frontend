@@ -7,8 +7,8 @@ import { EssentialsComponent } from './routes/essentials/essentials.component';
 import {SingleproductpagesampleComponent} from './routes/singleproductpagesample/singleproductpagesample.component';
 import {AboutComponent} from './routes/about/about.component';
 import { ProductComponent} from './routes/product/product.component';
-import {TcComponent} from './routes/footer/tc/tc.component';
-import {PrivacyComponent} from './routes/footer/privacy/privacy.component'
+import {TcComponent} from './routes/tc/tc.component';
+import {PrivacyComponent} from './routes/privacy/privacy.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
