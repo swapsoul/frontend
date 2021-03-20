@@ -13,7 +13,7 @@
 					</nav>
 				</div>
 			</div>
-      <br>
+      <br><br>
 			<div class="row">
 				<div class="col-md-5">
 					<div class="box-image-codeblocks">
@@ -23,6 +23,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col">
+                        <br><br>
                         <div class="zoom1">
                         <img src="assets/img/productimage1.jpg">
                       </div><br>
@@ -46,7 +47,7 @@
 					</div>
         </div>
         
-				<div class="col-md-6" style="margin-left:70px;">
+				<div class="col-md-6" style="left:8%;">
 					<h2 class="text-bold text-strong" style="font-size:36px;">Product Name</h2>
 					<span>
 						<h1 class="head">Rs 456<br>
@@ -62,17 +63,17 @@
 					  </button>
 					</div>
 					<div class="example-button-container">
-						<button class="size" style="margin-left:15px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>M</mat-icon>
 						</button>
 					  </div>
 					  <div class="example-button-container">
-						<button class="size" style="margin-left:15px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>L</mat-icon>
 						</button>
 					  </div>
 					  <div class="example-button-container">
-						<button class="size" style="margin-left:15px;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>XL</mat-icon>
 						</button>
 					  </div>
@@ -84,47 +85,28 @@
               <form>
 			  <section>
 				<div class="example-button-row" required>
-				  <button class="colors" mat-button style="background-color:yellow;"></button>&nbsp;&nbsp;
-				  <button class="colors" mat-button style="background-color:green;"></button>&nbsp;&nbsp;
-				  <button class="colors" mat-button style="background-color:orange;"></button>
+				  <button class="colors" mat-button style="background-color:yellow;opacity:80%;"></button>&nbsp;
+				  <button class="colors" mat-button style="background-color:green;opacity:80%;"></button>&nbsp;
+				  <button class="colors" mat-button style="background-color:orange;opacity:80%;"></button>
 				</div>
 			  </section>
         </form>
 							</h1>
 					</span>
-          
-					<span class="buy-form-codeblocks">
-						<form action="" class="form-inline" style="width:165px;">
-							<label for="" style="font-size:18px;font-family: poppins;"> Quantity </label>
-								<select name="quantity" id="quantity-codeblocks" class="form-control mx-2" style="border:3px solid black;" REQUIRED>
-									<option value="0">0</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-                  <option value="0">6</option>
-									<option value="1">7</option>
-									<option value="2">8</option>
-									<option value="3">9</option>
-									<option value="4">10</option>
-								</select>
-              </form>
-              
-               <br>
-			  <button mat-raised-button style="background-color:orange;border:2px solid orange;width:250px; height:48px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+          <br>
+			  <button mat-raised-button style="background-color:#ED3237;border:transparent;color:white;width:200px; height:40px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-              </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <button mat-raised-button style="border:2px solid black;width:250px;height:48px;"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+              </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <button mat-raised-button style="border:transparent;background-color:#ED3237;color:white;width:200px;height:40px;"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
               </svg>&nbsp;&nbsp;WISHLIST</button>		<br>	
-					</span>
+					
           <span>
             <br><br>
             <span style="color:black;font-size:24px;"> Delivery Details</span><br>
               <span style="color:black;font-size:18px;opacity:50%;">Enter Pincode</span><br>
-              <input (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:250px;height:48px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;
-              <button mat-button style="background-color:orange;color:white;height:48px;width:80px;font-size:18px;">Check</button><br><br>
+              <input (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;
+              <button mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;">CHECK</button><br><br>
               <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
           </span>
           
