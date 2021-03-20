@@ -135,13 +135,12 @@
     margin-left:0px;
     
   }
-  // #btn5{
-  //   color:white;
-  //   border:3px solid black;
-  //   width:150px;
-  //   height:50px;
+  #btn5{
+    color:white;
+    border:transparent;
+    background-color: #ED3237;
     
-  // }
+  }
 }
 
 
@@ -203,7 +202,7 @@
   }
   .story{
     text-align:center;
-    color:orange;
+    color:#ED3237;
     font-family:poppins;
     font-size:22px;
   }
@@ -215,10 +214,10 @@
   button{
     width:180px;
     height:40px;
-    background-color: orange;
+    background-color:#ED3237;
     color:white;
     left:0%;
-    font-size:22px;
+    font-size:18px;
     font-family:roboto;
   }
 }
@@ -251,12 +250,13 @@
   top:82%;
   left:15%;
   position:absolute;
-  width:100px;
+  width:120px;
   height:40px;
-  background-color: transparent;
+  background-color: #ED3237;
   color:white;
-  border:1px solid white;
+  border:transparent;
   font-size:22px;
+  font-weight:500px;
 }
 }
 .carousel-control-prev, .carousel-control-next {
@@ -279,7 +279,7 @@
   h3{
     font-size:28px;
     font-family:poppins;
-    color:orange;
+    color:#ED3237;
   }
   .sub_data{
     font-family:roboto;

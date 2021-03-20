@@ -1,39 +1,33 @@
 h1 {
     font-family:poppins;
     position: absolute;
-    top: 70px;
+    top: 40px;
     font-weight:500px;
-    left: 0;
-    width: 100%;
+    left: -10px;
     margin: 0 auto;
-    width: 300px;
-    height: 50px;
+   
     color:orange;
-    font-size: 36px;
+    font-size: 28px;
  }
  
     h2 {
         font-family:poppins;
         font-size:22px;
         position: absolute;
-        top: 110px;
-        left: 0;
-        width: 100%;
+        top: 80px;
+        left: -10px;
         margin: 0 auto;
-        width: 300px;
-        height: 50px;
+       
        font-weight:500px;
      }
      p {
          font-family:roboto;
         position: absolute;
-        top: 150px;
-        left: 0;
-        width: 100%;
+        top: 110px;
+        left: -20px;
         margin: 0 auto;
-        width: 300px;
-        height: 50px;
-        font-size:16px;
+       
+        font-size:14px;
      }
  h3{
      font-family:poppins;
@@ -66,43 +60,44 @@ h1 {
       font-size:28px;
       color:black;
       font-family:poppins;
-      margin-left:113px;
+      margin-left:100px;
   }
 
   .under {
     position: absolute;
     left: 45px;
-    top: -70px;
+    top: -60px;
     z-index: -1;
+    height:300px;
   }
   
   .over {
     
-    left: 45px;
+    left: 0px;
     top: 10px;
     z-index: -1;
-    width:240px;
-    height:240px;
+    width:200px;
+    height:200px;
   }
   
   .image_header{
       color:#EBB520;
-      right:-330px;
-      top:15px;
+      left:45%;
+      top:-30px;
       font-family:roboto;
       font-size:24px;
   }
   .image_header1{
       font-family:roboto;
       font-size:18px;
-      right:-330px;
-      top:50px;
+      left:45%;
+      top:10px;
   }
   .image_para{
-     right:-330px;
-     top:80px;
+    left:45%;
+     top:40px;
      font-family:roboto;
-     font-size:16px;
+     font-size:14px;
      svg{
          color:grey;
      }
@@ -208,7 +203,7 @@ h1 {
     // .carousel-indicators {
     //     bottom: -50px;
     // }
-    
+    #footer{
       h1,h3{
         color:white;
         font-size:22px;
@@ -217,6 +212,33 @@ h1 {
       #follow{
           text-align:left;
       }
-      
-    
-    
+    }
+    #join_us{
+        font-size:18px;
+        font-weight:500px;
+        border:transparent;
+        background-color: #ED3237;
+        color:white;
+        width:100px;
+        height:40px;
+        left:40%;
+
+    }
+    #people
+    {
+     .header{
+        margin-left:10px;
+     }   
+        .image_header{
+            font-size:18px;
+            left:60%;
+        }
+        .image_header1{
+            font-size: 16px;
+            left:60%;
+        }
+        .image_para{
+            font-family: 8px;
+            left:60%;
+        }
+    }
