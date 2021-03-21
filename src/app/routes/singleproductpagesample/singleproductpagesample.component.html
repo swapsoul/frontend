@@ -94,21 +94,29 @@
 							</h1>
 					</span>
           <br>
+          <span class="d-md-block d-none containera">
 			  <button mat-raised-button style="background-color:#ED3237;border:transparent;color:white;width:200px; height:40px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
-              </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <button mat-raised-button style="border:transparent;background-color:#ED3237;color:white;width:200px;height:40px;"><svg style="color:white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-              </svg>&nbsp;&nbsp;WISHLIST</button>		<br>	
-					     <br>
+              </svg>&nbsp;&nbsp;WISH LIST</button><br>	
+					     </span>
+               <span class="d-block d-md-none rwdcontainer">
+               <button mat-raised-button style="background-color:#ED3237;border:transparent;color:white;width:200px; height:40px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg>&nbsp;&nbsp;ADD TO BAG</button><br><br>
+			  <button  mat-raised-button style="border:transparent;background-color:#ED3237;color:white;width:200px;height:40px;"><svg style="color:white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg>&nbsp;&nbsp;WISH LIST</button>	
+              </span>
+					     <br><br>
           <div class="form-group">
-            <br><br>
-            
               <label style="color:black;font-size:24px;font-weight:normal;" for="deliveryDetails">Delivery Details</label>
               <form action = "/sample" method="POST" [formGroup]="mainForm" ng-submit="submitForm()">
               <label style="color:black;;font-size:16px;opacity:50%;font-weight:normal;" for="pinCode">Enter Pincode</label>
               <br/>
-              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
+              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;font-size:18px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
               <button (click) = "verifypincode()" class="ml-3" type = "submit" mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;border:transparent;">CHECK</button><br><br>
               <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
             </form>
