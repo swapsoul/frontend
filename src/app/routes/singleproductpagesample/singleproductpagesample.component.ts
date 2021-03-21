@@ -11,8 +11,10 @@ import { GlobalService } from 'src/app/services/global.service';
 export class SingleproductpagesampleComponent implements OnInit {
 
   pincode : number;
+  pinmessage: string;
 
-  mainForm: FormGroup;
+  searchValue: string = '';
+
 
   constructor(private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
@@ -20,7 +22,6 @@ export class SingleproductpagesampleComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
   onKey(event: any) {
     this.pincode = event.target.value;
   }
@@ -30,14 +31,16 @@ export class SingleproductpagesampleComponent implements OnInit {
     console.log(this.pincode);
     this.globalService.postServiceCall('api/sample',{pincode: this.pincode},(re)=>{
       console.log(re.status);
+      if(re.status=="success")
+      {
+        this.pinmessage = "Delivery Available";
+      }
+      else{
+        this.pinmessage = "Sorry, Currently Delivery Unavailable at this location";
+      }
     })
   }
 
-
-
-  submitForm() {
-
-  }
 
   addToCart(product) {
     this.cartService.addToCart(product);
@@ -52,5 +55,4 @@ export class SingleproductpagesampleComponent implements OnInit {
     return true;
 
   }
-
 }

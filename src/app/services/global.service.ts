@@ -19,14 +19,13 @@ export class GlobalService {
     constructor(private httpClient: HttpClient, private _router: Router) { }
 
     public postServiceCall(url: string, params: any, callback) {
-        console.log(url);
-        console.log(params);
-        console.log(callback);
-        console.log(this.headers);
+        //console.log(url);
+        //console.log(params);
+        //console.log(callback);
+        //console.log(this.headers);
 
         this.httpClient.post("http://localhost:4000/" + url, params, { headers: this.headers }).subscribe(
             (data) => {
-                console.log("iiiiiii");
                 var res = data;//Success                
                 callback(res);
 
