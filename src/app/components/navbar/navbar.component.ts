@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global.service';
+import { RequestService } from '../../services/request/request.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   term: string;
   hasValue: boolean;
-  placeholdervalue = 'Search'
+  placeholdervalue = 'Search';
 
   constructor(public dialog: MatDialog) { }
 
@@ -50,14 +51,20 @@ export class NavbarComponent implements OnInit {
 
 export class loginSignUpDialog {
 
+  hide = true;
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+  });
 
   constructor(
     private globalService: GlobalService,
     public dialogRef: MatDialogRef<loginSignUpDialog>,
+    private requestService: RequestService,
     @Inject(MAT_DIALOG_DATA) public data: null) { }
 
     ngOnInit() {
-    this.globalService.getServiceCall('/api/users', (result) => {
+    this.globalService.getServiceCall('/api/user', (result) => {
       console.log("***************************" + JSON.stringify(result.data));
     });
   }
@@ -66,15 +73,20 @@ export class loginSignUpDialog {
     this.dialogRef.close();
   }
 
-  hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
+  login(): any {
+    this.requestService.login(this.loginForm.get('email').value, this.loginForm.get('password').value, (res) => {
+      if (res.statusCode === 200) {
+        this.onNoClick();
+      }
+    });
+  }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
+  getErrorMessage(): string {
+    if (this.loginForm.get('email').hasError('required')) {
       return 'You must enter a value';
     }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
   }
 
 }

@@ -13,4 +13,5 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/swapsoul-frontend/index.html'));
 });
 
-app.listen(process.env.PORT || 8080, '0.0.0.0');
+console.log(process.env.PORT);
+app.listen(process.env.PORT || 8090, '0.0.0.0');
