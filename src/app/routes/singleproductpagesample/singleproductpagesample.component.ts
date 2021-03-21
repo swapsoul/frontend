@@ -29,7 +29,7 @@ export class SingleproductpagesampleComponent implements OnInit {
 
   verifypincode(){
     console.log(this.pincode);
-    this.globalService.postServiceCall('api/sample',{pincode: this.pincode},(re)=>{
+    this.globalService.postServiceCall('sample',{pincode: this.pincode},(re)=>{
       console.log(re.status);
       if(re.status=="success")
       {

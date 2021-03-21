@@ -19,8 +19,8 @@ export class GlobalService {
     headerKey = 'SwapsoulToken';
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
 
-    public postServiceCall(url: string, params: any, callback) {
-        //console.log(url);
+    public postServiceCall(url: string, params: any, callback, withToken = false): any {
+        console.log(url);
         //console.log(params);
         //console.log(callback);
         //console.log(this.headers);
