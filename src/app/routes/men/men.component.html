@@ -16,7 +16,7 @@
             </ng-template>
           <div class="container-fluid">
             <div class="row">
-              <div class="d-none d-md-block d-flex col-md-9" style="height: 60px;"></div>
+              <div class="d-none d-md-block d-flex col-md-9"></div>
               <mat-form-field appearance="fill" class="mt-4">
                 <mat-label>Sort By</mat-label>
                 <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
@@ -60,6 +60,7 @@
               </div>
             </mat-grid-list>-->
 
+            <div class = "d-none d-md-block">
             <mat-grid-list cols="3" rowHeight="1:1.1">
               <div *ngFor="let data of allData">
               <mat-grid-tile *ngIf="data.id<=12">
@@ -75,6 +76,35 @@
               </mat-grid-tile>
             </div>
             </mat-grid-list>
+          </div>
+
+          <div class="d-block d-md-none">
+            <mat-grid-list cols="2" rowHeight="1:0.87">
+              <div class="ht" *ngFor="let data of allData">
+                <mat-grid-tile *ngIf="data.id<=8">
+                  <mat-card>
+                    <mat-card-header>
+                      <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+                        onclick="location.href='sample'">
+                    </mat-card-header>
+                    <mat-card-content>
+                      <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong> <div class="d-inline-flex org">&#x2605;
+                        </div>
+                        <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+                      </h3>
+                    </mat-card-content>
+                    <mat-card-footer>
+                      <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> 
+                      <strike>&#8377;{{data.OrgPrice}}</strike> <div class="d-inline-flex purp">
+                        ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+                    </mat-card-footer>
+                  </mat-card>
+                </mat-grid-tile>
+                <br/>
+              </div>
+            </mat-grid-list>
+          </div>
+          
   
           </div>
         </mat-tab>
@@ -85,7 +115,7 @@
             </ng-template>
           <div class="container-fluid">
             <div class="row">
-              <div class="d-flex col-md-9" style="height: 60px;"></div>
+              <div class="d-flex col-md-9"></div>
               <mat-form-field appearance="fill" class="mt-4">
                 <mat-label>Sort By</mat-label>
                 <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
@@ -98,37 +128,71 @@
               <br />
             </div>
   
-            <mat-grid-list cols="3" rowHeight="1:1.1">
-              <div *ngFor="let data of allData">
-                <mat-grid-tile *ngIf="data.id<=12">
-                  <mat-card>
-                    <mat-card-header>
-                      <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
-                        onclick="location.href='sample'">
-                    </mat-card-header>
-                    <mat-card-content>
-                      <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
-                        {{data.rating}}({{data.norev}})</h3>
-                    </mat-card-content>
-                    <mat-card-footer>
-                      <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
-                      <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-                        ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
-                    </mat-card-footer>
-                  </mat-card>
-                </mat-grid-tile>
-              </div>
-            </mat-grid-list>
-  
-          </div>
-        </mat-tab>
+            <div class="d-none d-md-block">
+              <mat-grid-list cols="3" rowHeight="1:1.1">
+                <div *ngFor="let data of allData">
+                  <mat-grid-tile *ngIf="data.id<=12">
+                    <mat-card>
+                      <mat-card-header>
+                        <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
+                          onclick="location.href='sample'">
+                      </mat-card-header>
+                      <mat-card-content>
+                        <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+                          </div>
+                          <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+                        </h3>
+                      </mat-card-content>
+                      <mat-card-footer>
+                        <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
+                        <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
+                          ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+                      </mat-card-footer>
+                    </mat-card>
+                  </mat-grid-tile>
+                </div>
+              </mat-grid-list>
+            </div>
+            
+            <div class="d-block d-md-none">
+              <mat-grid-list cols="2" rowHeight="1:0.87">
+                <div class="ht" *ngFor="let data of allData">
+                  <mat-grid-tile *ngIf="data.id<=8">
+                    <mat-card>
+                      <mat-card-header>
+                        <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+                          onclick="location.href='sample'">
+                      </mat-card-header>
+                      <mat-card-content>
+                        <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong>
+                          <div class="d-inline-flex org">&#x2605;
+                          </div>
+                          <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+                        </h3>
+                      </mat-card-content>
+                      <mat-card-footer>
+                        <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div>
+                        <strike>&#8377;{{data.OrgPrice}}</strike>
+                        <div class="d-inline-flex purp">
+                          ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+                      </mat-card-footer>
+                    </mat-card>
+                  </mat-grid-tile>
+                  <br />
+                </div>
+              </mat-grid-list>
+            </div>
+            
+            
+            </div>
+            </mat-tab>
         <mat-tab>
           <ng-template mat-tab-label>
             <span>T-Shirts</span>
             </ng-template>
           <div class="container-fluid">
             <div class="row">
-              <div class="d-flex col-md-9" style="height: 60px;"></div>
+              <div class="d-flex col-md-9"></div>
               <mat-form-field appearance="fill" class="mt-4">
                 <mat-label>Sort By</mat-label>
                 <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
@@ -141,37 +205,71 @@
               <br />
             </div>
   
-<mat-grid-list cols="3" rowHeight="1:1.1">
-  <div *ngFor="let data of allData">
-    <mat-grid-tile *ngIf="data.id<=12">
-      <mat-card>
-        <mat-card-header>
-          <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
-            onclick="location.href='sample'">
-        </mat-card-header>
-        <mat-card-content>
-          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
-            {{data.rating}}({{data.norev}})</h3>
-        </mat-card-content>
-        <mat-card-footer>
-          <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
-          <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-            ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-  </div>
-</mat-grid-list>
-  
-          </div>
-        </mat-tab>
+<div class="d-none d-md-block">
+  <mat-grid-list cols="3" rowHeight="1:1.1">
+    <div *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id<=12">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
+            <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+
+<div class="d-block d-md-none">
+  <mat-grid-list cols="2" rowHeight="1:0.87">
+    <div class="ht" *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id<=8">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong>
+              <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div>
+            <strike>&#8377;{{data.OrgPrice}}</strike>
+            <div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+      <br />
+    </div>
+  </mat-grid-list>
+</div>
+
+
+</div>
+</mat-tab>
         <mat-tab>
           <ng-template mat-tab-label>
             <span>Dresses</span>
             </ng-template>
           <div class="container-fluid">
             <div class="row">
-              <div class="d-flex col-md-9" style="height: 60px;"></div>
+              <div class="d-flex col-md-9"></div>
               <mat-form-field appearance="fill" class="mt-4">
                 <mat-label>Sort By</mat-label>
                 <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
@@ -184,29 +282,64 @@
               <br />
             </div>
   
-<mat-grid-list cols="3" rowHeight="1:1.1">
-  <div *ngFor="let data of allData">
-    <mat-grid-tile *ngIf="data.id<=12">
-      <mat-card>
-        <mat-card-header>
-          <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
-            onclick="location.href='sample'">
-        </mat-card-header>
-        <mat-card-content>
-          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
-            {{data.rating}}({{data.norev}})</h3>
-        </mat-card-content>
-        <mat-card-footer>
-          <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
-          <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-            ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-  </div>
-</mat-grid-list>
-          </div>
-        </mat-tab>
+<div class="d-none d-md-block">
+  <mat-grid-list cols="3" rowHeight="1:1.1">
+    <div *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id<=12">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
+            <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+
+<div class="d-block d-md-none">
+  <mat-grid-list cols="2" rowHeight="1:0.87">
+    <div class="ht" *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id<=8">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong>
+              <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div>
+            <strike>&#8377;{{data.OrgPrice}}</strike>
+            <div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+      <br />
+    </div>
+  </mat-grid-list>
+</div>
+
+
+</div>
+</mat-tab>
       </mat-tab-group>
     </div>
   </div>
@@ -216,27 +349,61 @@
   
   <h1>More you might like</h1>
   
-<mat-grid-list cols="3" rowHeight="1:0.9">
-  <div *ngFor="let data of allData">
-    <mat-grid-tile *ngIf="data.id<=6">
-      <mat-card>
-        <mat-card-header>
-          <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
-            onclick="location.href='sample'">
-        </mat-card-header>
-        <mat-card-content>
-          <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div>
-            {{data.rating}}({{data.norev}})</h3>
-        </mat-card-content>
-        <mat-card-footer>
-          <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
-          <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-            ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-  </div>
-</mat-grid-list>
+<div class="d-none d-md-block">
+  <mat-grid-list cols="3" rowHeight="1:1.1">
+    <div *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id>=13 && data.id<=18">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div> &nbsp;
+            <strike>&#8377;{{data.OrgPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div>
+
+<div class="d-block d-md-none">
+  <mat-grid-list cols="2" rowHeight="1:0.87">
+    <div class="ht" *ngFor="let data of allData">
+      <mat-grid-tile *ngIf="data.id>=13 && data.id<=16">
+        <mat-card>
+          <mat-card-header>
+            <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+              onclick="location.href='sample'">
+          </mat-card-header>
+          <mat-card-content>
+            <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong>
+              <div class="d-inline-flex org">&#x2605;
+              </div>
+              <div class="d-inline-flex right">{{data.rating}}({{data.norev}})</div>
+            </h3>
+          </mat-card-content>
+          <mat-card-footer>
+            <div class="d-inline-flex purp">&#8377;{{data.DiscPrice}}</div>
+            <strike>&#8377;{{data.OrgPrice}}</strike>
+            <div class="d-inline-flex purp">
+              ({{((data.OrgPrice-data.DiscPrice)/data.OrgPrice*100).toFixed()}}% OFF)</div>
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+      <br />
+    </div>
+  </mat-grid-list>
+</div>
+
   
 
 
