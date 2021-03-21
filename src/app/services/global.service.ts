@@ -30,10 +30,10 @@ export class GlobalService {
                 console.log('iiiiiii');
                 let res = data; // Success
                 callback(res);
-
             },
             err => {
                 console.error(err);
+                callback(err);
             } // Error Response
         );
     }

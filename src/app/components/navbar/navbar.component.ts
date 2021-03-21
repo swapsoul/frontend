@@ -64,7 +64,7 @@ export class loginSignUpDialog {
     @Inject(MAT_DIALOG_DATA) public data: null) { }
 
     ngOnInit() {
-    this.globalService.getServiceCall('/api/user', (result) => {
+    this.globalService.getServiceCall('user', (result) => {
       console.log("***************************" + JSON.stringify(result.data));
     });
   }
@@ -75,8 +75,10 @@ export class loginSignUpDialog {
 
   login(): any {
     this.requestService.login(this.loginForm.get('email').value, this.loginForm.get('password').value, (res) => {
-      if (res.statusCode === 200) {
+      if (!res.error) {
         this.onNoClick();
+      } else {
+        console.log('Login Failed');
       }
     });
   }
