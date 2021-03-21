@@ -29,7 +29,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
       <mat-form-field floatLabel="never">
-        <input matInput type="search" [(ngModel)]="term" placeholder="Search&hellip;" autocomplete="off"
+        <input matInput type="search" [(ngModel)]="term" name="term" placeholder="Search&hellip;" autocomplete="off"
           (blur)="hasValue=term?true:false">
       </mat-form-field>
       <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
@@ -46,9 +46,6 @@
         <mat-icon>work_outliner</mat-icon>
       </button>
 
-      &nbsp; &nbsp;
-
-      &nbsp;
       <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
     </form>
   </div>
