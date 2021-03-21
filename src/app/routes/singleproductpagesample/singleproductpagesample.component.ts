@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from 'src/app/interaction.service';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -7,10 +9,34 @@ import { InteractionService } from 'src/app/interaction.service';
   styleUrls: ['./singleproductpagesample.component.scss']
 })
 export class SingleproductpagesampleComponent implements OnInit {
- 
-  constructor(private _interactionService: InteractionService, private cartService: InteractionService ) { }
+
+  pincode : number;
+
+  mainForm: FormGroup;
+
+  constructor(private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+   }
 
   ngOnInit(): void {
+    
+  }
+
+  onKey(event: any) {
+    this.pincode = event.target.value;
+  }
+
+
+  verifypincode(){
+    console.log(this.pincode);
+    this.globalService.postServiceCall('api/sample',{pincode: this.pincode},(re)=>{
+      console.log(re.status);
+    })
+  }
+
+
+
+  submitForm() {
+
   }
 
   addToCart(product) {

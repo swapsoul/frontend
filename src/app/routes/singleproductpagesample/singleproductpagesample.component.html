@@ -101,14 +101,16 @@
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
               </svg>&nbsp;&nbsp;WISHLIST</button>		<br>	
 					
-          <span>
+          <div class="form-group">
             <br><br>
-            <span style="color:black;font-size:24px;"> Delivery Details</span><br>
-              <span style="color:black;font-size:18px;opacity:50%;">Enter Pincode</span><br>
-              <input (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;
-              <button mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;">CHECK</button><br><br>
+              <label for="deliveryDetails">Delivery Details</label>
+              <form action = "/sample" method="POST" [formGroup]="mainForm" ng-submit="submitForm()">
+              <label for="pinCode">Enter Your Pin Code</label>
+              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required> &nbsp;
+              <button (click) = "verifypincode()" type = "submit" mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;">CHECK</button><br><br>
               <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
-          </span>
+            </form>
+        </div>
           
           <br><br>
 					<span class="extras-codeblocks">
