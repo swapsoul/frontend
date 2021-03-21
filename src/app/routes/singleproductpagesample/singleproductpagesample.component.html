@@ -107,8 +107,9 @@
               <label style="color:black;font-size:24px;font-weight:normal;" for="deliveryDetails">Delivery Details</label>
               <form action = "/sample" method="POST" [formGroup]="mainForm" ng-submit="submitForm()">
               <label style="color:black;;font-size:16px;opacity:50%;font-weight:normal;" for="pinCode">Enter Pincode</label>
-              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
-              <button (click) = "verifypincode()" type = "submit" mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;border:transparent;">CHECK</button><br><br>
+              <br/>
+              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
+              <button (click) = "verifypincode()" class="ml-3" type = "submit" mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;border:transparent;">CHECK</button><br><br>
               <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
             </form>
             
