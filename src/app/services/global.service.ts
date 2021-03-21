@@ -1,24 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, RoutesRecognized } from '@angular/router';
-var headers = new HttpHeaders().set('Content-Type', []);
-headers.append("Content-Type", "application/json");
-headers.append('Access-Control-Allow-Origin', '*');
-headers.append("enctype", "multipart/form-data");
-headers.append("authToken", "0AnA9a8lRMn3xIDtXFymVzBb");
+//var headers = new HttpHeaders().set('Content-Type', []);
+//headers.append("Content-Type", "application/json");
+//headers.append('Access-Control-Allow-Origin', '*');
+//headers.append("enctype", "multipart/form-data");
+//headers.append("authToken", "0AnA9a8lRMn3xIDtXFymVzBb");
+
+
 @Injectable({
     providedIn: 'root'
 })
 export class GlobalService {
-    public BASE_API_URL = 'http://api-stage.swapsoul.com/';
-    //public BASE_API_URL = 'http://localhost:4000';
+
+    headers = new HttpHeaders().append("Content-Type", "application/json").append("Access-Control-Allow-Origin", "*");
+    //public BASE_API_URL = 'http://api-stage.swapsoul.com/';
+    public BASE_API_URL = 'http://localhost:4000';
     constructor(private httpClient: HttpClient, private _router: Router) { }
 
     public postServiceCall(url: string, params: any, callback) {
+        console.log(url);
+        console.log(params);
+        console.log(callback);
+        console.log(this.headers);
 
-
-        this.httpClient.post(this.BASE_API_URL + url, params, { headers: headers }).subscribe(
+        this.httpClient.post("http://localhost:4000/" + url, params, { headers: this.headers }).subscribe(
             (data) => {
+                console.log("iiiiiii");
                 var res = data;//Success                
                 callback(res);
 
@@ -33,7 +41,7 @@ export class GlobalService {
 
         // let BASE_API_URL = 'http://localhost:4000';
         //  console.log('BASE_API_URL is '+this.BASE_API_URL);
-        this.httpClient.get(this.BASE_API_URL + url, { headers: headers }).subscribe(
+        this.httpClient.get(this.BASE_API_URL + url, { headers: this.headers }).subscribe(
             (data) => {
                 var res = data;//Success Response
                 callback(res);
@@ -50,7 +58,7 @@ export class GlobalService {
 
 
         // let BASE_API_URL = 'http://localhost:4000';
-        this.httpClient.post(this.BASE_API_URL + url, params, { headers: headers }).subscribe(
+        this.httpClient.post(this.BASE_API_URL + url, params, { headers: this.headers }).subscribe(
             (data) => {
                 var res = data;//Success                
                 callback(res);
@@ -62,7 +70,7 @@ export class GlobalService {
         )
     }
     public putServiceCall(url: string, params: any, callback) {
-        this.httpClient.put(this.BASE_API_URL + url, params, { headers: headers }).subscribe(
+        this.httpClient.put(this.BASE_API_URL + url, params, { headers: this.headers }).subscribe(
             (data) => {
                 var res = data;//Success Response
                 callback(res);
