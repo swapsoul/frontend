@@ -62,7 +62,13 @@ h1 {
       font-family:poppins;
       margin-left:100px;
   }
-
+.people_header{
+    font-size:28px;
+      color:black;
+      font-family:poppins;
+    margin-left:-70px;
+    color:black;
+}
   .under {
     position: absolute;
     left: 45px;
@@ -132,7 +138,20 @@ h1 {
 .card{
     border:transparent;
 }
-
+.join_us{
+    font-size:22px;
+    font-weight:500px;
+    border:transparent;
+    background-color: #ED3237;
+    color:white;
+}
+.join_us:hover{
+    font-size:22px;
+    font-weight:500px;
+    border:transparent;
+    background-color: #ED3237;
+    color:white;  
+}
     // .carousel {
     //     margin: 50px auto;
     //     padding: 0 70px;
@@ -203,14 +222,38 @@ h1 {
     // .carousel-indicators {
     //     bottom: -50px;
     // }
+    
     #footer{
-      h1,h3{
+        .foo{
+            float:right;
+            color:white;
+            font-size:15px;
+            background-color: transparent;
+        }
+        h3{
+            color:white;
+            font-size:18px;
+        }
+      h1{
         color:white;
         font-size:22px;
         font-family:poppins;
       }
       #follow{
           text-align:left;
+          font-family:poppins;
+          font-size:36px;
+          margin-left:40px;
+          margin-top:-10px;
+      }
+      #follow1{
+          text-align:left;
+      }
+      .copyrights{
+        font-family: poppins;
+        font-family:500px;
+        font-size:16px;
+        float:left;
       }
     }
     #join_us{
