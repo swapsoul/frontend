@@ -119,7 +119,6 @@
               <input [(ngModel)]="searchValue" (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
               <button (click) = "verifypincode()" class="ml-3 Check" type = "submit" mat-button>CHECK</button><br><br>
               <span class="fontsixteen">{{pinmessage}}</span>
-              <span class="check_details">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
             </form>
             
         </div>
@@ -178,7 +177,7 @@
     </div>
 <br><br><br>
     
-			<div class="row">
+			<div class="row mr-0">
         <h2 class="more_like_this">More like this</h2>
 <br><br><br>
         <!--Section: Products v.3-->
