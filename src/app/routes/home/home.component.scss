@@ -221,10 +221,30 @@
     font-family:roboto;
   }
 }
-
+.copyrights{
+  font-family: poppins;
+  font-family:500px;
+}
 #footer{
   color:white;
   border:3px solid white;
+  h1{
+    font-family:poppins;
+    font-size:36px;
+    margin-left:0px;
+  }
+  .foo{
+    float:right;
+    background-color: transparent;
+    color:white;
+    font-size:16px;
+  }
+  svg{
+
+  }
+  svg:hover{
+    color:white;
+  }
 }
 .mat-tab-body-content {
   display:flex;

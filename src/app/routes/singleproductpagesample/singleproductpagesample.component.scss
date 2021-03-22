@@ -4,6 +4,34 @@ li,del,span,button,mat-icon,p,a,strong{
 .breadcrumb{
   background-color: transparent;
 }
+.breadcrumb-item{
+  font-size:20px;
+}
+.product_name{
+  font-size:36px;
+}
+a:hover{
+  text-decoration: none;
+}
+.discount{
+  color:#F22579;
+  font-size:18px;
+}
+.tax{
+  color:#F22579;
+  font-size:16px;
+}
+.size_heading{
+  color:black;
+  font-size:24px;
+}
+.offer{
+  color:#F22579;
+  font-size:16px;
+}
+.colors_heading{
+  color:black; font-size:24px;
+}
 h1,h2,h3,h4,h5,h6{
   font-family:poppins;
   font-weight:500;
@@ -19,12 +47,79 @@ h1,h2,h3,h4,h5,h6{
   background-color:transparent;
   color:grey;
   border:2px solid grey;
+  left:5%;
 }
-.colors{
+.colors, .colors1, .colors2{
   width:30px;
   height:40px;
   border-radius: 0em;
   border:transparent;
+  opacity:80%;
+}
+.colors{
+  background-color:yellow;
+}
+.colors1{
+  background-color:green; 
+}
+.colors2{
+  background-color:orange;
+}
+.add_to_cart, .wish_list{
+  background-color: #ED3237;
+  color:white;
+  border:transparent;
+  width:200px;
+   height:40px;
+
+   svg{
+     color:white;
+   }
+}
+.add_to_cart:hover, .wish_list:hover{
+  color:white;
+}
+.pincode_details{
+  .delivery{
+    color:black;
+    font-size:24px;
+    font-weight:normal;
+  }
+  .pin_code{
+    color:black;
+    font-size:16px;
+    opacity:50%;
+    font-weight:normal;
+  }
+  input{
+    color:black;
+    width:200px;
+    height:40px;
+    font-size:18px;
+  }
+  .Check{
+    background-color:#ED3237;
+    color:white;
+    height:40px;
+    width:80px;
+    font-size:16px;
+    border:transparent;
+  }
+  .check_details{
+    color:black;
+    font-size:16px;
+  }
+}
+.description{
+  a{
+    font-style:24px;
+  }
+}
+.more_like_this{
+  font-size:28px;
+  color:black;
+  margin-left:50px;
+  font-weight: normal;
 }
 p{
   font-size:18px;
@@ -35,38 +130,47 @@ height: 100vh;
 }
 
 .main-box-codeblocks	{
-	
 	border-radius: 20px;
 	width:90%;
 	height: auto;
 	position: relative;
-	display: block;
-	
-	
+	display: block;	
 }
-#f1{
-  float:right;
-  font-size: large;
-}
-.foo{
-  border:transparent;
-}
-.foo:hover{
-  border:transparent;
-  color:white;
-}
-#f1:hover{
-  color:white;
-  text-decoration: none;
-}
-h1,h3{
-  color:white;
-}
-.foo{
-  float:right;
-  color:white;
-  background-color: transparent;
-  font-size:15px;
+#footer{
+  h1{
+    font-family:poppins;
+    font-size:36px;
+    margin-left:0px; 
+  }
+  h3{
+    font-family: poppins;
+    font-family:500px;
+  }
+  #f1{
+    float:right;
+    font-size: large;
+  }
+  .foo{
+    border:transparent;
+  }
+  .foo:hover{
+    border:transparent;
+    color:white;
+  }
+  #f1:hover{
+    color:white;
+    text-decoration: none;
+  }
+  h1,h3{
+    color:white;
+  }
+  .foo{
+    float:right;
+    color:white;
+    background-color: transparent;
+    font-size:15px;
+  }
+  
 }
 
 .zoom {
@@ -169,8 +273,9 @@ h1,h3{
  .card{
    width:310px;
    height:512px;
-   left:10%;
+   left:7%;
    position:relative;
+   border:transparent;
  }
  section {
   display: table;
