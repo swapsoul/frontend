@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product/product.service';
 import { InteractionService } from 'src/app/interaction.service';
 
 @Component({
@@ -35,7 +35,7 @@ export class MenComponent implements OnInit {
     window.alert('Your product has been added to the cart!');
   }
 
-  
+
 
   product_Names()
   {
@@ -60,7 +60,7 @@ export class MenComponent implements OnInit {
 
   sort(event) {
     if (event.value === this.toppingList[0]) {
-      
+
     }
 
     else if(event.value == this.toppingList[1])
