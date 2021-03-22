@@ -111,13 +111,14 @@
               </svg>&nbsp;&nbsp;WISH LIST</button>	
               </span>
 					     <br><br>
-          <div class="form-group pincode_details">
+          <div class="pincode_details">
               <label class="delivery" for="deliveryDetails">Delivery Details</label>
-              <form action = "/sample" method="POST" [formGroup]="mainForm" ng-submit="submitForm()">
+              <form action = "/sample" method="POST">
               <label class="pin_code" for="pinCode">Enter Pincode</label>
               <br/>
-              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
+              <input [(ngModel)]="searchValue" (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
               <button (click) = "verifypincode()" class="ml-3 Check" type = "submit" mat-button>CHECK</button><br><br>
+              <span class="fontsixteen">{{pinmessage}}</span>
               <span class="check_details">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
             </form>
             
