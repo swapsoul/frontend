@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { GlobalService } from 'src/app/services/global.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
 
 @Component({
