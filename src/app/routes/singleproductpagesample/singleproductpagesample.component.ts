@@ -33,10 +33,10 @@ export class SingleproductpagesampleComponent implements OnInit {
       console.log(re.status);
       if(re.status=="success")
       {
-        this.pinmessage = "Delivery Available";
+        this.pinmessage = "Delivery is available to your place!";
       }
       else{
-        this.pinmessage = "Sorry, Currently Delivery Unavailable at this location";
+        this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
       }
     })
   }
