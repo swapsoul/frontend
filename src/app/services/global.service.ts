@@ -15,7 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class GlobalService {
 
     // public BASE_API_URL = 'http://api-stage.swapsoul.com/';
-    BASE_API_URL = 'http://api-stage.swapsoul.com/api';
+    BASE_API_URL = 'http://api-stage.swapsoul.com/api/';
     headerKey = 'SwapsoulToken';
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
 
