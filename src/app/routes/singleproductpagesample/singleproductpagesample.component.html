@@ -6,9 +6,9 @@
 				<div class="col-md-12">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#" style="font-size:24px;">Home</a></li>
-							<li class="breadcrumb-item"><a href="#" style="font-size:24px;">Products</a></li>
-							<li class="breadcrumb-item active" aria-current="page" style="font-size:24px;">Product Name</li>
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Products</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Product Name</li>
 						</ol>
 					</nav>
 				</div>
@@ -48,12 +48,12 @@
         </div>
         
 				<div class="col-md-6" style="left:8%;">
-					<h2 class="text-bold text-strong" style="font-size:36px;">Product Name</h2>
+					<h2 class="text-bold text-strong product_name">Product Name</h2>
 					<span>
 						<h1 class="head">Rs 456<br>
-              <del>Rs 486</del> &nbsp; <span style="color:#F22579;font-size:18px;"> 20% OFF</span><br>
-              <span style="color:#F22579;font-size:16px;">Inclusive of taxes</span><br>
-              <span style="color:black;font-size:24px;">Size</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#EBB520;font-size:15px;">Check Size Chart</span>
+              <del>Rs 486</del> &nbsp; <span class="discount"> 20% OFF</span><br>
+              <span class="tax">Inclusive of taxes</span><br>
+              <span class="size_heading">Size</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#EBB520;font-size:15px;">Check Size Chart</span>
 			  <section>
 				<div class="example-button-row">
 				  <div class="example-flex-container">
@@ -63,31 +63,31 @@
 					  </button>
 					</div>
 					<div class="example-button-container">
-						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>M</mat-icon>
 						</button>
 					  </div>
 					  <div class="example-button-container">
-						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>L</mat-icon>
 						</button>
 					  </div>
 					  <div class="example-button-container">
-						<button class="size" style="left:5%;" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
 						  <mat-icon>XL</mat-icon>
 						</button>
 					  </div>
 				  </div>
 				</div>
 			  </section>
-              <span style="color:#F22579;font-size:16px;"> Only few Left!</span><br>
-              <span style="color:black; font-size:24px;"> Colors</span><br>
+              <span class="offer"> Only few Left!</span><br>
+              <span class="colors_heading"> Colors</span><br>
               <form>
 			  <section>
 				<div class="example-button-row" required>
-				  <button class="colors" mat-button style="background-color:yellow;opacity:80%;"></button>&nbsp;
-				  <button class="colors" mat-button style="background-color:green;opacity:80%;"></button>&nbsp;
-				  <button class="colors" mat-button style="background-color:orange;opacity:80%;"></button>
+				  <button class="colors" mat-button></button>&nbsp;
+				  <button class="colors1" mat-button></button>&nbsp;
+				  <button class="colors2" mat-button></button>
 				</div>
 			  </section>
         </form>
@@ -95,45 +95,45 @@
 					</span>
           <br>
           <span class="d-md-block d-none containera">
-			  <button mat-raised-button style="background-color:#ED3237;border:transparent;color:white;width:200px; height:40px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+			  <button mat-raised-button class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
               </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <button mat-raised-button style="border:transparent;background-color:#ED3237;color:white;width:200px;height:40px;"><svg style="color:white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+			  <button mat-raised-button class="wish_list"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
               </svg>&nbsp;&nbsp;WISH LIST</button><br>	
 					     </span>
                <span class="d-block d-md-none rwdcontainer">
-               <button mat-raised-button style="background-color:#ED3237;border:transparent;color:white;width:200px; height:40px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+               <button mat-raised-button class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
               </svg>&nbsp;&nbsp;ADD TO BAG</button><br><br>
-			  <button  mat-raised-button style="border:transparent;background-color:#ED3237;color:white;width:200px;height:40px;"><svg style="color:white;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+			  <button  mat-raised-button class="wish_list"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
               </svg>&nbsp;&nbsp;WISH LIST</button>	
               </span>
 					     <br><br>
-          <div class="form-group">
-              <label style="color:black;font-size:24px;font-weight:normal;" for="deliveryDetails">Delivery Details</label>
+          <div class="form-group pincode_details">
+              <label class="delivery" for="deliveryDetails">Delivery Details</label>
               <form action = "/sample" method="POST" [formGroup]="mainForm" ng-submit="submitForm()">
-              <label style="color:black;;font-size:16px;opacity:50%;font-weight:normal;" for="pinCode">Enter Pincode</label>
+              <label class="pin_code" for="pinCode">Enter Pincode</label>
               <br/>
-              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" style="color:black;width:200px;height:40px;font-size:18px;" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
-              <button (click) = "verifypincode()" class="ml-3" type = "submit" mat-button style="background-color:#ED3237;color:white;height:40px;width:80px;font-size:16px;border:transparent;">CHECK</button><br><br>
-              <span style="color:black;font-size:16px;">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
+              <input (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
+              <button (click) = "verifypincode()" class="ml-3 Check" type = "submit" mat-button>CHECK</button><br><br>
+              <span class="check_details">Please Enter PIN code and check delivery time <br>and Pay on Delivery Availability</span><br>
             </form>
             
         </div>
           
           <br><br>
-					<span class="extras-codeblocks">
+					<span class="extras-codeblocks description">
 						<ul class="nav nav-tabs my-2" id="myTab" role="tablist">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="font-size:24px;">Full Description</a>
+								<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Full Description</a>
 							</li>
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="font-size:24px;">Instructions</a>
+								<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Instructions</a>
 							</li>
 							<li class="nav-item" role="presentation">
-								<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="font-size:24px;">Share</a>
+								<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Share</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="myTabContent">
@@ -178,7 +178,7 @@
 <br><br><br>
     
 			<div class="row">
-        <h2 style="font-size:28px;color:black;margin-left:50px;">More like this</h2>
+        <h2 class="more_like_this">More like this</h2>
 <br><br><br>
         <!--Section: Products v.3-->
         <section class="text-center mb-4">
@@ -517,7 +517,7 @@
 <div class="container px-lg-5">
   <div class="row mx-lg-n5">
     <div class="col py-3 px-lg-5 border bg-dark" id="footer">
-      <h1 style="font-family:poppins;font-size:36px;margin-left:0px;">Footer</h1>
+      <h1>Footer</h1>
       <h3><b>Follow us on:</b><br></h3>
         <a href="https://www.instagram.com/swap_soul/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
           <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
@@ -531,7 +531,7 @@
       <br>
       <button class="foo" mat-button onclick="location.href='privacy'">Privacy Policy</button>
       <button class="foo" mat-button onclick="location.href='terms'">Terms and Conditions</button> &nbsp;
-     <h3 style="font-family: poppins;font-family:500px;">Copyrights &copy; 2020-21 All rights reserved to Swapsoul.com </h3>
+     <h3>Copyrights &copy; 2020-21 All rights reserved to Swapsoul.com </h3>
     </div>
     </div>
     </div>
