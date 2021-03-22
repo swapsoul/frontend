@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
 
@@ -19,17 +19,16 @@ export class NavbarComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  searchclick()
-  {
-    this.hasValue=!this.hasValue
-    this.placeholdervalue=' ';
+  searchclick() {
+    this.hasValue = !this.hasValue
+    this.placeholdervalue = ' ';
   }
 
   openDialog(): void {
 
     const dialogRef = this.dialog.open(loginSignUpDialog, {
       width: '410px',
-      height: '370px',
+      height: '500px',
       data: null,
     });
 
@@ -52,21 +51,43 @@ export class NavbarComponent implements OnInit {
 export class loginSignUpDialog {
 
   hide = true;
+  submitStatus: boolean = false;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
+  });
+
+  registerForm: FormGroup = this.formBuilder.group({
+    fullName: [, { validators: [Validators.required], updateOn: "change" }],
+    email: [
+      ,
+      {
+        validators: [Validators.required, Validators.email],
+        updateOn: "change",
+      },
+    ],
+    phone: [, { updateOn: "change" }],
+    password: [, { validators: [Validators.required], updateOn: "change" }],
   });
 
   constructor(
     private globalService: GlobalService,
     public dialogRef: MatDialogRef<loginSignUpDialog>,
     private requestService: RequestService,
+    private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: null) { }
 
-    ngOnInit() {
-    this.globalService.getServiceCall('user', (result) => {
-      console.log("***************************" + JSON.stringify(result.data));
-    });
+  ngOnInit() {
+    this.setPhoneValidation();
+  }
+
+  setPhoneValidation() {
+    const phoneControl = this.registerForm.get("phone");
+
+    phoneControl.setValidators([
+      Validators.pattern("^[0-9]*$"),
+      Validators.required,
+    ]);
   }
 
   onNoClick(): void {
@@ -89,6 +110,18 @@ export class loginSignUpDialog {
     }
 
     return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
+  }
+
+  submitForm() {
+    this.globalService.postServiceCall('user', {
+      userEmail: this.registerForm.value.email,
+      userPassword: btoa(this.registerForm.value.password),
+      phoneNumber: this.registerForm.value.phone,
+      userName: this.registerForm.value.fullName
+    }, (re) => {
+      console.log(re.status);
+    });
+    this.submitStatus = true;
   }
 
 }
