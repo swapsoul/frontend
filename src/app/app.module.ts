@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,11 +28,9 @@ import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
 import { TcComponent } from './routes/tc/tc.component';
 import { PrivacyComponent } from './routes/privacy/privacy.component';
-
-
-
-
-
+import { RequestService } from './services/request/request.service';
+import { CookieService } from 'ngx-cookie-service';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -49,10 +47,11 @@ import { PrivacyComponent } from './routes/privacy/privacy.component';
     ProductComponent,
     TcComponent,
     PrivacyComponent,
-    ],
+  ],
   imports: [
-    
+
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
@@ -70,7 +69,7 @@ import { PrivacyComponent } from './routes/privacy/privacy.component';
     MatSelectModule,
     NgbCollapseModule
   ],
-providers: [GlobalService],
+  providers: [ GlobalService, RequestService, CookieService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
