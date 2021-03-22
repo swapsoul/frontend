@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
+import { Md5 } from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-navbar',
@@ -115,7 +116,7 @@ export class loginSignUpDialog {
   submitForm() {
     this.globalService.postServiceCall('user', {
       userEmail: this.registerForm.value.email,
-      userPassword: btoa(this.registerForm.value.password),
+      userPassword: Md5.hashStr(this.registerForm.value.password),
       phoneNumber: this.registerForm.value.phone,
       userName: this.registerForm.value.fullName
     }, (re) => {
