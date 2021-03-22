@@ -49,14 +49,25 @@ h1,h2,h3,h4,h5,h6{
   border:2px solid grey;
   left:5%;
 }
-.colors{
+.colors, .colors1, .colors2{
   width:30px;
   height:40px;
   border-radius: 0em;
   border:transparent;
   opacity:80%;
 }
-
+.colors{
+  background-color: yellow;
+}
+.colors1{
+  background-color: green;
+}
+.colors2{
+  background-color: orange;
+}
+.colors:hover, .colors1:hover, .colors2:hover{
+  border:1px solid red;
+}
 .add_to_cart, .wish_list{
   background-color: #ED3237;
   color:white;
@@ -190,37 +201,7 @@ height: 100vh;
       color:black;
       background-color:grey;
   }
-  #colors{
-      border-radius:0%;
-      width:30px;
-      height:30px;
-      border:none;
-      background-color: yellow;
-      
-  }
-  #colors:hover{
-      border:3px solid red;
-  }
-  #colors1{
-    border-radius:0%;
-    width:30px;
-    height:30px;
-    border:none;
-    background-color: green;
-}
-#colors1:hover{
-    border:3px solid red;
-}
-#colors2{
-    border-radius:0%;
-    width:30px;
-    height:30px;
-    border:none;
-    background-color:orange;
-}
-#colors2:hover{
-    border:3px solid red;
-}
+  
   #pincode{
       color:white;
       height:35px;
