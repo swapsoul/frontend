@@ -21,4 +21,15 @@ export class RequestService {
       this.globalService.postServiceCall('auth/login', { usernameOrEmail }, callback, true);
     }
   }
+
+  signup(userName: string, userPassword: string, userEmail: string, phoneNumber: string, callback = null): any {
+    this.globalService.setCookie(userEmail, userPassword);
+    if ( callback == null ) {
+      this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, (res) => {
+        console.log(res);
+      }, true);
+    } else {
+      this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, callback, true);
+    }
+  }
 }

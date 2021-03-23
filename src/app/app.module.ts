@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { loginSignUpDialog } from './components/navbar/navbar.component'
+import { LoginSignUpDialogComponent } from './components/navbar/navbar.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -41,7 +41,7 @@ import { BrowserModule } from '@angular/platform-browser';
     WomenComponent,
     MenComponent,
     EssentialsComponent,
-    loginSignUpDialog,
+    LoginSignUpDialogComponent,
     SingleproductpagesampleComponent,
     AboutComponent,
     ProductComponent,

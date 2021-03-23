@@ -27,7 +27,6 @@ export class GlobalService {
 
         this.httpClient.post(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken) }).subscribe(
             (data) => {
-                console.log('iiiiiii');
                 let res = data; // Success
                 callback(res);
             },
