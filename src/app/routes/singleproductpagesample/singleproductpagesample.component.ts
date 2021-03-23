@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from 'src/app/interaction.service';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
-import { GlobalService } from 'src/app/services/global.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -10,17 +10,17 @@ import { GlobalService } from 'src/app/services/global.service';
 })
 export class SingleproductpagesampleComponent implements OnInit {
 
-  pincode : number;
+  pincode: number;
   pinmessage: string;
 
-  searchValue: string = '';
+  searchValue = '';
 
 
   constructor(private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
 
   ngOnInit(): void {
-    
+
   }
   onKey(event: any) {
     this.pincode = event.target.value;
@@ -33,10 +33,10 @@ export class SingleproductpagesampleComponent implements OnInit {
       console.log(re.status);
       if(re.status=="success")
       {
-        this.pinmessage = "Delivery Available";
+        this.pinmessage = "Delivery is available to your place!";
       }
       else{
-        this.pinmessage = "Sorry, Currently Delivery Unavailable at this location";
+        this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
       }
     })
   }

@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: "http://127.0.0.1:8088/"
+  baseUrl: 'https://swapsoul-backend-prd.herokuapp.com/api/',
+  envName: 'production',
+  gtagId: 'G-JWVLF041Q4'
 };

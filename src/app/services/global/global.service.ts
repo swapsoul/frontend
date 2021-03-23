@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, RoutesRecognized } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../../environments/environment';
 // var headers = new HttpHeaders().set('Content-Type', []);
 // headers.append("Content-Type", "application/json");
 // headers.append('Access-Control-Allow-Origin', '*');
@@ -14,8 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class GlobalService {
 
-    // public BASE_API_URL = 'http://api-stage.swapsoul.com/';
-    BASE_API_URL = 'http://localhost:4000/api/';
+    BASE_API_URL = environment.baseUrl;
     headerKey = 'SwapsoulToken';
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
 
@@ -27,7 +27,6 @@ export class GlobalService {
 
         this.httpClient.post(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken) }).subscribe(
             (data) => {
-                console.log('iiiiiii');
                 let res = data; // Success
                 callback(res);
             },
