@@ -3,12 +3,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
-import { Md5 } from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: [ './navbar.component.scss' ]
 })
 
 export class NavbarComponent implements OnInit {
@@ -18,23 +17,24 @@ export class NavbarComponent implements OnInit {
   hasValue: boolean;
   placeholdervalue = 'Search';
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+  }
 
   searchclick() {
-    this.hasValue = !this.hasValue
+    this.hasValue = !this.hasValue;
     this.placeholdervalue = ' ';
   }
 
   openDialog(): void {
 
-    const dialogRef = this.dialog.open(loginSignUpDialog, {
+    const dialogRef = this.dialog.open(LoginSignUpDialogComponent, {
       width: '410px',
       height: '500px',
       data: null,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      // console.log('The dialog was closed');
     });
   }
 
@@ -44,49 +44,50 @@ export class NavbarComponent implements OnInit {
 }
 
 @Component({
-  selector: 'loginSignUpDialog',
+  selector: 'app-login-signup-dialog',
   templateUrl: 'loginSignUpDialog.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: [ './navbar.component.scss' ]
 })
 
-export class loginSignUpDialog {
+export class LoginSignUpDialogComponent implements OnInit{
 
   hide = true;
-  submitStatus: boolean = false;
+  submitStatus = false;
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: new FormControl('', [ Validators.required, Validators.email ]),
+    password: new FormControl('', [ Validators.required, Validators.minLength(6) ])
   });
 
   registerForm: FormGroup = this.formBuilder.group({
-    fullName: [, { validators: [Validators.required], updateOn: "change" }],
+    username: [ undefined, { validators: [ Validators.required ], updateOn: 'change' } ],
     email: [
-      ,
+      undefined,
       {
-        validators: [Validators.required, Validators.email],
-        updateOn: "change",
+        validators: [ Validators.required, Validators.email ],
+        updateOn: 'change',
       },
     ],
-    phone: [, { updateOn: "change" }],
-    password: [, { validators: [Validators.required], updateOn: "change" }],
+    phone: [ undefined, { updateOn: 'change' } ],
+    password: [ undefined, { validators: [ Validators.required ], updateOn: 'change' } ],
   });
 
   constructor(
     private globalService: GlobalService,
-    public dialogRef: MatDialogRef<loginSignUpDialog>,
+    public dialogRef: MatDialogRef<LoginSignUpDialogComponent>,
     private requestService: RequestService,
     private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: null) { }
+    @Inject(MAT_DIALOG_DATA) public data: null) {
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.setPhoneValidation();
   }
 
-  setPhoneValidation() {
-    const phoneControl = this.registerForm.get("phone");
+  setPhoneValidation(): void {
+    const phoneControl = this.registerForm.get('phone');
 
     phoneControl.setValidators([
-      Validators.pattern("^[0-9]*$"),
+      Validators.pattern('^[0-9]*$'),
       Validators.required,
     ]);
   }
@@ -95,9 +96,9 @@ export class loginSignUpDialog {
     this.dialogRef.close();
   }
 
-  login(): any {
+  login(): void {
     this.requestService.login(this.loginForm.get('email').value, this.loginForm.get('password').value, (res) => {
-      if (!res.error) {
+      if ( !res.error ) {
         this.onNoClick();
       } else {
         console.log('Login Failed');
@@ -106,23 +107,25 @@ export class loginSignUpDialog {
   }
 
   getErrorMessage(): string {
-    if (this.loginForm.get('email').hasError('required')) {
+    if ( this.loginForm.get('email').hasError('required') ) {
       return 'You must enter a value';
     }
 
     return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
   }
 
-  submitForm() {
-    this.globalService.postServiceCall('user', {
-      userEmail: this.registerForm.value.email,
-      userPassword: Md5.hashStr(this.registerForm.value.password),
-      phoneNumber: this.registerForm.value.phone,
-      userName: this.registerForm.value.fullName
-    }, (re) => {
-      console.log(re.status);
+  submitForm(): void {
+    const user = this.registerForm.value;
+    this.requestService.signup(user.username, user.password, user.email, user.phone, (res) => {
+      if ( !res.error ) {
+        // this.onNoClick();
+        console.log(res);
+        this.submitStatus = true;
+      } else {
+        console.log('Login Failed');
+        this.submitStatus = false;
+      }
     });
-    this.submitStatus = true;
   }
 
 }

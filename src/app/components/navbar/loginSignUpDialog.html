@@ -45,10 +45,10 @@
       <form [formGroup]="registerForm" (submit)="submitForm()">
         <div class="card-column-1">
           <mat-form-field fxFlex appearance="fill">
-            <mat-label>Full Name</mat-label>
-            <input type="text" matInput formControlName="fullName" placeholder="Ex. Swap Soul" />
-            <mat-error *ngIf="registerForm.get('fullName').hasError('required')">
-              Full Name is <strong>required</strong>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="username" placeholder="Ex. swapsoul" />
+            <mat-error *ngIf="registerForm.get('username').hasError('required')">
+              Username is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
