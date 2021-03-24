@@ -38,7 +38,8 @@
                 </div>
                 <div class="col">
 									<div class="zoom">
-                    <img src="assets/img/productimage1.jpg"><br><br><br>
+                    <img src="{{productData['productImgURL']}}">
+                    <br><br><br>
                   </div>
                   </div>
 								</div>
@@ -48,10 +49,10 @@
         </div>
         
 				<div class="col-md-6" style="left:8%;">
-					<h2 class="text-bold text-strong product_name">Product Name</h2>
+					<h2 class="text-bold text-strong product_name">{{productData["productName"]}}</h2>
 					<span>
-						<h1 class="head">Rs 456<br>
-              <del>Rs 486</del> &nbsp; <span class="discount"> 20% OFF</span><br>
+						<h1 class="head">Rs {{productData["productSalePrice"]}}<br>
+              <del>Rs {{productData["productRetailPrice"]}}</del> &nbsp; <span class="discount"> {{productData["productDiscount"]}}% OFF</span><br>
               <span class="tax">Inclusive of taxes</span><br>
               <span class="size_heading">Size</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#EBB520;font-size:15px;">Check Size Chart</span>
 			  <section>

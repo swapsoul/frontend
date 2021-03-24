@@ -12,6 +12,7 @@ export class SingleproductpagesampleComponent implements OnInit {
 
   pincode: number;
   pinmessage: string;
+  productData: any[];
 
   searchValue = '';
 
@@ -20,7 +21,8 @@ export class SingleproductpagesampleComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    this.productData = JSON.parse(localStorage.myArrData);
+    console.log(this.productData);
   }
   onKey(event: any) {
     this.pincode = event.target.value;
