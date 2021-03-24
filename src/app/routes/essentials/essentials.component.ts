@@ -13,9 +13,11 @@ export class EssentialsComponent implements OnInit {
 
   allData: any[];
   products: any[];
+  particularproduct: any[];
   productnames: string[] = []
   pint: any;
   selected: string;
+  id: string;
 
   constructor(private data_service: ProductService, private globalservice: GlobalService) { }
 
@@ -24,7 +26,7 @@ export class EssentialsComponent implements OnInit {
       this.allData = data;
       //console.log("data",data);
       this.globalservice.getServiceCall('product', (pdata) => {
-        console.log(pdata.status);
+        //console.log(pdata.status);
         console.log(pdata.data);
         this.products = pdata.data;
       })
@@ -40,11 +42,12 @@ export class EssentialsComponent implements OnInit {
 
   pro(id) {
     console.log("id", id);
-    for (let i = 0; i < this.allData.length; i++) {
-      if (i == id) {
-        console.log(i)
+    for (let i = 0; i < this.products.length; i++) {
+      if (id == this.products[i]._id) {
+        this.particularproduct = this.products[i];
       }
     }
+    localStorage.myArrData = JSON.stringify(this.particularproduct);
   }
 
   sort(event) {

@@ -296,7 +296,7 @@ h1,h3{
 }
 }
 button{
-  border:1px solid black;
+  border:1px solid grey;
   color:grey;
 }
 button:hover{
@@ -306,4 +306,12 @@ button:hover{
 .fontsixteen{
   font-size: 16px;
   color: black;
+}
+.heart{
+  background-color: transparent;
+  svg{
+  color:red;
+  margin-left:0px;
+  border:2px solid white;
+  }
 }
