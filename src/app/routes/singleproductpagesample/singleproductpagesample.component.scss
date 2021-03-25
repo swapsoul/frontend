@@ -82,6 +82,7 @@ h1,h2,h3,h4,h5,h6{
 .add_to_cart:hover, .wish_list:hover{
   color:white;
 }
+
 .pincode_details{
   .delivery{
     color:black;
@@ -140,42 +141,28 @@ height: 100vh;
 	display: block;	
 }
 #footer{
-  h1{
-    font-family:poppins;
-    font-size:36px;
-    margin-left:0px; 
-  }
-  h3{
-    font-family: poppins;
-    font-family:500px;
-  }
-  #f1{
-    float:right;
-    font-size: large;
-  }
-  .foo{
-    border:transparent;
-  }
-  .foo:hover{
-    border:transparent;
-    color:white;
-  }
-  #f1:hover{
-    color:white;
-    text-decoration: none;
-  }
-  h1,h3{
-    color:white;
-  }
-  .foo{
-    float:right;
-    color:white;
-    background-color: transparent;
-    font-size:15px;
-  }
+  color:white;
   
-}
+  svg{
 
+  }
+  svg:hover{
+    color:white;
+  }
+}
+.foo{
+  color:white;
+  font-size:18px;
+  border:transparent;
+}
+.foo:hover{
+  color:white;
+  border:transparent;
+}
+#para{
+  color:white;
+  font-size:18px;
+}
 .zoom {
     transition: transform .2s;
     img{
@@ -307,11 +294,14 @@ button:hover{
   font-size: 16px;
   color: black;
 }
-.heart{
+#heart{
+  float:right;
   background-color: transparent;
-  svg{
-  color:red;
-  margin-left:0px;
-  border:2px solid white;
-  }
+  margin-top:-60px;
+}
+#heart:hover{
+  border:2px solid grey;
+}
+.heart{
+  color:grey;
 }
