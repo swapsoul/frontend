@@ -13,9 +13,11 @@ export class MenComponent implements OnInit {
 
   allData: any[];
   products: any[];
+  particularproduct: any[];
   productnames: string[] = []
   pint: any;
   selected : string;
+  id : string;
 
   toppings = new FormControl();
 
@@ -27,7 +29,7 @@ export class MenComponent implements OnInit {
       //console.log("data",data);
 
       this.globalservice.getServiceCall('product', (pdata) => {
-        console.log(pdata.status);
+        //console.log(pdata.status);
         console.log(pdata.data);
         this.products = pdata.data;
       })
@@ -35,7 +37,7 @@ export class MenComponent implements OnInit {
   }
 
   constructor(private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
-    console.log(this.allData);
+    //console.log(this.allData);
    }
 
   addToCart(product) {
@@ -57,13 +59,14 @@ export class MenComponent implements OnInit {
   pro(id)
   {
     console.log("id",id);
-    for(let i=0;i<this.allData.length;i++)
+    for(let i=0;i<this.products.length;i++)
     {
-      if(i==id)
+      if(id==this.products[i]._id)
       {
-        console.log(i)
+        this.particularproduct = this.products[i];
       }
     }
+    localStorage.myArrData = JSON.stringify(this.particularproduct);
   }
 
   sort(event) {

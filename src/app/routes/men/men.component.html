@@ -37,7 +37,7 @@
               <mat-grid-tile>
                 <mat-card>
                   <mat-card-header>
-                    <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imd" onclick="location.href='sample'">
+                    <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd" onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
                     <h3 class="mt-2 mb-0"><strong>{{data.productName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div><div class="d-inline-flex right">{{data.productRating}}({{data.productRatingCount}})</div></h3>
@@ -55,7 +55,7 @@
                 <mat-grid-tile>
                   <mat-card>
                     <mat-card-header>
-                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imm ml-1"
+                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
@@ -105,7 +105,7 @@
                 <mat-grid-tile>
                   <mat-card>
                     <mat-card-header>
-                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imd"
+                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
@@ -131,7 +131,7 @@
                 <mat-grid-tile>
                   <mat-card>
                     <mat-card-header>
-                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imm ml-1"
+                      <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
@@ -182,7 +182,7 @@
       <mat-grid-tile>
         <mat-card>
           <mat-card-header>
-            <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imd"
+            <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
@@ -208,7 +208,7 @@
       <mat-grid-tile>
         <mat-card>
           <mat-card-header>
-            <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imm ml-1"
+            <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
@@ -259,7 +259,7 @@
       <mat-grid-tile>
         <mat-card>
           <mat-card-header>
-            <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imd"
+            <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
@@ -285,7 +285,7 @@
       <mat-grid-tile>
         <mat-card>
           <mat-card-header>
-            <img src="{{data.productImgURL}}" alt="p1" (click)=pro(data.id) class="imm ml-1"
+            <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
@@ -326,7 +326,7 @@
       <mat-grid-tile *ngIf="data.id>=13 && data.id<=18">
         <mat-card>
           <mat-card-header>
-            <img src="assets/img/imageprod.png" alt="p1" (click)=pro(data.id) class="im"
+            <img src="assets/img/imageprod.png" alt="p1" (click)=pro([data._id]) class="im"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
@@ -352,7 +352,7 @@
       <mat-grid-tile *ngIf="data.id>=13 && data.id<=16">
         <mat-card>
           <mat-card-header>
-            <img src="assets/img/mobileView.png" alt="p1" (click)=pro(data.id) class="im"
+            <img src="assets/img/mobileView.png" alt="p1" (click)=pro([data._id]) class="im"
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>

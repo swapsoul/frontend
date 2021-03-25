@@ -13,9 +13,11 @@ export class WomenComponent implements OnInit {
 
   allData: any[];
   products: any[];
+  particularproduct: any[];
   productnames: string[] = []
   pint: any;
   selected: string;
+  id: string;
 
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class WomenComponent implements OnInit {
       this.allData = data;
       //console.log("data",data);
       this.globalservice.getServiceCall('product', (pdata) => {
-        console.log(pdata.status);
+        //console.log(pdata.status);
         console.log(pdata.data);
         this.products = pdata.data;
       })
@@ -43,15 +45,15 @@ product_Names()
   //console.log("ku",this.productnames)
 }
 
-pro(id)
-{
-  console.log("id", id);
-  for (let i = 0; i < this.allData.length; i++) {
-    if (i == id) {
-      console.log(i)
+  pro(id) {
+    console.log("id", id);
+    for (let i = 0; i < this.products.length; i++) {
+      if (id == this.products[i]._id) {
+        this.particularproduct = this.products[i];
+      }
     }
+    localStorage.myArrData = JSON.stringify(this.particularproduct);
   }
-}
 
   sort(event) {
     if (event.value === this.toppingList[0]) {
