@@ -1,5 +1,5 @@
 li,del,span,button,mat-icon,p,a,strong{
-  font-family:roboto;
+  font-family:helvetica;
 }
 .breadcrumb{
   background-color: transparent;
@@ -23,7 +23,7 @@ a:hover{
 }
 .size_heading{
   color:black;
-  font-size:24px;
+  font-size:16px;
 }
 .offer{
   color:#F22579;
@@ -38,12 +38,11 @@ h1,h2,h3,h4,h5,h6{
 }
 .head{
   font-family:roboto;
-  font-size:24px;
   color:black;
 }
 .size{
-  width:50px;
-  height:50px;
+  width:53px;
+  height:53px;
   background-color:transparent;
   color:grey;
   border:2px solid grey;
@@ -73,8 +72,6 @@ h1,h2,h3,h4,h5,h6{
   color:white;
   border:transparent;
   width:200px;
-   height:40px;
-
    svg{
      color:white;
    }
@@ -82,6 +79,7 @@ h1,h2,h3,h4,h5,h6{
 .add_to_cart:hover, .wish_list:hover{
   color:white;
 }
+
 .pincode_details{
   .delivery{
     color:black;
@@ -125,7 +123,7 @@ h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
 p{
-  font-size:18px;
+  font-size:15px;
 }
 .bg-codeblocks {
 width: 100%;
@@ -137,45 +135,27 @@ height: 100vh;
 	width:90%;
 	height: auto;
 	position: relative;
-	display: block;	
+	display: block;
 }
 #footer{
-  h1{
-    font-family:poppins;
-    font-size:36px;
-    margin-left:0px; 
-  }
-  h3{
-    font-family: poppins;
-    font-family:500px;
-  }
-  #f1{
-    float:right;
-    font-size: large;
-  }
-  .foo{
-    border:transparent;
-  }
-  .foo:hover{
-    border:transparent;
+  color:white;
+  svg:hover{
     color:white;
   }
-  #f1:hover{
-    color:white;
-    text-decoration: none;
-  }
-  h1,h3{
-    color:white;
-  }
-  .foo{
-    float:right;
-    color:white;
-    background-color: transparent;
-    font-size:15px;
-  }
-  
 }
-
+.foo{
+  color:white;
+  font-size:18px;
+  border:transparent;
+}
+.foo:hover{
+  color:white;
+  border:transparent;
+}
+#para{
+  color:white;
+  font-size:18px;
+}
 .zoom {
     transition: transform .2s;
     img{
@@ -185,23 +165,23 @@ height: 100vh;
     margin-top:-400px;
     }
   }
-  
+
   .zoom:hover {
     -ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
-    transform: scale(1.05); 
+    transform: scale(1.05);
   }
   #size {
     border-radius:50%;
     border-color: grey;
     color:grey;
-    
+
   }
   #size:hover{
       color:black;
       background-color:grey;
   }
-  
+
   #pincode{
       color:white;
       height:35px;
@@ -209,7 +189,7 @@ height: 100vh;
       background-color: orange;
       font-size:20px;
       border-color: black;
-      
+
   }
   .zoom1 {
     transition: transform .2s;
@@ -218,11 +198,11 @@ height: 100vh;
       height:100px;
     }
   }
-  
+
   .zoom1:hover {
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
+    transform: scale(1.1);
   }
 
 .dark-grey-text
@@ -234,14 +214,12 @@ height: 100vh;
 .dark-grey-text:hover{
   text-decoration: none;
 }
- strong{
-  color:#F22579;
-  font-size:22px;
- }
  del{
    color:grey;
-   font-size:22px;
-   font-family:roboto;
+   font-family:helvetica;
+ }
+ .fontsmall{
+   font-size: 0.4 rem;
  }
  .card{
    width:310px;
@@ -255,7 +233,7 @@ height: 100vh;
 }
 
 .example-label {
-  display: table-cell;  
+  display: table-cell;
 }
 
 .example-button-row {
@@ -275,19 +253,34 @@ height: 100vh;
 .example-button-container {
   display: flex;
   justify-content: center;
-  
+
 }
 mat-icon{
-  font-size:18px;
+  font-size:13px;
   color:black;
+ 
+}
+.red{
+  color: red;
+}
+
+#rcorners4 {
+  border-radius: 15px;
+  background: #73AD21;
+  padding: 8px;
+  width: 45px;
+  height: 24px;
+}
+
+.t-white{
+    color: white;
+    margin-top: -10px;
+    margin-left: -5px;
 }
 
 a{
 
   font-size:20px;
-}
-h1,h3{
-  color:white;
 }
 .view{
   img{
@@ -295,9 +288,11 @@ h1,h3{
     height:400px;
 }
 }
+
 button{
   border:1px solid grey;
   color:grey;
+ 
 }
 button:hover{
   border:1px solid red;
@@ -307,11 +302,24 @@ button:hover{
   font-size: 16px;
   color: black;
 }
+.gre{
+  color:green;
+}
+.rd{
+  color:red;
+}
 .heart{
   background-color: transparent;
-  svg{
-  color:red;
-  margin-left:0px;
-  border:2px solid white;
-  }
+  margin-top:-50px;
+
+}
+#heart{
+  float:right;
+  top:-50px;
+#heart:hover{
+  border:2px solid grey;
+}
+.heart{
+  color:grey;
+}
 }
