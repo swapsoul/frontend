@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from 'src/app/services/product/product.service';
 import { InteractionService } from 'src/app/interaction.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { DatasharingService } from 'src/app/services/datasharing/datasharing.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-men',
   templateUrl: './men.component.html',
   styleUrls: ['./men.component.scss']
 })
-export class MenComponent implements OnInit {
+export class MenComponent implements OnInit, OnDestroy {
 
   allData: any[];
   products: any[];
@@ -18,10 +20,12 @@ export class MenComponent implements OnInit {
   pint: any;
   selected : string;
   id : string;
+  message: string;
+  subscription: Subscription
 
   toppings = new FormControl();
 
-  toppingList: string[] = ['Popularity', 'Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
+  toppingList: string[] = ['Discount - High to Low','Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
 
   ngOnInit(): void {
     this.data_service.collData().subscribe(data => {
@@ -31,12 +35,16 @@ export class MenComponent implements OnInit {
       this.globalservice.getServiceCall('product', (pdata) => {
         //console.log(pdata.status);
         console.log(pdata.data);
-        this.products = pdata.data;
+        this.products = pdata.data;;
       })
     })
   }
 
-  constructor(private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  constructor(private shareservice: DatasharingService, private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
     //console.log(this.allData);
    }
 
@@ -58,7 +66,7 @@ export class MenComponent implements OnInit {
 
   pro(id)
   {
-    console.log("id",id);
+    console.log("id",id[0]);
     for(let i=0;i<this.products.length;i++)
     {
       if(id==this.products[i]._id)
@@ -66,12 +74,28 @@ export class MenComponent implements OnInit {
         this.particularproduct = this.products[i];
       }
     }
+    id = id.toString();
     localStorage.myArrData = JSON.stringify(this.particularproduct);
+
+    this.shareservice.modifyMessage(id);
+
+    this.subscription = this.shareservice.currentMessage.subscribe(message => {
+      this.message = message;
+      console.log(this.message);
+    })
+
+    this.shareservice.changeMessage(id);
+    
+
+    this.globalservice.getServiceCall(`product/${id}`,(re)=>{
+      console.log(re.data);
+    })
+
   }
 
   sort(event) {
     if (event.value === this.toppingList[0]) {
-
+      this.products.sort((a, b) => (a.productDiscount < b.productDiscount) ? 1 : -1)
     }
 
     else if(event.value == this.toppingList[1])

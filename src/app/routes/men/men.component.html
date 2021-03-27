@@ -40,9 +40,9 @@
                     <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd" onclick="location.href='sample'">
                   </mat-card-header>
                   <mat-card-content>
-                    <h3 class="mt-2 mb-0"><strong>{{data.productName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;</div><div class="d-inline-flex right">{{data.productRating}}({{data.productRatingCount}})</div></h3>
+                    <h3 class="mt-2 mb-0"><div class="d-inline-block elpdesktop"><strong class="fonttwenty">{{data.productName}}</strong></div> &nbsp; <div class="d-inline-flex right float-right" id="rcorners4"><p class="d-inline-flex t-white ml-1">{{data.productRating}}</p></div></h3>
                   </mat-card-content>
-                  <mat-card-footer><div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div> &nbsp;   <strike>&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex purp"> ({{data.productDiscount}}%OFF)</div></mat-card-footer>
+                  <mat-card-footer><div class="d-inline-flex fontdouble"><strong>&#8377;{{data.productSalePrice}}</strong></div> &nbsp;   <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex green"> {{data.productDiscount}}%OFF</div></mat-card-footer>
                 </mat-card>
               </mat-grid-tile>
             </div>

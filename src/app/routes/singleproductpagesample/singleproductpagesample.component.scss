@@ -1,5 +1,5 @@
 li,del,span,button,mat-icon,p,a,strong{
-  font-family:roboto;
+  font-family:helvetica;
 }
 .breadcrumb{
   background-color: transparent;
@@ -23,7 +23,7 @@ a:hover{
 }
 .size_heading{
   color:black;
-  font-size:24px;
+  font-size:16px;
 }
 .offer{
   color:#F22579;
@@ -38,12 +38,11 @@ h1,h2,h3,h4,h5,h6{
 }
 .head{
   font-family:roboto;
-  font-size:24px;
   color:black;
 }
 .size{
-  width:50px;
-  height:50px;
+  width:53px;
+  height:53px;
   background-color:transparent;
   color:grey;
   border:2px solid grey;
@@ -125,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
 p{
-  font-size:18px;
+  font-size:15px;
 }
 .bg-codeblocks {
 width: 100%;
@@ -163,9 +162,6 @@ height: 100vh;
   #f1:hover{
     color:white;
     text-decoration: none;
-  }
-  h1,h3{
-    color:white;
   }
   .foo{
     float:right;
@@ -234,14 +230,12 @@ height: 100vh;
 .dark-grey-text:hover{
   text-decoration: none;
 }
- strong{
-  color:#F22579;
-  font-size:22px;
- }
  del{
    color:grey;
-   font-size:22px;
-   font-family:roboto;
+   font-family:helvetica;
+ }
+ .fontsmall{
+   font-size: 0.4 rem;
  }
  .card{
    width:310px;
@@ -278,16 +272,30 @@ height: 100vh;
   
 }
 mat-icon{
-  font-size:18px;
+  font-size:13px;
   color:black;
+}
+.red{
+  color: red;
+}
+
+#rcorners4 {
+  border-radius: 15px;
+  background: #73AD21;
+  padding: 8px; 
+  width: 45px;
+  height: 24px; 
+} 
+
+.t-white{
+    color: white;
+    margin-top: -10px;
+    margin-left: -5px;
 }
 
 a{
 
   font-size:20px;
-}
-h1,h3{
-  color:white;
 }
 .view{
   img{
@@ -306,6 +314,12 @@ button:hover{
 .fontsixteen{
   font-size: 16px;
   color: black;
+}
+.gre{
+  color:green;
+}
+.rd{
+  color:red;
 }
 .heart{
   background-color: transparent;

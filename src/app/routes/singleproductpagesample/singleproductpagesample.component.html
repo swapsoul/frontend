@@ -51,37 +51,28 @@
 				<div class="col-md-6" style="left:8%;">
 					<h2 class="text-bold text-strong product_name">{{productData["productName"]}}</h2>
 					<span>
-						<h1 class="head">&#8377; {{productData["productSalePrice"]}}<br>
-              <del>&#8377; {{productData["productRetailPrice"]}}</del> &nbsp; <span class="discount"> {{productData["productDiscount"]}}% OFF</span><br>
-              <span class="tax">Inclusive of taxes</span><br>
-              <span class="size_heading">Size</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#EBB520;font-size:15px;">Check Size Chart</span>
+						<h1 class="head">&#8377; {{productData["productSalePrice"]}} &nbsp;
+              <del class="d-inline-flex"> <h3 class="d-inline-flex">&#8377;{{productData["productRetailPrice"]}}</h3></del> &nbsp; <span class="discount"> <h3 class="d-inline-flex">{{productData["productDiscount"]}}% OFF</h3></span><br/>
+              <div class="d-inline-flex right" id="rcorners4">
+                <p class="d-inline-flex t-white ml-1">{{productData["productRating"]}}</p> &nbsp;
+              </div>
+              &nbsp; <p class="d-inline-flex red">{{productData["productSaleTagLine"]}}</p>
+              <br/>
+              <span class="size_heading"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
 				<div class="example-button-row">
 				  <div class="example-flex-container">
 					<div class="example-button-container" PLACEHOLDER="choose a size" REQUIRED>
-					  <button class="size" mat-fab aria-label="Example icon button with a bookmark icon">
-						<mat-icon>S</mat-icon>
-					  </button>
+
+            <div *ngFor="let size of productData['productSizes']">
+              <button class="size" mat-fab aria-label="Example icon button with a bookmark icon">
+                <mat-icon>{{size}}</mat-icon>
+              </button>
+            </div>
 					</div>
-					<div class="example-button-container">
-						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-						  <mat-icon>M</mat-icon>
-						</button>
-					  </div>
-					  <div class="example-button-container">
-						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-						  <mat-icon>L</mat-icon>
-						</button>
-					  </div>
-					  <div class="example-button-container">
-						<button class="size" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-						  <mat-icon>XL</mat-icon>
-						</button>
-					  </div>
 				  </div>
 				</div>
 			  </section>
-              <span class="offer"> Only few Left!</span><br>
               <span class="colors_heading"> Colors</span><br>
               <form>
 			  <section>
@@ -129,7 +120,8 @@
               <br/>
               <input [(ngModel)]="searchValue" (keyup)="onKey($event)" id="pinCode" [value]="pincode" class="form-control d-inline-flex" (keypress)="numberOnly($event)" maxlength="6" type="pincode" name="pincode" PLACEHOLDER=" EX:560091" required>
               <button (click) = "verifypincode()" class="ml-3 Check" type = "submit" mat-button>CHECK</button><br><br>
-              <span class="fontsixteen">{{pinmessage}}</span>
+              <span *ngIf="flag==1" class="fontsixteen gre">{{pinmessage}}</span>
+              <span *ngIf="flag==0" class="fontsixteen rd">{{pinmessage}}</span>
             </form>
             
         </div>
@@ -546,9 +538,3 @@
     </div>
     </div>
     </div>
-  
-    
-
-
-
-      

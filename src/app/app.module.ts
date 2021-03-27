@@ -31,6 +31,7 @@ import { PrivacyComponent } from './routes/privacy/privacy.component';
 import { RequestService } from './services/request/request.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
+import { DatasharingService } from './services/datasharing/datasharing.service';
 
 
 @NgModule({
@@ -69,7 +70,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MatSelectModule,
     NgbCollapseModule
   ],
-  providers: [ GlobalService, RequestService, CookieService ],
+  providers: [ GlobalService, RequestService, CookieService, DatasharingService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
