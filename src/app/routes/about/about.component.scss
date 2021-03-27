@@ -224,37 +224,27 @@ h1 {
     // }
     
     #footer{
-        .foo{
-            float:right;
-            color:white;
-            font-size:15px;
-            background-color: transparent;
-        }
-        h3{
-            color:white;
-            font-size:18px;
-        }
-      h1{
         color:white;
-        font-size:22px;
-        font-family:poppins;
+       h1{
+           color:white;
+       } 
+        svg{
+      
+        }
+        svg:hover{
+          color:white;
+        }
+        
+          
       }
-      #follow{
-          text-align:left;
-          font-family:poppins;
-          font-size:36px;
-          margin-left:40px;
-          margin-top:-10px;
+      .foo{
+        color:white;
+        font-size:18px;
       }
-      #follow1{
-          text-align:left;
-      }
-      .copyrights{
-        font-family: poppins;
-        font-family:500px;
-        font-size:16px;
-        float:left;
-      }
+      #para{
+      color:white;
+            font-size:18px;
+            top:0%;
     }
     #join_us{
         font-size:18px;

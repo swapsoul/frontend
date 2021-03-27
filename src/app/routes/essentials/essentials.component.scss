@@ -1,13 +1,22 @@
 #footer{
     color:white;
     
-    svg:hover{
-        color:white;
-        
+    svg{
+  
     }
-    
-
-}
+    svg:hover{
+      color:white;
+    }
+  }
+  .foo{
+    color:white;
+    font-size:18px;
+  }
+  
+  #para{
+    color:white;
+    font-size:18px;
+  }
 .tabs{
     font-family:roboto;
     font-size:50px;
@@ -17,7 +26,7 @@ h1{
     cursor: pointer;
     font-family:poppins;
     font-size:28px;
-    margin-left:50px;
+    margin-left:10px;
 }
 
 h2{

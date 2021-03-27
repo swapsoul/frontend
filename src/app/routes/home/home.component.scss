@@ -1,3 +1,4 @@
+
 .men, .women {
   .img, .img-hover {
     width: 100%;
@@ -171,10 +172,10 @@
   padding: 30px 0;
 
   .carousal-heading {
-    font-family:poppins;
+    font-family:Arial, Helvetica, sans-serif;
     color: black;
     text-align: Center;
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .item {
@@ -203,7 +204,7 @@
   .story{
     text-align:center;
     color:#ED3237;
-    font-family:poppins;
+    font-family: Arial, Helvetica, sans-serif;
     font-size:22px;
   }
   p{
@@ -221,30 +222,25 @@
     font-family:roboto;
   }
 }
-.copyrights{
-  font-family: poppins;
-  font-family:500px;
-}
+
 #footer{
   color:white;
-  border:3px solid white;
-  h1{
-    font-family:poppins;
-    font-size:36px;
-    margin-left:0px;
-  }
-  .foo{
-    float:right;
-    background-color: transparent;
-    color:white;
-    font-size:16px;
-  }
+  
   svg{
 
   }
   svg:hover{
     color:white;
   }
+}
+.foo{
+  color:white;
+  font-size:18px;
+}
+
+#para{
+  color:white;
+  font-size:18px;
 }
 .mat-tab-body-content {
   display:flex;
@@ -293,12 +289,12 @@
 
 #contact1{
   text-align: center;
-  font-family: poppins;
+
     font-size:28px;
     font-weight:500px;
   h3{
     font-size:28px;
-    font-family:poppins;
+    font-family: Arial, Helvetica, sans-serif;
     color:#ED3237;
   }
   .sub_data{
@@ -365,4 +361,6 @@
 .rwdcontainer .btn:hover {
   background-color: black;
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family:Arial, Helvetica, sans-serif;
+}
