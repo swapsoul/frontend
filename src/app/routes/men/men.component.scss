@@ -56,6 +56,24 @@ font-weight:500px;
 .mob{
     font-size: 13px;
 }
+.fontdouble{
+    font-size: 23px;
+}
+.grey{
+    color: gray;
+}
+.green{
+    color: green;
+}
+.elpdesktop{
+    max-width: 159px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.fonttwenty{
+    font-size: 20px;
+}
 
 #f1{
     float:right;
@@ -78,7 +96,11 @@ font-weight:500px;
     font-size:15px;
   }
   
-
+.t-white{
+    color: white;
+    margin-top: -10px;
+    margin-left: -5px;
+}
 h3{
     font-size:larger;
     color: black;
@@ -110,3 +132,10 @@ mat-label{
 .ht{
     height: 0px;
 }
+#rcorners4 {
+  border-radius: 15px;
+  background: #73AD21;
+  padding: 8px; 
+  width: 45px;
+  height: 24px; 
+} 
