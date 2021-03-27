@@ -73,8 +73,6 @@ h1,h2,h3,h4,h5,h6{
   color:white;
   border:transparent;
   width:200px;
-   height:40px;
-
    svg{
      color:white;
    }
@@ -144,7 +142,7 @@ height: 100vh;
   color:white;
   
   svg{
-
+   
   }
   svg:hover{
     color:white;
@@ -267,6 +265,7 @@ height: 100vh;
 mat-icon{
   font-size:18px;
   color:black;
+ 
 }
 
 a{
@@ -282,9 +281,11 @@ h1,h3{
     height:400px;
 }
 }
+
 button{
   border:1px solid grey;
   color:grey;
+ 
 }
 button:hover{
   border:1px solid red;
@@ -297,7 +298,8 @@ button:hover{
 #heart{
   float:right;
   background-color: transparent;
-  margin-top:-60px;
+  margin-top:-50px;
+
 }
 #heart:hover{
   border:2px solid grey;
