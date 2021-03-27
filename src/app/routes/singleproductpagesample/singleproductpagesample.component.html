@@ -68,27 +68,6 @@
 			  <section>
 				<div class="example-button-row">
 				  <div class="example-flex-container">
-					<div class="example-button-container" PLACEHOLDER="choose a size" REQUIRED>
-					  <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-              <mat-icon>S</mat-icon>
-            </button>
-					</div>
-					<div class="example-button-container">
-						<button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-              <mat-icon>M</mat-icon>
-            </button>
-					  </div>
-					  <div class="example-button-container">
-              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-                <mat-icon>L</mat-icon>
-              </button>
-					  </div>
-					  <div class="example-button-container">
-              <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-                <mat-icon>XL</mat-icon>
-              </button>
-					  </div>
-
             <div *ngFor="let size of productData['productSizes']">
               <button class="size" mat-fab aria-label="Example icon button with a bookmark icon">
                 <mat-icon>{{size}}</mat-icon>
