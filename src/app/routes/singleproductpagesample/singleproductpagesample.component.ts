@@ -47,14 +47,14 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
 
   verifypincode(){
     console.log(this.pincode);
-    this.globalService.postServiceCall('sample',{pincode: this.pincode},(re)=>{
-      console.log(re.status);
-      if(re.status=="success")
-      {
+
+    this.globalService.getServiceCall(`delivery/pin/${this.pincode}`,(re)=>{
+      console.log("aaaaaaaaaaaa",re);
+      if (re["message"][12] == 'a') {
         this.pinmessage = "Delivery is available to your place!";
         this.flag = 1;
       }
-      else{
+      else {
         this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
         this.flag = 0;
       }
