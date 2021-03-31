@@ -60,19 +60,19 @@
         </svg>
 					<h2 class="text-bold text-strong product_name">{{productData["productName"]}}</h2>
 					<span>
-						<h1 class="head">&#8377; {{productData["productSalePrice"]}} &nbsp;
-              <del class="d-inline-flex"> <h3 class="d-inline-flex">&#8377;{{productData["productRetailPrice"]}}</h3></del> &nbsp; <span class="discount"> <h3 class="d-inline-flex">{{productData["productDiscount"]}}% OFF</h3></span><br/>
+						<h1 class="head text-boldy d-inline-flex">&#8377; {{productData["productSalePrice"]}} &nbsp;</h1>
+              <del class="d-inline-flex fonttwelve"> <p class="fonttwelve d-inline-flex">&#8377;{{productData["productRetailPrice"]}}</p></del> &nbsp; <span class="discount fonttwelve"> <p class="fonttwelve d-inline-flex">{{productData["productDiscount"]}}% OFF</p></span><br/>
               <div class="d-inline-flex right" id="rcorners4">
                 <p class="d-inline-flex t-white ml-1">{{productData["productRating"]}}</p> &nbsp;
               </div>
               &nbsp; <p class="d-inline-flex red">{{productData["productSaleTagLine"]}}</p>
-              <br/>
+              <br/><br/><br/>
               <span class="size_heading"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
 				<div class="example-button-row">
-				  <div class="example-flex-container">
+				  <div class="example-flex-container" id="myDiv">
             <div *ngFor="let size of productData['productSizes']">
-              <button class="size" mat-fab aria-label="Example icon button with a bookmark icon">
+              <button class="size active" id="size" mat-fab aria-label="Example icon button with a bookmark icon" (click)=checksize()>
                 <mat-icon>{{size}}</mat-icon>
               </button>
             </div>
@@ -90,7 +90,6 @@
 				</div>
 			  </section>
         </form>
-							</h1>
 					</span>
           <br>
           <span class="d-md-block d-none containera">

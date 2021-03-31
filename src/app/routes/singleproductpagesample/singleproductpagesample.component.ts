@@ -53,6 +53,38 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     heart.classList.toggle('red');
   }
 
+  checksize()
+  {
+    var btnContainer = document.getElementById("myDiv");
+
+    // Get all buttons with class="btn" inside the container
+    var btns = btnContainer.getElementsByClassName("size");
+    //console.log(btns);
+    console.log(btns.length);
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < btns.length; i++) {
+      //console.log("amqa")
+      btns[i].addEventListener("click", function () {
+        console.log("pppp")
+        var current = document.getElementsByClassName("active");
+        console.log(current);
+
+        // If there's no active class
+        if (current.length > 0) {
+          console.log("prprprprpprpr")
+          current[0].className = current[0].className.replace(" active", "");
+        }
+
+        // Add the active class to the current/clicked button
+        console.log(this.className);
+        this.className += " active";
+        console.log(this.className);
+      });
+      console.log("ererrrrrr")
+    }
+  }
+
 
   verifypincode(){
     console.log(this.pincode);
