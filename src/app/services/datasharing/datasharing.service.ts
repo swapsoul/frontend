@@ -9,10 +9,16 @@ export class DatasharingService {
   message: string;
   rr: string;
 
+  id1: string;
+
   modifyMessage(newmessage) {
     this.message = newmessage;
     console.log(this.message);
     this.rr = this.getId();
+  }
+
+  setProjects(id: any) {
+    this.id1 = id;
   }
 
   changeMessage(message: string) {
@@ -22,8 +28,8 @@ export class DatasharingService {
 
   getId()
   {
-    console.log(this.message);
-    return this.message;
+    console.log(this.id1);
+    return this.id1;
   }
   
   private messageSource = new BehaviorSubject<string>('bf');

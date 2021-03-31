@@ -309,17 +309,33 @@ button:hover{
   color:red;
 }
 .heart{
-  background-color: transparent;
-  margin-top:-50px;
-
+  cursor: pointer;
+  color: gray;
+}
+.heartcol
+{
+  cursor: pointer;
+  color:mediumvioletred;
+}
+.heart red {
+  color: red;
+  background-color: red;
 }
 #heart{
   float:right;
-  top:-50px;
+  top:0px;
 #heart:hover{
   border:2px solid grey;
 }
 .heart{
-  color:grey;
+  color:magenta;
+}
+#heart {
+  color:navy;  
+  font-size: 50px;
+}
+.heart.red {
+  color: red;
+  background-color: red;
 }
 }
