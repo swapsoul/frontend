@@ -77,6 +77,8 @@ export class MenComponent implements OnInit, OnDestroy {
     id = id.toString();
     localStorage.myArrData = JSON.stringify(this.particularproduct);
 
+    this.shareservice.setProjects(id);
+
     this.shareservice.modifyMessage(id);
 
     this.subscription = this.shareservice.currentMessage.subscribe(message => {
@@ -88,7 +90,7 @@ export class MenComponent implements OnInit, OnDestroy {
     
 
     this.globalservice.getServiceCall(`product/${id}`,(re)=>{
-      console.log(re.data);
+      console.log(re);
     })
 
   }

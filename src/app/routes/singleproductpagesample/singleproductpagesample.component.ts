@@ -20,6 +20,7 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
   message: string;
   subscription: Subscription;
   id: string;
+  wishflag: boolean = false;
 
   searchValue = '';
 
@@ -28,6 +29,8 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
+    this.id = this.datashare.getId();
+    console.log(this.id);
     this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
     this.pid = this.productData["_id"].toString();
@@ -42,6 +45,12 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
   }
   onKey(event: any) {
     this.pincode = event.target.value;
+  }
+
+  wish(){
+    this.wishflag = !this.wishflag;
+    const heart = document.getElementById('heat');
+    heart.classList.toggle('red');
   }
 
 

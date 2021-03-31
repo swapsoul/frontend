@@ -1,9 +1,6 @@
 #footer{
     color:white;
     
-    svg{
-  
-    }
     svg:hover{
       color:white;
     }
@@ -17,42 +14,23 @@
     color:white;
     font-size:18px;
   }
-.tabs{
-    font-family:roboto;
-    font-size:50px;
-}
 h1{
     font-weight: 500px;
     cursor: pointer;
     font-family:poppins;
     font-size:28px;
     margin-left:10px;
+
 }
 
 h2{
-    cursor: pointer;
-    font-size:24px;
-    color:#1492E6;
-    font-family:roboto;
-    align-self:center ;
-    text-decoration:none;
-    font-weight:500px;
-}
-
-h3{
-    font-size:larger;
-    color: black;
-}
-.strike{
-    text-decoration: line-through;
-}
-/*span{
-    font-family:roboto;
-    font-size:24px;
-}*/
-mat-label{
-    font-size:18px;
-    font-family:roboto;
+cursor: pointer;
+font-size:24px;
+color:#1492E6;
+font-family:roboto;
+align-self:center ;
+text-decoration:none;
+font-weight:500px;
 }
 
 .blu{
@@ -68,12 +46,83 @@ mat-label{
 
 .imm{
     cursor : pointer;
-    width: 90px;
-    height : 80px;
+    width: 150px;
+    height : 168px;
 }
 
 .mob{
     font-size: 13px;
+}
+.fontdouble{
+    font-size: 23px;
+}
+.fonteighteen{
+    font-size: 16px;
+}
+.font13{
+    font-size: 13px;
+}
+.grey{
+    color: gray;
+}
+.green{
+    color: green;
+}
+.elpdesktop{
+    max-width: 159px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.fonttwenty{
+    font-size: 20px;
+}
+
+#f1{
+    float:right;
+    font-size: large;
+  }
+  #f1:hover{
+    color:white;
+    text-decoration: none;
+  }
+ .text-white{
+      color:white;
+      font-family:poppins;
+      font-size:36px;
+      margin-left:0px;
+  }
+  .foo{
+    float:right;
+    color:white;
+    background-color: transparent;
+    font-size:15px;
+  }
+  
+.t-white{
+    color: white;
+    margin-top: -10px;
+    margin-left: -5px;
+}
+h3{
+    font-size:larger;
+    color: black;
+}
+.strike{
+    text-decoration: line-through;
+}
+.text-white2{
+    color:white;
+    font-family: poppins;
+    font-family:500px;
+}
+/*span{
+    font-family:roboto;
+    font-size:24px;
+}*/
+mat-label{
+    font-size:18px;
+    font-family:roboto;
 }
 
 .purp
@@ -83,41 +132,27 @@ mat-label{
 .org{
     color: orange;
 }
-f1{
-    float:right;
-    font-size: large;
-  }
-  #f1:hover{
-    color:white;
-    text-decoration: none;
-  }
-  .text-center{
-    color:white;
-  }
-  .foo{
-    float:right;
-    color:white;
-    background-color: transparent;
-    font-size:15px;
-  }
-  .ht{
+.ht{
     height: 0px;
 }
-  
-
-h3{
-    font-size:larger;
+#rcorners4 {
+  border-radius: 15px;
+  background: #73AD21;
+  padding: 8px; 
+  width: 45px;
+  height: 24px; 
+} 
+.elpmob{
+    max-width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
 }
-.text-white1{
-    font-family:poppins;
-    font-size:36px;
-    margin-left:0px;
-    font-family:500px;
-}
-.text-white2{
-    font-family:poppins;
-    font-size:18px;
-    margin-left:0px;
-    font-family:500px;
-    color:white;
-}
+#rcornersmob4 {
+  border-radius: 13px;
+  background: #73AD21;
+  padding: 6px; 
+  width: 32px;
+  height: 18px; 
+} 
