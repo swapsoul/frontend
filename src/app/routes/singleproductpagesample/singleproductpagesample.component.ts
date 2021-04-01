@@ -40,36 +40,28 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     })
     this.globalService.getServiceCall('product', (pdata) => {
       //console.log(pdata.status);
-      console.log(pdata.data);
+      //console.log(pdata.data);
       this.products = pdata.data;
-      console.log(this.products.length);
-      for (let i = 0; i < this.products.length; i++) {
-        console.log(this.products[i].productId);
-        if (this.productid == this.products[i]["productId"]) {
-          this.pro_id = this.products[i]["_id"];
-          console.log(this.pro_id);
-          break;
-        }
-      }
-      console.log(this.pro_id);
-      this.pro_id = this.pro_id.toString();
-      console.log(this.productid);
+      //console.log(this.products.length);
+      //console.log(this.pro_id);
+      //this.pro_id = this.pro_id.toString();
+      //console.log(this.productid);
 
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
-        console.log(re["data"]);
+        //console.log(re["data"]);
+        this.productData = re["data"][0];
+        console.log(this.productData["productId"])
       })
     })
    
-    console.log(this.productid);
-    console.log(this.pro_id);
+    //console.log(this.productid);
+    //console.log(this.pro_id);
     //console.log(this.products.length);
-
-    
-
+  
     /*this.globalService.getServiceCall(`product/${id}`, (re) => {
       console.log(re);
     })*/
-    this.productData = JSON.parse(localStorage.myArrData);
+    //this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
     this.pid = this.productData["_id"].toString();
     //console.log(this.pid)
@@ -125,7 +117,8 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     console.log(this.pincode);
 
     this.globalService.getServiceCall(`delivery/pin/${this.pincode}`,(re)=>{
-      console.log("aaaaaaaaaaaa",re);
+      //console.log("aaaaaaaaaaaa",re);
+      console.log(re["status"]);
       if (re["message"][12] == 'a') {
         this.pinmessage = "Delivery is available to your place!";
         this.flag = 1;
