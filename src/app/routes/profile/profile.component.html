@@ -1,0 +1,49 @@
+<div class="container">
+    <div class=".col-xs-4 .col-md-offset-2">
+        <div class="blue panel panel-default panel-info Profile">
+            <div class="panel-heading">
+                <strong class="blackcol">My Profile</strong>  
+                </div>
+            <div class="panel-body">
+                
+                <div class="form-horizontal">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">UserName</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" name="userName" placeholder="username"
+                                    ng-model="me.firstName" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" type="text" name="email" placeholder="Email"
+                                    ng-model="me.email" disabled>
+                            </div>
+                        </div>
+                                               
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Phone</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone" placeholder="xxxxxxxxxx"
+                                    ng-model="me.phone" disabled>
+                            </div>
+                                <mat-icon class="write" (click)=removedisabled();>create</mat-icon>
+                        </div>
+
+                        <div class="form-group" *ngIf="flag==1"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-primary" (click)="updateMe()">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end form-horizontal -->
+            </div> <!-- end panel-body -->
+
+        </div> <!-- end panel -->
+
+
+    </div> <!-- end size -->
+</div> <!-- end container-fluid -->

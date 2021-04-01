@@ -10,7 +10,8 @@ import { ProductComponent} from './routes/product/product.component';
 import {TcComponent} from './routes/tc/tc.component';
 import {PrivacyComponent} from './routes/privacy/privacy.component';
 import {ResetpwdComponent} from './routes/resetpwd/resetpwd.component';
-import { EmailVerifiedComponent} from './routes/email-verified/email-verified.component'
+import { EmailVerifiedComponent} from './routes/email-verified/email-verified.component';
+import { ProfileComponent } from './routes/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,13 +19,14 @@ const routes: Routes = [
   { path: 'men', component: MenComponent},
   { path: 'women', component: WomenComponent},
   { path: 'essentials', component: EssentialsComponent},
-  { path: 'sample', component: SingleproductpagesampleComponent},
+  { path: 'products/:id', component: SingleproductpagesampleComponent},
   { path: 'about', component: AboutComponent},
   { path: 'product', component: ProductComponent },
   {path :'terms', component: TcComponent},
   {path :'privacy', component: PrivacyComponent},
   {path :'reset_password', component: ResetpwdComponent},
-  {path :'email_verified', component: EmailVerifiedComponent}
+  {path :'email_verified', component: EmailVerifiedComponent},
+  { path : 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

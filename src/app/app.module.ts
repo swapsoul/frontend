@@ -34,6 +34,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DatasharingService } from './services/datasharing/datasharing.service';
 import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
 import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
+import { ProfileComponent } from './routes/profile/profile.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { EmailVerifiedComponent } from './routes/email-verified/email-verified.c
     PrivacyComponent,
     ResetpwdComponent,
     EmailVerifiedComponent,
+    ProfileComponent
   ],
   imports: [
 
