@@ -4,6 +4,7 @@ import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { DatasharingService } from 'src/app/services/datasharing/datasharing.service';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -21,23 +22,57 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   id: string;
   wishflag: boolean = false;
+  origin = window.location.href;
+  productid: number;
+  products: any[];
+  pro_id: any;
 
   searchValue = '';
 
 
-  constructor(private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+  constructor(private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
 
   ngOnInit(): void {
-    this.id = this.datashare.getId();
-    console.log(this.id);
+    this.route.params.subscribe(params => {
+      console.log(params["id"]);
+      this.productid = params["id"];
+    })
+    this.globalService.getServiceCall('product', (pdata) => {
+      //console.log(pdata.status);
+      console.log(pdata.data);
+      this.products = pdata.data;
+      console.log(this.products.length);
+      for (let i = 0; i < this.products.length; i++) {
+        console.log(this.products[i].productId);
+        if (this.productid == this.products[i]["productId"]) {
+          this.pro_id = this.products[i]["_id"];
+          console.log(this.pro_id);
+          break;
+        }
+      }
+      console.log(this.pro_id);
+      this.pro_id = this.pro_id.toString();
+      console.log(this.productid);
+
+      this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
+        console.log(re["data"]);
+      })
+    })
+   
+    console.log(this.productid);
+    console.log(this.pro_id);
+    //console.log(this.products.length);
+
+    
+
+    /*this.globalService.getServiceCall(`product/${id}`, (re) => {
+      console.log(re);
+    })*/
     this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
     this.pid = this.productData["_id"].toString();
     //console.log(this.pid)
-
-    this.id = this.datashare.getId();
-    console.log(this.id);
   }
 
   ngOnDestroy() {

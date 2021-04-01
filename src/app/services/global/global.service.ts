@@ -40,12 +40,12 @@ export class GlobalService {
     public getServiceCall(url: string, callback): any {
 
         // let BASE_API_URL = 'http://localhost:4000';
-          //console.log('BASE_API_URL is '+this.BASE_API_URL);
-          //console.log(url);
-          //console.log(callback);
+          console.log('BASE_API_URL is '+this.BASE_API_URL);
+          console.log(url);
+          console.log(callback);
         this.httpClient.get(this.BASE_API_URL + url, { headers: this.createHeaders() }).subscribe(
             (data) => {
-                //console.log(data);
+                console.log(data);
                 let res = data; // Success Response
                 callback(res);
                 // this.spinner.hide();

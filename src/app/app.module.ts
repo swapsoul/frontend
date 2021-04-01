@@ -32,6 +32,9 @@ import { RequestService } from './services/request/request.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { DatasharingService } from './services/datasharing/datasharing.service';
+import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
+import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
+import { ProfileComponent } from './routes/profile/profile.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { DatasharingService } from './services/datasharing/datasharing.service';
     ProductComponent,
     TcComponent,
     PrivacyComponent,
+    ResetpwdComponent,
+    EmailVerifiedComponent,
+    ProfileComponent
   ],
   imports: [
 
