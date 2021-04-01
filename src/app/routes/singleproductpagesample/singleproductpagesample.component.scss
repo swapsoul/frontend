@@ -8,14 +8,14 @@ li,del,span,button,mat-icon,p,a,strong{
   font-size:20px;
 }
 .product_name{
-  font-size:36px;
+  font-size:28px;
 }
 a:hover{
   text-decoration: none;
 }
 .discount{
-  color:#F22579;
-  font-size:18px;
+  color:green;
+  font-size:14px;
 }
 .tax{
   color:#F22579;
@@ -32,13 +32,17 @@ a:hover{
 .colors_heading{
   color:black; font-size:24px;
 }
-h1,h2,h3,h4,h5,h6{
-  font-family:poppins;
-  font-weight:500;
-}
 .head{
   font-family:roboto;
   color:black;
+}
+.text-boldy{
+  font-family: bold;
+  font-weight: 440;
+  font-size: 32px;
+}
+.text-bold{
+  font-family: bold;
 }
 .size{
   width:53px;
@@ -47,6 +51,7 @@ h1,h2,h3,h4,h5,h6{
   color:grey;
   border:2px solid grey;
   left:5%;
+  box-shadow: none;
 }
 .colors, .colors1, .colors2{
   width:30px;
@@ -121,9 +126,6 @@ h1,h2,h3,h4,h5,h6{
   color:black;
   margin-left:50px;
   font-weight: normal;
-}
-p{
-  font-size:15px;
 }
 .bg-codeblocks {
 width: 100%;
@@ -274,7 +276,7 @@ mat-icon{
 
 .t-white{
     color: white;
-    margin-top: -10px;
+    margin-top: -5px;
     margin-left: -5px;
 }
 
@@ -309,17 +311,46 @@ button:hover{
   color:red;
 }
 .heart{
-  background-color: transparent;
-  margin-top:-50px;
-
+  cursor: pointer;
+  color: gray;
+}
+.heartcol
+{
+  cursor: pointer;
+  color:mediumvioletred;
+}
+.heart red {
+  color: red;
+  background-color: red;
 }
 #heart{
   float:right;
-  top:-50px;
+  top:0px;
 #heart:hover{
   border:2px solid grey;
 }
 .heart{
-  color:grey;
+  color:magenta;
 }
+#heart {
+  color:navy;  
+  font-size: 50px;
+}
+.heart.red {
+  color: red;
+  background-color: red;
+}
+.fonttwelve{
+  font-size: 12px;
+}
+
+.mat-fab {
+  box-shadow: none;
+}
+
+.active {
+  background-color:midnightblue !important;
+  color: red !important;
+}
+
 }

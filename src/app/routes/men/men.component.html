@@ -50,7 +50,7 @@
           </div>
 
           <div class="d-block d-md-none">
-            <mat-grid-list cols="2" rowHeight="1:0.87">
+            <mat-grid-list cols="2" rowHeight="0.6:0.87">
               <div class="ht" *ngFor="let data of products">
                 <mat-grid-tile>
                   <mat-card>
@@ -59,14 +59,15 @@
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
-                      <h3 class="mb-0 ml-0 mob"><strong>{{data.productName}}</strong> <div class="d-inline-flex org">&#x2605;
+                      <h3 class="mb-0 ml-0 mob"><div class="d-inline-block elpmob"><strong>{{data.productName}}</strong></div>
+                        <div class="d-inline-flex right mob float-right mt-2" id="rcornersmob4">
+                          <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
                         </div>
-                        <div class="d-inline-flex right mob">{{data.productRating}}({{data.productRatingCount}})</div>
                       </h3>
                     </mat-card-content>
                     <mat-card-footer>
-                      <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div> 
-                      <strike>&#8377;{{data.productRetailPrice}}</strike> <div class="d-inline-flex purp">
+                    <div class="d-inline-flex fonteighteen"><strong>&#8377;{{data.productSalePrice}}</strong></div>&nbsp;
+                    <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp; <div class="d-inline-flex green font13">
                       ({{data.productDiscount}}%OFF)</div>
                     </mat-card-footer>
                   </mat-card>
@@ -109,15 +110,17 @@
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
-                      <h3 class="mt-2 mb-0"><strong>{{data.productName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+                      <h3 class="mt-2 mb-0">
+                        <div class="d-inline-block elpdesktop"><strong class="fonttwenty">{{data.productName}}</strong></div> &nbsp; <div
+                          class="d-inline-flex right float-right" id="rcorners4">
+                          <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
                         </div>
-                        <div class="d-inline-flex right">{{data.productRating}}({{data.productRatingCount}})</div>
                       </h3>
                     </mat-card-content>
                     <mat-card-footer>
-                      <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div> &nbsp;
-                      <strike>&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-                        ({{data.productDiscount}}%OFF)</div>
+                      <div class="d-inline-flex fontdouble"><strong>&#8377;{{data.productSalePrice}}</strong></div> &nbsp; <strike
+                        class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex green">
+                        {{data.productDiscount}}%OFF</div>
                     </mat-card-footer>
                   </mat-card>
                 </mat-grid-tile>
@@ -126,7 +129,7 @@
           </div>
           
           <div class="d-block d-md-none">
-            <mat-grid-list cols="2" rowHeight="1:0.87">
+            <mat-grid-list cols="2" rowHeight="0.6:0.87">
               <div class="ht" *ngFor="let data of products">
                 <mat-grid-tile>
                   <mat-card>
@@ -135,16 +138,16 @@
                         onclick="location.href='sample'">
                     </mat-card-header>
                     <mat-card-content>
-                      <h3 class="mb-0 ml-0 mob"><strong>{{data.productName}}</strong>
-                        <div class="d-inline-flex org">&#x2605;
+                      <h3 class="mb-0 ml-0 mob">
+                        <div class="d-inline-block elpmob"><strong>{{data.productName}}</strong></div>
+                        <div class="d-inline-flex right mob float-right mt-2" id="rcornersmob4">
+                          <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
                         </div>
-                        <div class="d-inline-flex right mob">{{data.productRating}}({{data.productRatingCount}})</div>
                       </h3>
                     </mat-card-content>
                     <mat-card-footer>
-                      <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div>
-                      <strike>&#8377;{{data.productRetailPrice}}</strike>
-                      <div class="d-inline-flex purp">
+                      <div class="d-inline-flex fonteighteen"><strong>&#8377;{{data.productSalePrice}}</strong></div>&nbsp;
+                      <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp; <div class="d-inline-flex green font13">
                         ({{data.productDiscount}}%OFF)</div>
                     </mat-card-footer>
                   </mat-card>
@@ -186,16 +189,18 @@
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
-            <h3 class="mt-2 mb-0"><strong>{{data.productName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+            <h3 class="mt-2 mb-0">
+              <div class="d-inline-block elpdesktop"><strong class="fonttwenty">{{data.productName}}</strong></div> &nbsp; <div
+                class="d-inline-flex right float-right" id="rcorners4">
+                <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
               </div>
-              <div class="d-inline-flex right">{{data.productRating}}({{data.productRatingCount}})</div>
             </h3>
           </mat-card-content>
-          <mat-card-footer>
-            <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div> &nbsp;
-            <strike>&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-              ({{data.productDiscount}}%OFF)</div>
-          </mat-card-footer>
+        <mat-card-footer>
+          <div class="d-inline-flex fontdouble"><strong>&#8377;{{data.productSalePrice}}</strong></div> &nbsp; <strike
+            class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex green">
+            {{data.productDiscount}}%OFF</div>
+        </mat-card-footer>
         </mat-card>
       </mat-grid-tile>
     </div>
@@ -203,7 +208,7 @@
 </div>
 
 <div class="d-block d-md-none">
-  <mat-grid-list cols="2" rowHeight="1:0.87">
+  <mat-grid-list cols="2" rowHeight="0.6:0.87">
     <div class="ht" *ngFor="let data of products">
       <mat-grid-tile>
         <mat-card>
@@ -212,16 +217,16 @@
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
-            <h3 class="mb-0 ml-0 mob"><strong>{{data.productName}}</strong>
-              <div class="d-inline-flex org">&#x2605;
+            <h3 class="mb-0 ml-0 mob">
+              <div class="d-inline-block elpmob"><strong>{{data.productName}}</strong></div>
+              <div class="d-inline-flex right mob float-right mt-2" id="rcornersmob4">
+                <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
               </div>
-              <div class="d-inline-flex right mob">{{data.productRating}}({{data.productRatingCount}})</div>
             </h3>
           </mat-card-content>
           <mat-card-footer>
-            <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div>
-            <strike>&#8377;{{data.productRetailPrice}}</strike>
-            <div class="d-inline-flex purp">
+            <div class="d-inline-flex fonteighteen"><strong>&#8377;{{data.productSalePrice}}</strong></div>&nbsp;
+            <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp; <div class="d-inline-flex green font13">
               ({{data.productDiscount}}%OFF)</div>
           </mat-card-footer>
         </mat-card>
@@ -263,15 +268,17 @@
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
-            <h3 class="mt-2 mb-0"><strong>{{data.productName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
+            <h3 class="mt-2 mb-0">
+              <div class="d-inline-block elpdesktop"><strong class="fonttwenty">{{data.productName}}</strong></div> &nbsp; <div
+                class="d-inline-flex right float-right" id="rcorners4">
+                <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
               </div>
-              <div class="d-inline-flex right">{{data.productRating}}({{data.productRatingCount}})</div>
             </h3>
           </mat-card-content>
           <mat-card-footer>
-            <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div> &nbsp;
-            <strike>&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex purp">
-              ({{data.productDiscount}}%OFF)</div>
+            <div class="d-inline-flex fontdouble"><strong>&#8377;{{data.productSalePrice}}</strong></div> &nbsp; <strike
+              class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex green">
+              {{data.productDiscount}}%OFF</div>
           </mat-card-footer>
         </mat-card>
       </mat-grid-tile>
@@ -280,7 +287,7 @@
 </div>
 
 <div class="d-block d-md-none">
-  <mat-grid-list cols="2" rowHeight="1:0.87">
+  <mat-grid-list cols="2" rowHeight="0.6:0.87">
     <div class="ht" *ngFor="let data of products">
       <mat-grid-tile>
         <mat-card>
@@ -289,16 +296,16 @@
               onclick="location.href='sample'">
           </mat-card-header>
           <mat-card-content>
-            <h3 class="mb-0 ml-0 mob"><strong>{{data.productName}}</strong>
-              <div class="d-inline-flex org">&#x2605;
+            <h3 class="mb-0 ml-0 mob">
+              <div class="d-inline-block elpmob"><strong>{{data.productName}}</strong></div>
+              <div class="d-inline-flex right mob float-right mt-2" id="rcornersmob4">
+                <p class="d-inline-flex t-white ml-1">{{data.productRating}}</p>
               </div>
-              <div class="d-inline-flex right mob">{{data.productRating}}({{data.productRatingCount}})</div>
             </h3>
           </mat-card-content>
           <mat-card-footer>
-            <div class="d-inline-flex purp">&#8377;{{data.productSalePrice}}</div>
-            <strike>&#8377;{{data.productRetailPrice}}</strike>
-            <div class="d-inline-flex purp">
+            <div class="d-inline-flex fonteighteen"><strong>&#8377;{{data.productSalePrice}}</strong></div>&nbsp;
+            <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp; <div class="d-inline-flex green font13">
               ({{data.productDiscount}}%OFF)</div>
           </mat-card-footer>
         </mat-card>
@@ -347,7 +354,7 @@
 </div>
 
 <div class="d-block d-md-none">
-  <mat-grid-list cols="2" rowHeight="1:0.87">
+  <mat-grid-list cols="2" rowHeight="0.6:0.87">
     <div class="ht" *ngFor="let data of allData">
       <mat-grid-tile *ngIf="data.id>=13 && data.id<=16">
         <mat-card>

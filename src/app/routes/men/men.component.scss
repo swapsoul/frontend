@@ -1,9 +1,6 @@
 #footer{
     color:white;
     
-    svg{
-  
-    }
     svg:hover{
       color:white;
     }
@@ -49,8 +46,8 @@ font-weight:500px;
 
 .imm{
     cursor : pointer;
-    width: 90px;
-    height : 80px;
+    width: 150px;
+    height : 168px;
 }
 
 .mob{
@@ -58,6 +55,12 @@ font-weight:500px;
 }
 .fontdouble{
     font-size: 23px;
+}
+.fonteighteen{
+    font-size: 16px;
+}
+.font13{
+    font-size: 13px;
 }
 .grey{
     color: gray;
@@ -138,4 +141,18 @@ mat-label{
   padding: 8px; 
   width: 45px;
   height: 24px; 
+} 
+.elpmob{
+    max-width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+}
+#rcornersmob4 {
+  border-radius: 13px;
+  background: #73AD21;
+  padding: 6px; 
+  width: 32px;
+  height: 18px; 
 } 

@@ -20,6 +20,7 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
   message: string;
   subscription: Subscription;
   id: string;
+  wishflag: boolean = false;
 
   searchValue = '';
 
@@ -28,6 +29,8 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
+    this.id = this.datashare.getId();
+    console.log(this.id);
     this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
     this.pid = this.productData["_id"].toString();
@@ -44,17 +47,55 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     this.pincode = event.target.value;
   }
 
+  wish(){
+    this.wishflag = !this.wishflag;
+    const heart = document.getElementById('heat');
+    heart.classList.toggle('red');
+  }
+
+  checksize()
+  {
+    var btnContainer = document.getElementById("myDiv");
+
+    // Get all buttons with class="btn" inside the container
+    var btns = btnContainer.getElementsByClassName("size");
+    //console.log(btns);
+    console.log(btns.length);
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < btns.length; i++) {
+      //console.log("amqa")
+      btns[i].addEventListener("click", function () {
+        console.log("pppp")
+        var current = document.getElementsByClassName("active");
+        console.log(current);
+
+        // If there's no active class
+        if (current.length > 0) {
+          console.log("prprprprpprpr")
+          current[0].className = current[0].className.replace(" active", "");
+        }
+
+        // Add the active class to the current/clicked button
+        console.log(this.className);
+        this.className += " active";
+        console.log(this.className);
+      });
+      console.log("ererrrrrr")
+    }
+  }
+
 
   verifypincode(){
     console.log(this.pincode);
-    this.globalService.postServiceCall('sample',{pincode: this.pincode},(re)=>{
-      console.log(re.status);
-      if(re.status=="success")
-      {
+
+    this.globalService.getServiceCall(`delivery/pin/${this.pincode}`,(re)=>{
+      console.log("aaaaaaaaaaaa",re);
+      if (re["message"][12] == 'a') {
         this.pinmessage = "Delivery is available to your place!";
         this.flag = 1;
       }
-      else{
+      else {
         this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
         this.flag = 0;
       }
