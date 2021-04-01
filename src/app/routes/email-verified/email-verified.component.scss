@@ -9,11 +9,13 @@
     }
   }
   .foo{
+    
     color:white;
     font-size:18px;
     background-color: transparent;
-  }
   
+  
+}
   #para{
     color:white;
     font-size:18px;
@@ -24,9 +26,18 @@
          color:green;
       }
   }
+  
   button{
     background-color: #ED3237;
     color:white;
-    border-radius: 0%;
     left:40%;
   }
+  
+
+ .mobile{
+   button{
+     background-color: #ED3237;
+     color:white;
+     left:18%;
+   }
+ }
