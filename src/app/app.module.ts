@@ -32,6 +32,7 @@ import { RequestService } from './services/request/request.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { DatasharingService } from './services/datasharing/datasharing.service';
+import { ProfileComponent } from './routes/profile/profile.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { DatasharingService } from './services/datasharing/datasharing.service';
     ProductComponent,
     TcComponent,
     PrivacyComponent,
+    ProfileComponent,
   ],
   imports: [
 

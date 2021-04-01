@@ -18,6 +18,7 @@ export class WomenComponent implements OnInit {
   pint: any;
   selected: string;
   id: string;
+  origin = window.location.origin;
 
 
   ngOnInit(): void {
@@ -45,6 +46,13 @@ product_Names()
   //console.log("ku",this.productnames)
 }
 
+  openUrl(url) {
+    console.log(url);
+    console.log(this.origin);
+    window.open(this.origin + '/products/' + url, "_self");
+  }
+
+
   pro(id) {
     console.log("id", id);
     for (let i = 0; i < this.products.length; i++) {
@@ -52,6 +60,7 @@ product_Names()
         this.particularproduct = this.products[i];
       }
     }
+    this.openUrl(this.particularproduct["productId"]);
     localStorage.myArrData = JSON.stringify(this.particularproduct);
   }
 

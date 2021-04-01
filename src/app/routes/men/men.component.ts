@@ -21,13 +21,15 @@ export class MenComponent implements OnInit, OnDestroy {
   selected : string;
   id : string;
   message: string;
-  subscription: Subscription
+  subscription: Subscription;
+  origin = window.location.origin;
 
   toppings = new FormControl();
 
   toppingList: string[] = ['Discount - High to Low','Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
 
   ngOnInit(): void {
+    console.log(this.origin);
     this.data_service.collData().subscribe(data => {
       this.allData = data;
       //console.log("data",data);
@@ -42,6 +44,13 @@ export class MenComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  openUrl(url)
+  {
+    console.log(url);
+    console.log(this.origin);
+    window.open(this.origin + '/products/' + url,"_self");
   }
 
   constructor(private shareservice: DatasharingService, private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
@@ -74,6 +83,7 @@ export class MenComponent implements OnInit, OnDestroy {
         this.particularproduct = this.products[i];
       }
     }
+    this.openUrl(this.particularproduct["productId"]);
     id = id.toString();
     localStorage.myArrData = JSON.stringify(this.particularproduct);
 

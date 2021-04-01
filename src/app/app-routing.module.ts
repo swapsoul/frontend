@@ -8,7 +8,8 @@ import {SingleproductpagesampleComponent} from './routes/singleproductpagesample
 import {AboutComponent} from './routes/about/about.component';
 import { ProductComponent} from './routes/product/product.component';
 import {TcComponent} from './routes/tc/tc.component';
-import {PrivacyComponent} from './routes/privacy/privacy.component'
+import {PrivacyComponent} from './routes/privacy/privacy.component';
+import { ProfileComponent } from './routes/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,12 +17,12 @@ const routes: Routes = [
   { path: 'men', component: MenComponent},
   { path: 'women', component: WomenComponent},
   { path: 'essentials', component: EssentialsComponent},
-  { path: 'sample', component: SingleproductpagesampleComponent},
+  { path: 'products/:id', component: SingleproductpagesampleComponent},
   { path: 'about', component: AboutComponent},
   { path: 'product', component: ProductComponent },
   {path :'terms', component: TcComponent},
-  {path :'privacy', component: PrivacyComponent}
-
+  {path :'privacy', component: PrivacyComponent},
+  { path : 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
