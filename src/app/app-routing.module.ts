@@ -9,6 +9,8 @@ import {AboutComponent} from './routes/about/about.component';
 import { ProductComponent} from './routes/product/product.component';
 import {TcComponent} from './routes/tc/tc.component';
 import {PrivacyComponent} from './routes/privacy/privacy.component';
+import {ResetpwdComponent} from './routes/resetpwd/resetpwd.component';
+import { EmailVerifiedComponent} from './routes/email-verified/email-verified.component';
 import { ProfileComponent } from './routes/profile/profile.component';
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   {path :'terms', component: TcComponent},
   {path :'privacy', component: PrivacyComponent},
+  {path :'reset_password', component: ResetpwdComponent},
+  {path :'email_verified', component: EmailVerifiedComponent},
   { path : 'profile', component: ProfileComponent}
 ];
 
