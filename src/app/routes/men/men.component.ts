@@ -85,7 +85,7 @@ export class MenComponent implements OnInit, OnDestroy {
     }
     this.openUrl(this.particularproduct["productId"]);
     id = id.toString();
-    localStorage.myArrData = JSON.stringify(this.particularproduct);
+    //localStorage.myArrData = JSON.stringify(this.particularproduct);
 
     this.shareservice.setProjects(id);
 
