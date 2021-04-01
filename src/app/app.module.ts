@@ -35,6 +35,8 @@ import { DatasharingService } from './services/datasharing/datasharing.service';
 import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
 import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
 import { ProfileComponent } from './routes/profile/profile.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -74,7 +76,9 @@ import { ProfileComponent } from './routes/profile/profile.component';
     MatFormFieldModule,
     MatCheckboxModule,
     MatSelectModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    MatMenuModule,
+    MatSnackBarModule,
   ],
   providers: [ GlobalService, RequestService, CookieService, DatasharingService ],
   bootstrap: [ AppComponent ]

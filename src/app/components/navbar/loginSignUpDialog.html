@@ -30,12 +30,18 @@
       <div class="card-column-3">
         <mat-checkbox class="example-margin">Remember me</mat-checkbox>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <button mat-button class="button-black">Forget password?</button>
+        <button mat-button class="button-black">Forgot password?</button>
       </div>
       <br>
       <div class="card-column-4">
-        <button mat-button class="yellow-button" (click)="login()"> &nbsp; &nbsp; &nbsp; Login In &nbsp; &nbsp;
+        <button mat-button class="yellow-button" (click)="login()"> &nbsp; &nbsp; &nbsp; Log In &nbsp; &nbsp;
           &nbsp;</button>
+        <ng-template [ngIf]="loginStatus">
+          <span>{{this.errorMsglogin}}</span>
+        </ng-template>
+        <ng-template [ngIf]="!loginStatus">
+          <span>{{this.errorMsglogin}}</span>
+        </ng-template>
       </div>
     </div>
 
@@ -96,8 +102,14 @@
           <button [disabled]="!registerForm.valid" type="submit" mat-button class="yellow-button">Create
             Account</button>
         </div>
+        <!-- <button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+          User already exists
+        </button> -->
         <ng-template [ngIf]="submitStatus">
-          <span>Created Account succesfully!</span>
+          <span>{{this.errorMsg}}</span>
+        </ng-template>
+        <ng-template [ngIf]="!submitStatus">
+          <span>{{this.errorMsg}}</span>
         </ng-template>
       </form>
     </div>
