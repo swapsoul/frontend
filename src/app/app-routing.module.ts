@@ -8,7 +8,9 @@ import {SingleproductpagesampleComponent} from './routes/singleproductpagesample
 import {AboutComponent} from './routes/about/about.component';
 import { ProductComponent} from './routes/product/product.component';
 import {TcComponent} from './routes/tc/tc.component';
-import {PrivacyComponent} from './routes/privacy/privacy.component'
+import {PrivacyComponent} from './routes/privacy/privacy.component';
+import {ResetpwdComponent} from './routes/resetpwd/resetpwd.component';
+import { EmailVerifiedComponent} from './routes/email-verified/email-verified.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,8 +22,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'product', component: ProductComponent },
   {path :'terms', component: TcComponent},
-  {path :'privacy', component: PrivacyComponent}
-
+  {path :'privacy', component: PrivacyComponent},
+  {path :'reset_password', component: ResetpwdComponent},
+  {path :'email_verified', component: EmailVerifiedComponent}
 ];
 
 @NgModule({
