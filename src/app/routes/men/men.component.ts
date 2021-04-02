@@ -36,8 +36,8 @@ export class MenComponent implements OnInit, OnDestroy {
 
       this.globalservice.getServiceCall('product', (pdata) => {
         //console.log(pdata.status);
-        console.log(pdata.data);
-        this.products = pdata.data;;
+        console.log(pdata.body.data);
+        this.products = pdata.body.data;;
       })
     })
   }
@@ -85,7 +85,7 @@ export class MenComponent implements OnInit, OnDestroy {
     }
     this.openUrl(this.particularproduct["productId"]);
     id = id.toString();
-    localStorage.myArrData = JSON.stringify(this.particularproduct);
+    //localStorage.myArrData = JSON.stringify(this.particularproduct);
 
     this.shareservice.setProjects(id);
 

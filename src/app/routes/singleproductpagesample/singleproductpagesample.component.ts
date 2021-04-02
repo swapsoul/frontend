@@ -35,43 +35,35 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params["id"]);
+      //console.log(params["id"]);
       this.productid = params["id"];
     })
     this.globalService.getServiceCall('product', (pdata) => {
-      //console.log(pdata.status);
-      console.log(pdata.data);
-      this.products = pdata.data;
-      console.log(this.products.length);
-      for (let i = 0; i < this.products.length; i++) {
-        console.log(this.products[i].productId);
-        if (this.productid == this.products[i]["productId"]) {
-          this.pro_id = this.products[i]["_id"];
-          console.log(this.pro_id);
-          break;
-        }
-      }
-      console.log(this.pro_id);
-      this.pro_id = this.pro_id.toString();
-      console.log(this.productid);
+      //console.log(pdata);
+      //console.log(pdata.body.data);
+      this.products = pdata.body.data;
+      //console.log(this.products.length);
+      //console.log(this.pro_id);
+      //this.pro_id = this.pro_id.toString();
+      //console.log(this.productid);
 
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
-        console.log(re["data"]);
+        //console.log(re.body.data[0]);
+        this.productData = re.body.data[0];
+        //console.log(this.productData["productId"])
       })
     })
    
-    console.log(this.productid);
-    console.log(this.pro_id);
+    //console.log(this.productid);
+    //console.log(this.pro_id);
     //console.log(this.products.length);
-
-    
-
+  
     /*this.globalService.getServiceCall(`product/${id}`, (re) => {
       console.log(re);
     })*/
-    this.productData = JSON.parse(localStorage.myArrData);
+    //this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
-    this.pid = this.productData["_id"].toString();
+    //this.pid = this.productData["_id"].toString();
     //console.log(this.pid)
   }
 
@@ -125,12 +117,12 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     console.log(this.pincode);
 
     this.globalService.getServiceCall(`delivery/pin/${this.pincode}`,(re)=>{
-      console.log("aaaaaaaaaaaa",re);
-      if (re["message"][12] == 'a') {
+      //console.log(re.status);
+      if (re.status==200) {
         this.pinmessage = "Delivery is available to your place!";
         this.flag = 1;
       }
-      else {
+      else if(re.status==219){
         this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
         this.flag = 0;
       }
