@@ -3,11 +3,12 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: [ './navbar.component.scss' ]
+  styleUrls: ['./navbar.component.scss'],
 })
 
 export class NavbarComponent implements OnInit {
@@ -16,6 +17,7 @@ export class NavbarComponent implements OnInit {
   term: string;
   hasValue: boolean;
   placeholdervalue = 'Search';
+  profileFlag = false
 
   constructor(public dialog: MatDialog) {
   }
@@ -25,11 +27,17 @@ export class NavbarComponent implements OnInit {
     this.placeholdervalue = ' ';
   }
 
+  logout() {
+    localStorage.clear();
+    this.profileFlag = false
+  }
+
+
   openDialog(): void {
 
     const dialogRef = this.dialog.open(LoginSignUpDialogComponent, {
-      width: '410px',
-      height: '500px',
+      width: '412px',
+      height: '510px',
       data: null,
     });
 
@@ -46,33 +54,42 @@ export class NavbarComponent implements OnInit {
 @Component({
   selector: 'app-login-signup-dialog',
   templateUrl: 'loginSignUpDialog.html',
-  styleUrls: [ './navbar.component.scss' ]
+  styleUrls: ['./navbar.component.scss']
 })
 
-export class LoginSignUpDialogComponent implements OnInit{
+export class LoginSignUpDialogComponent implements OnInit {
 
+  myStorage = window.localStorage;
   hide = true;
   submitStatus = false;
+  loginStatus = false;
   loginForm = new FormGroup({
-    email: new FormControl('', [ Validators.required, Validators.email ]),
-    password: new FormControl('', [ Validators.required, Validators.minLength(6) ])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
   registerForm: FormGroup = this.formBuilder.group({
-    username: [ undefined, { validators: [ Validators.required ], updateOn: 'change' } ],
+    username: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     email: [
       undefined,
       {
-        validators: [ Validators.required, Validators.email ],
+        validators: [Validators.required, Validators.email],
         updateOn: 'change',
       },
     ],
-    phone: [ undefined, { updateOn: 'change' } ],
-    password: [ undefined, { validators: [ Validators.required ], updateOn: 'change' } ],
+    phone: [undefined, { updateOn: 'change' }],
+    password: [undefined, { validators: [Validators.required], updateOn: 'change' }],
   });
+
+  durationInSeconds = 5;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  errorMsg = '';
+  errorMsglogin = '';
 
   constructor(
     private globalService: GlobalService,
+    public snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<LoginSignUpDialogComponent>,
     private requestService: RequestService,
     private formBuilder: FormBuilder,
@@ -93,21 +110,30 @@ export class LoginSignUpDialogComponent implements OnInit{
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    setTimeout(() => {
+      this.dialogRef.close();
+    }, 1000);
   }
 
   login(): void {
     this.requestService.login(this.loginForm.get('email').value, this.loginForm.get('password').value, (res) => {
-      if ( !res.error ) {
+      if (!res.error) {
+
+        console.log({ observe: 'response' })
+        console.log(res.status)
+        localStorage.setItem('token', 'true');
+        this.errorMsglogin = 'Successfully Logged In'
+        this.loginStatus = true;
         this.onNoClick();
       } else {
         console.log('Login Failed');
+        this.errorMsglogin = 'Invalid username/password'
       }
     });
   }
 
   getErrorMessage(): string {
-    if ( this.loginForm.get('email').hasError('required') ) {
+    if (this.loginForm.get('email').hasError('required')) {
       return 'You must enter a value';
     }
 
@@ -117,14 +143,24 @@ export class LoginSignUpDialogComponent implements OnInit{
   submitForm(): void {
     const user = this.registerForm.value;
     this.requestService.signup(user.username, user.password, user.email, user.phone, (res) => {
-      if ( !res.error ) {
-        // this.onNoClick();
-        console.log(res);
+      if (!res.error) {
+        localStorage.setItem("token", "true");
+        this.errorMsg = 'Created Account succesfully!'
         this.submitStatus = true;
+        this.onNoClick();
       } else {
-        console.log('Login Failed');
-        this.submitStatus = false;
+        console.log('SigUp Error');
+        this.errorMsg = 'User already exists'
       }
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+      panelClass: ['mat-toolbar', '#689f38'],
     });
   }
 
