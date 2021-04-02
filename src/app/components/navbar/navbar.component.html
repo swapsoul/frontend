@@ -2,8 +2,8 @@
   <a class="navbar-brand" style="margin-right: 60px; margin-left: 80px;" href="#">
     <img src="assets/img/logo.png" style="height:40px; width: 120px;">
   </a>
-  <button class="navbar-toggler navbar-dark" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
-  aria-controls="navbarToggler" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-dark" type="button" (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggler" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
@@ -29,8 +29,8 @@
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
       <mat-form-field floatLabel="never">
-        <input class="text-white" matInput type="search" [(ngModel)]="term" name="term" placeholder="Search&hellip;" autocomplete="off"
-          (blur)="hasValue=term?true:false">
+        <input class="text-white" matInput type="search" [(ngModel)]="term" name="term" placeholder="Search&hellip;"
+          autocomplete="off" (blur)="hasValue=term?true:false">
       </mat-form-field>
       <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
         <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
@@ -46,8 +46,12 @@
         <mat-icon>work_outliner</mat-icon>
       </button>
 
-      <a mat-button class="button-white" (click)="openDialog()">Login/SignUp</a>
+      <button mat-button class="button-white" (click)="openDialog()" *ngIf="!profileFlag">Login/SignUp</button>
+      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="profileFlag">Hi, Swapsoul </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="button-black" onclick="location.href='profile'">Profile</button>
+        <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
+      </mat-menu>
     </form>
   </div>
 </nav>
-
