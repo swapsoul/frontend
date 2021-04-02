@@ -35,22 +35,22 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params["id"]);
+      //console.log(params["id"]);
       this.productid = params["id"];
     })
     this.globalService.getServiceCall('product', (pdata) => {
-      //console.log(pdata.status);
-      //console.log(pdata.data);
-      this.products = pdata.data;
+      //console.log(pdata);
+      //console.log(pdata.body.data);
+      this.products = pdata.body.data;
       //console.log(this.products.length);
       //console.log(this.pro_id);
       //this.pro_id = this.pro_id.toString();
       //console.log(this.productid);
 
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
-        //console.log(re["data"]);
-        this.productData = re["data"][0];
-        console.log(this.productData["productId"])
+        //console.log(re.body.data[0]);
+        this.productData = re.body.data[0];
+        //console.log(this.productData["productId"])
       })
     })
    
@@ -63,7 +63,7 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     })*/
     //this.productData = JSON.parse(localStorage.myArrData);
     //console.log(this.productData);
-    this.pid = this.productData["_id"].toString();
+    //this.pid = this.productData["_id"].toString();
     //console.log(this.pid)
   }
 
@@ -117,13 +117,12 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     console.log(this.pincode);
 
     this.globalService.getServiceCall(`delivery/pin/${this.pincode}`,(re)=>{
-      //console.log("aaaaaaaaaaaa",re);
-      console.log(re["status"]);
-      if (re["message"][12] == 'a') {
+      //console.log(re.status);
+      if (re.status==200) {
         this.pinmessage = "Delivery is available to your place!";
         this.flag = 1;
       }
-      else {
+      else if(re.status==219){
         this.pinmessage = "Sorry, delivery is not available at this Pincode :(";
         this.flag = 0;
       }

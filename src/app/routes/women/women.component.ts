@@ -27,8 +27,8 @@ export class WomenComponent implements OnInit {
       //console.log("data",data);
       this.globalservice.getServiceCall('product', (pdata) => {
         //console.log(pdata.status);
-        console.log(pdata.data);
-        this.products = pdata.data;
+        console.log(pdata.body.data);
+        this.products = pdata.body.data;
       })
     })
   }
