@@ -1,12 +1,12 @@
 <!--Section: Block Content-->
-<body marginheight="0" topmargin="0" marginwidth="0" leftmargin="0">
+
+<div class="d-md-block d-none containera px-lg-3">
     <!--100% body table-->
-    <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
-        style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+    <table
+              style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
         <tr>
             <td>
-                <table width="100%" border="0"
-                    align="center" cellpadding="0" cellspacing="0">
+                <table width="100%" align="center">
                     <tr>
                         <td style="height:80px;">&nbsp;</td>
                     </tr>
@@ -21,12 +21,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="table">
+                            <table class="table">
                                 <tr>
                                     <td style="height:40px;">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 35px;">
+                                    <td>
                                         <h1>You have requested to reset your password</h1>
                                         <hr>
                                         <span>
@@ -39,7 +39,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 35px;">
+                                    <td>
                                         <span>
                                             <p>Enter your verification code:</p>
                                         </span>
@@ -49,7 +49,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 35px;">
+                                    <td>
                                         <span>
                                             <p>Enter new Password:</p>
                                         </span>
@@ -58,7 +58,7 @@
                                                                            </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 35px;">
+                                    <td>
                                         <span>
                                             <p>Confirm new Password:
                                        </p>
@@ -97,8 +97,106 @@
             </td>
         </tr>
     </table>
+    </div>
     <!--/100% body table-->
+    <div class="d-block d-md-none rwdcontainer reset">
+      <table
+      style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+<tr>
+    <td>
+        <table width="100%" align="center">
+            <tr>
+                <td style="height:80px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                  
+                  
+                </td>
+            </tr>
+            <tr>
+                <td style="height:20px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="table">
+                        <tr>
+                            <td style="height:40px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h1 class="mobile">You have requested to reset your password</h1>
+                                <hr>
+                                <span>
+                                    <p>Enter your email:</p>
+                                    
+                                </span>
+                               
+                                <input type="email" class="form-control" id="email" placeholder="xyz@gmail.com" name="email"> 
+                              <br><br>
+                                <button mat-button>CONFIRM</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>
+                                    <p>Enter your verification code:</p>
+                                </span>
+                                <input type="text" class="form-control" id="text" placeholder="abcdXYZ" name="code">  
+                                <br><br>
+                                <button mat-button>CONFIRM</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>
+                                    <p>Enter new Password:</p>
+                                </span>
+                                <input type="password" class="form-control" id="password" placeholder="new password" name="password">  
 
+                                                                   </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>
+                                    <p>Confirm new Password:
+                               </p>
+                               
+                                </span>
+                                
+                                <input type="password" class="form-control" id="password" placeholder="Confirm new password" name="password">
+                                
+                                                                 </td>
+                        </tr><br><br><br><br>
+                       <tr>
+                        <div class="example-button-container" style="float:none;">
+                            <button style="left:10%;background-color: #ED3237;" mat-fab color="warn" aria-label="Example icon button with a home icon">
+                              <mat-icon><svg style="margin-top:-16px;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+                              </svg></mat-icon>
+                            </button>
+                          </div>
+                       </tr>
+                        <tr>
+                            <td style="height:40px;">&nbsp; </td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td style="height:20px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">
+                </td>
+            </tr>
+            <tr>
+                <td style="height:80px;">&nbsp;</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+    </div>
 <br><br>
 
 <div class="page-footer-section bg-dark fg-white">

@@ -42,16 +42,14 @@ input{
     width:60%;
 }
 p{
-    color:#455056; font-size:20px; width:300px;height:10px;
+    color:#455056; font-size:20px; width:300px;height:25px;
 }
 h1{
     color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;text-align:center;
 }
-body{
-    margin: 0px; background-color: #f2f3f8;
-}
+
 table{
-    background-color: #f2f3f8; max-width:670px; margin:0 auto;
+    margin:0 auto;
 }
 span{
     display:inline-block; vertical-align:middle; margin:29px 0 26px;width:200px;
@@ -62,7 +60,7 @@ button{
 }
 
 .table{
-    max-width:670px;background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);
+    max-width:600px;background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);
 
 }
 tr,td{
@@ -71,4 +69,47 @@ tr,td{
 hr{
     width:325px;
     color:rgb(68, 66, 66);
+}
+.reset{
+    // .reset_password{
+    //     left:35%;
+    //     width:350px;
+    //     height:450px;
+    // }  
+    input{
+        font-size:15px;
+        text-align:center;
+        width:80%;
+        
+    }
+    p{
+        color:#455056; font-size:20px; width:300px;height:25px;padding-left: 30px;
+    }
+    .mobile{
+        color:#1e1e2d; font-weight:500;font-size:32px;font-family:'Rubik',sans-serif;
+    }
+    
+    table{
+        margin:0 auto;
+    }
+    span{
+        display:inline-block; vertical-align:middle; margin:29px 0 26px;width:200px;
+    }
+    button{
+        
+        background:#ED3237;text-decoration:none !important; font-weight:500; color:#fff;font-size:14px;margin-top:-33px;margin-left:90px;
+    }
+    
+    .table{
+        background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);
+    
+    }
+    tr,td{
+        border:transparent;
+        
+    }
+    hr{
+        width:325px;
+        color:rgb(68, 66, 66);
+    }  
 }
