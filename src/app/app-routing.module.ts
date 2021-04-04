@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'men', component: MenComponent},
   { path: 'women', component: WomenComponent},
   { path: 'essentials', component: EssentialsComponent},
-  { path: 'products/:id', component: SingleproductpagesampleComponent},
+  { path: 'products/:id', component: SingleproductpagesampleComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent},
   { path: 'product', component: ProductComponent ,canActivate: [AuthGuard] },
   {path :'terms', component: TcComponent},
