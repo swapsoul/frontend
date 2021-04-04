@@ -58,9 +58,9 @@
           class="bi bi-heart-fill heartcol" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
         </svg>
-					<h2 class="text-bold text-strong product_name">{{productData["productName"]}}</h2>
+					<h2 class="product_name">{{productData["productName"]}}</h2>
 					<span>
-						<h1 class="head text-boldy d-inline-flex">&#8377; {{productData["productSalePrice"]}} &nbsp;</h1>
+						<h1 class="head text-boldy d-inline-flex"><strong>&#8377; {{productData["productSalePrice"]}}</strong> &nbsp;</h1>
               <del class="d-inline-flex fonttwelve"> <p class="fonttwelve d-inline-flex">&#8377;{{productData["productRetailPrice"]}}</p></del> &nbsp; <span class="discount fonttwelve"> <p class="fonttwelve d-inline-flex">{{productData["productDiscount"]}}% OFF</p></span><br/>
               <div class="d-inline-flex right" id="rcorners4">
                 <p class="d-inline-flex t-white ml-1">{{productData["productRating"]}}</p> &nbsp;
@@ -69,34 +69,41 @@
               <br/><br/><br/>
               <span class="size_heading"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
-				<div class="example-button-row">
-				  <div class="example-flex-container" id="myDiv">
-            <div *ngFor="let size of productData['productSizes']">
-              <button class="size active" id="size" mat-fab aria-label="Example icon button with a bookmark icon" (click)=checksize()>
-                <mat-icon>{{size}}</mat-icon>
-              </button>
+          <br/>
+          <div class="example-button-row">
+            <div class="example-flex-container" id="myDiv">
+              <div *ngFor="let size of productData['productSizes']">
+                <button class="btn btn-warn active mr-3 mt-3 mb-3 px-3" (click)="act1($event)" id="b1" value="button1{{size}}">
+                  <mat-icon class="mt-2">{{size}}</mat-icon>
+                </button>
+              </div>
             </div>
-					</div>
-				  </div>
+          </div>
 				
 			  </section>
-              <span class="colors_heading"> Colors</span><br>
+
+              <span class="colors_heading"> <strong>Colors</strong></span><br>
               <form>
 			  <section>
-				<div class="example-button-row" required>
-				  <button class="colors" mat-button></button>&nbsp;
-				  <button class="colors1" mat-button></button>&nbsp;
-				  <button class="colors2" mat-button></button>
+
+				<div class="example-button-row" required id="coldiv">
+        <div *ngFor="let color of productData['productColors']" class="d-inline-flex">
+          <button class="btn btn-warn active mr-3 mt-3 mb-3 px-3" (click)="act2($event)" id="b2" value="button2" [ngStyle]="{'background-color': color}">
+            <mat-icon></mat-icon>
+          </button>
+        </div>
 				</div>
+
 			  </section>
+
         </form>
 					</span>
           <br>
           <span class="d-md-block d-none containera">
-  			  <button mat-raised-button class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+  			  <button mat-raised-button class="add_to_cart" [disabled]="!(sizeselected && colorselected)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <button mat-raised-button class="wish_list"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+			  <button mat-raised-button class="wish_list" [disabled]="!(sizeselected && colorselected)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
           <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"/>
         </svg>&nbsp;&nbsp;BUY NOW</button><br>
 					     </span>
@@ -127,7 +134,7 @@
 					<span class="extras-codeblocks description">
 						<ul class="nav nav-tabs my-2" id="myTab" role="tablist">
 							<li class="nav-item" role="presentation">
-								<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Full Description</a>
+								<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Full Description</a>
 							</li>
 							<li class="nav-item" role="presentation">
 								<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Instructions</a>

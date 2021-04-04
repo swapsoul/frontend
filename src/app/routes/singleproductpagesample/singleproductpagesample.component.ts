@@ -26,6 +26,8 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
   productid: number;
   products: any[];
   pro_id: any;
+  sizeselected:boolean = false;
+  colorselected:boolean = false;
 
   searchValue = '';
 
@@ -38,6 +40,8 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
       //console.log(params["id"]);
       this.productid = params["id"];
     })
+
+    
     this.globalService.getServiceCall('product', (pdata) => {
       //console.log(pdata);
       //console.log(pdata.body.data);
@@ -50,9 +54,14 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
         //console.log(re.body.data[0]);
         this.productData = re.body.data[0];
-        //console.log(this.productData["productId"])
       })
+
+      //this.act1();
+      //this.act2();
+
     })
+
+    
    
     //console.log(this.productid);
     //console.log(this.pro_id);
@@ -80,38 +89,44 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     heart.classList.toggle('red');
   }
 
-  checksize()
-  {
-    var btnContainer = document.getElementById("myDiv");
+ act1(b){
+   console.log(b.path);
+   var header = document.getElementById("myDiv");
+   var btns = header.getElementsByClassName("btn");
+   for(let i=0;i<btns.length;i++)
+   {
+     btns[i].classList.remove("active");
+     btns[i].classList.remove("focus");
+   }
+   if(b.path.length==18){
+   b.path[1].classList.add('active');
+     b.path[1].classList.add('focus');
+   }
+   else if(b.path.length==17){
+   b.path[0].classList.add('active');
+   b.path[0].classList.add('focus');
+   }
+   this.sizeselected = true;
+ }
 
-    // Get all buttons with class="btn" inside the container
-    var btns = btnContainer.getElementsByClassName("size");
-    //console.log(btns);
-    console.log(btns.length);
-
-    // Loop through the buttons and add the active class to the current/clicked button
-    for (var i = 0; i < btns.length; i++) {
-      //console.log("amqa")
-      btns[i].addEventListener("click", function () {
-        console.log("pppp")
-        var current = document.getElementsByClassName("active");
-        console.log(current);
-
-        // If there's no active class
-        if (current.length > 0) {
-          console.log("prprprprpprpr")
-          current[0].className = current[0].className.replace(" active", "");
-        }
-
-        // Add the active class to the current/clicked button
-        console.log(this.className);
-        this.className += " active";
-        console.log(this.className);
-      });
-      console.log("ererrrrrr")
+  act2(b2) {
+    console.log(b2.path);
+    var header = document.getElementById("coldiv");
+    var btns = header.getElementsByClassName("btn");
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].classList.remove("active");
+      btns[i].classList.remove("focus");
     }
+    if (b2.path.length == 18) {
+      b2.path[1].classList.add('active');
+      b2.path[1].classList.add('focus');
+    }
+    else if (b2.path.length == 17) {
+      b2.path[0].classList.add('active');
+      b2.path[0].classList.add('focus');
+    }
+    this.colorselected = true;
   }
-
 
   verifypincode(){
     console.log(this.pincode);

@@ -27,7 +27,7 @@ const routes: Routes = [
   {path :'privacy', component: PrivacyComponent},
   {path :'reset_password', component: ResetpwdComponent},
   {path :'email_verified', component: EmailVerifiedComponent},
-  { path : 'profile', component: ProfileComponent}
+  { path : 'profile/:username', component: ProfileComponent }
 ];
 
 @NgModule({

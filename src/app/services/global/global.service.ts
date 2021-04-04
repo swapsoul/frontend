@@ -17,6 +17,7 @@ export class GlobalService {
 
     BASE_API_URL = environment.baseUrl;
     headerKey = 'SwapsoulToken';
+    profiledata: any[];
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
 
     public postServiceCall(url: string, params: any, callback, withToken = false): any {
@@ -26,7 +27,10 @@ export class GlobalService {
 
         this.httpClient.post(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
             (data) => {
-                console.log(data);
+                console.log(params);
+                console.log(params["usernameOrEmail"]);
+                this.cookie.set('useremail', params["usernameOrEmail"]);
+                this.setProfileData(params);
                 let res = data; // Success
                 callback(res);
             },
@@ -37,13 +41,17 @@ export class GlobalService {
         );
     }
 
-    public getServiceCall(url: string, callback): any {
+    public getServiceCall(url: string, callback, withToken = true): any {
 
         // let BASE_API_URL = 'http://localhost:4000';
           //console.log('BASE_API_URL is '+this.BASE_API_URL);
           //console.log(url);
           //console.log(callback);
-        this.httpClient.get(this.BASE_API_URL + url, { headers: this.createHeaders(), observe: 'response' }).subscribe(
+          //let h = this.createHeaders(withToken);
+          //console.log(h);
+          //h.append({"swapsoultoken":'fgbkdjs'});
+          //console.log(h);
+        this.httpClient.get(this.BASE_API_URL + url, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
             (data) => {
                 console.log(data);
                 let res = data; // Success Response
@@ -86,6 +94,18 @@ export class GlobalService {
 
   setCookie(username, secret): void {
     this.cookie.set('token', btoa(username + ':' + secret), 10, '/');
+  }
+
+  setProfileData(data){
+      console.log(data);
+      this.profiledata = data;
+      this.getProfileData();
+  }
+
+  getProfileData()
+  {
+      console.log(this.profiledata);
+      return this.profiledata;
   }
 
   createHeaders(withToken = false): any {

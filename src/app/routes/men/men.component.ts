@@ -36,7 +36,7 @@ export class MenComponent implements OnInit, OnDestroy {
 
       this.globalservice.getServiceCall('product', (pdata) => {
         //console.log(pdata.status);
-        console.log(pdata.body.data);
+        //console.log(pdata.body.data);
         this.products = pdata.body.data;;
       })
     })

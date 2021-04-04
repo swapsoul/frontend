@@ -12,7 +12,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">UserName</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="userName" placeholder="username"
+                                <input class="form-control" type="text" name="userName" placeholder="{{userName}}"
                                     ng-model="me.firstName" disabled>
                             </div>
                         </div>
@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-4">
-                                <input class="form-control" type="text" name="email" placeholder="Email"
+                                <input class="form-control" type="text" name="email" placeholder="{{useremail}}"
                                     ng-model="me.email" disabled>
                             </div>
                         </div>
@@ -28,8 +28,11 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Phone</label>
                             <div class="col-sm-4">
-                                <input class="form-control" (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone" placeholder="xxxxxxxxxx"
-                                    ng-model="me.phone" disabled>
+                                <form (submit)="onSubmit()">
+                                    <input [(ngModel)]="mobile" (keyup)="onKey($event)" class="form-control" (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone"
+                                        placeholder="{{phone}}" ng-model="me.phone" disabled>
+                                </form>
+                                
                             </div>
                                 <mat-icon class="write" (click)=removedisabled();>create</mat-icon>
                         </div>
