@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -12,15 +12,17 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 })
 
 export class NavbarComponent implements OnInit {
+  // profileFlag = GlobalService.profileFlag;
+  // profileFlag: boolean;
   public isCollapsed = true;
 
   term: string;
   hasValue: boolean;
   placeholdervalue = 'Search';
-  profileFlag = false
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public globalService: GlobalService) {
   }
+
 
   searchclick() {
     this.hasValue = !this.hasValue;
@@ -29,7 +31,7 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    this.profileFlag = false
+    this.globalService.profileFlag = false
   }
 
 
@@ -42,6 +44,7 @@ export class NavbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log("after closed",this.globalService.profileFlag)
       // console.log('The dialog was closed');
     });
   }
@@ -88,15 +91,16 @@ export class LoginSignUpDialogComponent implements OnInit {
   errorMsglogin = '';
 
   constructor(
-    private globalService: GlobalService,
+    public globalService: GlobalService,
     public snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<LoginSignUpDialogComponent>,
     private requestService: RequestService,
     private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: null) {
+    @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit(): void {
+    console.log(this.globalService.profileFlag)
     this.setPhoneValidation();
   }
 
@@ -123,8 +127,11 @@ export class LoginSignUpDialogComponent implements OnInit {
         console.log(res.status)
         localStorage.setItem('token', 'true');
         this.errorMsglogin = 'Successfully Logged In'
+        this.globalService.profileFlag = true;
         this.loginStatus = true;
+        this.globalService.UserName = res.body.data.userName
         this.onNoClick();
+        console.log(this.globalService.profileFlag)
       } else {
         console.log('Login Failed');
         this.errorMsglogin = 'Invalid username/password'
@@ -147,6 +154,8 @@ export class LoginSignUpDialogComponent implements OnInit {
         localStorage.setItem("token", "true");
         this.errorMsg = 'Created Account succesfully!'
         this.submitStatus = true;
+        this.globalService.profileFlag = true;
+        this.globalService.UserName = user.username;
         this.onNoClick();
       } else {
         console.log('SigUp Error');

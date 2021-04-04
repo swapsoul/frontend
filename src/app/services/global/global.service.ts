@@ -16,6 +16,8 @@ import { environment } from '../../../environments/environment';
 export class GlobalService {
 
     BASE_API_URL = environment.baseUrl;
+    public profileFlag: boolean = false;
+    public UserName: String = 'My Account'
     headerKey = 'SwapsoulToken';
     profiledata: any[];
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
