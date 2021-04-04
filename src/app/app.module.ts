@@ -37,6 +37,8 @@ import { EmailVerifiedComponent } from './routes/email-verified/email-verified.c
 import { ProfileComponent } from './routes/profile/profile.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartComponent } from './routes/cart/cart.component';
+import { NotfoundComponent } from './routes/notfound/notfound.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     PrivacyComponent,
     ResetpwdComponent,
     EmailVerifiedComponent,
-    ProfileComponent
+    ProfileComponent,
+    CartComponent,
+    NotfoundComponent
   ],
   imports: [
 

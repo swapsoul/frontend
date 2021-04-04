@@ -1,0 +1,66 @@
+<div class="cart-container">
+  <div class="col-12">
+    <div class="cart-navigation">
+      <table>
+        <tr>
+          <td><img src="assets/img/bag.png"></td>
+          <td></td>
+          <td><img src="assets/img/bag.png"></td>
+          <td></td>
+          <td><img src="assets/img/bag.png"></td>
+        </tr>
+        <tr>
+          <td>My Bag</td>
+          <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
+          <td>Confirm Address</td>
+          <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
+          <td>Payment</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="col-lg-6 col-md-12 bag-item-container">
+      <div class="col-12"><span>My Bag Items (02)</span></div>
+      <div class="col-12 cart-item">
+        <div class="product-details-container d-flex">
+          <div class="product-image-container">
+            <img src="assets/img/productimage1.jpg">
+          </div>
+          <div class="product-details-text">
+            <div class="product-details col-md-6 col-sm-12">
+              <div>Product name here</div>
+              <div>{{ 256 | currency: 'INR' }}</div>
+              <div>
+                <span class="strikethrough">{{ 256 | currency: 'INR' }}</span>
+                <span class="discount">50% OFF</span>
+              </div>
+              <div class="modifiers d-flex">
+                <div class="col-6 quantity-modifier d-flex">
+                  <button class="decrement">-</button>
+                  <span class="quantity">1</span>
+                  <button class="increment">+</button>
+                </div>
+                <div class="col-6 size-modifier">
+                  <select>
+                    <option selected>XL</option>
+                  </select>
+                </div>
+              </div>
+              <div>Delivery by <strong>6th March</strong> at <strong>560066</strong></div>
+            </div>
+            <div class="product-discount col-md-6 col-sm-12 text-right-md">
+              <div>Coupon Discount: {{ 120 | currency: 'USD'}}</div>
+              <div>Code: <span class="coupon-code">NEW120</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col-6 item-action-btn">Remove</div>
+          <div class="col-6 item-action-btn">Move To Wishlist</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">Lower Right</div>
+  </div>
+</div>
