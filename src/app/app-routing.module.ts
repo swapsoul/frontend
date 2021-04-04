@@ -12,7 +12,7 @@ import { PrivacyComponent } from './routes/privacy/privacy.component';
 import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
 import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
 import { ProfileComponent } from './routes/profile/profile.component';
-import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
+import { AuthGuardService  as AuthGuard } from './services/auth/auth.service';
 import { CartComponent } from './routes/cart/cart.component';
 import { NotfoundComponent } from './routes/notfound/notfound.component';
 
@@ -24,12 +24,12 @@ const routes: Routes = [
   { path: 'essentials', component: EssentialsComponent },
   { path: 'products/:id', component: SingleproductpagesampleComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'product', component: ProductComponent, canActivate: [AuthGuard] },
+  { path: 'product', component: ProductComponent },
   { path: 'terms', component: TcComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'reset_password', component: ResetpwdComponent },
   { path: 'email_verified', component: EmailVerifiedComponent },
-  { path: 'profile/:username', component: ProfileComponent },
+  { path: 'profile/:username', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: CartComponent },
   { path: '**', component: NotfoundComponent }
 ];
