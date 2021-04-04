@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
+import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 
 @Component({
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
   hasValue: boolean;
   placeholdervalue = 'Search';
 
-  constructor(public dialog: MatDialog, public globalService: GlobalService) {
+  constructor(public dialog: MatDialog, public globalService: GlobalService,private _router:Router) {
   }
 
 
@@ -32,6 +33,9 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.globalService.profileFlag = false
+    this._router.navigate(['home']);
+    // console.log("After logged out",this.globalService.profileFlag )
+    return false;
   }
 
 
@@ -44,7 +48,7 @@ export class NavbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("after closed",this.globalService.profileFlag)
+      // console.log("after closed",this.globalService.profileFlag)
       // console.log('The dialog was closed');
     });
   }
@@ -100,7 +104,7 @@ export class LoginSignUpDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.globalService.profileFlag)
+    // console.log(this.globalService.profileFlag)
     this.setPhoneValidation();
   }
 
@@ -116,22 +120,20 @@ export class LoginSignUpDialogComponent implements OnInit {
   onNoClick(): void {
     setTimeout(() => {
       this.dialogRef.close();
-    }, 1000);
+    }, 500);
   }
 
   login(): void {
     this.requestService.login(this.loginForm.get('email').value, this.loginForm.get('password').value, (res) => {
       if (!res.error) {
 
-        console.log({ observe: 'response' })
-        console.log(res.status)
         localStorage.setItem('token', 'true');
         this.errorMsglogin = 'Successfully Logged In'
         this.globalService.profileFlag = true;
         this.loginStatus = true;
         this.globalService.UserName = res.body.data.userName
         this.onNoClick();
-        console.log(this.globalService.profileFlag)
+        // console.log(this.globalService.profileFlag)
       } else {
         console.log('Login Failed');
         this.errorMsglogin = 'Invalid username/password'
