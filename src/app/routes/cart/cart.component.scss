@@ -1,5 +1,11 @@
+$color-pink: deeppink;
+$border-color: #ccc;
+$border-radius-px: 8px;
+
 .cart-navigation {
   max-height: 20%;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 10px;
 
   table {
     margin: 0 auto;
@@ -13,7 +19,7 @@
     .dashes {
       letter-spacing: 5px;
       font-weight: bolder;
-      color: deeppink;
+      color: $color-pink;
       padding: 0;
     }
   }
@@ -23,25 +29,211 @@
 
 .bag-item-container {
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 40px;
+
+  .cart-item {
+    border: 2px solid $border-color;
+    border-radius: $border-radius-px;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 35px;
+  }
+
+  .cart-product-heading {
+    padding: 10px 0 20px 0;
+  }
+
+  .product-image-container {
+
+  }
+
+  .action-btn-container {
+    border-top: 2px solid $border-color;
+    margin-top: 20px;
+    padding: 10px;
+  }
 
   .product-image-container {
     width: 110px;
+
     img {
       max-width: 100px;
       max-height: 150px;
       width: 100px;
     }
   }
+
   .product-details-text {
     width: calc(100% - 110px);
+
+    .discount {
+      padding-left: 15px;
+      color: $color-pink;
+    }
+
+    .quantity-modifier {
+      min-width: fit-content;
+
+      form {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        height: 25px;
+      }
+
+      .value-button {
+        border: 1px solid #ddd;
+        width: 30px;
+        min-width: 30px;
+        text-align: center;
+        vertical-align: middle;
+        // background: #eee;
+      }
+
+      .value-button:hover {
+        cursor: pointer;
+      }
+
+      #decrease {
+        border-radius: $border-radius-px 0 0 $border-radius-px;
+      }
+
+      #increase {
+        border-radius: 0 $border-radius-px $border-radius-px 0;
+      }
+
+      #decrease, #increase {
+        span {
+          position: relative;
+          top: -2px;
+        }
+      }
+
+      #number {
+        text-align: center;
+        border: none;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+        width: 35px;
+      }
+
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    .size-modifier {
+      min-width: fit-content;
+
+      select {
+        height: 25px;
+        border: 1px solid #ddd;
+        border-radius: $border-radius-px;
+        padding: 0 3px 0 6px;
+        // background: #eee;
+      }
+
+    }
   }
 
   .product-details {
     line-height: 25px;
   }
+
+  .margin-around {
+    margin: 5px auto;
+  }
+
+  .delivery {
+    display: inline-block;
+  }
+
+  .add-from-wishlist {
+    font-size: 20px;
+    padding: 0 10px 20px 10px;
+    display: inline-flex;
+    justify-content: center;
+    color: #daae0c;
+
+    span {
+      padding: 4px 15px 4px 4px;
+      font-weight: 500;
+    }
+
+    mat-icon {
+      font-size: 30px;
+    }
+  }
 }
 
-@media screen and ( min-width: 768px ) {
+.price-details-container {
+  margin-top: 50px;
+  padding-left: 40px;
+  padding-right: 30px;
+  
+  .coupon-code-container {
+    border: 2px solid $border-color;
+    border-radius: $border-radius-px;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 40px;
+
+    mat-icon {
+      font-size: 30px;
+      width: 50px;
+      padding: 0 10px;
+    }
+
+    input {
+      width: calc(100% - 150px);
+      border: none;
+    }
+
+    input:focus {
+      border: 1px solid $border-color;
+    }
+
+    button {
+      width: 100px;
+    }
+  }
+
+  .price-calculation-container {
+    border: 2px solid $border-color;
+    border-radius: $border-radius-px;
+
+    .price-heading {
+      border-bottom: 2px solid $border-color;
+      padding: 10px 10px;
+    }
+
+    .price-components {
+      padding-top: 5px;
+      border-bottom: 2px solid $border-color;
+
+      p {
+        padding: 0 10px;
+      }
+    }
+
+    .price-total {
+      padding: 10px 10px;
+
+      div {
+        position: relative;
+      }
+
+      .next-step {
+        top: -30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
   .text-right-md {
     text-align: right;
   }

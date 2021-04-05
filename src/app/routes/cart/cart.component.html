@@ -20,47 +20,97 @@
     </div>
   </div>
   <div>
-    <div class="col-lg-6 col-md-12 bag-item-container">
-      <div class="col-12"><span>My Bag Items (02)</span></div>
-      <div class="col-12 cart-item">
+    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-2px">
+      <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items (03)</strong></div>
+      <div class="col-12 cart-item" *ngFor="let i of [].constructor(3)">
         <div class="product-details-container d-flex">
           <div class="product-image-container">
             <img src="assets/img/productimage1.jpg">
           </div>
           <div class="product-details-text">
             <div class="product-details col-md-6 col-sm-12">
-              <div>Product name here</div>
-              <div>{{ 256 | currency: 'INR' }}</div>
-              <div>
-                <span class="strikethrough">{{ 256 | currency: 'INR' }}</span>
-                <span class="discount">50% OFF</span>
+              <div class="margin-around" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">Product name here</div>
+              <div class="margin-around" ngClass.gt-xs="font-23px"
+                   ngClass.xs="font-18px">{{ 256 | currency: 'INR' }}</div>
+              <div class="margin-around">
+                <span class="font-14px strikethrough">{{ 256 | currency: 'INR' }}</span>
+                <span class="font-12px discount">50% OFF</span>
               </div>
-              <div class="modifiers d-flex">
-                <div class="col-6 quantity-modifier d-flex">
-                  <button class="decrement">-</button>
-                  <span class="quantity">1</span>
-                  <button class="increment">+</button>
+              <div class="modifiers">
+                <div class="margin-around col-xs-12 col-sm-6 quantity-modifier">
+                  <form>
+                    <div class="value-button" id="decrease"><span>-</span></div>
+                    <input type="number" id="number" value="1"/>
+                    <div class="value-button" id="increase"><span>+</span></div>
+                  </form>
                 </div>
-                <div class="col-6 size-modifier">
-                  <select>
-                    <option selected>XL</option>
-                  </select>
+                <div class="margin-around col-xs-12 col-sm-6 size-modifier">
+                  <form>
+                    <select>
+                      <option selected disabled>Size: XL</option>
+                      <option>Size: S</option>
+                      <option>Size: L</option>
+                    </select>
+                  </form>
+
                 </div>
               </div>
-              <div>Delivery by <strong>6th March</strong> at <strong>560066</strong></div>
+              <div class="delivery margin-around color-gray">Delivery by <strong class="color-black">6th March</strong> at
+                <strong class="color-black">560066</strong></div>
             </div>
-            <div class="product-discount col-md-6 col-sm-12 text-right-md">
-              <div>Coupon Discount: {{ 120 | currency: 'USD'}}</div>
-              <div>Code: <span class="coupon-code">NEW120</span></div>
+            <div class="product-discount col-md-6 col-sm-12 text-right-md font-16px">
+              <div class="margin-around color-deeppink">Coupon Discount: {{ 120 | currency: 'USD'}}</div>
+              <div class="margin-around">Code: <span class="coupon-code color-deeppink"><strong>{{ "New" | uppercase }}120</strong></span>
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <div class="col-6 item-action-btn">Remove</div>
-          <div class="col-6 item-action-btn">Move To Wishlist</div>
+        <div class="action-btn-container color-gray d-flex">
+          <div class="col-xs-6 item-action-btn text-center border-right-2px"><strong>{{ "Remove" | uppercase }}</strong></div>
+          <div class="col-xs-6 item-action-btn text-center"><strong>{{ "Move To Wishlist" | uppercase }}</strong></div>
+        </div>
+      </div>
+      <div class="col-12 add-from-wishlist">
+        <span>Add More From Wishlist</span>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 price-details-container">
+      <div class="coupon-code-container">
+        <mat-icon class="horizontal-invert">loyalty</mat-icon>
+        <input type="text" id="coupon-code" placeholder="Coupon Code">
+        <button class="coupon-code-btn">Check</button >
+      </div>
+      <div class="price-calculation-container">
+        <div class="price-heading font-18px">Price Details ( 02 Items )</div>
+        <div class="price-components">
+          <p>
+            <span class="left">Total MRP ( Including Taxes )</span>
+            <span class="right">{{ 3417 | currency: 'INR' }}</span>
+          </p>
+          <p>
+            <span class="left">Discount on MRP</span>
+            <span class="right color-deeppink">- {{ 417 | currency: 'INR' }}</span>
+          </p>
+          <p>
+            <span class="left">Delivery Fee</span>
+            <span class="right">{{ 50 | currency: 'INR' }}</span>
+          </p>
+          <p>
+            <span class="left">Coupon Discount</span>
+            <span class="right color-deeppink">- {{ 120 | currency: 'INR' }}</span>
+          </p>
+        </div>
+        <div class="price-total">
+          <div>
+            <span>Sub Total</span><br>
+            <span>{{ 1234 | currency: 'INR' }}</span>
+          </div>
+          <div class="right next-step">
+            <button>Next Step</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-12">Lower Right</div>
   </div>
 </div>
