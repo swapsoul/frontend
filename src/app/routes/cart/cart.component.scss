@@ -73,6 +73,7 @@ $border-radius-px: 8px;
 
     .quantity-modifier {
       min-width: fit-content;
+      max-width: 150px;
 
       form {
         margin: 0 auto;
@@ -105,7 +106,7 @@ $border-radius-px: 8px;
       #decrease, #increase {
         span {
           position: relative;
-          top: -2px;
+          //top: -2px;
         }
       }
 
@@ -127,6 +128,7 @@ $border-radius-px: 8px;
 
     .size-modifier {
       min-width: fit-content;
+      max-width: 150px;
 
       select {
         height: 25px;
@@ -173,7 +175,7 @@ $border-radius-px: 8px;
   margin-top: 50px;
   padding-left: 40px;
   padding-right: 30px;
-  
+
   .coupon-code-container {
     border: 2px solid $border-color;
     border-radius: $border-radius-px;
