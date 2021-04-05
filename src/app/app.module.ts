@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { GlobalService } from './services/global/global.service';
+import { AuthGuardService } from './services/auth/auth.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
@@ -80,7 +81,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatMenuModule,
     MatSnackBarModule,
   ],
-  providers: [ GlobalService, RequestService, CookieService, DatasharingService ],
+  providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
