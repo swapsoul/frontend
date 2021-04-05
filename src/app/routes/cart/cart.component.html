@@ -81,7 +81,7 @@
       <div class="coupon-code-container">
         <mat-icon class="horizontal-invert">loyalty</mat-icon>
         <input type="text" id="coupon-code" placeholder="Coupon Code">
-        <button class="coupon-code-btn">Check</button>
+        <button mat-ripple class="coupon-code-btn">Check</button>
       </div>
       <div class="price-calculation-container">
         <div class="price-heading font-18px">Price Details ( 02 Items )</div>
@@ -106,10 +106,10 @@
         <div class="price-total">
           <div>
             <span>Sub Total</span><br>
-            <span>{{ 1234 | currency: 'INR' }}</span>
+            <span class="total-amount font-18px">{{ 1234 | currency: 'INR' }}</span>
           </div>
           <div class="right next-step">
-            <button>Next Step</button>
+            <button mat-ripple>Next Step</button>
           </div>
         </div>
       </div>

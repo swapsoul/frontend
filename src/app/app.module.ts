@@ -40,6 +40,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartComponent } from './routes/cart/cart.component';
 import { NotfoundComponent } from './routes/notfound/notfound.component';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { NotfoundComponent } from './routes/notfound/notfound.component';
     NgbCollapseModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatRippleModule,
   ],
   providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
   bootstrap: [ AppComponent ]
