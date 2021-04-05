@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InteractionService } from 'src/app/interaction.service';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './singleproductpagesample.component.html',
   styleUrls: ['./singleproductpagesample.component.scss']
 })
-export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
+export class SingleproductpagesampleComponent implements OnInit {
 
   pincode: number;
   pinmessage: string;
@@ -76,9 +76,6 @@ export class SingleproductpagesampleComponent implements OnInit, OnDestroy {
     //console.log(this.pid)
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
   onKey(event: any) {
     this.pincode = event.target.value;
   }

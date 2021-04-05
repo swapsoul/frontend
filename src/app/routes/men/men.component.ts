@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from 'src/app/services/product/product.service';
 import { InteractionService } from 'src/app/interaction.service';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './men.component.html',
   styleUrls: ['./men.component.scss']
 })
-export class MenComponent implements OnInit, OnDestroy {
+export class MenComponent implements OnInit {
 
   allData: any[];
   products: any[];
@@ -40,10 +40,6 @@ export class MenComponent implements OnInit, OnDestroy {
         this.products = pdata.body.data;;
       })
     })
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   openUrl(url)
