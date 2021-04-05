@@ -6,7 +6,7 @@ import { WomenComponent } from './routes/women/women.component';
 import { EssentialsComponent } from './routes/essentials/essentials.component';
 import {SingleproductpagesampleComponent} from './routes/singleproductpagesample/singleproductpagesample.component';
 import {AboutComponent} from './routes/about/about.component';
-import { ProductComponent} from './routes/product/product.component';
+import { ProductComponent} from 'src/app/routes/product/product.component';
 import {TcComponent} from './routes/tc/tc.component';
 import {PrivacyComponent} from './routes/privacy/privacy.component';
 import {ResetpwdComponent} from './routes/resetpwd/resetpwd.component';
@@ -27,7 +27,7 @@ const routes: Routes = [
   {path :'privacy', component: PrivacyComponent},
   {path :'reset_password', component: ResetpwdComponent},
   {path :'email_verified', component: EmailVerifiedComponent},
-  { path : 'profile/:username', component: ProfileComponent }
+  { path : 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
