@@ -75,6 +75,7 @@ h1 {
     top: -60px;
     z-index: -1;
     height:300px;
+    width:150px;
   }
   
   .over {
@@ -241,6 +242,7 @@ h1 {
         color:white;
         font-size:18px;
       }
+      
       #para{
       color:white;
             font-size:18px;
@@ -275,3 +277,6 @@ h1 {
             left:60%;
         }
     }
+    .page-footer-section{
+  background-color:#373435;
+}
