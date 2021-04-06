@@ -1,5 +1,5 @@
 $color-pink: deeppink;
-$border-color: #ccc;
+$border-color: #eee;
 $border-radius-px: 5px;
 $secondary-color: #daae0c;
 
@@ -107,7 +107,7 @@ $secondary-color: #daae0c;
       #decrease, #increase {
         span {
           position: relative;
-          //top: -2px;
+          top: 3px;
         }
       }
 
@@ -118,6 +118,7 @@ $secondary-color: #daae0c;
         border-bottom: 1px solid #ddd;
         margin: 0;
         width: 35px;
+        padding-top: 4px;
       }
 
       input[type=number]::-webkit-inner-spin-button,

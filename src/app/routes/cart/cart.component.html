@@ -38,17 +38,16 @@
               </div>
             </div>
             <div class="product-discount col-md-6 col-sm-12 text-right-md font-16px">
-              <div class="margin-around color-deeppink">Coupon Discount: {{ 120 | currency: 'USD'}}</div>
-              <div class="margin-around">Code: <span class="coupon-code color-deeppink"><strong>{{ "New" | uppercase }}
-                120</strong></span>
+              <div class="margin-around color-deeppink">Coupon Discount: {{ 120 | currency: 'INR'}}</div>
+              <div class="margin-around">Code: <span class="coupon-code color-deeppink"><strong>{{ "New120" | uppercase }}</strong></span>
               </div>
             </div>
             <div class="col-sm-12 modifiers">
               <div class="margin-around col-xs-12 col-sm-6 quantity-modifier">
                 <form>
-                  <div class="value-button" id="decrease"><span>-</span></div>
+                  <div class="value-button" id="decrease"><span><mat-icon class="font-18px">remove</mat-icon></span></div>
                   <input type="number" id="number" value="1"/>
-                  <div class="value-button" id="increase"><span>+</span></div>
+                  <div class="value-button" id="increase"><span><mat-icon class="font-18px">add</mat-icon></span></div>
                 </form>
               </div>
               <div class="margin-around col-xs-12 col-sm-6 size-modifier">
