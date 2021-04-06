@@ -172,8 +172,7 @@
 
 .price-details-container {
   margin-top: 50px;
-  padding-left: 40px;
-  padding-right: 30px;
+  padding: 0 30px 20px 40px;
 
   .coupon-code-container {
     border: $border-width solid $border-color;
@@ -281,3 +280,4 @@
     text-align: right;
   }
 }
+

@@ -73,16 +73,30 @@ button :active{
 .colors:hover, .colors1:hover, .colors2:hover{
   border:1px solid red;
 }
-.add_to_cart, .wish_list{
+.add_to_cart{
   background-color: #ED3237;
   color:white;
   border:transparent;
   width:200px;
+  height:50px;
    svg{
      color:white;
    }
    cursor: pointer;
 }
+.wish_list
+{
+ background-color:#FF8C00;
+  color:white;
+  border:transparent;
+  width:200px;
+  height:50px;
+   svg{
+     color:white;
+   }
+   cursor: pointer;
+} 
+
 .add_to_cart:hover, .wish_list:hover{
   color:white;
 }
@@ -347,4 +361,7 @@ button:hover{
   border-radius: 50%;
   background-color: #f2f2f2;
 }
+}
+ .page-footer-section{
+  background-color:#373435;
 }
