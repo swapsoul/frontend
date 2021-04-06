@@ -5,6 +5,7 @@ import { InteractionService } from 'src/app/interaction.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { DatasharingService } from 'src/app/services/datasharing/datasharing.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-men',
@@ -42,16 +43,20 @@ export class MenComponent implements OnInit {
     })
   }
 
-  openUrl(url)
+  
+
+  constructor(private _router:Router,private shareservice: DatasharingService, private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
+    //console.log(this.allData);
+   }
+
+   openUrl(url)
   {
     console.log(url);
     console.log(this.origin);
-    window.open(this.origin + '/products/' + url,"_self");
+    this._router.navigate(['products/'+url]);
+    return false;
+    // window.open(this.origin + '/products/' + url,"_self");
   }
-
-  constructor(private shareservice: DatasharingService, private data_service: ProductService, private cartService: InteractionService,private globalservice: GlobalService) {
-    //console.log(this.allData);
-   }
 
   addToCart(product) {
     this.cartService.addToCart(product);
