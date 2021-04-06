@@ -32,4 +32,14 @@ export class RequestService {
       this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, callback, true);
     }
   }
+
+  cartDetails(callback): any {
+    if ( callback == null ) {
+      this.globalService.getServiceCall('cart', (res) => {
+        console.log(res);
+      }, true);
+    } else {
+      this.globalService.getServiceCall('cart', callback, true);
+    }
+  }
 }
