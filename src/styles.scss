@@ -1,15 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
 
- /*@font-face{
-   font-family: poppins;
-   src:url(assets/font/Poppins/Poppins-Medium.ttf);
- }
- .poppins{
-   font-family:poppins;
- }
- html,body{
-   height:100%;
- }
- body{
-   margin:0;
- }*/
+/*@font-face{
+  font-family: poppins;
+  src:url(assets/font/Poppins/Poppins-Medium.ttf);
+}
+.poppins{
+  font-family:poppins;
+}
+html,body{
+  height:100%;
+}
+body{
+  margin:0;
+}*/
+
+$font-sizes: 40;
+
+@for $i from 1 through $font-sizes {
+  .font-#{$i}px {
+    font-size: ($i) + px;
+  }
+}
+
+.strikethrough {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.color-gray {
+  color: gray;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-deeppink {
+  color: deeppink;
+}
+
+.border-right-2px {
+  border-right: 2px solid #eee;
+}
+
+.margin-botton-5px {
+  margin-bottom: 5px;
+}
+
+.horizontal-invert {
+  transform: rotateY(180deg);
+}
+
+.right {
+  float: right;
+}
