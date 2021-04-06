@@ -19,8 +19,8 @@
       </table>
     </div>
   </div>
-  <div>
-    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-2px">
+  <div class="col-12" ngClass.gt-sm="d-flex">
+    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-npx">
       <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items (03)</strong></div>
       <div class="col-12 cart-item" *ngFor="let i of [].constructor(3)">
         <div class="product-details-container d-flex">
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="action-btn-container color-gray d-flex">
-          <div class="col-xs-6 item-action-btn text-center border-right-2px"><strong>{{ "Remove" | uppercase }}</strong>
+          <div class="col-xs-6 item-action-btn text-center border-right-npx"><strong>{{ "Remove" | uppercase }}</strong>
           </div>
           <div class="col-xs-6 item-action-btn text-center"><strong>{{ "Move To Wishlist" | uppercase }}</strong></div>
         </div>
@@ -109,6 +109,27 @@
           </div>
           <div class="right next-step">
             <button mat-ripple>Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 also-like">
+    <div class="heading font-20px col"><strong>You May Also Like</strong></div>
+    <div class="also-like-carousal">
+      <div class="product-card" *ngFor="let i of [].constructor(3)">
+        <div class="img-container">
+          <img src="assets/img/productimage1.jpg">
+        </div>
+        <div class="product-description">
+          <div>
+            <span class="product-name font-18px" ngbTooltip="Great Men's Shirt Number 1">Great Men's Shirt Number 1</span>
+            <span class="product-rating font-16px right">4.5</span>
+          </div>
+          <div>
+            <span class="product-price font-20px"><strong>{{ 400 | currency: 'INR' }}</strong></span>
+            <span class="product-actual-price strikethrough font-13px text-center">{{ 500 | currency: 'INR' }}</span>
+            <span class="product-discount font-13px text-right">{{ "20% OFF" | uppercase }}</span>
           </div>
         </div>
       </div>
