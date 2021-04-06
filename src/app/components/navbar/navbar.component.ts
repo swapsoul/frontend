@@ -5,6 +5,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
 import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
+import { ExternalUrlsService } from 'src/app/services/externalUrls/external-urls.service'
 
 @Component({
   selector: 'app-navbar',
@@ -21,13 +22,17 @@ export class NavbarComponent implements OnInit {
   hasValue: boolean;
   placeholdervalue = 'Search';
 
-  constructor(public dialog: MatDialog, public globalService: GlobalService,private _router:Router) {
+  constructor(private externalUrl: ExternalUrlsService ,public dialog: MatDialog, public globalService: GlobalService,private _router:Router) {
   }
 
 
   searchclick() {
     this.hasValue = !this.hasValue;
     this.placeholdervalue = ' ';
+  }
+
+  goToBlog(url:string){
+    this.externalUrl.openUrlinNewTab(url);
   }
 
   logout() {

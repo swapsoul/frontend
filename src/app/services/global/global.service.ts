@@ -23,9 +23,9 @@ export class GlobalService {
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
 
     public postServiceCall(url: string, params: any, callback, withToken = false): any {
-        console.log(url);
-        console.log(params);
-        console.log(callback);
+        //console.log(url);
+        //console.log(params);
+        //console.log(callback);
 
         this.httpClient.post(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
             (data) => {
@@ -49,13 +49,9 @@ export class GlobalService {
           //console.log('BASE_API_URL is '+this.BASE_API_URL);
           //console.log(url);
           //console.log(callback);
-          //let h = this.createHeaders(withToken);
-          //console.log(h);
-          //h.append({"swapsoultoken":'fgbkdjs'});
-          //console.log(h);
         this.httpClient.get(this.BASE_API_URL + url, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
             (data) => {
-                console.log(data);
+                //console.log(data);
                 let res = data; // Success Response
                 callback(res);
                 // this.spinner.hide();
@@ -82,8 +78,8 @@ export class GlobalService {
             } // Error Response
         );
     }
-    public putServiceCall(url: string, params: any, callback): any {
-        this.httpClient.put(this.BASE_API_URL + url, params, { headers: this.createHeaders() }).subscribe(
+    public putServiceCall(url: string, params: any, callback,withToken = true): any {
+        this.httpClient.put(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken) }).subscribe(
             (data) => {
                 let res = data; // Success Response
                 callback(res);
@@ -99,14 +95,14 @@ export class GlobalService {
   }
 
   setProfileData(data){
-      console.log(data);
+      //console.log(data);
       this.profiledata = data;
       this.getProfileData();
   }
 
   getProfileData()
   {
-      console.log(this.profiledata);
+      //console.log(this.profiledata);
       return this.profiledata;
   }
 
