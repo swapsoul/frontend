@@ -51,15 +51,18 @@ export class ProfileComponent implements OnInit {
 
   updateMe(){
     this.flag=0;
+    this.globalService.putServiceCall('user', { usernameOrEmail: this.useremail, phoneNumber: this.mobile }, (data) => {
+      //console.log(data);
+    })
   }
 
   onSubmit() {
-    console.log(this.mobile);
+    //console.log(this.mobile);
   }
 
   onKey(event) {
      this.mobile = event.target.value; 
-     console.log(this.mobile);
+     //console.log(this.mobile);
     }
 
 
