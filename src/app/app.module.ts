@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { GlobalService } from './services/global/global.service';
+import { AuthGuardService } from './services/auth/auth.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,9 @@ import { EmailVerifiedComponent } from './routes/email-verified/email-verified.c
 import { ProfileComponent } from './routes/profile/profile.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartComponent } from './routes/cart/cart.component';
+import { NotfoundComponent } from './routes/notfound/notfound.component';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -55,7 +59,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     PrivacyComponent,
     ResetpwdComponent,
     EmailVerifiedComponent,
-    ProfileComponent
+    ProfileComponent,
+    CartComponent,
+    NotfoundComponent
   ],
   imports: [
 
@@ -79,8 +85,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NgbCollapseModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatRippleModule,
   ],
-  providers: [ GlobalService, RequestService, CookieService, DatasharingService ],
+  providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
