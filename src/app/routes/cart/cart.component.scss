@@ -86,6 +86,7 @@
         min-width: 30px;
         text-align: center;
         vertical-align: middle;
+        user-select: none;
         // background: #eee;
       }
 
@@ -93,22 +94,22 @@
         cursor: pointer;
       }
 
-      #decrease {
+      .decrease {
         border-radius: $border-radius-px 0 0 $border-radius-px;
       }
 
-      #increase {
+      .increase {
         border-radius: 0 $border-radius-px $border-radius-px 0;
       }
 
-      #decrease, #increase {
+      .decrease, .increase {
         span {
           position: relative;
           top: 3px;
         }
       }
 
-      #number {
+      .number {
         text-align: center;
         border: none;
         border-top: 1px solid #ddd;
