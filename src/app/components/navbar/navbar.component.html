@@ -9,22 +9,22 @@
   <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <button mat-button routerLink="/home">Home</button> &nbsp;
+        <button mat-button routerLink='/home'>Home</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink="/men">Men</button> &nbsp;
+        <button mat-button routerLink='/men'>Men</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink="/women">Women</button> &nbsp;
+        <button mat-button routerLink='/women'>Women</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink="/essentials">Essentials</button> &nbsp;
+        <button mat-button routerLink='/essentials'>Essentials</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button onclick="location.href='https://swap-soul.blogspot.com/'">Blog</button> &nbsp;
+        <button mat-button (click)="goToBlog('https://swap-soul.blogspot.com/')">Blog</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink="about">About</button> &nbsp;
+        <button mat-button routerLink='/about'>About</button> &nbsp;
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
@@ -42,7 +42,7 @@
         <mat-icon>favorite_border</mat-icon>
       </button>
       &nbsp;
-      <button mat-icon-button aria-label="cart">
+      <button mat-icon-button aria-label="cart" routerLink="cart">
         <mat-icon>work_outliner</mat-icon>
       </button>
 

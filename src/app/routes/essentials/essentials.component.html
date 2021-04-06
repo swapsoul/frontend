@@ -38,7 +38,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mt-2 mb-0">
@@ -66,7 +66,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mb-0 ml-0 mob">
@@ -120,7 +120,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mt-2 mb-0">
@@ -149,7 +149,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mb-0 ml-0 mob">
@@ -202,7 +202,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mt-2 mb-0">
@@ -231,7 +231,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mb-0 ml-0 mob">
@@ -284,7 +284,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mt-2 mb-0">
@@ -313,7 +313,7 @@
                   <mat-card>
                     <mat-card-header>
                       <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imm ml-1"
-                        onclick="location.href='sample'">
+                        routerLink='/products/{{data.productId}}'>
                     </mat-card-header>
                     <mat-card-content>
                       <h3 class="mb-0 ml-0 mob">
@@ -356,7 +356,7 @@
         <mat-card>
           <mat-card-header>
             <img src="assets/img/imageprod.png" alt="p1" (click)=pro([data._id]) class="im"
-              onclick="location.href='sample'">
+              routerLink='/products/{{data.productId}}'>
           </mat-card-header>
           <mat-card-content>
             <h3 class="mt-2 mb-0"><strong>{{data.ProductName}}</strong> &nbsp; <div class="d-inline-flex org">&#x2605;
@@ -382,7 +382,7 @@
         <mat-card>
           <mat-card-header>
             <img src="assets/img/mobileView.png" alt="p1" (click)=pro([data._id]) class="im"
-              onclick="location.href='sample'">
+              routerLink='/products/{{data.productId}}'>
           </mat-card-header>
           <mat-card-content>
             <h3 class="mb-0 ml-0"><strong>{{data.ProductName}}</strong>
@@ -442,8 +442,8 @@
       </div>
       <div class="col-12 col-md-6 py-2">
         <ul class="nav justify-content-end">
-          <button mat-button onclick="location.href='privacy'" class="foo">Privacy Policy</button>&nbsp;
-          <button mat-button onclick="location.href='terms'" class="foo">Terms and Conditions</button> &nbsp;
+          <button mat-button routerLink='/privacy' class="foo">Privacy Policy</button>&nbsp;
+          <button mat-button routerLink='/terms' class="foo">Terms and Conditions</button> &nbsp;
         </ul>
       </div>
     </div>

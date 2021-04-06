@@ -42,7 +42,7 @@ input{
     width:60%;
 }
 p{
-    color:#455056; font-size:20px; width:300px;height:25px;
+    color:#455056; font-size:20px; width:350px;height:25px;
 }
 h1{
     color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;text-align:center;
@@ -70,6 +70,9 @@ hr{
     width:325px;
     color:rgb(68, 66, 66);
 }
+h4{
+    color:red;width:350px;
+}
 .reset{
     // .reset_password{
     //     left:35%;
@@ -80,7 +83,7 @@ hr{
         font-size:15px;
         text-align:center;
         width:80%;
-        
+        margin-left:30px;
     }
     p{
         color:#455056; font-size:20px; width:300px;height:25px;padding-left: 30px;
@@ -111,5 +114,9 @@ hr{
     hr{
         width:325px;
         color:rgb(68, 66, 66);
-    }  
+    } 
+    h4{
+        color:red;
+        margin-left:30px;
+    } 
 }
