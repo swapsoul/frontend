@@ -1,7 +1,4 @@
-$color-pink: deeppink;
-$border-color: #eee;
-$border-radius-px: 5px;
-$secondary-color: #daae0c;
+@import "src/assets/scss/variables";
 
 .cart-navigation {
   max-height: 20%;
@@ -34,7 +31,7 @@ $secondary-color: #daae0c;
   padding-right: 40px;
 
   .cart-item {
-    border: 2px solid $border-color;
+    border: $border-width solid $border-color;
     border-radius: $border-radius-px;
     padding: 10px 10px 0 10px;
     margin-bottom: 35px;
@@ -179,7 +176,7 @@ $secondary-color: #daae0c;
   padding-right: 30px;
 
   .coupon-code-container {
-    border: 2px solid $border-color;
+    border: $border-width solid $border-color;
     border-radius: $border-radius-px;
     padding: 10px;
     display: flex;
@@ -207,7 +204,7 @@ $secondary-color: #daae0c;
   }
 
   .price-calculation-container {
-    border: 2px solid $border-color;
+    border: $border-width solid $border-color;
     border-radius: $border-radius-px;
 
     .price-heading {
@@ -248,6 +245,34 @@ $secondary-color: #daae0c;
         }
       }
     }
+  }
+}
+
+.also-like {
+  border-top: $border-width solid $border-color;
+  padding-top: 20px;
+  border-bottom: $border-width solid $border-color;
+  padding-bottom: 20px;
+  .heading {
+    margin-bottom: 15px;
+    strong {
+      display: inline-block;
+      position: relative;
+    }
+
+    strong:after {
+      content: '';
+      height: 3px;
+      width: 100%;
+      background: $secondary-color;
+      position: absolute;
+      left: 30%;
+      bottom: -8px;
+    }
+  }
+
+  .also-like-carousal {
+    text-align: center;
   }
 }
 
