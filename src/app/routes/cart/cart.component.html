@@ -1,5 +1,5 @@
 <div class="cart-container">
-  <div class="col-12">
+  <div class="row">
     <div class="cart-navigation">
       <table>
         <tr>
@@ -19,8 +19,8 @@
       </table>
     </div>
   </div>
-  <div class="col-12" ngClass.gt-sm="d-flex">
-    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-npx" ngClass.lt-md="bag-item-container-less-padding">
+  <div class="row margin-0" ngClass.gt-sm="d-flex">
+    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx" ngClass.lt-sm="bag-item-container-less-padding">
       <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
         <div class="product-details-container d-flex">
@@ -60,19 +60,19 @@
           <div class="col-xs-12 item-action-btn text-center"><strong>{{ "Delete" | uppercase }}</strong> <mat-icon>delete</mat-icon></div>
         </div>
       </div>
-      <div class="col-12 add-from-wishlist">
+      <div class="col-12 add-from-wishlist" ngClass.gt-sm="font-20px" ngClass.lt-sm="font-16px">
         <span>Add More From Wishlist</span>
         <mat-icon>keyboard_arrow_right</mat-icon>
       </div>
     </div>
-    <div class="col-lg-6 col-md-12 price-details-container">
+    <div class="col-md-6 col-sm-12 price-details-container" ngClass.lt-sm="price-details-container-less-padding">
       <div class="coupon-code-container">
         <mat-icon class="horizontal-invert">loyalty</mat-icon>
-        <input type="text" id="coupon-code" placeholder="Coupon Code">
+        <input type="text" id="coupon-code" placeholder="Enter Coupon Code">
         <button mat-ripple class="coupon-code-btn">Check</button>
       </div>
       <div class="price-calculation-container">
-        <div class="price-heading font-18px">Price Details ( {{ cartDetails.length.toString().padStart(2, '0') }} Items )</div>
+        <div class="price-heading font-18px">Price Details ({{ cartDetails.length.toString().padStart(2, '0') }} Items)</div>
         <div class="price-components">
           <p>
             <span class="left">Total MRP ( Including Taxes )</span>

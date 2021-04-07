@@ -2,6 +2,7 @@
 
 .cart-navigation {
   max-height: 20%;
+  width: 100%;
   border-bottom: 2px solid $border-color;
   padding-bottom: 10px;
 
@@ -162,7 +163,6 @@
   }
 
   .add-from-wishlist {
-    font-size: 20px;
     padding: 0 10px 20px 10px;
     display: inline-flex;
     justify-content: center;
@@ -177,6 +177,10 @@
       font-size: 30px;
     }
   }
+}
+
+.price-details-container-less-padding {
+  padding: 0 10px 20px 10px!important;
 }
 
 .price-details-container {
@@ -246,7 +250,7 @@
         button {
           color: white;
           background: $secondary-color;
-          width: 150px;
+          width: 100px;
           border: 1px solid $border-color;
           border-radius: $border-radius-px;
           height: 30px;
@@ -292,3 +296,8 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  #coupon-code {
+    width: 100%;
+  }
+}
