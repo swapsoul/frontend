@@ -17,7 +17,7 @@ export class GlobalService {
 
     BASE_API_URL = environment.baseUrl;
     public profileFlag: boolean = false;
-    public UserName: String = 'My Account'
+    public UserName: string = 'My Account';
     headerKey = 'SwapsoulToken';
     profiledata: any[];
     constructor(private httpClient: HttpClient, private cookie: CookieService ) { }
@@ -121,5 +121,11 @@ export class GlobalService {
       }
 
       return headers;
+  }
+
+  clearCookies(): void {
+    this.cookie.deleteAll();
+    this.cookie.deleteAll('/');
+    this.cookie.deleteAll('/*');
   }
 }
