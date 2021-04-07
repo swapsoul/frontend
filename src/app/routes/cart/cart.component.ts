@@ -71,15 +71,7 @@ export class CartComponent implements OnInit {
     return 50;
   }
 
-  getCouponDiscount(): number {
-    let couponDiscount = 0;
-    this.cartDetails.forEach((cartItem) => {
-      couponDiscount += cartItem.couponDiscount;
-    });
-    return couponDiscount;
-  }
-
   getCartTotalPrice(): number {
-    return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee() - this.getCouponDiscount();
+    return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
 }

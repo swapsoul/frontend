@@ -12,7 +12,7 @@ import { PrivacyComponent } from './routes/privacy/privacy.component';
 import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
 import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
 import { ProfileComponent } from './routes/profile/profile.component';
-import { AuthGuardService  as AuthGuard } from './services/auth/auth.service';
+import { AuthGuardService as AuthGuard } from './services/auth/auth.service';
 import { CartComponent } from './routes/cart/cart.component';
 import { NotfoundComponent } from './routes/notfound/notfound.component';
 
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'reset_password', component: ResetpwdComponent },
   { path: 'email_verified', component: EmailVerifiedComponent },
   { path: 'profile/:username', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotfoundComponent }
 ];
 

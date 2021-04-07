@@ -37,7 +37,8 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    this.globalService.profileFlag = false
+    this.globalService.profileFlag = false;
+    this.globalService.clearCookies();
     this._router.navigate(['home']);
     // console.log("After logged out",this.globalService.profileFlag )
     return false;
