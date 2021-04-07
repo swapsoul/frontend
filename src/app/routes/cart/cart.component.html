@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="col-12" ngClass.gt-sm="d-flex">
-    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-npx">
+    <div class="col-lg-6 col-md-12 bag-item-container" ngClass.gt-sm="border-right-npx" ngClass.lt-md="bag-item-container-less-padding">
       <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
         <div class="product-details-container d-flex">
@@ -28,18 +28,13 @@
             <img [src]="item['productImgURL']">
           </div>
           <div class="product-details-text">
-            <div class="product-details col-md-6 col-sm-12">
+            <div class="product-details col-sm-12">
               <div class="margin-around" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">{{ item['productName'] }}</div>
               <div class="margin-around" ngClass.gt-xs="font-23px"
                    ngClass.xs="font-18px">{{ item['productSalePrice'] | currency: 'INR' }}</div>
               <div class="margin-around">
-                <span class="font-14px strikethrough">{{ item['productRetailPrice'] | currency: 'INR' }}</span>
-                <span class="font-12px discount">{{ item['productDiscount'] }}% OFF</span>
-              </div>
-            </div>
-            <div class="product-discount col-md-6 col-sm-12 text-right-md font-16px">
-              <div class="margin-around color-deeppink">Coupon Discount: {{  item['couponDiscount'] | currency: 'INR'}}</div>
-              <div class="margin-around">Code: <span class="coupon-code color-deeppink"><strong>{{ "New120" | uppercase }}</strong></span>
+                <span class="font-14px strikethrough" ngClass.lt-sm="custom-col-12">{{ item['productRetailPrice'] | currency: 'INR' }}</span>
+                <span class="font-12px discount" ngClass.lt-sm="custom-col-12 padding-0">{{ item['productDiscount'] }}% OFF</span>
               </div>
             </div>
             <div class="col-sm-12 modifiers">
@@ -59,14 +54,10 @@
 
               </div>
             </div>
-            <div class="col-sm-12 delivery margin-around color-gray">Delivery by <strong class="color-black">6th March</strong> at
-              <strong class="color-black">560066</strong></div>
           </div>
         </div>
         <div class="action-btn-container color-gray d-flex">
-          <div class="col-xs-6 item-action-btn text-center border-right-npx"><strong>{{ "Remove" | uppercase }}</strong>
-          </div>
-          <div class="col-xs-6 item-action-btn text-center"><strong>{{ "Move To Wishlist" | uppercase }}</strong></div>
+          <div class="col-xs-12 item-action-btn text-center"><strong>{{ "Delete" | uppercase }}</strong> <mat-icon>delete</mat-icon></div>
         </div>
       </div>
       <div class="col-12 add-from-wishlist">
@@ -94,10 +85,6 @@
           <p>
             <span class="left">Delivery Fee</span>
             <span class="right">{{ getDeliveryFee() | currency: 'INR' }}</span>
-          </p>
-          <p>
-            <span class="left">Coupon Discount</span>
-            <span class="right color-deeppink">- {{ getCouponDiscount() | currency: 'INR' }}</span>
           </p>
         </div>
         <div class="price-total">

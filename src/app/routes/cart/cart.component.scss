@@ -25,10 +25,13 @@
   margin: 10px 5px 20px 5px;
 }
 
+.bag-item-container-less-padding {
+  padding: 0 10px !important;
+}
+
 .bag-item-container {
   margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 40px;
+  padding: 0 40px 0 30px;
 
   .cart-item {
     border: $border-width solid $border-color;
@@ -41,14 +44,17 @@
     padding: 10px 0 20px 0;
   }
 
-  .product-image-container {
-
-  }
-
   .action-btn-container {
     border-top: 2px solid $border-color;
     margin-top: 20px;
     padding: 10px;
+
+    .item-action-btn {
+      mat-icon {
+        position: relative;
+        top: 6px;
+      }
+    }
   }
 
   .product-image-container {
@@ -70,8 +76,9 @@
     }
 
     .quantity-modifier {
-      min-width: fit-content;
-      max-width: 150px;
+      //min-width: fit-content;
+      max-width: 130px;
+      padding: 0;
 
       form {
         margin: 0 auto;
@@ -128,7 +135,8 @@
 
     .size-modifier {
       min-width: fit-content;
-      max-width: 150px;
+      max-width: 130px;
+      padding: 0;
 
       select {
         height: 25px;
@@ -253,8 +261,10 @@
   padding-top: 20px;
   border-bottom: $border-width solid $border-color;
   padding-bottom: 20px;
+
   .heading {
     margin-bottom: 15px;
+
     strong {
       display: inline-block;
       position: relative;
