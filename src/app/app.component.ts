@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { GlobalService } from './services/global/global.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RequestService } from './services/request/request.service';
 
