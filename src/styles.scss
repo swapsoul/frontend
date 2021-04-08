@@ -16,9 +16,33 @@ body{
   margin:0;
 }*/
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.invalid-input {
+  background-color: red;
+  color: white;
+}
+
+.padding-0 {
+  padding: 0!important;
+}
+
+.margin-0 {
+  margin: 0!important;
+}
+
 @for $i from 1 through $font-sizes {
   .font-#{$i}px {
     font-size: ($i) + px;
+  }
+}
+
+@for $i from 1 through $column-numbers {
+  .custom-col-#{$i} {
+    width: 100%*($i)/12;
+    display: block;
   }
 }
 

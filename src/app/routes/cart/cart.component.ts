@@ -42,12 +42,18 @@ export class CartComponent implements OnInit {
   }
 
   increaseProductQuantity(item): void {
-    item.productQuantity += 1;
+    if (item.productQuantity < 1) {
+      item.productQuantity = 1;
+    } else {
+      item.productQuantity += 1;
+    }
   }
 
   decreaseProductQuantity(item): void {
     if (item.productQuantity > 1) {
       item.productQuantity -= 1;
+    } else {
+      item.productQuantity = 1;
     }
   }
 
@@ -71,15 +77,15 @@ export class CartComponent implements OnInit {
     return 50;
   }
 
-  getCouponDiscount(): number {
-    let couponDiscount = 0;
-    this.cartDetails.forEach((cartItem) => {
-      couponDiscount += cartItem.couponDiscount;
-    });
-    return couponDiscount;
+  getCartTotalPrice(): number {
+    return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
 
-  getCartTotalPrice(): number {
-    return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee() - this.getCouponDiscount();
+  isQuantityValid(value): boolean {
+    try {
+      return parseInt(value.toString(), 10) > 0;
+    } catch (e) {
+      return false;
+    }
   }
 }
