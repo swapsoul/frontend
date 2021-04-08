@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../../../theme.scss';
 li,del,span,button,mat-icon,p,a,strong{
   font-family:helvetica;
 }
@@ -355,11 +357,25 @@ button:hover{
 .fonttwelve{
   font-size: 12px;
 }
+.border50{
+  border-radius: 50% !important;
+}
+.kkkk{
+  border-radius: 2px;
+  border-color: purple;
+}
 
-.mat-fab {
+mat-button-toggle{
+    border-radius: 50% !important;
+}
+
+mat-button-toggle-group-apperance-standard{
+  border-radius: 50% !important;
+}
+.mat-fab .mat-accent {
   box-shadow: none;
   border-radius: 50%;
-  background-color: #f2f2f2;
+  background: #f2f2f2;
 }
 }
  .page-footer-section{

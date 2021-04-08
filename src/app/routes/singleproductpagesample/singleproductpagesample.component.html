@@ -49,7 +49,7 @@
         </div>
 
 				<div class="col-md-6" style="left:8%;">
-        <svg *ngIf="wishflag==false" (click)=wish(); xmlns="http://www.w3.org/2000/svg" width="16" id="heart" height="16" fill="currentColor" class="bi bi-heart-fill heart"
+        <!--<svg *ngIf="wishflag==false" (click)=wish(); xmlns="http://www.w3.org/2000/svg" width="16" id="heart" height="16" fill="currentColor" class="bi bi-heart-fill heart"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
         </svg>
@@ -57,42 +57,58 @@
         <svg *ngIf="wishflag==true" (click)=wish(); xmlns="http://www.w3.org/2000/svg" width="16" id="heart" height="16" fill="currentColor"
           class="bi bi-heart-fill heartcol" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-        </svg>
+        </svg>-->
 					<h2 class="product_name">{{productData["productName"]}}</h2>
 					<span>
 						<h1 class="head text-boldy d-inline-flex"><strong>&#8377; {{productData["productSalePrice"]}}</strong> &nbsp;</h1>
               <del class="d-inline-flex fonttwelve"> <p class="fonttwelve d-inline-flex">&#8377;{{productData["productRetailPrice"]}}</p></del> &nbsp; <span class="discount fonttwelve"> <p class="fonttwelve d-inline-flex">{{productData["productDiscount"]}}% OFF</p></span><br/>
-              <div class="d-inline-flex right" id="rcorners4">
+              <div class="d-inline-flex" id="rcorners4">
                 <p class="d-inline-flex t-white ml-1">{{productData["productRating"]}}</p> &nbsp;
               </div>
               &nbsp; <p class="d-inline-flex red">{{productData["productSaleTagLine"]}}</p>
               <br/><br/><br/>
-              <span class="size_heading"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              
+
+              <span class="size_heading mt-1"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
           <br/>
-          <div class="example-button-row">
+          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productSizes'][0]}}">
+            <mat-button-toggle style="border-radius: 50%;" *ngFor="let size of productData['productSizes']" class="mr-1 border50 px-3 py-1"
+              value="{{size}}">
+              <span>{{size}}</span>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+          <!--<div class="example-button-row">
             <div class="example-flex-container" id="myDiv">
               <div *ngFor="let size of productData['productSizes']">
-                <button class="btn btn-warn active mr-3 mt-3 mb-3 px-3" (click)="act1($event)" id="b1" value="button1{{size}}">
+                <button class="btn btn-warn active mr-3 mt-3 mb-3 px-3" style="border-radius: 50%;" (click)="act1($event)" id="b1" value="button1{{size}}">
                   <mat-icon class="mt-2">{{size}}</mat-icon>
                 </button>
               </div>
             </div>
-          </div>
+          </div>-->
 				
 			  </section>
+        <br/>
 
               <span class="colors_heading"> <strong>Colors</strong></span><br>
               <form>
 			  <section>
 
-				<div class="example-button-row" required id="coldiv">
+          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productColors'][0]}}">
+            <mat-button-toggle [ngStyle]="{'background-color': color}" *ngFor="let color of productData['productColors']" class="border50 mr-3 px-3 py-3"
+              value="{{color}}">
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+
+				<!--<div class="example-button-row" required id="coldiv">
         <div *ngFor="let color of productData['productColors']" class="d-inline-flex">
           <button class="btn btn-warn active mr-3 mt-3 mb-3 px-3" (click)="act2($event)" id="b2" value="button2" [ngStyle]="{'background-color': color}">
             <mat-icon></mat-icon>
           </button>
         </div>
-				</div>
+				</div>-->
 
 			  </section>
 
@@ -100,10 +116,10 @@
 					</span>
           <br>
           <span class="d-md-block d-none containera">
-  			  <button mat-raised-button class="add_to_cart" [disabled]="!(sizeselected && colorselected)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+  			  <button mat-raised-button class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <button mat-raised-button class="wish_list" [disabled]="!(sizeselected && colorselected)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+			  <button mat-raised-button class="wish_list"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
           <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"/>
         </svg>&nbsp;&nbsp;BUY NOW</button><br>
 					     </span>
@@ -145,11 +161,7 @@
 						</ul>
 						<div class="tab-content" id="myTabContent">
 							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nostrum quam accusantium dolore ipsa beatae, autem illum libero, repudiandae, nihil cupiditate excepturi sequi eveniet? Incidunt maiores veniam atque cumque placeat!</p>
-
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro consectetur quibusdam nulla officia tempore animi saepe perspiciatis harum inventore corrupti? Quidem odit consequatur fugiat earum odio explicabo! Quam, quisquam dolorum.
-								</p>
+								<p>{{productData['productDescription']}}</p>
 							</div>
 							<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 								<div class="media">
