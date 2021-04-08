@@ -74,4 +74,12 @@ export class CartComponent implements OnInit {
   getCartTotalPrice(): number {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
+
+  isQuantityValid(value): boolean {
+    try {
+      return parseInt(value.toString(), 10) > 0;
+    } catch (e) {
+      return false;
+    }
+  }
 }

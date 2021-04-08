@@ -16,6 +16,15 @@ body{
   margin:0;
 }*/
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.invalid-input {
+  background-color: red;
+  color: white;
+}
+
 .padding-0 {
   padding: 0!important;
 }

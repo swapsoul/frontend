@@ -41,7 +41,7 @@
               <div class="margin-around col-xs-12 col-sm-6 quantity-modifier">
                 <form>
                   <div mat-ripple class="value-button decrease" (click)="decreaseProductQuantity(item)"><span><mat-icon class="font-18px">remove</mat-icon></span></div>
-                  <input type="number" class="number" name="quantity" [(ngModel)]="item['productQuantity']"/>
+                  <input type="number" class="number" [ngModelOptions]="{ standalone: true }"  min="1" [ngClass]="isQuantityValid(item['productQuantity']) ? '' : 'invalid-input'" [(ngModel)]="item['productQuantity']"/>
                   <div mat-ripple class="value-button increase" (click)="increaseProductQuantity(item)"><span><mat-icon class="font-18px">add</mat-icon></span></div>
                 </form>
               </div>
