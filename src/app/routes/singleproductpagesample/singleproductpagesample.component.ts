@@ -5,6 +5,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { DatasharingService } from 'src/app/services/datasharing/datasharing.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { FlexAlignStyleBuilder } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -28,6 +29,7 @@ export class SingleproductpagesampleComponent implements OnInit {
   pro_id: any;
   sizeselected:boolean = false;
   colorselected:boolean = false;
+  isFavorite:boolean = false;
 
   searchValue = '';
 
@@ -44,7 +46,7 @@ export class SingleproductpagesampleComponent implements OnInit {
     
     this.globalService.getServiceCall('product', (pdata) => {
       //console.log(pdata);
-      //console.log(pdata.body.data);
+      console.log(pdata.body.data);
       this.products = pdata.body.data;
       //console.log(this.products.length);
       //console.log(this.pro_id);
@@ -54,7 +56,19 @@ export class SingleproductpagesampleComponent implements OnInit {
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
         //console.log(re.body.data[0]);
         this.productData = re.body.data[0];
+        //console.log(this.productData["productSizes"][0]);
       })
+
+      var header = document.getElementById("coldiv");
+      var btns = header.getElementsByClassName("btn");
+      console.log(btns[0]);
+      btns[0].classList.add("active");
+      btns[0].classList.add("focus");
+      btns[0].classList.add("kkkk");
+      console.log(btns[0])
+      //btns.path[1].classList.add('active');
+      //b2.path[1].classList.add('focus');
+      
 
       //this.act1();
       //this.act2();
@@ -107,6 +121,7 @@ export class SingleproductpagesampleComponent implements OnInit {
  }
 
   act2(b2) {
+    this.isFavorite=true;
     console.log(b2.path);
     var header = document.getElementById("coldiv");
     var btns = header.getElementsByClassName("btn");

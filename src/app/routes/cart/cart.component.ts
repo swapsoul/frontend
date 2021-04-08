@@ -42,12 +42,18 @@ export class CartComponent implements OnInit {
   }
 
   increaseProductQuantity(item): void {
-    item.productQuantity += 1;
+    if (item.productQuantity < 1) {
+      item.productQuantity = 1;
+    } else {
+      item.productQuantity += 1;
+    }
   }
 
   decreaseProductQuantity(item): void {
     if (item.productQuantity > 1) {
       item.productQuantity -= 1;
+    } else {
+      item.productQuantity = 1;
     }
   }
 
@@ -73,5 +79,13 @@ export class CartComponent implements OnInit {
 
   getCartTotalPrice(): number {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
+  }
+
+  isQuantityValid(value): boolean {
+    try {
+      return parseInt(value.toString(), 10) > 0;
+    } catch (e) {
+      return false;
+    }
   }
 }

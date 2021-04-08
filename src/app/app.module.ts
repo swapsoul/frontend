@@ -41,6 +41,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartComponent } from './routes/cart/cart.component';
 import { NotfoundComponent } from './routes/notfound/notfound.component';
 import { MatRippleModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -87,6 +88,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatSnackBarModule,
     MatRippleModule,
     NgbTooltipModule,
+    MatButtonToggleModule
   ],
   providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
   bootstrap: [ AppComponent ]

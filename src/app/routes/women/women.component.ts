@@ -3,6 +3,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from 'src/app/services/product/product.service';
 import { InteractionService } from 'src/app/interaction.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-women',
@@ -33,7 +34,7 @@ export class WomenComponent implements OnInit {
     })
   }
 
-  constructor(private data_service: ProductService, private globalservice: GlobalService) { }
+  constructor(private _router:Router, private data_service: ProductService, private globalservice: GlobalService) { }
   toppings = new FormControl();
 
   toppingList: string[] = ['Popularity', 'Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
@@ -49,7 +50,9 @@ product_Names()
   openUrl(url) {
     console.log(url);
     console.log(this.origin);
-    window.open(this.origin + '/products/' + url, "_self");
+    this._router.navigate(['products/' + url]);
+    return false;
+    //window.open(this.origin + '/products/' + url, "_self");
   }
 
 

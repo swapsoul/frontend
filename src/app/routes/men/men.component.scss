@@ -40,8 +40,27 @@ font-weight:500px;
 
 .imd{
     cursor: pointer;
-    width: 260px;
-    height: 307px;
+    width: 64%;
+    max-height: 270px;
+}
+
+@media only screen and (max-width: 700px){
+  .imd {
+    width: 95%;
+    height: auto;
+  }
+  div.fonttwenty{
+      font-size: 0.7em ;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .imd {
+    width: 88%;
+  }
+  div.fonttwenty{
+      font-size: 0.7em ;
+  }
 }
 
 .imm{

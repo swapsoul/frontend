@@ -6,7 +6,7 @@
 
   <br>
 
-  <div class="row">
+  <div class="row mr-0">
     <div class="col-md-1"></div>
     <div class="col-md-10">
       <mat-tab-group mat-align-tabs="start">
@@ -40,7 +40,7 @@
                     <img src="{{data.productImgURL}}" alt="p1" (click)=pro([data._id]) class="imd">
                   </mat-card-header>
                   <mat-card-content>
-                    <h3 class="mt-2 mb-0"><div class="d-inline-block elpdesktop"><strong class="fonttwenty">{{data.productName}}</strong></div> &nbsp; <div class="d-inline-flex right float-right" id="rcorners4"><p class="d-inline-flex t-white ml-1">{{data.productRating}}</p></div></h3>
+                    <h3 class="mt-2 mb-0"><div class="d-inline-block elpdesktop fonttwenty"><strong>{{data.productName}}</strong></div> &nbsp; <div class="d-inline-flex text-center mb-3" id="rcorners4"><p class="d-inline-flex t-white ml-1">{{data.productRating}}</p></div></h3>
                   </mat-card-content>
                   <mat-card-footer><div class="d-inline-flex fontdouble"><strong>&#8377;{{data.productSalePrice}}</strong></div> &nbsp;   <strike class="grey">&#8377;{{data.productRetailPrice}}</strike> &nbsp;<div class="d-inline-flex green"> {{data.productDiscount}}%OFF</div></mat-card-footer>
                 </mat-card>

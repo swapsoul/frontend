@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   constructor(private globalService: GlobalService, private cookie:CookieService) { }
 
   flag:number = 0;
+  flag1:number = 0;
   username: string;
   useremail: string;
   data: any[];
@@ -20,6 +21,9 @@ export class ProfileComponent implements OnInit {
   userName: string;
   userEmail:string;
   mobile: any;
+  address: string;
+  error:number = 0;
+  error1:number = 0;
 
   ngOnInit(): void {
     this.userEmail = this.cookie.get('useremail');
@@ -49,11 +53,24 @@ export class ProfileComponent implements OnInit {
     this.flag=1;
   }
 
+  removedisabled1() {
+    document.querySelector("input[name='address']").removeAttribute("disabled");
+    this.flag1 = 1;
+  }
+
   updateMe(){
     this.flag=0;
+    if(this.mobile.length<10)
+    {
+      this.error=1;
+      return;
+    }
+    else{
+      this.error=2;
     this.globalService.putServiceCall('user', { usernameOrEmail: this.useremail, phoneNumber: this.mobile }, (data) => {
       //console.log(data);
     })
+  }
   }
 
   onSubmit() {
