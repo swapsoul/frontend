@@ -6,6 +6,7 @@ import { DatasharingService } from 'src/app/services/datasharing/datasharing.ser
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { FlexAlignStyleBuilder } from '@angular/flex-layout';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -30,16 +31,20 @@ export class SingleproductpagesampleComponent implements OnInit {
   sizeselected:boolean = false;
   colorselected:boolean = false;
   isFavorite:boolean = false;
+  useremail:string;
+  username:string;
+  selectedSize:string;
+  selectedColor:string;
 
   searchValue = '';
 
 
-  constructor(private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+  constructor(private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      //console.log(params["id"]);
+      console.log(params["id"]);
       this.productid = params["id"];
     })
 
@@ -56,7 +61,10 @@ export class SingleproductpagesampleComponent implements OnInit {
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
         //console.log(re.body.data[0]);
         this.productData = re.body.data[0];
-        //console.log(this.productData["productSizes"][0]);
+        this.pid = this.productData["_id"];
+        console.log(this.pid);
+        this.selectedSize=this.productData["productSizes"][0];
+        this.selectedColor=this.productData["productColors"][0];
       })
 
       var header = document.getElementById("coldiv");
@@ -140,6 +148,16 @@ export class SingleproductpagesampleComponent implements OnInit {
     this.colorselected = true;
   }
 
+  selectionChanged(item) {
+    console.log("Selected value: " + item.value);
+    this.selectedSize = item.value;
+  }
+
+  selectionChangedColor(item) {
+    console.log("Selected value: " + item.value);
+    this.selectedColor = item.value;
+  }
+
   verifypincode(){
     console.log(this.pincode);
 
@@ -157,9 +175,24 @@ export class SingleproductpagesampleComponent implements OnInit {
   }
 
 
-  addToCart(product) {
-    this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+  add_to_cart() {
+    this.useremail = this.cookie.get('useremail');
+    console.log(this.selectedColor);
+    this.globalService.getServiceCall(`user/${this.useremail}`, (re) => {
+      console.log(re.body.data);
+      this.username = re.body.data["userName"];
+      console.log(this.username);
+      this.globalService.putServiceCall('cart', {
+        "usernameOrEmail": this.username,
+        "productId": this.productid,
+        "product": this.pid,
+        "productQuantity": 1,
+        "productSize": this.selectedSize,
+        "productColor": this.selectedColor
+      }, (data) => {
+        console.log("tttttt");
+      });
+    });
   }
 
   numberOnly(event): boolean {

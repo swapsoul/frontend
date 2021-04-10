@@ -25,16 +25,16 @@
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
         <div class="product-details-container d-flex">
           <div class="product-image-container">
-            <img [src]="item['productImgURL']">
+            <img [src]="item['product']['productImgURL']">
           </div>
           <div class="product-details-text">
             <div class="product-details col-sm-12">
-              <div class="margin-around" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">{{ item['productName'] }}</div>
+              <div class="margin-around" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">{{ item['product']['productName'] }}</div>
               <div class="margin-around" ngClass.gt-xs="font-23px"
-                   ngClass.xs="font-18px">{{ item['productSalePrice'] | currency: 'INR' }}</div>
+                   ngClass.xs="font-18px">{{ item['product']['productSalePrice'] | currency: 'INR' }}</div>
               <div class="margin-around">
-                <span class="font-14px strikethrough" ngClass.lt-sm="custom-col-12">{{ item['productRetailPrice'] | currency: 'INR' }}</span>
-                <span class="font-12px discount" ngClass.lt-sm="custom-col-12 padding-0">{{ item['productDiscount'] }}% OFF</span>
+                <span class="font-14px strikethrough" ngClass.lt-sm="custom-col-12">{{ item['product']['productRetailPrice'] | currency: 'INR' }}</span>
+                <span class="font-12px discount" ngClass.lt-sm="custom-col-12 padding-0">{{ item['product']['productDiscount'] }}% OFF</span>
               </div>
             </div>
             <div class="col-sm-12 modifiers">
@@ -57,7 +57,12 @@
           </div>
         </div>
         <div class="action-btn-container color-gray d-flex">
-          <div class="col-xs-12 item-action-btn text-center"><strong>{{ "Delete" | uppercase }}</strong> <mat-icon>delete</mat-icon></div>
+          <div class="col-xs-12 item-action-btn text-center">
+            <button mat-flat-button class="mt-2" (click)="delete()">
+              <strong>{{ "Delete" | uppercase }}</strong>
+              <mat-icon class="mb-3 ml-2">delete</mat-icon>
+            </button>
+           </div>
         </div>
       </div>
       <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">

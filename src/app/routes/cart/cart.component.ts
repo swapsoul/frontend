@@ -10,15 +10,18 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
+  cart_id:string;
   constructor(private requestService: RequestService) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
+      console.log(resp);
       if (resp.status === 200) {
+        console.log(resp);
         this.cartDetails = resp.body.cartArray;
         this.cartDetails.forEach((cartItem) => {
           cartItem.couponDiscount = cartItem.productRetailPrice - cartItem.productSalePrice;
         });
-        // console.log(this.cartDetails);
+        console.log(this.cartDetails);
       } else {
         console.error('Error at fetching cart details');
       }
@@ -79,6 +82,14 @@ export class CartComponent implements OnInit {
 
   getCartTotalPrice(): number {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
+  }
+
+  delete(){
+    console.log("gdksf");
+    this.requestService.cartDetails((re)=>{
+      console.log(re);
+      //this.cart_id = re.body
+    })
   }
 
   isQuantityValid(value): boolean {
