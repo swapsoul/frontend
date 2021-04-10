@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { FlexAlignStyleBuilder } from '@angular/flex-layout';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -39,7 +40,7 @@ export class SingleproductpagesampleComponent implements OnInit {
   searchValue = '';
 
 
-  constructor(private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+  constructor(private router: Router, private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
 
   ngOnInit(): void {
@@ -190,7 +191,10 @@ export class SingleproductpagesampleComponent implements OnInit {
         "productSize": this.selectedSize,
         "productColor": this.selectedColor
       }, (data) => {
-        console.log(data);
+        if(data.status==201)
+        {
+          this.router.navigate(['cart'])
+        }
         console.log("tttttt");
       });
     });
