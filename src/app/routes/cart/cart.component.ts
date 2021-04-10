@@ -67,7 +67,7 @@ export class CartComponent implements OnInit {
   getTotalPrice(): number {
     let sum = 0;
     this.cartDetails.forEach((cartItem) => {
-      sum += cartItem.product.productRetailPrice;
+      sum += cartItem.product.productRetailPrice * cartItem.productQuantity;
     });
     return sum;
   }
@@ -75,7 +75,7 @@ export class CartComponent implements OnInit {
   getTotalDiscount(): number {
     let discount = 0;
     this.cartDetails.forEach((cartItem) => {
-      discount += cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
+      discount += (cartItem.product.productRetailPrice - cartItem.product.productSalePrice) * cartItem.productQuantity;
     });
     return discount;
   }
