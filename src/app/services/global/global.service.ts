@@ -63,6 +63,26 @@ export class GlobalService {
         );
     }
 
+    public getServiceCall1(url: string,params, callback, withToken = true): any {
+
+        // let BASE_API_URL = 'http://localhost:4000';
+        //console.log('BASE_API_URL is '+this.BASE_API_URL);
+        //console.log(url);
+        //console.log(callback);
+        this.httpClient.get(this.BASE_API_URL + url, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
+            (data) => {
+                //console.log(data);
+                let res = data; // Success Response
+                callback(res);
+                // this.spinner.hide();
+            },
+            err => {
+                console.error(err);
+                // this.spinner.hide();
+            } // Error Response
+        );
+    }
+
     public postServiceCallToSaleBot(url: string, params: any, callback): any {
 
 
@@ -79,7 +99,7 @@ export class GlobalService {
         );
     }
     public putServiceCall(url: string, params: any, callback,withToken = true): any {
-        this.httpClient.put(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken) }).subscribe(
+        this.httpClient.put(this.BASE_API_URL + url, params, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
             (data) => {
                 let res = data; // Success Response
                 callback(res);

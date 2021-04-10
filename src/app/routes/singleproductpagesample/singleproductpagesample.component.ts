@@ -190,6 +190,7 @@ export class SingleproductpagesampleComponent implements OnInit {
         "productSize": this.selectedSize,
         "productColor": this.selectedColor
       }, (data) => {
+        console.log(data);
         console.log("tttttt");
       });
     });

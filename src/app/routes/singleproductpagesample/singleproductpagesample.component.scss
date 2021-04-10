@@ -1,5 +1,5 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '../../../theme.scss';
+
+
 li,del,span,button,mat-icon,p,a,strong{
   font-family:helvetica;
 }
@@ -359,10 +359,6 @@ button:hover{
 }
 .border50{
   border-radius: 50% !important;
-}
-.kkkk{
-  border-radius: 2px;
-  border-color: purple;
 }
 
 mat-button-toggle{

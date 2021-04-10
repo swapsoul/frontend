@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
+import { CookieService } from 'ngx-cookie-service';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +12,10 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
+  useremail:string;
   cart_id:string;
-  constructor(private requestService: RequestService) {
+  username:string;
+  constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
       console.log(resp);
@@ -86,10 +90,15 @@ export class CartComponent implements OnInit {
 
   delete(){
     console.log("gdksf");
-    this.requestService.cartDetails((re)=>{
+    this.useremail = this.cookie.get('useremail');
+    console.log(this.useremail);
+    this.globalService.getServiceCall(`user/${this.useremail}`, (re) => {
+      this.username = re.body.data["userName"];
+      console.log(this.username);
+    });
+    this.globalService.getServiceCall1(`cart`,{"usernameOrEmail":this.username}, (re) => {
       console.log(re);
-      //this.cart_id = re.body
-    })
+    });
   }
 
   isQuantityValid(value): boolean {
