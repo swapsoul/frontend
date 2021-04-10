@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
         console.log(resp);
         this.cartDetails = resp.body.cartArray;
         this.cartDetails.forEach((cartItem) => {
-          cartItem.couponDiscount = cartItem.productRetailPrice - cartItem.productSalePrice;
+          cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
         console.log(this.cartDetails);
       } else {
@@ -67,7 +67,7 @@ export class CartComponent implements OnInit {
   getTotalPrice(): number {
     let sum = 0;
     this.cartDetails.forEach((cartItem) => {
-      sum += cartItem.productRetailPrice;
+      sum += cartItem.product.productRetailPrice;
     });
     return sum;
   }
@@ -75,7 +75,7 @@ export class CartComponent implements OnInit {
   getTotalDiscount(): number {
     let discount = 0;
     this.cartDetails.forEach((cartItem) => {
-      discount += cartItem.productRetailPrice - cartItem.productSalePrice;
+      discount += cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
     });
     return discount;
   }
