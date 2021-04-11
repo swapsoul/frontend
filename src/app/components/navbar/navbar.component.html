@@ -48,7 +48,7 @@
       </button>
 
       <button mat-button class="button-white" (click)="openDialog()" *ngIf="!globalService.profileFlag">Login/SignUp</button>
-      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag">Hi, {{globalService.UserName}} </button>
+      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag">Hi, {{globalService.UserName}} <mat-icon>account_circle</mat-icon></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item class="button-black" routerLink="/profile/{{globalService.UserName}}">Profile</button>
         <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
