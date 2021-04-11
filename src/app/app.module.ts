@@ -42,6 +42,7 @@ import { CartComponent } from './routes/cart/cart.component';
 import { NotfoundComponent } from './routes/notfound/notfound.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatSnackBarModule,
     MatRippleModule,
     NgbTooltipModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatCardModule
   ],
   providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
   bootstrap: [ AppComponent ]

@@ -12,7 +12,7 @@ export class AuthGuardService implements CanActivate {
  
         //check some condition  
         if (!this.globalService.profileFlag)  {
-            alert('You are not allowed to view this page');
+            alert('Please login to view this page');
             this._router.navigate(['home']);
             //redirect to login/home page etc
             //return false to cancel the navigation

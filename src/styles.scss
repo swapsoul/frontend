@@ -86,61 +86,61 @@ input[type=number] {
 //  margin-right: 15px;
 //}
 
-.product-card {
-  display: inline-block;
-  // border: $border-width solid $border-color;
-  padding: 10px 5%;
-  //margin-right: 15px;
-
-  .img-container {
-    display: inline-block;
-
-    img {
-      max-width: 200px;
-      max-height: 300px;
-    }
-  }
-
-  .product-description {
-    padding-top: 5px;
-
-    span {
-      line-height: 25px;
-    }
-
-    .product-name {
-      text-overflow: ellipsis;
-      width: 155px;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      padding-left: 5px;
-    }
-
-    .product-rating {
-      border-radius: 15px;
-      background: #73AD21;
-      padding: 0 8px 8px 8px;
-      width: 45px;
-      height: 24px;
-      color: white;
-      text-align: center;
-    }
-
-    .product-price {
-      margin-right: 5px;
-    }
-
-    .product-actual-price {
-      margin-right: 5px;
-    }
-
-    .product-discount {
-      margin-right: 5px;
-      color: #73AD21;
-    }
-  }
-}
+//.product-card {
+//  display: inline-block;
+//  // border: $border-width solid $border-color;
+//  padding: 10px 5%;
+//  //margin-right: 15px;
+//
+//  .img-container {
+//    display: inline-block;
+//
+//    img {
+//      max-width: 200px;
+//      max-height: 300px;
+//    }
+//  }
+//
+//  .product-description {
+//    padding-top: 5px;
+//
+//    span {
+//      line-height: 25px;
+//    }
+//
+//    .product-name {
+//      text-overflow: ellipsis;
+//      width: 155px;
+//      white-space: nowrap;
+//      overflow: hidden;
+//      display: inline-block;
+//      padding-left: 5px;
+//    }
+//
+//    .product-rating {
+//      border-radius: 15px;
+//      background: #73AD21;
+//      padding: 0 8px 8px 8px;
+//      width: 45px;
+//      height: 24px;
+//      color: white;
+//      text-align: center;
+//    }
+//
+//    .product-price {
+//      margin-right: 5px;
+//    }
+//
+//    .product-actual-price {
+//      margin-right: 5px;
+//    }
+//
+//    .product-discount {
+//      margin-right: 5px;
+//      color: #73AD21;
+//    }
+//  }
+//}
 
 .tooltip {
   font-size: 10px;
