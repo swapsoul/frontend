@@ -35,23 +35,19 @@ export class RequestService {
   }
 
   cartDetails(callback): any {
-    if ( callback == null ) {
-      this.globalService.getServiceCall('cart', (res) => {
-        console.log(res);
-      }, true);
-    } else {
-      this.globalService.getServiceCall('cart', callback, true);
-    }
+    this.globalService.getServiceCall('cart', callback, true);
+  }
+
+  updateCartQuantity(payload, callback): any {
+    this.globalService.patchServiceCall('cart', payload, callback, true);
+  }
+
+  deleteCartItem(payload, callback): any {
+    this.globalService.deleteServiceCall('cart', payload, callback, true);
   }
 
   getLoggedUserDetails(username, callback): any {
-    if ( callback == null ) {
-      this.globalService.getServiceCall('user/' + username, (res) => {
-        console.log(res);
-      }, true);
-    } else {
-      this.globalService.getServiceCall('user/' + username, callback, true);
-    }
+    this.globalService.getServiceCall('user/' + username, callback, true);
   }
 
   initializeUserFromCookie(): void {

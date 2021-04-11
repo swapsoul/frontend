@@ -28,10 +28,10 @@
                         <img src="{{productData['productImgURL']}}">
                       </div><br>
                         <div class="zoom1">
-                        <img src="assets/img/pi1.PNG">
+                        <img src="assets/img/blanks.png">
                       </div><br>
                         <div class="zoom1">
-                        <img src="assets/img/productimage3.jpg">
+                        <img src="assets/img/blanks.png">
                       </div><br>
                       </div>
                   </div>
@@ -73,8 +73,8 @@
               <span class="size_heading mt-1"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
           <br/>
-          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productSizes'][0]}}">
-            <mat-button-toggle style="border-radius: 50%;" *ngFor="let size of productData['productSizes']" class="mr-1 border50 px-3 py-1"
+          <mat-button-toggle-group #group="matButtonToggleGroup" style="border: none;" value="{{productData['productSizes'][0]}}">
+            <mat-button-toggle style="border-radius: 50%;" (change)="selectionChanged($event)" [value]="size" *ngFor="let size of productData['productSizes']" class="mr-1 border50 px-3 py-1"
               value="{{size}}">
               <span>{{size}}</span>
             </mat-button-toggle>
@@ -96,8 +96,8 @@
               <form>
 			  <section>
 
-          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productColors'][0]}}">
-            <mat-button-toggle [ngStyle]="{'background-color': color}" *ngFor="let color of productData['productColors']" class="border50 mr-3 px-3 py-3"
+          <mat-button-toggle-group #group="matButtonToggleGroup" style="border:none" value="{{productData['productColors'][0]}}">
+            <mat-button-toggle (change)="selectionChangedColor($event)" [ngStyle]="{'background-color': color}" *ngFor="let color of productData['productColors']" class="border50 mr-3 px-3 py-3"
               value="{{color}}">
             </mat-button-toggle>
           </mat-button-toggle-group>
@@ -116,7 +116,7 @@
 					</span>
           <br>
           <span class="d-md-block d-none containera">
-  			  <button mat-raised-button class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+  			  <button mat-raised-button (click)="add_to_cart()" class="add_to_cart"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </svg>&nbsp;&nbsp;ADD TO BAG</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <button mat-raised-button class="wish_list"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">

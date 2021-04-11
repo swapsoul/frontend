@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
+import { CookieService } from 'ngx-cookie-service';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,15 +12,24 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
-  constructor(private requestService: RequestService) {
+  useremail: string;
+  delete_product_id: string;
+  username: string;
+  quantityCallManager: any = {};
+  isCartDetailsLoaded = false;
+
+  constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
+      this.isCartDetailsLoaded = true;
+      console.log(resp);
       if (resp.status === 200) {
+        console.log(resp);
         this.cartDetails = resp.body.cartArray;
         this.cartDetails.forEach((cartItem) => {
-          cartItem.couponDiscount = cartItem.productRetailPrice - cartItem.productSalePrice;
+          cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
-        // console.log(this.cartDetails);
+        console.log(this.cartDetails);
       } else {
         console.error('Error at fetching cart details');
       }
@@ -47,20 +58,24 @@ export class CartComponent implements OnInit {
     } else {
       item.productQuantity += 1;
     }
+    this.modifyQuantity(item);
   }
 
   decreaseProductQuantity(item): void {
-    if (item.productQuantity > 1) {
-      item.productQuantity -= 1;
-    } else {
-      item.productQuantity = 1;
+    if (item.productQuantity !== 1) {
+      if (item.productQuantity > 1) {
+        item.productQuantity -= 1;
+      } else {
+        item.productQuantity = 1;
+      }
+      this.modifyQuantity(item);
     }
   }
 
   getTotalPrice(): number {
     let sum = 0;
     this.cartDetails.forEach((cartItem) => {
-      sum += cartItem.productRetailPrice;
+      sum += cartItem.product.productRetailPrice * cartItem.productQuantity;
     });
     return sum;
   }
@@ -68,7 +83,7 @@ export class CartComponent implements OnInit {
   getTotalDiscount(): number {
     let discount = 0;
     this.cartDetails.forEach((cartItem) => {
-      discount += cartItem.productRetailPrice - cartItem.productSalePrice;
+      discount += (cartItem.product.productRetailPrice - cartItem.product.productSalePrice) * cartItem.productQuantity;
     });
     return discount;
   }
@@ -81,11 +96,41 @@ export class CartComponent implements OnInit {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
 
+  delete(item): void {
+    this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
+      if (resp.status === 200) {
+        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id ), 1);
+      } else {
+        console.error('Error while deleting product');
+      }
+    });
+  }
+
   isQuantityValid(value): boolean {
     try {
       return parseInt(value.toString(), 10) > 0;
     } catch (e) {
       return false;
+    }
+  }
+
+  modifyQuantity(item): void {
+    if (this.isQuantityValid(item.productQuantity)) {
+      if (this.quantityCallManager[item._id]) {
+        clearTimeout(this.quantityCallManager[item._id]);
+      }
+      this.quantityCallManager[item._id] = setTimeout(() => {
+        this.requestService.updateCartQuantity({
+          _id: item._id,
+          productQuantity: item.productQuantity
+        }, (resp) => {
+          if (resp.status === 200) {
+            console.log('cart updated');
+          } else {
+            console.log('failed to update quantity');
+          }
+        });
+      }, 2000);
     }
   }
 }

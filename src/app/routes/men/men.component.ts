@@ -22,6 +22,9 @@ export class MenComponent implements OnInit {
   selected : string;
   id : string;
   message: string;
+  randomnums: any[] = [];
+  moreyoulike: any[] = [];
+  len:number;
   subscription: Subscription;
   origin = window.location.origin;
 
@@ -38,8 +41,19 @@ export class MenComponent implements OnInit {
       this.globalservice.getServiceCall('product', (pdata) => {
         //console.log(pdata.status);
         //console.log(pdata.body.data);
-        this.products = pdata.body.data;;
-      })
+        this.products = pdata.body.data;
+        this.len = this.products.length;
+        console.log(this.len);
+        for(let i=0;i<=2;i++)
+        {
+          this.randomnums.push(Math.floor(Math.random() * (this.len+ 1)));
+        }
+        console.log(this.randomnums);
+        for(let d=0;d<this.randomnums.length;d++)
+        {
+          this.moreyoulike.push(this.products[this.randomnums[d]]);
+        }
+      });
     })
   }
 
@@ -91,7 +105,6 @@ export class MenComponent implements OnInit {
     this.shareservice.setProjects(id);
 
     this.shareservice.modifyMessage(id);
-
     this.subscription = this.shareservice.currentMessage.subscribe(message => {
       this.message = message;
       console.log(this.message);

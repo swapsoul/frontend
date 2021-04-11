@@ -6,6 +6,8 @@ import { DatasharingService } from 'src/app/services/datasharing/datasharing.ser
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { FlexAlignStyleBuilder } from '@angular/flex-layout';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -30,16 +32,20 @@ export class SingleproductpagesampleComponent implements OnInit {
   sizeselected:boolean = false;
   colorselected:boolean = false;
   isFavorite:boolean = false;
+  useremail:string;
+  username:string;
+  selectedSize:string;
+  selectedColor:string;
 
   searchValue = '';
 
 
-  constructor(private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+  constructor(private router: Router, private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
    }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      //console.log(params["id"]);
+      console.log(params["id"]);
       this.productid = params["id"];
     })
 
@@ -56,10 +62,13 @@ export class SingleproductpagesampleComponent implements OnInit {
       this.globalService.getServiceCall(`product/${this.productid}`, (re) => {
         //console.log(re.body.data[0]);
         this.productData = re.body.data[0];
-        //console.log(this.productData["productSizes"][0]);
+        this.pid = this.productData["_id"];
+        console.log(this.pid);
+        this.selectedSize=this.productData["productSizes"][0];
+        this.selectedColor=this.productData["productColors"][0];
       })
 
-      var header = document.getElementById("coldiv");
+      /*var header = document.getElementById("coldiv");
       var btns = header.getElementsByClassName("btn");
       console.log(btns[0]);
       btns[0].classList.add("active");
@@ -71,7 +80,7 @@ export class SingleproductpagesampleComponent implements OnInit {
       
 
       //this.act1();
-      //this.act2();
+      //this.act2();*/
 
     })
 
@@ -100,44 +109,14 @@ export class SingleproductpagesampleComponent implements OnInit {
     heart.classList.toggle('red');
   }
 
- act1(b){
-   console.log(b.path);
-   var header = document.getElementById("myDiv");
-   var btns = header.getElementsByClassName("btn");
-   for(let i=0;i<btns.length;i++)
-   {
-     btns[i].classList.remove("active");
-     btns[i].classList.remove("focus");
-   }
-   if(b.path.length==18){
-   b.path[1].classList.add('active');
-     b.path[1].classList.add('focus');
-   }
-   else if(b.path.length==17){
-   b.path[0].classList.add('active');
-   b.path[0].classList.add('focus');
-   }
-   this.sizeselected = true;
- }
+  selectionChanged(item) {
+    console.log("Selected value: " + item.value);
+    this.selectedSize = item.value;
+  }
 
-  act2(b2) {
-    this.isFavorite=true;
-    console.log(b2.path);
-    var header = document.getElementById("coldiv");
-    var btns = header.getElementsByClassName("btn");
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].classList.remove("active");
-      btns[i].classList.remove("focus");
-    }
-    if (b2.path.length == 18) {
-      b2.path[1].classList.add('active');
-      b2.path[1].classList.add('focus');
-    }
-    else if (b2.path.length == 17) {
-      b2.path[0].classList.add('active');
-      b2.path[0].classList.add('focus');
-    }
-    this.colorselected = true;
+  selectionChangedColor(item) {
+    console.log("Selected value: " + item.value);
+    this.selectedColor = item.value;
   }
 
   verifypincode(){
@@ -157,9 +136,28 @@ export class SingleproductpagesampleComponent implements OnInit {
   }
 
 
-  addToCart(product) {
-    this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+  add_to_cart() {
+    this.useremail = this.cookie.get('useremail');
+    console.log(this.selectedColor);
+    this.globalService.getServiceCall(`user/${this.useremail}`, (re) => {
+      console.log(re.body.data);
+      this.username = re.body.data["userName"];
+      console.log(this.username);
+      this.globalService.putServiceCall('cart', {
+        "usernameOrEmail": this.username,
+        "productId": this.productid,
+        "product": this.pid,
+        "productQuantity": 1,
+        "productSize": this.selectedSize,
+        "productColor": this.selectedColor
+      }, (data) => {
+        if(data.status==201)
+        {
+          this.router.navigate(['cart'])
+        }
+        console.log("tttttt");
+      });
+    });
   }
 
   numberOnly(event): boolean {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-custom mb-0">
+<nav id="our-navbar" class="navbar navbar-expand-lg navbar-custom mb-0">
   <a class="navbar-brand" style="margin-right: 60px; margin-left: 80px;" href="#">
     <img src="assets/img/logo.png" style="height:40px; width: 120px;">
   </a>
@@ -9,13 +9,13 @@
   <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <button mat-button routerLink='/home'>Home</button> &nbsp;
+        <button mat-button routerLink='home'>Home</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink='/men'>Men</button> &nbsp;
+        <button mat-button routerLink='men'>Men</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink='/women'>Women</button> &nbsp;
+        <button mat-button routerLink='women'>Women</button> &nbsp;
       </li>
       <!-- Essentials are not cureently used
       <li class="nav-item">
@@ -25,7 +25,7 @@
         <button mat-button (click)="goToBlog('https://swap-soul.blogspot.com/')">Blog</button> &nbsp;
       </li>
       <li class="nav-item">
-        <button mat-button routerLink='/about'>About</button> &nbsp;
+        <button mat-button routerLink='about'>About</button> &nbsp;
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
@@ -38,19 +38,19 @@
         <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
       </button>
       &nbsp;
-      &nbsp;
+      <!-- &nbsp;
       <button mat-icon-button aria-label="favorite">
         <mat-icon>favorite_border</mat-icon>
       </button>
-      &nbsp;
+      &nbsp; -->
       <button mat-icon-button aria-label="cart" routerLink="cart">
         <mat-icon>work_outliner</mat-icon>
       </button>
 
       <button mat-button class="button-white" (click)="openDialog()" *ngIf="!globalService.profileFlag">Login/SignUp</button>
-      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag">Hi, {{globalService.UserName}} </button>
+      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag"><mat-icon>account_circle</mat-icon> Hi, {{globalService.UserName}}</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item class="button-black" routerLink="/profile/{{globalService.UserName}}">Profile</button>
+        <button mat-menu-item class="button-black" routerLink="profile/{{globalService.UserName}}">Profile</button>
         <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
       </mat-menu>
     </form>
