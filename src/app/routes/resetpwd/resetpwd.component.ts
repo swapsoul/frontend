@@ -25,7 +25,7 @@ export class ResetpwdComponent implements OnInit {
     ],
     verification_code: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     password: [undefined, { validators: [Validators.required], updateOn: 'change' }],
-  }); 
+  });
 
   submitForm(): void {
     const user = this.registerForm.value;
