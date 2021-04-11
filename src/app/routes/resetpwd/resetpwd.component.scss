@@ -1,4 +1,32 @@
-#footer{
+.example-card {
+    max-width: 500px;
+    
+  }
+  
+.box{
+    margin: 3%;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red-button {
+    background-color:red;
+    border: none;
+    color: white;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    // padding: 1px 120px;
+  }
+
+
+  #footer{
     color:white;
     h1{
         color:white;
@@ -31,19 +59,12 @@
   .example-container .mat-form-field + .mat-form-field {
     margin-left: 8px;
   }
-.reset_password{
-    left:35%;
-    width:350px;
-    height:450px;
-}  
-input{
+  input{
     font-size:15px;
     text-align:center;
     width:60%;
 }
-p{
-    color:#455056; font-size:20px; width:350px;height:25px;
-}
+
 h1{
     color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;text-align:center;
 }
@@ -73,56 +94,6 @@ hr{
 h4{
     color:red;width:350px;
 }
-.page-footer-section{
-  background-color:#373435;
-}
-.reset{
-    // .reset_password{
-    //     left:35%;
-    //     width:350px;
-    //     height:450px;
-    // }  
-    input{
-        font-size:15px;
-        text-align:center;
-        width:80%;
-        margin-left:30px;
-    }
-    p{
-        color:#455056; font-size:20px; width:300px;height:25px;padding-left: 30px;
-    }
-    .mobile{
-        color:#1e1e2d; font-weight:500;font-size:32px;font-family:'Rubik',sans-serif;
-    }
-    
-    table{
-        margin:0 auto;
-    }
-    span{
-        display:inline-block; vertical-align:middle; margin:29px 0 26px;width:200px;
-    }
-    button{
-        
-        background:#ED3237;text-decoration:none !important; font-weight:500; color:#fff;font-size:14px;margin-top:-33px;margin-left:90px;
-    }
-    
-    .table{
-        background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);
-    
-    }
-    tr,td{
-        border:transparent;
-        
-    }
-    hr{
-        width:325px;
-        color:rgb(68, 66, 66);
-    } 
-    h4{
-        color:red;
-        margin-left:30px;
-    } 
-    .page-footer-section{
-  background-color:#373435;
-}
-}
+  .page-footer-section{
+    background-color:#373435;
+  }
