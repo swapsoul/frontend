@@ -68,7 +68,7 @@ export class SingleproductpagesampleComponent implements OnInit {
         this.selectedColor=this.productData["productColors"][0];
       })
 
-      var header = document.getElementById("coldiv");
+      /*var header = document.getElementById("coldiv");
       var btns = header.getElementsByClassName("btn");
       console.log(btns[0]);
       btns[0].classList.add("active");
@@ -80,7 +80,7 @@ export class SingleproductpagesampleComponent implements OnInit {
       
 
       //this.act1();
-      //this.act2();
+      //this.act2();*/
 
     })
 
@@ -107,46 +107,6 @@ export class SingleproductpagesampleComponent implements OnInit {
     this.wishflag = !this.wishflag;
     const heart = document.getElementById('heat');
     heart.classList.toggle('red');
-  }
-
- act1(b){
-   console.log(b.path);
-   var header = document.getElementById("myDiv");
-   var btns = header.getElementsByClassName("btn");
-   for(let i=0;i<btns.length;i++)
-   {
-     btns[i].classList.remove("active");
-     btns[i].classList.remove("focus");
-   }
-   if(b.path.length==18){
-   b.path[1].classList.add('active');
-     b.path[1].classList.add('focus');
-   }
-   else if(b.path.length==17){
-   b.path[0].classList.add('active');
-   b.path[0].classList.add('focus');
-   }
-   this.sizeselected = true;
- }
-
-  act2(b2) {
-    this.isFavorite=true;
-    console.log(b2.path);
-    var header = document.getElementById("coldiv");
-    var btns = header.getElementsByClassName("btn");
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].classList.remove("active");
-      btns[i].classList.remove("focus");
-    }
-    if (b2.path.length == 18) {
-      b2.path[1].classList.add('active');
-      b2.path[1].classList.add('focus');
-    }
-    else if (b2.path.length == 17) {
-      b2.path[0].classList.add('active');
-      b2.path[0].classList.add('focus');
-    }
-    this.colorselected = true;
   }
 
   selectionChanged(item) {

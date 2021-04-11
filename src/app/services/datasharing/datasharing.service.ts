@@ -34,7 +34,5 @@ export class DatasharingService {
   
   private messageSource = new BehaviorSubject<string>('bf');
   currentMessage = this.messageSource.asObservable();
-  constructor() { }
-
-  
+  constructor() { }  
 }

@@ -20,6 +20,9 @@ $app-theme: mat-light-theme($app-primary, $app-accent);
     border: 1px #000 solid !important;
     border-color: black;
   }
+  .mat-button-toggle-group-apperance-standard{
+  border: none !important;
+}
 }
 
 // Include the mixin

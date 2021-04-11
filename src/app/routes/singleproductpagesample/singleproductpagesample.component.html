@@ -28,10 +28,10 @@
                         <img src="{{productData['productImgURL']}}">
                       </div><br>
                         <div class="zoom1">
-                        <img src="assets/img/pi1.PNG">
+                        <img src="assets/img/blanks.png">
                       </div><br>
                         <div class="zoom1">
-                        <img src="assets/img/productimage3.jpg">
+                        <img src="assets/img/blanks.png">
                       </div><br>
                       </div>
                   </div>
@@ -73,7 +73,7 @@
               <span class="size_heading mt-1"><strong>Size</strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			  <section>
           <br/>
-          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productSizes'][0]}}">
+          <mat-button-toggle-group #group="matButtonToggleGroup" style="border: none;" value="{{productData['productSizes'][0]}}">
             <mat-button-toggle style="border-radius: 50%;" (change)="selectionChanged($event)" [value]="size" *ngFor="let size of productData['productSizes']" class="mr-1 border50 px-3 py-1"
               value="{{size}}">
               <span>{{size}}</span>
@@ -96,7 +96,7 @@
               <form>
 			  <section>
 
-          <mat-button-toggle-group #group="matButtonToggleGroup" value="{{productData['productColors'][0]}}">
+          <mat-button-toggle-group #group="matButtonToggleGroup" style="border:none" value="{{productData['productColors'][0]}}">
             <mat-button-toggle (change)="selectionChangedColor($event)" [ngStyle]="{'background-color': color}" *ngFor="let color of productData['productColors']" class="border50 mr-3 px-3 py-3"
               value="{{color}}">
             </mat-button-toggle>

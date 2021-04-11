@@ -15,7 +15,10 @@ export class WomenComponent implements OnInit {
   allData: any[];
   products: any[];
   particularproduct: any[];
-  productnames: string[] = []
+  productnames: string[] = [];
+  randomnums: any[] = [];
+  moreyoulike: any[] = [];
+  len: number;
   pint: any;
   selected: string;
   id: string;
@@ -30,7 +33,16 @@ export class WomenComponent implements OnInit {
         //console.log(pdata.status);
         console.log(pdata.body.data);
         this.products = pdata.body.data;
-      })
+        this.len = this.products.length;
+        console.log(this.len);
+        for (let i = 0; i <= 2; i++) {
+          this.randomnums.push(Math.floor(Math.random() * (this.len + 1)));
+        }
+        console.log(this.randomnums);
+        for (let d = 0; d < this.randomnums.length; d++) {
+          this.moreyoulike.push(this.products[this.randomnums[d]]);
+        }
+      });
     })
   }
 
