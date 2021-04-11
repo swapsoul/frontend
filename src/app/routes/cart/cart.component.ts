@@ -12,12 +12,16 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
-  useremail:string;
-  delete_product_id:string;
-  username:string;
+  useremail: string;
+  delete_product_id: string;
+  username: string;
+  quantityCallManager: any = {};
+  isCartDetailsLoaded = false;
+
   constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
+      this.isCartDetailsLoaded = true;
       console.log(resp);
       if (resp.status === 200) {
         console.log(resp);
@@ -54,13 +58,17 @@ export class CartComponent implements OnInit {
     } else {
       item.productQuantity += 1;
     }
+    this.modifyQuantity(item);
   }
 
   decreaseProductQuantity(item): void {
-    if (item.productQuantity > 1) {
-      item.productQuantity -= 1;
-    } else {
-      item.productQuantity = 1;
+    if (item.productQuantity !== 1) {
+      if (item.productQuantity > 1) {
+        item.productQuantity -= 1;
+      } else {
+        item.productQuantity = 1;
+      }
+      this.modifyQuantity(item);
     }
   }
 
@@ -88,22 +96,13 @@ export class CartComponent implements OnInit {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
 
-  delete(item){
-    //console.log(item);
-    this.delete_product_id = item._id;
-    this.delete_product_id=this.delete_product_id.toString();
-    //console.log(this.delete_product_id);
-    this.useremail = this.cookie.get('useremail');
-    this.globalService.getServiceCall(`user/${this.useremail}`, (re) => {
-      this.username = re.body.data["userName"];
-      //console.log(this.username);
-      this.globalService.deleteServiceCall(`cart`, { "_id": this.delete_product_id, "usernameOrEmail": this.username }, (re) => {
-        //console.log(re);
-      });
-      this.requestService.cartDetails(re=>{
-        //console.log(re);
-        this.cartDetails = re.body.cartArray;
-      })
+  delete(item): void {
+    this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
+      if (resp.status === 200) {
+        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id ), 1);
+      } else {
+        console.error('Error while deleting product');
+      }
     });
   }
 
@@ -112,6 +111,26 @@ export class CartComponent implements OnInit {
       return parseInt(value.toString(), 10) > 0;
     } catch (e) {
       return false;
+    }
+  }
+
+  modifyQuantity(item): void {
+    if (this.isQuantityValid(item.productQuantity)) {
+      if (this.quantityCallManager[item._id]) {
+        clearTimeout(this.quantityCallManager[item._id]);
+      }
+      this.quantityCallManager[item._id] = setTimeout(() => {
+        this.requestService.updateCartQuantity({
+          _id: item._id,
+          productQuantity: item.productQuantity
+        }, (resp) => {
+          if (resp.status === 200) {
+            console.log('cart updated');
+          } else {
+            console.log('failed to update quantity');
+          }
+        });
+      }, 2000);
     }
   }
 }

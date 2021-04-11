@@ -19,9 +19,12 @@
       </table>
     </div>
   </div>
-  <div class="row margin-0" ngClass.gt-sm="d-flex">
-    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx" ngClass.lt-sm="bag-item-container-less-padding">
-      <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
+  <div class="row margin-0" ngClass.gt-sm="d-flex"
+       *ngIf="cartDetails.length > 0 && isCartDetailsLoaded; else noCartItem">
+    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx"
+         ngClass.lt-sm="bag-item-container-less-padding">
+      <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items
+        ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
         <div class="product-details-container d-flex">
           <div class="product-image-container">
@@ -29,20 +32,28 @@
           </div>
           <div class="product-details-text">
             <div class="product-details col-sm-12">
-              <div class="margin-around" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">{{ item['product']['productName'] }}</div>
+              <div class="margin-around" ngClass.gt-xs="font-20px"
+                   ngClass.xs="font-16px">{{ item['product']['productName'] }}</div>
               <div class="margin-around" ngClass.gt-xs="font-23px"
                    ngClass.xs="font-18px">{{ item['product']['productSalePrice'] | currency: 'INR' }}</div>
               <div class="margin-around">
-                <span class="font-14px strikethrough" ngClass.lt-sm="custom-col-12">{{ item['product']['productRetailPrice'] | currency: 'INR' }}</span>
-                <span class="font-12px discount" ngClass.lt-sm="custom-col-12 padding-0">{{ item['product']['productDiscount'] }}% OFF</span>
+                <span class="font-14px strikethrough"
+                      ngClass.lt-sm="custom-col-12">{{ item['product']['productRetailPrice'] | currency: 'INR' }}</span>
+                <span class="font-12px discount"
+                      ngClass.lt-sm="custom-col-12 padding-0">{{ item['product']['productDiscount'] }}% OFF</span>
               </div>
             </div>
             <div class="col-sm-12 modifiers">
               <div class="margin-around col-xs-12 col-sm-6 quantity-modifier">
                 <form>
-                  <div mat-ripple class="value-button decrease" (click)="decreaseProductQuantity(item)"><span><mat-icon class="font-18px">remove</mat-icon></span></div>
-                  <input type="number" class="number" [ngModelOptions]="{ standalone: true }"  min="1" [ngClass]="isQuantityValid(item['productQuantity']) ? '' : 'invalid-input'" [(ngModel)]="item['productQuantity']"/>
-                  <div mat-ripple class="value-button increase" (click)="increaseProductQuantity(item)"><span><mat-icon class="font-18px">add</mat-icon></span></div>
+                  <div mat-ripple class="value-button decrease" (click)="decreaseProductQuantity(item)"><span><mat-icon
+                    class="font-18px">remove</mat-icon></span></div>
+                  <input type="number" class="number" [ngModelOptions]="{ standalone: true }"
+                         (ngModelChange)="modifyQuantity(item)" pattern="[0-9]" min="1"
+                         [ngClass]="isQuantityValid(item['productQuantity']) ? '' : 'invalid-input'"
+                         [(ngModel)]="item['productQuantity']"/>
+                  <div mat-ripple class="value-button increase" (click)="increaseProductQuantity(item)"><span><mat-icon
+                    class="font-18px">add</mat-icon></span></div>
                 </form>
               </div>
               <div class="margin-around col-xs-12 col-sm-6 size-modifier">
@@ -62,7 +73,7 @@
               <strong>{{ "Delete" | uppercase }}</strong>
               <mat-icon class="mb-3 ml-2">delete</mat-icon>
             </button>
-           </div>
+          </div>
         </div>
       </div>
       <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">
@@ -77,7 +88,9 @@
         <button mat-ripple class="coupon-code-btn">Check</button>
       </div>
       <div class="price-calculation-container">
-        <div class="price-heading font-18px">Price Details ({{ cartDetails.length.toString().padStart(2, '0') }} Items)</div>
+        <div class="price-heading font-18px">Price Details ({{ cartDetails.length.toString().padStart(2, '0') }}
+          Items)
+        </div>
         <div class="price-components">
           <p>
             <span class="left">Total MRP ( Including Taxes )</span>
@@ -104,25 +117,35 @@
       </div>
     </div>
   </div>
-<!--  <div class="col-12 also-like">-->
-<!--    <div class="heading font-20px col"><strong>You May Also Like</strong></div>-->
-<!--    <div class="also-like-carousal">-->
-<!--      <div class="product-card" *ngFor="let i of [].constructor(3)">-->
-<!--        <div class="img-container">-->
-<!--          <img src="assets/img/productimage1.jpg">-->
-<!--        </div>-->
-<!--        <div class="product-description">-->
-<!--          <div>-->
-<!--            <span class="product-name font-18px" ngbTooltip="Great Men's Shirt Number 1">Great Men's Shirt Number 1</span>-->
-<!--            <span class="product-rating font-16px right">4.5</span>-->
-<!--          </div>-->
-<!--          <div>-->
-<!--            <span class="product-price font-20px"><strong>{{ 400 | currency: 'INR' }}</strong></span>-->
-<!--            <span class="product-actual-price strikethrough font-13px text-center">{{ 500 | currency: 'INR' }}</span>-->
-<!--            <span class="product-discount font-13px text-right">{{ "20% OFF" | uppercase }}</span>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <ng-template #noCartItem>
+    <div class="row margin-0" ngClass.gt-sm="d-flex">
+      <div class="col-12 text-center font-18px">
+        <strong *ngIf="isCartDetailsLoaded; else loading">Please add few products. Your cart is empty.</strong>
+        <ng-template #loading>
+          <strong>Loading cart ...</strong>
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+  <!--  <div class="col-12 also-like">-->
+  <!--    <div class="heading font-20px col"><strong>You May Also Like</strong></div>-->
+  <!--    <div class="also-like-carousal">-->
+  <!--      <div class="product-card" *ngFor="let i of [].constructor(3)">-->
+  <!--        <div class="img-container">-->
+  <!--          <img src="assets/img/productimage1.jpg">-->
+  <!--        </div>-->
+  <!--        <div class="product-description">-->
+  <!--          <div>-->
+  <!--            <span class="product-name font-18px" ngbTooltip="Great Men's Shirt Number 1">Great Men's Shirt Number 1</span>-->
+  <!--            <span class="product-rating font-16px right">4.5</span>-->
+  <!--          </div>-->
+  <!--          <div>-->
+  <!--            <span class="product-price font-20px"><strong>{{ 400 | currency: 'INR' }}</strong></span>-->
+  <!--            <span class="product-actual-price strikethrough font-13px text-center">{{ 500 | currency: 'INR' }}</span>-->
+  <!--            <span class="product-discount font-13px text-right">{{ "20% OFF" | uppercase }}</span>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
 </div>
