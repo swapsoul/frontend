@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   dashesOnNavigation = 8;
   cartDetails = [];
   useremail:string;
-  cart_id:string;
+  delete_product_id:string;
   username:string;
   constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
     this.onResize(null);
@@ -88,16 +88,22 @@ export class CartComponent implements OnInit {
     return this.getTotalPrice() - this.getTotalDiscount() + this.getDeliveryFee();
   }
 
-  delete(){
-    console.log("gdksf");
+  delete(item){
+    //console.log(item);
+    this.delete_product_id = item._id;
+    this.delete_product_id=this.delete_product_id.toString();
+    //console.log(this.delete_product_id);
     this.useremail = this.cookie.get('useremail');
-    console.log(this.useremail);
     this.globalService.getServiceCall(`user/${this.useremail}`, (re) => {
       this.username = re.body.data["userName"];
-      console.log(this.username);
-    });
-    this.globalService.getServiceCall1(`cart`,{"usernameOrEmail":this.username}, (re) => {
-      console.log(re);
+      //console.log(this.username);
+      this.globalService.deleteServiceCall(`cart`, { "_id": this.delete_product_id, "usernameOrEmail": this.username }, (re) => {
+        //console.log(re);
+      });
+      this.requestService.cartDetails(re=>{
+        //console.log(re);
+        this.cartDetails = re.body.cartArray;
+      })
     });
   }
 

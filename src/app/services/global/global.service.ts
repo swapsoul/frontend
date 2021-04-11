@@ -110,6 +110,20 @@ export class GlobalService {
         );
     }
 
+    public deleteServiceCall(url: string, params: any, callback, withToken = true): any {
+        //console.log(this.BASE_API_URL+url);
+        this.httpClient.request('DELETE',this.BASE_API_URL + url, {headers:this.createHeaders(withToken),body:params,observe:'response'}).subscribe(
+            (data) => {
+                //console.log(data);
+                let res = data; // Success Response
+                callback(res);
+            },
+            err => {
+                console.error(err);
+            } // Error Response
+        );
+    }
+
   setCookie(username, secret): void {
     this.cookie.set('token', btoa(username + ':' + secret), 10, '/');
   }
