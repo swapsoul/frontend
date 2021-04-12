@@ -6,86 +6,82 @@
     <br>
     <mat-card-content>
       <div class="card-layout">
+        <form [formGroup]="emailForm">
+          <div [class.disabled]="!disabledFlag">
+            <p style="font-weight: bold;">Enter your email:</p>
+            <h5 style="color: red;">{{message}}</h5>
+            <button class="red-button" [disabled]="!emailForm.valid" (click)="submitEmail()" mat-button>SEND
+              EMAIL</button>
+            <div class="card-column">
+              <mat-form-field style="margin: 1px; margin-right: 10px;" fxFlex appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. mail@gmail.com" />
+                <mat-error
+                  *ngIf="emailForm.get('email').hasError('email') && !emailForm.get('email').hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailForm.get('email').hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+
         <form [formGroup]="registerForm" (submit)="submitForm()">
-          <p style="font-weight: bold;">Enter your email:</p>
-          <h5 style="color: red;">Verification code will be sent to your email</h5>
-          <button class="red-button" mat-button>SEND EMAIL</button>
-          <div class="card-column">
-            <mat-form-field style="margin: 1px; margin-right: 10px;" fxFlex appearance="fill">
-              <mat-label>Email</mat-label>
-              <input type="email" matInput formControlName="email" placeholder="Ex. mail@gmail.com" />
-              <mat-error
-                *ngIf="registerForm.get('email').hasError('email') && !registerForm.get('email').hasError('required')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="registerForm.get('email').hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+          <div [class.disabled]="disabledFlag">
+            <p style="font-weight: bold;">Enter your verification code:</p>
+            <!-- <button class="red-button" mat-button>CONFIRM </button> -->
+            <div class="card-column">
+              <mat-form-field style="margin: 1px; margin-right: 10px;" fxFlex appearance="fill">
+                <mat-label>verification code</mat-label>
+                <input type="text" matInput formControlName="passwordOtp" placeholder="Ex. swapsoul" />
+                <mat-error *ngIf="registerForm.get('passwordOtp').hasError('required')">
+                  Verification-Code is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
           </div>
-          <p style="font-weight: bold;">Enter your verification code:</p>
-          <button class="red-button" mat-button>CONFIRM </button>
-          <div class="card-column">
-            <mat-form-field style="margin: 1px; margin-right: 10px;" fxFlex appearance="fill">
-              <mat-label>verification code</mat-label>
-              <input type="text" matInput formControlName="verification_code" placeholder="Ex. swapsoul" />
-              <mat-error *ngIf="registerForm.get('verification_code').hasError('required')">
-                Verification-Code is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+          <div [class.disabled]="disabledFlag">
+            <p style="font-weight: bold;">Enter new Password:</p>
+            <div class="card-column">
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="registerForm.get('password').hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
           </div>
-
-          <p style="font-weight: bold;">Enter new Password:</p>
-          <div class="card-column">
-            <mat-form-field fxFlex appearance="fill">
-              <mat-label>Password</mat-label>
-              <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-error *ngIf="registerForm.get('password').hasError('required')">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
+          <div [class.disabled]="disabledFlag">
+            <p style="font-weight: bold;">Confirm new Password:</p>
+            <div class="card-column">
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>Password</mat-label>
+                <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="registerForm.get('password').hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
           </div>
-
-          <p style="font-weight: bold;">Confirm new Password:</p>
-          <div class="card-column">
-            <mat-form-field fxFlex appearance="fill">
-              <mat-label>Password</mat-label>
-              <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-error *ngIf="registerForm.get('password').hasError('required')">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
-
-
-          <div class="card-column">
+          <div [class.disabled]="disabledFlag" class="card-column">
             <button [disabled]="!registerForm.valid" type="submit" mat-button class="red-button">Submit</button>
           </div>
-          <!-- <button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
-            User already exists
-          </button> -->
-          <ng-template [ngIf]="submitStatus">
-            <span>{{this.errorMsg}}</span>
-          </ng-template>
-          <ng-template [ngIf]="!submitStatus">
-            <span>{{this.errorMsg}}</span>
-          </ng-template>
         </form>
       </div>
     </mat-card-content>
   </mat-card>
-
 </div>
-
-
 
 
 <div class="page-footer-section">
