@@ -85,10 +85,19 @@ export class ProfileComponent implements OnInit {
 
   updateAddress(){
     this.addressflag=0;
+    if (this.addline1){
     this.useraddress['addressLine1'] = this.addline1;
+    }
+    console.log(this.addline2);
+    if (this.addline2){
     this.useraddress['addressLine2'] = this.addline2;
+    }
+    if (this.city){
     this.useraddress['city'] = this.city;
+    }
+    if(this.pin){
     this.useraddress['pincode'] = this.pin;
+    }
     console.log(this.useraddress);
     this.globalService.putServiceCall('user', { usernameOrEmail: this.useremail, phoneNumber: this.mobile, userAddress: this.useraddress }, (data) => {
       //console.log(data);
