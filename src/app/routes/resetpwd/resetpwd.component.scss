@@ -11,6 +11,11 @@
     align-items: center;
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 .red-button {
     background-color:red;
     border: none;
@@ -56,14 +61,6 @@
     width:100%;
   }
   
-  .example-container .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-  }
-  input{
-    font-size:15px;
-    text-align:center;
-    width:60%;
-}
 
 h1{
     color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;text-align:center;

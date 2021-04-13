@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label class="col-sm-2 control-label">Delivery Address</label>
                             <div class="col-sm-4">
                                 <form (submit)="onSubmit()">
@@ -74,12 +74,60 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                        </div>-->
                         
                     </form>
                 </div> <!-- end form-horizontal -->
             </div> <!-- end panel-body -->
 
         </div> <!-- end panel -->
+
+            <div class="containerv d-flex">
+                <p class="headin"><strong>My Address</strong></p>
+                <form class="addressBox d-block" method="POST">
+                    <div class="submitBox form-group">
+                        <div class="inputBox">
+                            <div class="formText">Address Line 1</div>
+                            <div class="line1box">
+                                <input [(ngModel)]="addline1" (keyup)="onKeyline1($event)" placeholder="{{useraddress['addressLine1']}}" name="Line1" class="inputEle" required="required" id="line1" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <div class="formText">Address Line 2</div>
+                            <div class="line1box">
+                                <input [(ngModel)]="addline2" (keyup)="onKeyline2($event)" placeholder="{{useraddress['addressLine2']}}" name="Line2" class="inputEle" required="required" id="line2" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <div class="formText">City</div>
+                            <div class="line1box">
+                                <div class="errorMessageName d-none">Please enter valid line 1</div>
+                                <input [(ngModel)]="city" (keyup)="onKeycity($event)" placeholder="{{useraddress['city']}}" name="city" class="inputEle" required="required" id="city" type="text" disabled>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <div class="formText">Pincode</div>
+                            <div class="line1box">
+                                <input [(ngModel)]="pin" (keyup)="onKeypin($event)" placeholder="{{useraddress['pincode']}}" name="pin" maxlength="6" class="inputEle" required="required" disabled id="pincode" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <button *ngIf="addressflag==0 && addupsuccess==false" mat-raised-button class="mt-3 addbutton" (click)="removeDisabledAddress()">
+                    <span>Change</span>
+                </button>
+
+                <button *ngIf="addressflag==1" mat-raised-button class="mt-3 addbutton" (click)="updateAddress()">
+                        <span>Submit</span>
+                </button>
+
+                <p class="mt-3 headin" *ngIf="addupsuccess==true">Address Updated Successfully !</p>
+            </div>
 
 
     </div> <!-- end size -->

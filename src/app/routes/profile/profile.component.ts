@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { CookieService } from 'ngx-cookie-service';
+import { RequestService } from 'src/app/services/request/request.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,20 +11,27 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private globalService: GlobalService, private cookie:CookieService) { }
+  constructor(private request: RequestService,private globalService: GlobalService, private cookie:CookieService) { }
 
   flag:number = 0;
   flag1:number = 0;
+  addressflag:number = 0;
   username: string;
   useremail: string;
   data: any[];
   phone:any;
+  useraddress : any[] = [];
   userName: string;
   userEmail:string;
   mobile: any;
   address: string;
   error:number = 0;
   error1:number = 0;
+  addline1: string;
+  addline2: string;
+  city: string;
+  pin: number;
+  addupsuccess: boolean = false;
 
   ngOnInit(): void {
     this.userEmail = this.cookie.get('useremail');
@@ -31,13 +39,15 @@ export class ProfileComponent implements OnInit {
     this.data = this.globalService.getProfileData();
     console.log(this.data);
     this.globalService.getServiceCall(`user/${this.userEmail}`, (re) => {
-      //console.log(re.body.data);
+      console.log(re);
       this.phone = re.body.data["phoneNumber"];
       this.useremail = re.body.data["userEmail"];
       this.userName = re.body.data["userName"];
+      this.useraddress = re.body.data["userAddress"][0];
       //console.log(this.useremail);
       //console.log(this.phone);
     });
+    this.addupsuccess = false;
   }
 
   numberOnly(event): boolean {
@@ -73,6 +83,19 @@ export class ProfileComponent implements OnInit {
   }
   }
 
+  updateAddress(){
+    this.addressflag=0;
+    this.useraddress['addressLine1'] = this.addline1;
+    this.useraddress['addressLine2'] = this.addline2;
+    this.useraddress['city'] = this.city;
+    this.useraddress['pincode'] = this.pin;
+    console.log(this.useraddress);
+    this.globalService.putServiceCall('user', { usernameOrEmail: this.useremail, phoneNumber: this.mobile, userAddress: this.useraddress }, (data) => {
+      //console.log(data);
+    });
+    this.addupsuccess = true;
+  }
+
   onSubmit() {
     //console.log(this.mobile);
   }
@@ -81,6 +104,34 @@ export class ProfileComponent implements OnInit {
      this.mobile = event.target.value; 
      //console.log(this.mobile);
     }
+
+  onKeyline1(event) {
+    this.addline1 = event.target.value;
+    console.log(this.addline1);
+  }
+
+  onKeyline2(event) {
+    this.addline2 = event.target.value;
+    console.log(this.addline2);
+  }
+
+  onKeycity(event) {
+    this.city = event.target.value;
+    console.log(this.city);
+  }
+
+  onKeypin(event) {
+    this.pin = event.target.value;
+    console.log(this.pin);
+  }
+
+  removeDisabledAddress(){
+      document.querySelector("input[name='Line1']").removeAttribute("disabled");
+     document.querySelector("input[name='Line2']").removeAttribute("disabled");
+     document.querySelector("input[name='city']").removeAttribute("disabled");
+     document.querySelector("input[name='pin']").removeAttribute("disabled");
+      this.addressflag = 1;
+  }
 
 
 }
