@@ -23,6 +23,11 @@ export class RequestService {
     }
   }
 
+  resetPassword(usernameOrEmail: string, passwordOtp: string, password: string, callback): any {
+    this.globalService.setCookie(usernameOrEmail, password);
+    this.globalService.putServiceCall('user/resetpassword', { usernameOrEmail , passwordOtp}, callback, true);
+  }
+
   signup(userName: string, userPassword: string, userEmail: string, phoneNumber: string, callback = null): any {
     this.globalService.setCookie(userEmail, userPassword);
     if ( callback == null ) {
