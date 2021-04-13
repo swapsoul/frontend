@@ -24,9 +24,9 @@ export class ResetpwdComponent implements OnInit {
   registerForm: FormGroup = this.formBuilder.group({
     passwordOtp: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     password: [undefined, { validators: [Validators.required], updateOn: 'change' }],
-    
+
   });
-  
+
 
   emailForm: FormGroup = this.formBuilder.group({
     email: [
@@ -40,12 +40,12 @@ export class ResetpwdComponent implements OnInit {
 
   submitEmail(): void {
     this.email = this.emailForm.value.email
-    console.log(this.email)
+    // console.log(this.email)
     this.globalService.getServiceCall(`user/resetpassword/` + this.emailForm.value.email, (res) => {
       if (!res.error) {
         this.message = res.body.message
         this.disabledFlag = false;
-        console.log(res)
+        // console.log(res)
       } else {
         this.message = "Password OTP email sent failed"
       }
@@ -57,7 +57,7 @@ export class ResetpwdComponent implements OnInit {
     this.requestService.resetPassword(this.email, this.registerForm.value.passwordOtp, this.registerForm.value.password, (res) => {
       if (!res.error) {
         this.alert = "Password reset successful"
-        console.log(res)
+        // console.log(res)
         setTimeout(() => {
           this._router.navigate(['home']);
         }, 800);
