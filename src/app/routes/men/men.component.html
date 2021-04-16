@@ -41,8 +41,8 @@
                     <span class="product-rating font-16px right">{{data.productRating}}</span>
                   </div>
                   <div>
-                    <span class="product-price font-20px"><strong>{{ data.productSalePrice | currency: 'INR' }}</strong></span>
-                    <span class="product-actual-price strikethrough font-13px text-center">{{ data.productRetailPrice | currency: 'INR' }}</span>
+                    <span class="product-price font-20px"><strong>&#8377;{{ data.productSalePrice }}</strong></span>
+                    <span class="product-actual-price strikethrough font-13px text-center">&#8377;{{ data.productRetailPrice }}</span>
                     <span class="product-discount font-13px text-right">{{ data.productDiscount}}% OFF</span>
                   </div>
                 </div>
@@ -65,7 +65,24 @@
           </div>
 
           <div class="d-block d-md-none">
-            <mat-grid-list cols="2" rowHeight="0.6:0.87">
+            <div class="product-card-mob" *ngFor="let data of products">
+              <div class="img-container-mob">
+                <img src="{{data.productImgURL}}" (click)=pro([data._id])>
+              </div>
+              <div class="product-description-mob">
+                <div class="d-inline-flex">
+                  <span class="product-name-mob font-14px ml-n3"
+                    ngbTooltip="{{data.productName}}"><strong>{{data.productName}}</strong></span>
+                  <span class="product-rating-mob font-12px right">{{data.productRating}}</span>
+                </div>
+                <div>
+                  <span class="product-price-mob font-15px"><strong>&#8377;{{ data.productSalePrice }}</strong></span>
+                  <span class="product-actual-price-mob strikethrough font-10px text-center">&#8377;{{ data.productRetailPrice }}</span>
+                  <span class="product-discount-mob font-10px text-right">{{ data.productDiscount}}% OFF</span>
+                </div>
+              </div>
+            </div>
+            <!--<mat-grid-list cols="2" rowHeight="0.6:0.87">
               <div class="ht" *ngFor="let data of products">
                 <mat-grid-tile>
                   <mat-card class="custommatcard">
@@ -89,7 +106,7 @@
                 </mat-grid-tile>
                 <br/>
               </div>
-            </mat-grid-list>
+            </mat-grid-list>-->
           </div>
           
   
