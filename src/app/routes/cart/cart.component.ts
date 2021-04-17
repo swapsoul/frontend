@@ -48,7 +48,8 @@ export class CartComponent implements OnInit {
 
   get userAddress(): any {
     if (this.commonService.userData) {
-      return this.commonService.userData.data.userAddress;
+      // return this.commonService.userData.data.userAddress;
+      return Array.from(new Array(10), () => this.commonService.userData.data.userAddress[0]);
     }
   }
 
@@ -134,7 +135,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-  selectAddressAndProceed(address): void {
-    console.log(address);
+  selectAddressAndProceed(index, address): void {
+    console.log(index, address);
   }
 }

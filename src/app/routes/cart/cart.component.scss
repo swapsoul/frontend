@@ -320,9 +320,11 @@
     display: flex;
     flex: 1 1 0;
     min-width: 200px;
+    max-width: 200px;
     min-height: 200px;
     align-items: center;
     justify-content: center;
+    margin: 10px 20px;
   }
 
   .add-address {

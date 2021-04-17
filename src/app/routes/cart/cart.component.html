@@ -127,7 +127,7 @@
     </div>
   </ng-template>
   <div class="row margin-0 address-container" ngClass.gt-sm="d-flex" *ngIf="isAddressSelection">
-    <div class="row margin-0" ngClass.gt-sm="d-flex" >
+    <div class="row margin-0" ngClass.gt-sm="d-flex">
       <div class="col-12 font-18px">
         <div class="address-header"><strong>Please select the delivery address</strong></div>
         <div class="back-btn">
@@ -135,28 +135,31 @@
             <mat-icon class="font-20px">keyboard_arrow_left</mat-icon>
             {{ "Back" | uppercase }}</button>
         </div>
-        <div fxLayout="row wrap" fxLayoutGap="20px">
-          <mat-card class="address-card" *ngFor="let address of userAddress">
-            <div fxLayout="column">
-              <mat-card-content>
-                <div>{{address.addressLine1}}</div>
-                <div>{{address.addressLine2}}</div>
-                <div>{{address.city}}</div>
-                <div>Pincode: {{address.pincode}}</div>
-              </mat-card-content>
-              <mat-card-actions fxLayoutAlign="center">
-                <button mat-button (click)="selectAddressAndProceed(address)">{{ "Deliver Here" | uppercase }}</button>
-              </mat-card-actions>
-            </div>
-          </mat-card>
-          <mat-card mat-ripple class="address-card add-address text-center">
-            <div fxLayout="row">
-              <mat-card-content>
-                <mat-icon class="font-40px color-gray">add</mat-icon>
-                <div class="color-gray"><strong>Add address</strong></div>
-              </mat-card-content>
-            </div>
-          </mat-card>
+        <div fxLayoutAlign="center">
+          <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+            <mat-card class="address-card" *ngFor="let address of userAddress; let i=index">
+              <div fxLayout="column">
+                <mat-card-content>
+                  <div>{{address.addressLine1}}</div>
+                  <div>{{address.addressLine2}}</div>
+                  <div>{{address.city}}</div>
+                  <div>Pincode: {{address.pincode}}</div>
+                </mat-card-content>
+                <mat-card-actions fxLayoutAlign="center">
+                  <button mat-button
+                          (click)="selectAddressAndProceed(i, address)">{{ "Deliver Here" | uppercase }}</button>
+                </mat-card-actions>
+              </div>
+            </mat-card>
+            <mat-card mat-ripple class="address-card add-address text-center">
+              <div fxLayout="row">
+                <mat-card-content>
+                  <mat-icon class="font-40px color-gray">add</mat-icon>
+                  <div class="color-gray"><strong>Add address</strong></div>
+                </mat-card-content>
+              </div>
+            </mat-card>
+          </div>
         </div>
       </div>
     </div>
