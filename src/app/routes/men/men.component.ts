@@ -43,7 +43,7 @@ export class MenComponent implements OnInit {
         //console.log(pdata.body.data);
         this.products = pdata.body.data;
         this.len = this.products.length;
-        console.log(this.len);
+        console.log(this.products);
         for(let i=0;i<=2;i++)
         {
           this.randomnums.push(Math.floor(Math.random() * (this.len+ 1)));

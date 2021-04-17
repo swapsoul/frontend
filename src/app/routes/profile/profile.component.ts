@@ -30,8 +30,9 @@ export class ProfileComponent implements OnInit {
   addline1: string;
   addline2: string;
   city: string;
-  pin: number;
+  pin: any;
   addupsuccess: boolean = false;
+  pincodesmall: boolean = false;
 
   ngOnInit(): void {
     this.userEmail = this.cookie.get('useremail');
@@ -96,6 +97,12 @@ export class ProfileComponent implements OnInit {
     this.useraddress['city'] = this.city;
     }
     if(this.pin){
+      if(this.pin.length<6)
+      {
+        this.pincodesmall = false;
+        return;
+      }
+      this.pincodesmall = true;
     this.useraddress['pincode'] = this.pin;
     }
     console.log(this.useraddress);

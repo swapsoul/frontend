@@ -37,11 +37,11 @@
                                 <mat-icon class="write" (click)=removedisabled();>create</mat-icon>
                         </div>
 
-                        <div *ngIf="error==1">
+                        <div *ngIf="error==1 && flag==0">
                             <p class="ml-3">Please Enter Valid 10 Digit Mobile Number</p>
                         </div>
 
-                        <div *ngIf="error==2">
+                        <div *ngIf="error==2 && flag==0">
                             <p class="ml-3">Phone Number Updated Successfully!</p>
                         </div>
 
@@ -112,7 +112,7 @@
                         <div class="inputBox">
                             <div class="formText">Pincode</div>
                             <div class="line1box">
-                                <input [(ngModel)]="pin" (keyup)="onKeypin($event)" placeholder="{{useraddress['pincode']}}" name="pin" maxlength="6" class="inputEle" required="required" disabled id="pincode" type="text">
+                                <input [(ngModel)]="pin" #pinc="ngModel" pattern="[1-9][0-9]{5}" (keyup)="onKeypin($event)" placeholder="{{useraddress['pincode']}}" name="pin" maxlength="6" class="inputEle" required="required" disabled id="pincode" type="text">
                             </div>
                         </div>
 
