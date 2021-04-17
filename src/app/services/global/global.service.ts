@@ -72,6 +72,7 @@ export class GlobalService {
       },
       err => {
         console.error(err);
+        callback(err);
         // this.spinner.hide();
       } // Error Response
     );
@@ -121,6 +122,7 @@ export class GlobalService {
       },
       err => {
         console.error(err);
+        callback(err);
       } // Error Response
     );
   }
