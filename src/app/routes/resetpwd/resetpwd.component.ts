@@ -24,6 +24,7 @@ export class ResetpwdComponent implements OnInit {
   registerForm: FormGroup = this.formBuilder.group({
     passwordOtp: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     password: [undefined, { validators: [Validators.required], updateOn: 'change' }],
+    confirmpassword: [undefined, { validators: [Validators.required], updateOn: 'change' }]
 
   });
 
@@ -64,6 +65,7 @@ export class ResetpwdComponent implements OnInit {
         return false;
       } else {
         this.alert = "Password reset failed"
+        return true;
       }
 
     });
