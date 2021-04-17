@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalService } from '../global/global.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { CommonService } from '../common/common.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestService {
 
-  constructor(private router: Router, private cookie: CookieService, private globalService: GlobalService) {
+  constructor(private router: Router, private cookie: CookieService, private globalService: GlobalService, private commonService: CommonService) {
   }
 
   login(usernameOrEmail: string, password: string, callback = null): any {
@@ -62,6 +63,7 @@ export class RequestService {
       this.globalService.profileFlag = true;
       this.getLoggedUserDetails(username, (resp) => {
         if (resp.status === 200) {
+          this.commonService.userData = resp.body;
           this.globalService.UserName = resp.body.data.userName;
         } else {
           this.globalService.clearCookies();

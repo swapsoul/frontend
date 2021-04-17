@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
-import { CookieService } from 'ngx-cookie-service';
-import { GlobalService } from 'src/app/services/global/global.service';
+import { CommonService } from '../../services/common/common.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,24 +11,19 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
-  useremail: string;
-  delete_product_id: string;
-  username: string;
   quantityCallManager: any = {};
   isCartDetailsLoaded = false;
+  isAddressSelection = false;
 
-  constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
+  constructor(private requestService: RequestService, private commonService: CommonService) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
       this.isCartDetailsLoaded = true;
-      console.log(resp);
       if (resp.status === 200) {
-        console.log(resp);
         this.cartDetails = resp.body.cartArray;
         this.cartDetails.forEach((cartItem) => {
           cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
-        console.log(this.cartDetails);
       } else {
         console.error('Error at fetching cart details');
       }
@@ -50,6 +44,12 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  get userAddress(): any {
+    if (this.commonService.userData) {
+      return this.commonService.userData.data.userAddress;
+    }
   }
 
   increaseProductQuantity(item): void {
@@ -99,7 +99,7 @@ export class CartComponent implements OnInit {
   delete(item): void {
     this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
       if (resp.status === 200) {
-        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id ), 1);
+        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id), 1);
       } else {
         console.error('Error while deleting product');
       }
@@ -132,5 +132,9 @@ export class CartComponent implements OnInit {
         });
       }, 2000);
     }
+  }
+
+  selectAddressAndProceed(address): void {
+    console.log(address);
   }
 }

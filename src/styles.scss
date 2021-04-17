@@ -40,6 +40,13 @@ input[type=number] {
   .font-#{$i}px {
     font-size: ($i) + px;
   }
+
+  mat-icon.font-#{$i}px {
+    height: ($i) + px;
+    width: ($i) + px;
+    min-width: 24px;
+    min-height: 24px;
+  }
 }
 
 @for $i from 1 through $column-numbers {

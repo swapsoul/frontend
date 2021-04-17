@@ -284,7 +284,8 @@
   .also-like-carousal {
     text-align: center;
   }
-  .cursop{
+
+  .cursop {
     cursor: pointer;
   }
 }
@@ -298,5 +299,39 @@
 @media screen and (max-width: 425px) {
   #coupon-code {
     width: 100%;
+  }
+}
+
+.address-container {
+  .address-header {
+    padding: 0 0 15px 0;
+  }
+
+  .address-card {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 200px;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add-address {
+    border: $border-width dashed $border-color;
+    box-shadow: none;
+  }
+
+  .back-btn {
+    margin-bottom: 15px;
+    button {
+      padding-left: 10px;
+    }
+  }
+
+  button {
+    color: white;
+    background: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-px;
   }
 }
