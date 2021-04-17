@@ -3,18 +3,18 @@
     <div class="cart-navigation">
       <table>
         <tr>
-          <td><img src="assets/img/bag.png"></td>
+          <td [ngClass]="isAddressSelection ? 'inactive' : ''"><img src="assets/img/bag.png"></td>
           <td></td>
-          <td><img src="assets/img/bag.png"></td>
+          <td [ngClass]="isAddressSelection ? '' : 'inactive'"><img src="assets/img/bag.png"></td>
           <td></td>
-          <td><img src="assets/img/bag.png"></td>
+          <td class="inactive"><img src="assets/img/bag.png"></td>
         </tr>
         <tr>
-          <td>My Bag</td>
+          <td [ngClass]="isAddressSelection ? 'inactive' : 'active'">My Bag</td>
           <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
-          <td>Confirm Address</td>
+          <td [ngClass]="isAddressSelection ? 'active' : 'inactive'">Confirm Address</td>
           <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
-          <td>Payment</td>
+          <td class="inactive">Payment</td>
         </tr>
       </table>
     </div>

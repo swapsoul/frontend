@@ -21,6 +21,15 @@
       color: $color-pink;
       padding: 0;
     }
+
+    .active {
+      color: $color-pink;
+      font-weight: bold;
+    }
+
+    .inactive {
+      opacity: 0.5;
+    }
   }
 
   margin: 10px 5px 20px 5px;
