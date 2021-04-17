@@ -21,8 +21,7 @@
   </div>
   <div class="row margin-0" ngClass.gt-sm="d-flex"
        *ngIf="cartDetails.length > 0 && isCartDetailsLoaded; else noCartItem">
-    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx"
-         ngClass.lt-sm="bag-item-container-less-padding">
+    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx">
       <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items
         ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
@@ -76,12 +75,12 @@
           </div>
         </div>
       </div>
-      <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">
-        <span>Add More From Wishlist</span>
-        <mat-icon>keyboard_arrow_right</mat-icon>
-      </div>
+<!--      <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">-->
+<!--        <span>Add More From Wishlist</span>-->
+<!--        <mat-icon>keyboard_arrow_right</mat-icon>-->
+<!--      </div>-->
     </div>
-    <div class="col-md-6 col-sm-12 price-details-container" ngClass.lt-sm="price-details-container-less-padding">
+    <div class="col-md-6 col-sm-12 price-details-container">
       <div class="coupon-code-container">
         <mat-icon class="horizontal-invert">loyalty</mat-icon>
         <input type="text" id="coupon-code" placeholder="Enter Coupon Code">

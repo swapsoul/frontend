@@ -26,13 +26,11 @@
   margin: 10px 5px 20px 5px;
 }
 
-.bag-item-container-less-padding {
-  padding: 0 10px !important;
-}
-
 .bag-item-container {
   margin: 0 auto;
-  padding: 0 40px 0 30px;
+  @media screen and (min-width: 768px) {
+    padding: 0 40px 0 30px;
+  }
 
   .cart-item {
     border: $border-width solid $border-color;
@@ -179,13 +177,11 @@
   }
 }
 
-.price-details-container-less-padding {
-  padding: 0 10px 20px 10px!important;
-}
-
 .price-details-container {
   margin-top: 50px;
-  padding: 0 30px 20px 40px;
+  @media screen and (min-width: 768px) {
+    padding: 0 30px 20px 40px;
+  }
 
   .coupon-code-container {
     border: $border-width solid $border-color;
