@@ -60,7 +60,7 @@ export class RequestService {
     this.globalService.getServiceCall('user/' + username, callback, true);
   }
 
-  addUpdateAddress(payload, callback): void {
+  addUpdateDeleteAddress(payload, callback): void {
     payload.usernameOrEmail = this.cookie.get('useremail');
     this.globalService.putServiceCall('user', payload, callback, true);
   }

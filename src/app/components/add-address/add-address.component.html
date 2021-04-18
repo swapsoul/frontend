@@ -42,10 +42,10 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
-    <button mat-flat-button type="submit" [mat-dialog-close]="addressForm.value"
-            [disabled]="!addressForm.valid">Add
+    <button class="custom-style-btn" mat-flat-button type="submit" [mat-dialog-close]="addressForm.value"
+            [disabled]="!addressForm.valid">{{isEditAddress ? 'Update' : 'Add' }}
     </button>
-    <button mat-flat-button [mat-dialog-close]="false">Close
+    <button mat-flat-button color="warn" [mat-dialog-close]="false">Close
       <mat-icon inline="true">close</mat-icon>
     </button>
   </mat-dialog-actions>

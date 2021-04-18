@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from '../../handlers/error-state-matcher';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-address',
@@ -10,6 +11,7 @@ import { MyErrorStateMatcher } from '../../handlers/error-state-matcher';
 export class AddAddressComponent implements OnInit {
 
   addressForm = new FormGroup({
+    id: new FormControl('', []),
     lineFirst: new FormControl('', [Validators.required]),
     lineSecond: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
@@ -22,14 +24,27 @@ export class AddAddressComponent implements OnInit {
 
   autocomplete = 'off';
 
+  isEditAddress = false;
+
   get matcher(): any {
     return new MyErrorStateMatcher();
   }
 
-  constructor() {
+  constructor(@Inject(MAT_DIALOG_DATA) private data: any) {
   }
 
   ngOnInit(): void {
+    console.log(this.data);
+    if (this.data) {
+      this.addressForm.setValue({
+        id: this.data.id,
+        lineFirst: this.data.addressLine1,
+        lineSecond: this.data.addressLine2,
+        city: this.data.city,
+        pinCode: this.data.pincode
+      });
+      this.isEditAddress = true;
+    }
   }
 
   get lineFirst(): any {

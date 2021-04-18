@@ -149,13 +149,16 @@ export class CartComponent implements OnInit {
     console.log(index, address);
   }
 
-  addAddress(): void {
+  addOrEditAddress(index = null, address = null): void {
+    if (index != null) {
+      address.id = index;
+    }
     const dialogRef = this.dialog.open(AddAddressComponent, {
       width: '90%',
       maxWidth: '300px',
       height: '90%',
       maxHeight: '500px',
-      data: null,
+      data: index == null ? null : address,
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -169,17 +172,37 @@ export class CartComponent implements OnInit {
             pincode: result.pinCode
           }
         };
-        this.requestService.addUpdateAddress(payload, (res) => {
+        if (!isNaN(parseInt(result.id, 10))) {
+          // @ts-ignore
+          payload.userAddress.id = result.id;
+        }
+        this.requestService.addUpdateDeleteAddress(payload, (res) => {
           if (res.status === 200) {
             this.commonService.userData.data.userAddress = res.body.data.userAddress;
-            this.snackbarService.openMessageSnackbar('Address added successfully');
+            this.snackbarService.openMessageSnackbar('Address added (or updated) successfully');
           } else {
-            this.snackbarService.openMessageSnackbar('Failed to add address');
+            this.snackbarService.openMessageSnackbar('Failed to add (or update) address');
           }
         });
       }
       // console.log("after closed",this.globalService.profileFlag)
       // console.log('The dialog was closed');
+    });
+  }
+
+  deleteAddress(index): void {
+    const payload = {
+      userAddress: {
+        id: index
+      }
+    };
+    this.requestService.addUpdateDeleteAddress(payload, (res) => {
+      if (res.status === 200) {
+        this.commonService.userData.data.userAddress = res.body.data.userAddress;
+        this.snackbarService.openMessageSnackbar('Address deleted successfully');
+      } else {
+        this.snackbarService.openMessageSnackbar('Failed to delete address');
+      }
     });
   }
 }

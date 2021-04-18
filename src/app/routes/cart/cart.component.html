@@ -149,9 +149,13 @@
                   <button mat-button
                           (click)="selectAddressAndProceed(i, address)">{{ "Deliver Here" | uppercase }}</button>
                 </mat-card-actions>
+                <div fxLayout="row" class="address-clickable-text font-16px">
+                  <span mat-ripple (click)="addOrEditAddress(i, address)">Edit</span> |
+                  <span mat-ripple (click)="deleteAddress(i)">Delete</span>
+                </div>
               </div>
             </mat-card>
-            <mat-card mat-ripple class="address-card add-address text-center" (click)="addAddress()">
+            <mat-card mat-ripple class="address-card add-address text-center" (click)="addOrEditAddress()">
               <div fxLayout="row">
                 <mat-card-content>
                   <mat-icon class="font-40px color-gray">add</mat-icon>

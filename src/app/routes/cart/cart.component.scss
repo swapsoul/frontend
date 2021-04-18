@@ -325,6 +325,14 @@
     align-items: center;
     justify-content: center;
     margin: 10px 20px;
+
+    .address-clickable-text {
+      span {
+        text-decoration: underline;
+        padding: 0 5px;
+        cursor: pointer;
+      }
+    }
   }
 
   .add-address {
@@ -334,6 +342,7 @@
 
   .back-btn {
     margin-bottom: 15px;
+
     button {
       padding-left: 10px;
     }
