@@ -10,12 +10,16 @@ import { CommonService } from '../common/common.service';
 })
 export class RequestService {
 
-  constructor(private router: Router, private cookie: CookieService, private globalService: GlobalService, private commonService: CommonService) {
+  constructor(
+    private router: Router,
+    private cookie: CookieService,
+    private globalService: GlobalService,
+    private commonService: CommonService) {
   }
 
   login(usernameOrEmail: string, password: string, callback = null): any {
     this.globalService.setCookie(usernameOrEmail, password);
-    if ( callback == null ) {
+    if (callback == null) {
       this.globalService.postServiceCall('auth/login', { usernameOrEmail }, (res) => {
         console.log(res);
       }, true);
@@ -26,12 +30,12 @@ export class RequestService {
 
   resetPassword(usernameOrEmail: string, passwordOtp: string, password: string, callback): any {
     this.globalService.setCookie(usernameOrEmail, password);
-    this.globalService.putServiceCall('user/resetpassword', { usernameOrEmail , passwordOtp}, callback, true);
+    this.globalService.putServiceCall('user/resetpassword', { usernameOrEmail, passwordOtp }, callback, true);
   }
 
   signup(userName: string, userPassword: string, userEmail: string, phoneNumber: string, callback = null): any {
     this.globalService.setCookie(userEmail, userPassword);
-    if ( callback == null ) {
+    if (callback == null) {
       this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, (res) => {
         console.log(res);
       }, true);
@@ -54,6 +58,11 @@ export class RequestService {
 
   getLoggedUserDetails(username, callback): any {
     this.globalService.getServiceCall('user/' + username, callback, true);
+  }
+
+  addUpdateAddress(payload, callback): void {
+    payload.usernameOrEmail = this.cookie.get('useremail');
+    this.globalService.putServiceCall('user', payload, callback, true);
   }
 
   initializeUserFromCookie(): void {

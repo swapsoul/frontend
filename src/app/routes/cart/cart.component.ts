@@ -1,6 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
 import { CommonService } from '../../services/common/common.service';
+import { MatDialog } from '@angular/material/dialog';
+import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { AddAddressComponent } from '../../components/add-address/add-address.component';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +18,12 @@ export class CartComponent implements OnInit {
   isCartDetailsLoaded = false;
   isAddressSelection = false;
 
-  constructor(private requestService: RequestService, private commonService: CommonService) {
+  constructor(
+    private requestService: RequestService,
+    private commonService: CommonService,
+    private dialog: MatDialog,
+    private snackbarService: SnackbarService
+  ) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
       this.isCartDetailsLoaded = true;
@@ -48,8 +56,10 @@ export class CartComponent implements OnInit {
 
   get userAddress(): any {
     if (this.commonService.userData) {
-      // return this.commonService.userData.data.userAddress;
-      return Array.from(new Array(10), () => this.commonService.userData.data.userAddress[0]);
+      return this.commonService.userData.data.userAddress;
+      // if (this.commonService.userData.data.userAddress.length > 0) {
+      //   return Array.from(new Array(10), () => this.commonService.userData.data.userAddress[0]);
+      // }
     }
   }
 
@@ -137,5 +147,39 @@ export class CartComponent implements OnInit {
 
   selectAddressAndProceed(index, address): void {
     console.log(index, address);
+  }
+
+  addAddress(): void {
+    const dialogRef = this.dialog.open(AddAddressComponent, {
+      width: '90%',
+      maxWidth: '300px',
+      height: '90%',
+      maxHeight: '500px',
+      data: null,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        const payload = {
+          userAddress: {
+            addressLine1: result.lineFirst,
+            addressLine2: result.lineSecond,
+            city: result.city,
+            pincode: result.pinCode
+          }
+        };
+        this.requestService.addUpdateAddress(payload, (res) => {
+          if (res.status === 200) {
+            this.commonService.userData.data.userAddress = res.body.data.userAddress;
+            this.snackbarService.openMessageSnackbar('Address added successfully');
+          } else {
+            this.snackbarService.openMessageSnackbar('Failed to add address');
+          }
+        });
+      }
+      // console.log("after closed",this.globalService.profileFlag)
+      // console.log('The dialog was closed');
+    });
   }
 }
