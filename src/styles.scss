@@ -40,6 +40,13 @@ input[type=number] {
   .font-#{$i}px {
     font-size: ($i) + px;
   }
+
+  mat-icon.font-#{$i}px {
+    height: ($i) + px;
+    width: ($i) + px;
+    min-width: 24px;
+    min-height: 24px;
+  }
 }
 
 @for $i from 1 through $column-numbers {
@@ -144,4 +151,14 @@ input[type=number] {
 
 .tooltip {
   font-size: 10px;
+}
+
+.mat-form-field-appearance-outline.mat-focused {
+  .mat-form-field-outline-thick {
+    color: $secondary-color;
+  }
+}
+
+.mat-input-element {
+  caret-color: $secondary-color;
 }

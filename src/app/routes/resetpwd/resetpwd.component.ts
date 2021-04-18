@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { GlobalService } from 'src/app/services/global/global.service';
 import { RequestService } from '../../services/request/request.service';
 import { Router } from '@angular/router';
+import { PasswordValidation } from './password-validator';
 
 @Component({
   selector: 'app-resetpwd',
@@ -24,7 +25,9 @@ export class ResetpwdComponent implements OnInit {
   registerForm: FormGroup = this.formBuilder.group({
     passwordOtp: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     password: [undefined, { validators: [Validators.required], updateOn: 'change' }],
-
+    confirmpassword: [undefined, { validators: [Validators.required], updateOn: 'change' }]
+  }, {
+    validator: PasswordValidation.MatchPassword
   });
 
 
@@ -64,6 +67,7 @@ export class ResetpwdComponent implements OnInit {
         return false;
       } else {
         this.alert = "Password reset failed"
+        return true;
       }
 
     });

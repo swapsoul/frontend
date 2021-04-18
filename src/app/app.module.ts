@@ -43,6 +43,7 @@ import { NotfoundComponent } from './routes/notfound/notfound.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
+import { AddAddressComponent } from './components/add-address/add-address.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { MatCardModule } from '@angular/material/card';
     EmailVerifiedComponent,
     ProfileComponent,
     CartComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AddAddressComponent
   ],
   imports: [
 

@@ -1,0 +1,12 @@
+@import '~src/assets/scss/variables.scss';
+
+mat-form-field {
+  width: 100%;
+}
+
+.custom-style-btn {
+    color: white;
+    background: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-px;
+  }

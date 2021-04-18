@@ -1,0 +1,52 @@
+<div mat-dialog-title>Address</div>
+<form [formGroup]="addressForm" fxLayout="column" fxLayoutAlign="center">
+  <mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Line 1</mat-label>
+      <input matInput placeholder="Line 1" formControlName="lineFirst" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="lineFirst.invalid && (lineFirst.dirty || lineFirst.touched)">
+        <div>
+          Line 1 is <strong>Invalid</strong>
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Line 2</mat-label>
+      <input matInput placeholder="Line 2" formControlName="lineSecond" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="lineSecond.invalid && (lineSecond.dirty || lineSecond.touched)">
+        <div>
+          Line 2 is <strong>Invalid</strong>
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="City" formControlName="city" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="city.invalid && (city.dirty || city.touched)">
+        <div>
+          City is <strong>Invalid</strong>
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Pin Code</mat-label>
+      <input matInput placeholder="Pin Code" formControlName="pinCode" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="pinCode.invalid && (pinCode.dirty || pinCode.touched)">
+        <div *ngIf="pinCode.errors['minlength'] || pinCode.errors['maxlength']; else invalid">
+          Pin Code must be 6 characters long.
+        </div>
+        <ng-template #invalid>
+          Pin Code is <strong>Invalid</strong>
+        </ng-template>
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
+    <button class="custom-style-btn" mat-flat-button type="submit" [mat-dialog-close]="addressForm.value"
+            [disabled]="!addressForm.valid">{{isEditAddress ? 'Update' : 'Add' }}
+    </button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="false">Close
+      <mat-icon inline="true">close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</form>
