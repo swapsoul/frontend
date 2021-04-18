@@ -106,6 +106,7 @@ export class ProfileComponent implements OnInit {
     this.useraddress['pincode'] = this.pin;
     }
     console.log(this.useraddress);
+    this.useraddress['id'] = 0;
     this.globalService.putServiceCall('user', { usernameOrEmail: this.useremail, phoneNumber: this.mobile, userAddress: this.useraddress }, (data) => {
       //console.log(data);
     });

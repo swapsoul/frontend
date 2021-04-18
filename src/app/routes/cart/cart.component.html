@@ -3,26 +3,25 @@
     <div class="cart-navigation">
       <table>
         <tr>
-          <td><img src="assets/img/bag.png"></td>
+          <td [ngClass]="isAddressSelection ? 'inactive' : ''"><img src="assets/img/bag.png"></td>
           <td></td>
-          <td><img src="assets/img/bag.png"></td>
+          <td [ngClass]="isAddressSelection ? '' : 'inactive'"><img src="assets/img/bag.png"></td>
           <td></td>
-          <td><img src="assets/img/bag.png"></td>
+          <td class="inactive"><img src="assets/img/bag.png"></td>
         </tr>
         <tr>
-          <td>My Bag</td>
+          <td [ngClass]="isAddressSelection ? 'inactive' : 'active'">My Bag</td>
           <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
-          <td>Confirm Address</td>
+          <td [ngClass]="isAddressSelection ? 'active' : 'inactive'">Confirm Address</td>
           <td class="dashes">{{ "-".repeat(dashesOnNavigation) }}</td>
-          <td>Payment</td>
+          <td class="inactive">Payment</td>
         </tr>
       </table>
     </div>
   </div>
   <div class="row margin-0" ngClass.gt-sm="d-flex"
-       *ngIf="cartDetails.length > 0 && isCartDetailsLoaded; else noCartItem">
-    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx"
-         ngClass.lt-sm="bag-item-container-less-padding">
+       *ngIf="cartDetails.length > 0 && isCartDetailsLoaded && !isAddressSelection; else noCartItem">
+    <div class="col-md-6 col-sm-12 bag-item-container" ngClass.gt-xs="border-right-npx">
       <div class="col-12 font-18px cart-product-heading"><strong>My Bag Items
         ({{ cartDetails.length.toString().padStart(2, '0') }})</strong></div>
       <div class="col-12 cart-item" *ngFor="let item of cartDetails">
@@ -76,17 +75,17 @@
           </div>
         </div>
       </div>
-      <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">
-        <span>Add More From Wishlist</span>
-        <mat-icon>keyboard_arrow_right</mat-icon>
-      </div>
+      <!--      <div class="col-12 add-from-wishlist" ngClass.gt-xs="font-20px" ngClass.xs="font-16px">-->
+      <!--        <span>Add More From Wishlist</span>-->
+      <!--        <mat-icon>keyboard_arrow_right</mat-icon>-->
+      <!--      </div>-->
     </div>
-    <div class="col-md-6 col-sm-12 price-details-container" ngClass.lt-sm="price-details-container-less-padding">
-      <div class="coupon-code-container">
-        <mat-icon class="horizontal-invert">loyalty</mat-icon>
-        <input type="text" id="coupon-code" placeholder="Enter Coupon Code">
-        <button mat-ripple class="coupon-code-btn">Check</button>
-      </div>
+    <div class="col-md-6 col-sm-12 price-details-container">
+      <!--      <div class="coupon-code-container">-->
+      <!--        <mat-icon class="horizontal-invert">loyalty</mat-icon>-->
+      <!--        <input type="text" id="coupon-code" placeholder="Enter Coupon Code">-->
+      <!--        <button mat-ripple class="coupon-code-btn">Check</button>-->
+      <!--      </div>-->
       <div class="price-calculation-container">
         <div class="price-heading font-18px">Price Details ({{ cartDetails.length.toString().padStart(2, '0') }}
           Items)
@@ -111,14 +110,14 @@
             <span class="total-amount font-18px">{{ getCartTotalPrice() | currency: 'INR' }}</span>
           </div>
           <div class="right next-step">
-            <button mat-ripple>Place Order</button>
+            <button mat-ripple (click)="isAddressSelection = !isAddressSelection">Proceed</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <ng-template #noCartItem>
-    <div class="row margin-0" ngClass.gt-sm="d-flex">
+    <div class="row margin-0" ngClass.gt-sm="d-flex" *ngIf="!isAddressSelection">
       <div class="col-12 text-center font-18px">
         <strong *ngIf="isCartDetailsLoaded; else loading">Please add few products. Your cart is empty.</strong>
         <ng-template #loading>
@@ -127,6 +126,48 @@
       </div>
     </div>
   </ng-template>
+  <div class="row margin-0 address-container" ngClass.gt-sm="d-flex" *ngIf="isAddressSelection">
+    <div class="row margin-0" ngClass.gt-sm="d-flex">
+      <div class="col-12 font-18px">
+        <div class="address-header"><strong>Please select the delivery address</strong></div>
+        <div class="back-btn">
+          <button mat-button (click)="isAddressSelection = !isAddressSelection">
+            <mat-icon class="font-20px">keyboard_arrow_left</mat-icon>
+            {{ "Back" | uppercase }}</button>
+        </div>
+        <div fxLayoutAlign="center">
+          <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+            <mat-card class="address-card" *ngFor="let address of userAddress; let i=index">
+              <div fxLayout="column">
+                <mat-card-content>
+                  <div>{{address.addressLine1}}</div>
+                  <div>{{address.addressLine2}}</div>
+                  <div>{{address.city}}</div>
+                  <div>Pincode: {{address.pincode}}</div>
+                </mat-card-content>
+                <mat-card-actions fxLayoutAlign="center">
+                  <button mat-button
+                          (click)="selectAddressAndProceed(i, address)">{{ "Deliver Here" | uppercase }}</button>
+                </mat-card-actions>
+                <div fxLayout="row" class="address-clickable-text font-16px">
+                  <span mat-ripple (click)="addOrEditAddress(i, address)">Edit</span> |
+                  <span mat-ripple (click)="deleteAddress(i)">Delete</span>
+                </div>
+              </div>
+            </mat-card>
+            <mat-card mat-ripple class="address-card add-address text-center" (click)="addOrEditAddress()">
+              <div fxLayout="row">
+                <mat-card-content>
+                  <mat-icon class="font-40px color-gray">add</mat-icon>
+                  <div class="color-gray"><strong>Add address</strong></div>
+                </mat-card-content>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--  <div class="col-12 also-like">-->
   <!--    <div class="heading font-20px col"><strong>You May Also Like</strong></div>-->
   <!--    <div class="also-like-carousal">-->

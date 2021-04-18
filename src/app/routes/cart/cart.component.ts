@@ -1,7 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
-import { CookieService } from 'ngx-cookie-service';
-import { GlobalService } from 'src/app/services/global/global.service';
+import { CommonService } from '../../services/common/common.service';
+import { MatDialog } from '@angular/material/dialog';
+import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { AddAddressComponent } from '../../components/add-address/add-address.component';
 
 @Component({
   selector: 'app-cart',
@@ -12,24 +14,24 @@ export class CartComponent implements OnInit {
 
   dashesOnNavigation = 8;
   cartDetails = [];
-  useremail: string;
-  delete_product_id: string;
-  username: string;
   quantityCallManager: any = {};
   isCartDetailsLoaded = false;
+  isAddressSelection = false;
 
-  constructor(private requestService: RequestService, private cookie: CookieService, private globalService: GlobalService) {
+  constructor(
+    private requestService: RequestService,
+    private commonService: CommonService,
+    private dialog: MatDialog,
+    private snackbarService: SnackbarService
+  ) {
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
       this.isCartDetailsLoaded = true;
-      console.log(resp);
       if (resp.status === 200) {
-        console.log(resp);
         this.cartDetails = resp.body.cartArray;
         this.cartDetails.forEach((cartItem) => {
           cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
-        console.log(this.cartDetails);
       } else {
         console.error('Error at fetching cart details');
       }
@@ -50,6 +52,15 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  get userAddress(): any {
+    if (this.commonService.userData) {
+      return this.commonService.userData.data.userAddress;
+      // if (this.commonService.userData.data.userAddress.length > 0) {
+      //   return Array.from(new Array(10), () => this.commonService.userData.data.userAddress[0]);
+      // }
+    }
   }
 
   increaseProductQuantity(item): void {
@@ -99,7 +110,7 @@ export class CartComponent implements OnInit {
   delete(item): void {
     this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
       if (resp.status === 200) {
-        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id ), 1);
+        this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id), 1);
       } else {
         console.error('Error while deleting product');
       }
@@ -132,5 +143,66 @@ export class CartComponent implements OnInit {
         });
       }, 2000);
     }
+  }
+
+  selectAddressAndProceed(index, address): void {
+    console.log(index, address);
+  }
+
+  addOrEditAddress(index = null, address = null): void {
+    if (index != null) {
+      address.id = index;
+    }
+    const dialogRef = this.dialog.open(AddAddressComponent, {
+      width: '90%',
+      maxWidth: '300px',
+      height: '90%',
+      maxHeight: '500px',
+      data: index == null ? null : address,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        const payload = {
+          userAddress: {
+            addressLine1: result.lineFirst,
+            addressLine2: result.lineSecond,
+            city: result.city,
+            pincode: result.pinCode
+          }
+        };
+        if (!isNaN(parseInt(result.id, 10))) {
+          // @ts-ignore
+          payload.userAddress.id = result.id;
+        }
+        this.requestService.addUpdateDeleteAddress(payload, (res) => {
+          if (res.status === 200) {
+            this.commonService.userData.data.userAddress = res.body.data.userAddress;
+            this.snackbarService.openMessageSnackbar('Address added (or updated) successfully');
+          } else {
+            this.snackbarService.openMessageSnackbar('Failed to add (or update) address');
+          }
+        });
+      }
+      // console.log("after closed",this.globalService.profileFlag)
+      // console.log('The dialog was closed');
+    });
+  }
+
+  deleteAddress(index): void {
+    const payload = {
+      userAddress: {
+        id: index
+      }
+    };
+    this.requestService.addUpdateDeleteAddress(payload, (res) => {
+      if (res.status === 200) {
+        this.commonService.userData.data.userAddress = res.body.data.userAddress;
+        this.snackbarService.openMessageSnackbar('Address deleted successfully');
+      } else {
+        this.snackbarService.openMessageSnackbar('Failed to delete address');
+      }
+    });
   }
 }

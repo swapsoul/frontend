@@ -21,18 +21,25 @@
       color: $color-pink;
       padding: 0;
     }
+
+    .active {
+      color: $color-pink;
+      font-weight: bold;
+    }
+
+    .inactive {
+      opacity: 0.5;
+    }
   }
 
   margin: 10px 5px 20px 5px;
 }
 
-.bag-item-container-less-padding {
-  padding: 0 10px !important;
-}
-
 .bag-item-container {
   margin: 0 auto;
-  padding: 0 40px 0 30px;
+  @media screen and (min-width: 768px) {
+    padding: 0 40px 0 30px;
+  }
 
   .cart-item {
     border: $border-width solid $border-color;
@@ -179,13 +186,11 @@
   }
 }
 
-.price-details-container-less-padding {
-  padding: 0 10px 20px 10px!important;
-}
-
 .price-details-container {
   margin-top: 50px;
-  padding: 0 30px 20px 40px;
+  @media screen and (min-width: 768px) {
+    padding: 0 30px 20px 40px;
+  }
 
   .coupon-code-container {
     border: $border-width solid $border-color;
@@ -288,7 +293,8 @@
   .also-like-carousal {
     text-align: center;
   }
-  .cursop{
+
+  .cursop {
     cursor: pointer;
   }
 }
@@ -302,5 +308,50 @@
 @media screen and (max-width: 425px) {
   #coupon-code {
     width: 100%;
+  }
+}
+
+.address-container {
+  .address-header {
+    padding: 0 0 15px 0;
+  }
+
+  .address-card {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+
+    .address-clickable-text {
+      span {
+        text-decoration: underline;
+        padding: 0 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .add-address {
+    border: $border-width dashed $border-color;
+    box-shadow: none;
+  }
+
+  .back-btn {
+    margin-bottom: 15px;
+
+    button {
+      padding-left: 10px;
+    }
+  }
+
+  button {
+    color: white;
+    background: $secondary-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-px;
   }
 }

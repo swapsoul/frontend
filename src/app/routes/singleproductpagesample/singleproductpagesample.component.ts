@@ -44,6 +44,7 @@ export class SingleproductpagesampleComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.route.params.subscribe(params => {
       console.log(params["id"]);
       this.productid = params["id"];

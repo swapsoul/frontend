@@ -6,6 +6,7 @@ import { RequestService } from '../../services/request/request.service';
 import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 import { ExternalUrlsService } from 'src/app/services/externalUrls/external-urls.service'
+import { CommonService } from '../../services/common/common.service';
 
 @Component({
   selector: 'app-navbar',
@@ -106,6 +107,7 @@ export class LoginSignUpDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<LoginSignUpDialogComponent>,
     private requestService: RequestService,
     private formBuilder: FormBuilder,
+    private commonService: CommonService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
@@ -138,6 +140,7 @@ export class LoginSignUpDialogComponent implements OnInit {
         this.globalService.profileFlag = true;
         this.loginStatus = true;
         this.globalService.UserName = res.body.data.userName
+        this.commonService.userData = res.body;
         this.onNoClick();
         // console.log(this.globalService.profileFlag)
       } else {
@@ -164,6 +167,7 @@ export class LoginSignUpDialogComponent implements OnInit {
         this.submitStatus = true;
         this.globalService.profileFlag = true;
         this.globalService.UserName = user.username;
+        this.commonService.userData = res.body;
         this.onNoClick();
       } else {
         console.log('SigUp Error');
