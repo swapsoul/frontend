@@ -124,22 +124,22 @@ export class ProfileComponent implements OnInit {
 
   onKeyline1(event) {
     this.addline1 = event.target.value;
-    console.log(this.addline1);
+    //console.log(this.addline1);
   }
 
   onKeyline2(event) {
     this.addline2 = event.target.value;
-    console.log(this.addline2);
+    //console.log(this.addline2);
   }
 
   onKeycity(event) {
     this.city = event.target.value;
-    console.log(this.city);
+    //console.log(this.city);
   }
 
   onKeypin(event) {
     this.pin = event.target.value;
-    console.log(this.pin);
+    //console.log(this.pin);
   }
 
   removeDisabledAddress(){

@@ -3,10 +3,10 @@
     <div class=".col-xs-4 .col-md-offset-2">
         <div class="blue panel panel-default panel-info Profile">
             <div class="panel-heading">
-                <strong class="blackcol">My Profile</strong>  
-                </div>
+                <strong class="blackcol">My Profile</strong>
+            </div>
             <div class="panel-body">
-                
+        
                 <div class="form-horizontal">
                     <form>
                         <div class="form-group">
@@ -16,7 +16,7 @@
                                     ng-model="me.firstName" disabled>
                             </div>
                         </div>
-                        
+        
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-4">
@@ -24,64 +24,105 @@
                                     ng-model="me.email" disabled>
                             </div>
                         </div>
-                                               
+        
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Phone</label>
                             <div class="col-sm-4">
                                 <form (submit)="onSubmit()">
-                                    <input [(ngModel)]="mobile" (keyup)="onKey($event)" class="form-control" (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone"
+                                    <input [(ngModel)]="mobile" (keyup)="onKey($event)" class="form-control"
+                                        (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone"
                                         placeholder="{{phone}}" ng-model="me.phone" disabled>
                                 </form>
-                                
+        
                             </div>
-                                <mat-icon class="write" (click)=removedisabled();>create</mat-icon>
+                            <mat-icon class="write ml-3 mt-1" (click)=removedisabled();>create</mat-icon>
                         </div>
-
+        
                         <div *ngIf="error==1 && flag==0">
                             <p class="ml-3">Please Enter Valid 10 Digit Mobile Number</p>
                         </div>
-
+        
                         <div *ngIf="error==2 && flag==0">
                             <p class="ml-3">Phone Number Updated Successfully!</p>
                         </div>
-
-                        <div class="form-group" *ngIf="flag==1"> 
+        
+                        <div class="form-group" *ngIf="flag==1">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button class="btn btn-primary" (click)="updateMe()">Update</button>
                             </div>
                         </div>
-
-                        <!--<div class="form-group">
-                            <label class="col-sm-2 control-label">Delivery Address</label>
+        
+                    </form>
+                </div> <!-- end form-horizontal -->
+            </div> <!-- end panel-body -->
+        
+        </div> <!-- end panel -->
+        <div class="blue panel panel-default panel-info Profile">
+            <div class="panel-heading">
+                <strong class="blackcol">My Address</strong>
+            </div>
+            <div class="panel-body">
+        
+                <div class="form-horizontal">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Address Line 1</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="line1" (keyup)="onKeyline1($event)" type="text" placeholder="{{useraddress['addressLine1']}}" name="Line1"
+                                    [(ngModel)]="addline1" required="required" disabled>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Address Line 2</label>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="line2" (keyup)="onKeyline2($event)" type="text"
+                                    placeholder="{{useraddress['addressLine2']}}" name="Line2" [(ngModel)]="addline2" required="required" disabled>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">City</label>
                             <div class="col-sm-4">
                                 <form (submit)="onSubmit()">
-                                    <input [(ngModel)]="address" class="form-control"
-                                        maxlength="25" type="text" name="address" placeholder="MyAddress" ng-model="me.address" disabled>
+                                    <input class="form-control" id="city" (keyup)="onKeycity($event)" type="text"
+                                        placeholder="{{useraddress['city']}}" name="city" [(ngModel)]="city" required="required" disabled>
                                 </form>
-                        
-                            </div>
-                            <mat-icon class="write" (click)=removedisabled1();>create</mat-icon>
-                        </div>
-                        
-                        
-                        <div *ngIf="error1==2">
-                            <p class="ml-3">Delivery Address Updated Successfully!</p>
-                        </div>
-                        
-                        <div class="form-group" *ngIf="flag1==1">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-primary" (click)="updateMe1()">Update</button>
+        
                             </div>
                         </div>
 
                         <div class="form-group">
-                        </div>-->
+                            <label class="col-sm-2 control-label">Pincode</label>
+                            <div class="col-sm-4">
+                                <form (submit)="onSubmit()">
+                                    <input class="form-control" #pinc="ngModel" maxlength="6" pattern="[1-9][0-9]{5}" id="pincode" (keyup)="onKeypin($event)" type="text"
+                                        placeholder="{{useraddress['pincode']}}" name="pin" [(ngModel)]="pin" required="required" disabled>
+                                </form>
                         
+                            </div>
+                        </div>
                     </form>
+                    
                 </div> <!-- end form-horizontal -->
             </div> <!-- end panel-body -->
-
         </div> <!-- end panel -->
+        <div class="row mr-0">
+        <div class="col-4"></div>
+        <div class="col-6">
+                    <button *ngIf="addressflag==0 && addupsuccess==false" mat-raised-button class="addbutton mb-3"
+                        (click)="removeDisabledAddress()">
+                        <mat-icon class="write">create</mat-icon>
+                    </button>
+                    
+                    <button *ngIf="addressflag==1" mat-raised-button class="addbutton mb-3" (click)="updateAddress()">
+                        <span>Submit</span>
+                    </button>
+        </div>
+        <p class="headin mb-3" *ngIf="addupsuccess==true">Address Updated Successfully !</p>
+        </div>
+
+        <!--
 
             <div class="containerv d-flex">
                 <p class="headin"><strong>My Address</strong></p>
@@ -130,5 +171,5 @@
             </div>
 
 
-    </div> <!-- end size -->
+    </div>  end size -->
 </div> <!-- end container-fluid -->

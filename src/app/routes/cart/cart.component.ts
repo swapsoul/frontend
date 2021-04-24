@@ -1,9 +1,11 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit , NgZone} from '@angular/core';
 import { RequestService } from '../../services/request/request.service';
 import { CommonService } from '../../services/common/common.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 import { AddAddressComponent } from '../../components/add-address/add-address.component';
+import {ICustomWindow, WindowRefService} from './window-ref.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -12,6 +14,32 @@ import { AddAddressComponent } from '../../components/add-address/add-address.co
 })
 export class CartComponent implements OnInit {
 
+  private _window: ICustomWindow;
+  public rzp: any;
+
+  public options: any = {
+    key: '', // add razorpay key here
+    name: 'The Swag Coder',
+    description: 'Shopping',
+    amount: 100, // razorpay takes amount in paisa
+    prefill: {
+      name: 'The Swag Coder',
+      email: 'mounika.nimmu@gmail.com', // add your email id
+    },
+    notes: {},
+    theme: {
+      color: '#3880FF'
+    },
+    handler: this.paymentHandler.bind(this),
+    modal: {
+      ondismiss: (() => {
+        this.zone.run(() => {
+          // add current page routing if payment fails
+        })
+      })
+    }
+  }; 
+
   dashesOnNavigation = 8;
   cartDetails = [];
   quantityCallManager: any = {};
@@ -19,11 +47,14 @@ export class CartComponent implements OnInit {
   isAddressSelection = false;
 
   constructor(
+    private zone: NgZone,
+    private winRef: WindowRefService,
     private requestService: RequestService,
     private commonService: CommonService,
     private dialog: MatDialog,
     private snackbarService: SnackbarService
   ) {
+    this._window = this.winRef.nativeWindow;
     this.onResize(null);
     this.requestService.cartDetails((resp) => {
       this.isCartDetailsLoaded = true;
@@ -35,6 +66,17 @@ export class CartComponent implements OnInit {
       } else {
         console.error('Error at fetching cart details');
       }
+    });
+  }
+
+  initPay(): void {
+    this.rzp = new this.winRef.nativeWindow['Razorpay'](this.options);
+    this.rzp.open();
+  }
+
+  paymentHandler(res: any) {
+    this.zone.run(() => {
+      // add API call here
     });
   }
 

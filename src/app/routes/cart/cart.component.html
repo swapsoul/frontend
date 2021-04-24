@@ -148,6 +148,8 @@
                 <mat-card-actions fxLayoutAlign="center">
                   <button mat-button
                           (click)="selectAddressAndProceed(i, address)">{{ "Deliver Here" | uppercase }}</button>
+
+                          
                 </mat-card-actions>
                 <div fxLayout="row" class="address-clickable-text font-16px">
                   <span mat-ripple (click)="addOrEditAddress(i, address)">Edit</span> |
@@ -167,6 +169,7 @@
         </div>
       </div>
     </div>
+    <button style="float: right; margin: 5%;" class="btn btn-primary" (click)="initPay()">Pay with Razorpay</button>
   </div>
   <!--  <div class="col-12 also-like">-->
   <!--    <div class="heading font-20px col"><strong>You May Also Like</strong></div>-->
