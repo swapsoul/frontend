@@ -7,7 +7,11 @@ export class ExternalUrlsService {
 
   constructor() { }
 
-  openUrlinNewTab(url:string){
+  openUrlinNewTab(url: string): void{
     window.open(url,"_blank");
+  }
+
+  openUrlInTopWindow(url: string): void {
+    window.open(url, 'WhatsApp', 'width:100, height=100');
   }
 }

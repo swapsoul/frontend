@@ -44,6 +44,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { AddAddressComponent } from './components/add-address/add-address.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
     ProfileComponent,
     CartComponent,
     NotfoundComponent,
-    AddAddressComponent
+    AddAddressComponent,
+    FooterComponent
   ],
   imports: [
 

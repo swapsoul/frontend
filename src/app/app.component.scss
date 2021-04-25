@@ -4,3 +4,16 @@ img{
     background-size: cover;
     margin:3px solid black;
 }
+.sticky-footer {
+    // position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.page {
+    min-height: 100%;
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

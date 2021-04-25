@@ -1,0 +1,45 @@
+footer {
+  background: black;
+  color: white;
+  padding-top: 10px;
+
+  section {
+    padding: 10px;
+  }
+
+  .section-1 {
+    img {
+      max-height: 80px;
+      max-width: 300px;
+      padding: 10px 0 20px 10px;
+    }
+
+    i {
+      padding: 0 10px;
+    }
+
+    .social-media {
+      font-size: 30px;
+    }
+  }
+
+  .section-4 {
+    a {
+      color: white;
+    }
+
+    .icon-right-padding {
+      i {
+        padding: 0 10px 0 0;
+      }
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    span:hover {
+      text-decoration: underline;
+    }
+  }
+}
