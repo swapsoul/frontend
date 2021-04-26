@@ -49,8 +49,8 @@ export class NavbarComponent implements OnInit {
   openDialog(): void {
 
     const dialogRef = this.dialog.open(LoginSignUpDialogComponent, {
-      width: '412px',
-      height: '510px',
+      width: '90%',
+      maxWidth: '350px',
       data: null,
     });
 
@@ -61,6 +61,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.openDialog();
   }
 
 }
@@ -77,6 +78,7 @@ export class LoginSignUpDialogComponent implements OnInit {
   hide = true;
   submitStatus = false;
   loginStatus = false;
+  autocomplete = 'off';
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
