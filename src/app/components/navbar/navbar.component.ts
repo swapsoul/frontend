@@ -79,8 +79,8 @@ export class LoginSignUpDialogComponent implements OnInit {
   loginStatus = false;
   autocomplete = 'off';
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)])
   });
 
   registerForm: FormGroup = this.formBuilder.group({
@@ -146,7 +146,8 @@ export class LoginSignUpDialogComponent implements OnInit {
         // console.log(this.globalService.profileFlag)
       } else {
         console.log('Login Failed');
-        this.errorMsglogin = 'Invalid username/password'
+        this.errorMsglogin = 'Invalid username/password';
+        this.openSnackBar('Invalid username/password', null);
       }
     });
   }
@@ -172,7 +173,8 @@ export class LoginSignUpDialogComponent implements OnInit {
         this.onNoClick();
       } else {
         console.log('SigUp Error');
-        this.errorMsg = 'User already exists'
+        this.errorMsg = 'User already exists';
+        this.openSnackBar('Failed to signup', null);
       }
     });
   }
