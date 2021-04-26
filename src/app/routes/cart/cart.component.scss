@@ -18,12 +18,12 @@
     .dashes {
       letter-spacing: 5px;
       font-weight: bolder;
-      color: $color-pink;
+      color: $primary-color;
       padding: 0;
     }
 
     .active {
-      color: $color-pink;
+      color: $primary-color;
       font-weight: bold;
     }
 
@@ -80,7 +80,7 @@
 
     .discount {
       padding-left: 15px;
-      color: $color-pink;
+      color: $primary-color;
     }
 
     .quantity-modifier {

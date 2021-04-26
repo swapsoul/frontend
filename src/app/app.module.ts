@@ -7,7 +7,7 @@ import { GlobalService } from './services/global/global.service';
 import { AuthGuardService } from './services/auth/auth.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginSignUpDialogComponent } from './components/navbar/navbar.component';
@@ -45,6 +45,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { AddAddressComponent } from './components/add-address/add-address.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -67,7 +70,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CartComponent,
     NotfoundComponent,
     AddAddressComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
 
@@ -94,9 +98,14 @@ import { FooterComponent } from './components/footer/footer.component';
     MatRippleModule,
     NgbTooltipModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
-  providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
+  providers: [ GlobalService, RequestService, CookieService, DatasharingService, AuthGuardService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true
+  } ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

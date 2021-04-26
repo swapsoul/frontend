@@ -74,8 +74,8 @@ input[type=number] {
   color: black;
 }
 
-.color-deeppink {
-  color: deeppink;
+.color-primary {
+  color: $primary-color;
 }
 
 .border-right-npx {
@@ -170,4 +170,8 @@ input[type=number] {
 
 .d-flex {
   display: flex;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $primary-color;
 }
