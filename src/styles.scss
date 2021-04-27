@@ -34,11 +34,11 @@ input[type=number] {
 }
 
 .padding-0 {
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 .margin-0 {
-  margin: 0!important;
+  margin: 0 !important;
 }
 
 @for $i from 1 through $font-sizes {
@@ -173,9 +173,20 @@ input[type=number] {
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: $primary-color;
+  stroke: $primary-color;
 }
 
 label.mat-checkbox-layout {
   margin: 0;
+}
+
+app-login-signup-dialog {
+  .mat-tab-labels {
+    width: 100px !important;
+    min-width: 100px !important;
+
+    .mat-tab-label {
+      min-width: 100px !important;
+    }
+  }
 }
