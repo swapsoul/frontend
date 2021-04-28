@@ -37,6 +37,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.isCollapsed = true;
     localStorage.clear();
     this.globalService.profileFlag = false;
     this.globalService.clearCookies();
@@ -47,7 +48,7 @@ export class NavbarComponent implements OnInit {
 
 
   openDialog(): void {
-
+    this.isCollapsed = true;
     const dialogRef = this.dialog.open(LoginSignUpDialogComponent, {
       width: '90%',
       maxWidth: '350px',
