@@ -28,7 +28,12 @@ button:hover{
 .text-white{
   color:white;
 }
-
+.navbar-brand {
+  padding: 0 60px;
+  img {
+    height: 40px;
+  }
+}
 
 svg, a {
   color: white;
