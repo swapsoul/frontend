@@ -1,11 +1,14 @@
 @import "src/assets/scss/variables";
 
 #our-navbar {
-  // position: sticky;
-  // z-index: 999999;
   top: 0;
   width: 100%;
   border-radius: 0;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 10;
 }
 
 button {
@@ -16,10 +19,7 @@ button:hover{
   color:#ED3237;
 }
 
-#psuedo-navbar {
-  height: 48px;
-  position: relative;
-}
+
 
 #logo {
   height: auto;

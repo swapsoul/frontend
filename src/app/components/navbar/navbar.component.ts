@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Input, ViewChild, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -14,10 +14,12 @@ import { CommonService } from '../../services/common/common.service';
   styleUrls: ['./navbar.component.scss'],
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
   // profileFlag = GlobalService.profileFlag;
   // profileFlag: boolean;
   public isCollapsed = true;
+
+  @ViewChild('stickyMenu') menuElement: ElementRef;
 
   term: string;
   hasValue: boolean;
@@ -64,6 +66,19 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+    this.onResize(null);
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  handleScroll(): void {
+    this.onResize(null);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(_): void {
+    document.getElementById('psuedo-navbar').style.height = this.menuElement.nativeElement.clientHeight + 'px';
+  }
 }
 
 @Component({
