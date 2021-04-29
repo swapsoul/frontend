@@ -7,8 +7,8 @@ export class ExternalUrlsService {
 
   constructor() { }
 
-  openUrlinNewTab(url: string): void{
-    window.open(url,"_blank");
+  openUrlInNewTab(url: string): void{
+    window.open(url, '_blank');
   }
 
   openUrlInTopWindow(url: string): void {

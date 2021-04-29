@@ -5,10 +5,10 @@
         <div>
           <img src="assets/img/logo.png">
           <div class="social-media">
-            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-facebook-f pointer" (click)="externalUrlService.openUrlInNewTab('https://www.facebook.com/')"></i>
             <i class="fab fa-twitter"></i>
             <i class="fab fa-pinterest"></i>
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram pointer" (click)="externalUrlService.openUrlInNewTab('https://www.instagram.com/swap_soul/')"></i>
           </div>
         </div>
       </section>
@@ -27,8 +27,8 @@
           <p>Orders & Payments</p>
           <p>Shipping & Delivery</p>
           <p>Exchange & Returns</p>
-          <p>Privacy Policy</p>
-          <p>Terms of Use</p>
+          <p class="pointer-underline" routerLink='/privacy'>Privacy Policy</p>
+          <p class="pointer-underline" routerLink='/terms'>Terms of Use</p>
         </div>
       </section>
       <section class="section-4" fxFlex="50%" fxFlex.xs="100%">
@@ -36,7 +36,7 @@
           <p><a href="mailto:info@swapsoul.com"><i class="far fa-envelope"></i> info@swapsoul.com</a></p>
           <p><a href="tel:+91-1234567890"><i class="fas fa-phone-alt"></i> +91-1234567890</a></p>
           <p>
-            <span (click)="externalUrlService.openUrlInTopWindow('https://api.whatsapp.com/send?phone=1234567980')">
+            <span class="pointer-underline" (click)="externalUrlService.openUrlInTopWindow('https://api.whatsapp.com/send?phone=1234567980')">
               <i class="fab fa-whatsapp"></i> +91-1234567890
             </span>
           </p>
@@ -47,7 +47,7 @@
             <i class="fab fa-cc-mastercard"></i>
             <i class="fab fa-cc-amex"></i>
           </p>
-          <p class="text-right font-12px"><i class="far fa-copyright"></i>2021-2022 OffNorth All Rights Reserved</p>
+          <p class="text-right font-12px"><i class="far fa-copyright"></i>2021-2022 Swapsoul All Rights Reserved</p>
         </div>
       </section>
     </div>

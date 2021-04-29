@@ -34,8 +34,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     this.placeholdervalue = ' ';
   }
 
-  goToBlog(url:string){
-    this.externalUrl.openUrlinNewTab(url);
+  openInNewTab(url:string){
+    this.externalUrl.openUrlInNewTab(url);
   }
 
   logout() {

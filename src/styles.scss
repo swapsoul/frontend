@@ -193,3 +193,11 @@ app-login-signup-dialog {
     }
   }
 }
+
+.pointer, .pointer-underline {
+  cursor: pointer;
+}
+
+.pointer-underline:hover {
+  text-decoration: underline;
+}
