@@ -1,33 +1,36 @@
-h1,h3{
-    color:white;
-    font-size:22px;
-    font-family:poppins;
+h1, h3 {
+  color: white;
+  font-size: 22px;
+  font-family: poppins;
+}
+
+#follow {
+  text-align: left;
+  color: white;
+}
+
+#footer {
+  color: white;
+
+  h1 {
+    color: white;
   }
-  #follow{
-      text-align:left;
-      color:white;
+
+  svg {
+
   }
-  #footer{
-    color:white;
-    h1{
-        color:white;
-    }
-    svg{
-  
-    }
-    svg:hover{
-      color:white;
-    }
+
+  svg:hover {
+    color: white;
   }
-  .foo{
-    color:white;
-    font-size:18px;
-  }
-  
-  #para{
-    color:white;
-    font-size:18px;
-  }
-   .page-footer-section{
-  background-color:#373435;
+}
+
+.foo {
+  color: white;
+  font-size: 18px;
+}
+
+#para {
+  color: white;
+  font-size: 18px;
 }
