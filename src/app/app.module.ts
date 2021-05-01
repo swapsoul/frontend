@@ -48,6 +48,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-delivery-policy/shipping-delivery-policy.component';
+import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
+import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
 
 
 @NgModule({
@@ -71,7 +74,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NotfoundComponent,
     AddAddressComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    ShippingDeliveryPolicyComponent,
+    OrdersPaymentsPolicyComponent,
+    ExchangeReturnPolicyComponent
   ],
   imports: [
 

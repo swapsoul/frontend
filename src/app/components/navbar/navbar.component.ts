@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   // profileFlag = GlobalService.profileFlag;
   // profileFlag: boolean;
   public isCollapsed = true;
+  isSticky = false;
 
   @ViewChild('stickyMenu') menuElement: ElementRef;
 
@@ -73,11 +74,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   @HostListener('window:scroll', ['$event'])
   handleScroll(): void {
     this.onResize(null);
+    this.isSticky = window.scrollY > 0;
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(_): void {
-    document.getElementById('psuedo-navbar').style.height = this.menuElement.nativeElement.clientHeight + 'px';
+    document.getElementById('psuedo-navbar').style.height = parseInt(this.menuElement.nativeElement.clientHeight, 10) + 'px';
   }
 }
 
