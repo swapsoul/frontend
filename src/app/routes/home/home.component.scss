@@ -132,17 +132,23 @@
 
 .banner {
 
-  img {
-    width: 100%;
-    margin-left: 0px;
+  .banner-img-container {
+    position: relative;
+    img {
+      width: 111%;
+      margin-left: 0;
+      object-fit: cover;
+      object-position: -18px;
+    }
 
-  }
-
-  #btn5 {
-    color: white;
-    border: transparent;
-    background-color: #ED3237;
-
+    button {
+      color: white;
+      border: transparent;
+      background-color: #ED3237;
+      position: absolute;
+      left: 44%;
+      bottom: 10%;
+    }
   }
 }
 
