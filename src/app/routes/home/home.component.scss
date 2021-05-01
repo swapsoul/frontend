@@ -135,20 +135,20 @@
   .banner-img-container {
     position: relative;
     overflow: hidden;
+    text-align: center;
     img {
-      width: 111%;
+      width: 112vw;
       margin-left: 0;
       object-fit: cover;
-      object-position: -18px;
+      object-position: -2vw 0;
     }
 
     button {
       color: white;
       border: transparent;
       background-color: #ED3237;
-      position: absolute;
-      left: 44%;
-      bottom: 10%;
+      position: relative;
+      margin-top: -20%;
     }
   }
 }
