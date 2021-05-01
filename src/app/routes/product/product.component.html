@@ -1,1 +1,16 @@
-<p>Product Works!</p>
+<div class="product-card" [routerLink]="'/products/' + productData.productId">
+  <div class="img-container">
+    <img [src]="productData.productImgURL">
+  </div>
+  <div class="product-description">
+    <div>
+      <span class="product-name" [ngbTooltip]="productData.productName">{{ productData.productName }}</span>
+      <span class="product-rating right">{{ productData.productRating }}</span>
+    </div>
+    <div>
+      <span class="product-price"><strong>{{ productData.productSalePrice | currency: 'INR' }}</strong></span>
+      <span class="product-actual-price strikethrough text-center">{{ productData.productRetailPrice | currency: 'INR' }}</span>
+      <span class="product-discount text-right">{{ productData.productDiscount + "% OFF" | uppercase }}</span>
+    </div>
+  </div>
+</div>

@@ -65,6 +65,21 @@ input[type=number] {
   }
 }
 
+@for $i from 1 through 400 {
+  .p-left-#{$i}px {
+    padding-left: ($i) + px;;
+  }
+  .m-left-#{$i}px {
+    margin-left: ($i) + px;;
+  }
+  .p-right-#{$i}px {
+    padding-right: ($i) + px;;
+  }
+  .m-right-#{$i}px {
+    margin-right: ($i) + px;;
+  }
+}
+
 .strikethrough {
   color: grey;
   text-decoration: line-through;
@@ -96,6 +111,10 @@ input[type=number] {
 
 .right {
   float: right;
+}
+
+.d-grid {
+  display: grid;
 }
 
 //.product-card:not(:last-child) {
