@@ -7,8 +7,8 @@ import { EssentialsComponent } from './routes/essentials/essentials.component';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
-import { TcComponent } from './routes/tc/tc.component';
-import { PrivacyComponent } from './routes/privacy/privacy.component';
+import { TcComponent } from './routes/policies/tc/tc.component';
+import { PrivacyComponent } from './routes/policies/privacy/privacy.component';
 import { ResetpwdComponent } from './routes/resetpwd/resetpwd.component';
 import { EmailVerifiedComponent } from './routes/email-verified/email-verified.component';
 import { ProfileComponent } from './routes/profile/profile.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
