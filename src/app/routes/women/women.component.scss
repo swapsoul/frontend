@@ -1,178 +1,20 @@
-#footer {
-  color: white;
+.img-container {
+  margin-bottom: 30px;
+}
 
-  svg:hover {
-    color: white;
+.full-width {
+  width: 100%;
+}
+
+.sort-select {
+  padding: 20px 20px 0 20px;
+}
+
+.more-you-might-like {
+  margin: 10px 0 20px 0;
+  .heading {
+    font-size: 25px;
+    padding: 40px 20px 30px 20px;
+    text-align: center;
   }
-}
-
-.foo {
-  color: white;
-  font-size: 18px;
-}
-
-#para {
-  color: white;
-  font-size: 18px;
-}
-
-h1 {
-  font-weight: 500px;
-  cursor: pointer;
-  font-family: poppins;
-  font-size: 28px;
-  margin-left: 10px;
-
-}
-
-h2 {
-  cursor: pointer;
-  font-size: 24px;
-  color: #1492E6;
-  font-family: roboto;
-  align-self: center;
-  text-decoration: none;
-  font-weight: 500px;
-}
-
-.blu {
-  color: #1492E6;
-  cursor: pointer;
-}
-
-.imd {
-  cursor: pointer;
-  width: 260px;
-  height: 307px;
-}
-
-.imm {
-  cursor: pointer;
-  width: 150px;
-  height: 168px;
-}
-
-.mob {
-  font-size: 13px;
-}
-
-.fontdouble {
-  font-size: 23px;
-}
-
-.fonteighteen {
-  font-size: 16px;
-}
-
-.font13 {
-  font-size: 13px;
-}
-
-.grey {
-  color: gray;
-}
-
-.green {
-  color: green;
-}
-
-.elpdesktop {
-  max-width: 159px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.fonttwenty {
-  font-size: 20px;
-}
-
-#f1 {
-  float: right;
-  font-size: large;
-}
-
-#f1:hover {
-  color: white;
-  text-decoration: none;
-}
-
-.text-white {
-  color: white;
-  font-family: poppins;
-  font-size: 36px;
-  margin-left: 0px;
-}
-
-.foo {
-  float: right;
-  color: white;
-  background-color: transparent;
-  font-size: 15px;
-}
-
-.t-white {
-  color: white;
-  margin-top: -10px;
-  margin-left: -5px;
-}
-
-h3 {
-  font-size: larger;
-  color: black;
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-.text-white2 {
-  color: white;
-  font-family: poppins;
-  font-family: 500px;
-}
-
-/*span{
-    font-family:roboto;
-    font-size:24px;
-}*/
-mat-label {
-  font-size: 18px;
-  font-family: roboto;
-}
-
-.purp {
-  color: purple;
-}
-
-.org {
-  color: orange;
-}
-
-.ht {
-  height: 0px;
-}
-
-#rcorners4 {
-  border-radius: 15px;
-  background: #73AD21;
-  padding: 8px;
-  width: 45px;
-  height: 24px;
-}
-
-.elpmob {
-  max-width: 120px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 14px;
-}
-
-#rcornersmob4 {
-  border-radius: 13px;
-  background: #73AD21;
-  padding: 6px;
-  width: 32px;
-  height: 18px;
 }
