@@ -10,7 +10,7 @@
     <div class="sort-select">
       <mat-form-field appearance="fill">
         <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
+        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
           <mat-select-trigger>
             {{toppings.value ? toppings.value : ''}}
           </mat-select-trigger>
@@ -30,7 +30,7 @@
     <div class="sort-select">
       <mat-form-field appearance="fill">
         <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
+        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
           <mat-select-trigger>
             {{toppings.value ? toppings.value : ''}}
           </mat-select-trigger>
@@ -49,7 +49,7 @@
     <div class="sort-select">
       <mat-form-field appearance="fill">
         <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
+        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
           <mat-select-trigger>
             {{toppings.value ? toppings.value : ''}}
           </mat-select-trigger>
@@ -68,7 +68,7 @@
     <div class="sort-select">
       <mat-form-field appearance="fill">
         <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" [(value)]="selected" (selectionChange)="sort($event)">
+        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
           <mat-select-trigger>
             {{toppings.value ? toppings.value : ''}}
           </mat-select-trigger>
