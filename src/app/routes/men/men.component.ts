@@ -23,7 +23,7 @@ export class MenComponent implements OnInit {
       this.products = pdata.body.data;
       const morelike = [];
       for (let i = 0; i < 3; i++) {
-        const randomnum = Math.floor(Math.random() * (this.products.length + 1));
+        const randomnum = Math.floor(Math.random() * this.products.length);
         morelike.push(this.products[randomnum]);
       }
       this.moreyoulike = morelike;

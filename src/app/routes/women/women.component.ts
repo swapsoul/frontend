@@ -24,7 +24,7 @@ export class WomenComponent implements OnInit {
       this.products = pdata.body.data;
       const likeproducts = [];
       for (let i = 0; i < 3; i++) {
-        const randomnum = Math.floor(Math.random() * (this.products.length + 1));
+        const randomnum = Math.floor(Math.random() * this.products.length);
         likeproducts.push(this.products[randomnum]);
       }
       this.moreyoulike = likeproducts;

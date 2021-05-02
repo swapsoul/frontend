@@ -7,19 +7,22 @@
     <ng-template mat-tab-label>
       <span>All</span>
     </ng-template>
-    <div class="sort-select">
-      <mat-form-field appearance="fill">
-        <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
-          <mat-select-trigger>
-            {{toppings.value ? toppings.value : ''}}
-          </mat-select-trigger>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
+    <div fxLayout="column">
+      <div class="sort-select">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"
+                     fxFlex.gt-sm="25%"></app-product>
+      </div>
     </div>
   </mat-tab>
 
@@ -27,57 +30,66 @@
     <ng-template mat-tab-label>
       <span>Hoodies</span>
     </ng-template>
-    <div class="sort-select">
-      <mat-form-field appearance="fill">
-        <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
-          <mat-select-trigger>
-            {{toppings.value ? toppings.value : ''}}
-          </mat-select-trigger>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
+    <div fxLayout="column">
+      <div class="sort-select">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"
+                     fxFlex.gt-sm="25%"></app-product>
+      </div>
     </div>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
       <span>T-Shirts</span>
     </ng-template>
-    <div class="sort-select">
-      <mat-form-field appearance="fill">
-        <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
-          <mat-select-trigger>
-            {{toppings.value ? toppings.value : ''}}
-          </mat-select-trigger>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
+    <div fxLayout="column">
+      <div class="sort-select">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"
+                     fxFlex.gt-sm="25%"></app-product>
+      </div>
     </div>
   </mat-tab>
   <mat-tab>
     <ng-template mat-tab-label>
       <span>Dresses</span>
     </ng-template>
-    <div class="sort-select">
-      <mat-form-field appearance="fill">
-        <mat-label>Sort By</mat-label>
-        <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
-          <mat-select-trigger>
-            {{toppings.value ? toppings.value : ''}}
-          </mat-select-trigger>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
+    <div fxLayout="column">
+      <div class="sort-select">
+        <mat-form-field appearance="fill">
+          <mat-label>Sort By</mat-label>
+          <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"
+                     fxFlex.gt-sm="25%"></app-product>
+      </div>
     </div>
   </mat-tab>
 </mat-tab-group>
@@ -85,6 +97,7 @@
 <div class="more-you-might-like">
   <div class="heading">More you might like</div>
   <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <app-product class="d-grid" [productData]="productData" *ngFor="let productData of moreyoulike" fxFlex.gt-sm="25%"></app-product>
+    <app-product class="d-grid" [productData]="productData" *ngFor="let productData of moreyoulike"
+                 fxFlex.gt-sm="25%"></app-product>
   </div>
 </div>
