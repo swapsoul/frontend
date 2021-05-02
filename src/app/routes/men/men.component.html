@@ -19,7 +19,7 @@
       </mat-form-field>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"></app-product>
+      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
     </div>
   </mat-tab>
 
@@ -39,7 +39,7 @@
       </mat-form-field>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"></app-product>
+      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
     </div>
   </mat-tab>
   <mat-tab>
@@ -58,7 +58,7 @@
       </mat-form-field>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"></app-product>
+      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
     </div>
   </mat-tab>
   <mat-tab>
@@ -77,7 +77,7 @@
       </mat-form-field>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"></app-product>
+      <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products" fxFlex.gt-sm="25%"></app-product>
     </div>
   </mat-tab>
 </mat-tab-group>
@@ -85,6 +85,6 @@
 <div class="more-you-might-like">
   <div class="heading">More you might like</div>
   <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <app-product class="d-grid" [productData]="productData" *ngFor="let productData of moreyoulike"></app-product>
+    <app-product class="d-grid" [productData]="productData" *ngFor="let productData of moreyoulike" fxFlex.gt-sm="25%"></app-product>
   </div>
 </div>
