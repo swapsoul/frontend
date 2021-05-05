@@ -1,10 +1,14 @@
+@import "src/assets/scss/variables";
 
 #our-navbar {
-  // position: sticky;
-  // z-index: 999999;
   top: 0;
   width: 100%;
   border-radius: 0;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 500;
 }
 
 button {
@@ -15,11 +19,6 @@ button:hover{
   color:#ED3237;
 }
 
-#psuedo-navbar {
-  height: 48px;
-  position: relative;
-}
-
 #logo {
   height: auto;
   color: grey;
@@ -27,7 +26,12 @@ button:hover{
 .text-white{
   color:white;
 }
-
+.navbar-brand {
+  padding: 0 60px;
+  img {
+    height: 40px;
+  }
+}
 
 svg, a {
   color: white;
@@ -61,18 +65,7 @@ a:hover {
   color: black;
 }
 
-.yellow-button {
-  background-color: #e6b800;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  padding: 1px 120px;
-}
+
 
 
 .black-text {
@@ -91,7 +84,7 @@ a:hover {
   width: 100%;
 }
 
-.example-full-width {
+.full-width {
   width: 100%;
 }
 
@@ -120,4 +113,21 @@ a:hover {
 
 .navbar-custom {
   background-color: #373435;
+}
+
+.forgot-password {
+  cursor: pointer;
+}
+
+.login, .signup {
+  button.action {
+    background-color: $secondary-color;
+    margin-top: 10px;
+    width: 100%;
+  }
+  button {
+    mat-icon {
+      color: black;
+    }
+  }
 }

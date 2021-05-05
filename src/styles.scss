@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "src/assets/scss/variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css');
+@import "src/assets/scss/variables";
 @import './theme.scss';
+@import './assets/scss/policies';
 
 
 /*@font-face{
@@ -19,6 +24,10 @@ body{
   margin:0;
 }*/
 
+body, app-root {
+  height: 100vh;
+}
+
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -29,11 +38,11 @@ input[type=number] {
 }
 
 .padding-0 {
-  padding: 0!important;
+  padding: 0 !important;
 }
 
 .margin-0 {
-  margin: 0!important;
+  margin: 0 !important;
 }
 
 @for $i from 1 through $font-sizes {
@@ -56,6 +65,21 @@ input[type=number] {
   }
 }
 
+@for $i from 1 through 400 {
+  .p-left-#{$i}px {
+    padding-left: ($i) + px;;
+  }
+  .m-left-#{$i}px {
+    margin-left: ($i) + px;;
+  }
+  .p-right-#{$i}px {
+    padding-right: ($i) + px;;
+  }
+  .m-right-#{$i}px {
+    margin-right: ($i) + px;;
+  }
+}
+
 .strikethrough {
   color: grey;
   text-decoration: line-through;
@@ -69,8 +93,8 @@ input[type=number] {
   color: black;
 }
 
-.color-deeppink {
-  color: deeppink;
+.color-primary {
+  color: $primary-color;
 }
 
 .border-right-npx {
@@ -87,6 +111,10 @@ input[type=number] {
 
 .right {
   float: right;
+}
+
+.d-grid {
+  display: grid;
 }
 
 //.product-card:not(:last-child) {
@@ -161,4 +189,35 @@ input[type=number] {
 
 .mat-input-element {
   caret-color: $secondary-color;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $primary-color;
+}
+
+label.mat-checkbox-layout {
+  margin: 0;
+}
+
+app-login-signup-dialog {
+  .mat-tab-labels {
+    width: 100px !important;
+    min-width: 100px !important;
+
+    .mat-tab-label {
+      min-width: 100px !important;
+    }
+  }
+}
+
+.pointer, .pointer-underline {
+  cursor: pointer;
+}
+
+.pointer-underline:hover {
+  text-decoration: underline;
 }

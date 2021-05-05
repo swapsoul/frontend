@@ -1,58 +1,62 @@
-<nav id="our-navbar" class="navbar navbar-expand-lg navbar-custom mb-0">
-  <a class="navbar-brand" style="margin-right: 60px; margin-left: 80px;" href="#">
-    <img src="assets/img/logo.png" style="height:40px; width: 120px;">
+<nav id="our-navbar" #stickyMenu class="navbar navbar-expand-lg navbar-custom mb-0" [class.sticky]="isSticky">
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/logo.png">
   </a>
   <button class="navbar-toggler navbar-dark" type="button" (click)="isCollapsed = !isCollapsed"
-    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggler" aria-label="Toggle navigation">
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbarToggler" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse navbar-collapse" id="navbarToggler" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <button mat-button routerLink='home'>Home</button> &nbsp;
+      <li class="nav-item" (click)="isCollapsed = true">
+        <button mat-button routerLink='home'>Home</button>
       </li>
-      <li class="nav-item">
-        <button mat-button routerLink='men'>Men</button> &nbsp;
+      <li class="nav-item" (click)="isCollapsed = true">
+        <button mat-button routerLink='men'>Men</button>
       </li>
-      <li class="nav-item">
-        <button mat-button routerLink='women'>Women</button> &nbsp;
+      <li class="nav-item" (click)="isCollapsed = true">
+        <button mat-button routerLink='women'>Women</button>
       </li>
       <!-- Essentials are not cureently used
       <li class="nav-item">
         <button mat-button routerLink='/essentials'>Essentials</button> &nbsp;
       </li> -->
-      <li class="nav-item">
-        <button mat-button (click)="goToBlog('https://swap-soul.blogspot.com/')">Blog</button> &nbsp;
+      <li class="nav-item" (click)="isCollapsed = true">
+        <button mat-button (click)="openInNewTab('https://swap-soul.blogspot.com/')">Blog</button>
       </li>
-      <li class="nav-item">
-        <button mat-button routerLink='about'>About</button> &nbsp;
+      <li class="nav-item" (click)="isCollapsed = true">
+        <button mat-button routerLink='about'>About</button>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}">
-      <mat-form-field floatLabel="never">
-        <input class="text-white" matInput type="search" [(ngModel)]="term" name="term" placeholder="Search&hellip;"
-          autocomplete="off" (blur)="hasValue=term?true:false">
-      </mat-form-field>
-      <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
-        <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
-        <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
-      </button>
-      &nbsp;
-      <!-- &nbsp;
-      <button mat-icon-button aria-label="favorite">
-        <mat-icon>favorite_border</mat-icon>
-      </button>
-      &nbsp; -->
-      <button mat-icon-button aria-label="cart" routerLink="cart">
-        <mat-icon>work_outliner</mat-icon>
-      </button>
+    <form class="form-inline my-2 my-lg-0 search-container" [ngClass]="{'hasValue':hasValue}" fxLayout.xs="column" fxLayoutAlign.xs="start start" fxLayoutAlign="start center" fxLayout="row">
+      <div>
+        <mat-form-field floatLabel="never">
+          <input class="text-white" matInput type="search" [(ngModel)]="term" name="term" placeholder="Search&hellip;"
+                 autocomplete="off" (blur)="hasValue=term?true:false">
+        </mat-form-field>
+        <button type="button" class="searchIcon" mat-icon-button (click)="hasValue=!hasValue">
+          <mat-icon *ngIf="!hasValue" class="mat-18">search</mat-icon>
+          <mat-icon style="color:black;" *ngIf="hasValue" (click)="term=''" class="mat-18 ">close</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="cart" routerLink="cart" (click)="isCollapsed = true">
+          <mat-icon>work_outliner</mat-icon>
+        </button>
+      </div>
 
-      <button mat-button class="button-white" (click)="openDialog()" *ngIf="!globalService.profileFlag">Login/SignUp</button>
-      <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag"><mat-icon>account_circle</mat-icon> Hi, {{globalService.UserName}}</button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item class="button-black" routerLink="profile/{{globalService.UserName}}">Profile</button>
-        <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
-      </mat-menu>
+      <div>
+        <button mat-button class="button-white" (click)="openDialog()" *ngIf="!globalService.profileFlag">Login/SignUp
+        </button>
+        <button mat-button class="button-white" [matMenuTriggerFor]="menu" *ngIf="globalService.profileFlag">
+          <mat-icon>account_circle</mat-icon>
+          Hi, {{globalService.UserName}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="button-black" routerLink="profile/{{globalService.UserName}}"
+                  (click)="isCollapsed = true">Profile
+          </button>
+          <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
+        </mat-menu>
+      </div>
     </form>
   </div>
 </nav>
+<div id="psuedo-navbar"></div>

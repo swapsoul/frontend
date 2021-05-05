@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Input, ViewChild, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -14,10 +14,13 @@ import { CommonService } from '../../services/common/common.service';
   styleUrls: ['./navbar.component.scss'],
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
   // profileFlag = GlobalService.profileFlag;
   // profileFlag: boolean;
   public isCollapsed = true;
+  isSticky = false;
+
+  @ViewChild('stickyMenu') menuElement: ElementRef;
 
   term: string;
   hasValue: boolean;
@@ -32,11 +35,12 @@ export class NavbarComponent implements OnInit {
     this.placeholdervalue = ' ';
   }
 
-  goToBlog(url:string){
-    this.externalUrl.openUrlinNewTab(url);
+  openInNewTab(url:string){
+    this.externalUrl.openUrlInNewTab(url);
   }
 
   logout() {
+    this.isCollapsed = true;
     localStorage.clear();
     this.globalService.profileFlag = false;
     this.globalService.clearCookies();
@@ -47,10 +51,10 @@ export class NavbarComponent implements OnInit {
 
 
   openDialog(): void {
-
+    this.isCollapsed = true;
     const dialogRef = this.dialog.open(LoginSignUpDialogComponent, {
-      width: '412px',
-      height: '510px',
+      width: '90%',
+      maxWidth: '350px',
       data: null,
     });
 
@@ -63,6 +67,20 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(): void {
+    this.onResize(null);
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  handleScroll(): void {
+    this.onResize(null);
+    this.isSticky = window.scrollY > 0;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(_): void {
+    document.getElementById('psuedo-navbar').style.height = parseInt(this.menuElement.nativeElement.clientHeight, 10) + 'px';
+  }
 }
 
 @Component({
@@ -77,9 +95,10 @@ export class LoginSignUpDialogComponent implements OnInit {
   hide = true;
   submitStatus = false;
   loginStatus = false;
+  autocomplete = 'off';
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)])
   });
 
   registerForm: FormGroup = this.formBuilder.group({
@@ -145,7 +164,8 @@ export class LoginSignUpDialogComponent implements OnInit {
         // console.log(this.globalService.profileFlag)
       } else {
         console.log('Login Failed');
-        this.errorMsglogin = 'Invalid username/password'
+        this.errorMsglogin = 'Invalid username/password';
+        this.openSnackBar('Invalid username/password', null);
       }
     });
   }
@@ -171,7 +191,8 @@ export class LoginSignUpDialogComponent implements OnInit {
         this.onNoClick();
       } else {
         console.log('SigUp Error');
-        this.errorMsg = 'User already exists'
+        this.errorMsg = 'User already exists';
+        this.openSnackBar('Failed to signup', null);
       }
     });
   }

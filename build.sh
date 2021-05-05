@@ -6,7 +6,7 @@ if [[ "$NODE_ENV" ]]; then
   cli_cmd="npm install -g @angular/cli"
   echo "Installing cli : $cli_cmd"
   eval "$cli_cmd"
-  build_cmd="ng build --aot --prod -c ${NODE_ENV}"
+  build_cmd="ng build --aot --prod --build-optimizer false -c ${NODE_ENV}"
   echo "running \"$build_cmd\""
   eval "$build_cmd"
 

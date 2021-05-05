@@ -7,7 +7,7 @@ import { GlobalService } from './services/global/global.service';
 import { AuthGuardService } from './services/auth/auth.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './routes/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginSignUpDialogComponent } from './components/navbar/navbar.component';
@@ -27,8 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { SingleproductpagesampleComponent } from './routes/singleproductpagesample/singleproductpagesample.component';
 import { AboutComponent } from './routes/about/about.component';
 import { ProductComponent } from './routes/product/product.component';
-import { TcComponent } from './routes/tc/tc.component';
-import { PrivacyComponent } from './routes/privacy/privacy.component';
+import { TcComponent } from './routes/policies/tc/tc.component';
+import { PrivacyComponent } from './routes/policies/privacy/privacy.component';
 import { RequestService } from './services/request/request.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -44,6 +44,14 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { AddAddressComponent } from './components/add-address/add-address.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-delivery-policy/shipping-delivery-policy.component';
+import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
+import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
+import { FilterPipe } from './routes/filter.pipe';
 
 
 @NgModule({
@@ -65,7 +73,13 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
     ProfileComponent,
     CartComponent,
     NotfoundComponent,
-    AddAddressComponent
+    AddAddressComponent,
+    FooterComponent,
+    LoaderComponent,
+    ShippingDeliveryPolicyComponent,
+    OrdersPaymentsPolicyComponent,
+    ExchangeReturnPolicyComponent,
+    FilterPipe
   ],
   imports: [
 
@@ -92,9 +106,14 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
     MatRippleModule,
     NgbTooltipModule,
     MatButtonToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
-  providers: [ GlobalService, RequestService, CookieService, DatasharingService,AuthGuardService ],
+  providers: [ GlobalService, RequestService, CookieService, DatasharingService, AuthGuardService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true
+  } ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
