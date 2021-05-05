@@ -107,7 +107,7 @@
         <div class="price-total">
           <div>
             <span>Sub Total</span><br>
-            <span class="total-amount font-18px">{{ getCartTotalPrice() | currency: 'INR' }}</span>
+            <span class="total-amount font-18px" >{{ getCartTotalPrice() | currency: 'INR' }}</span>
           </div>
           <div class="right next-step">
             <button mat-ripple (click)="isAddressSelection = !isAddressSelection">Proceed</button>
@@ -147,7 +147,7 @@
                 </mat-card-content>
                 <mat-card-actions fxLayoutAlign="center">
                   <button mat-button
-                          (click)="selectAddressAndProceed(i, address)">{{ "Deliver Here" | uppercase }}</button>
+                          (click)="selectAddressAndProceed(i, address)" (click)="initPay()">{{ "Deliver Here" | uppercase }}</button>
 
                           
                 </mat-card-actions>
@@ -169,7 +169,7 @@
         </div>
       </div>
     </div>
-    <button style="float: right; margin: 5%;" class="btn btn-primary" (click)="initPay()">Pay with Razorpay</button>
+    <!-- <button style="float: right; margin: 5%;" class="btn btn-primary" (click)="initPay()">Pay with Razorpay</button> -->
   </div>
   <!--  <div class="col-12 also-like">-->
   <!--    <div class="heading font-20px col"><strong>You May Also Like</strong></div>-->

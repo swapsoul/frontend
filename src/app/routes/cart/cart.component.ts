@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 import { AddAddressComponent } from '../../components/add-address/add-address.component';
 import {ICustomWindow, WindowRefService} from './window-ref.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -16,15 +16,14 @@ export class CartComponent implements OnInit {
 
   private _window: ICustomWindow;
   public rzp: any;
-
   public options: any = {
-    key: '', // add razorpay key here
-    name: 'The Swag Coder',
+    key: 'rzp_test_PI5sKdi9BRTiJu', // add razorpay key here
+    name: 'Swapsoul',
     description: 'Shopping',
-    amount: 100, // razorpay takes amount in paisa
+    // amount: , // razorpay takes amount in paisa
     prefill: {
-      name: 'The Swag Coder',
-      email: 'mounika.nimmu@gmail.com', // add your email id
+      // name: 'mounika nimmu',
+      // email: 'mounika.nimmu@gmail.com', // add your email id
     },
     notes: {},
     theme: {
@@ -34,6 +33,7 @@ export class CartComponent implements OnInit {
     modal: {
       ondismiss: (() => {
         this.zone.run(() => {
+          this.router.navigate(['cart']);
           // add current page routing if payment fails
         })
       })
@@ -46,13 +46,16 @@ export class CartComponent implements OnInit {
   isCartDetailsLoaded = false;
   isAddressSelection = false;
 
+  
+
   constructor(
     private zone: NgZone,
     private winRef: WindowRefService,
     private requestService: RequestService,
     private commonService: CommonService,
     private dialog: MatDialog,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    private router:Router
   ) {
     this._window = this.winRef.nativeWindow;
     this.onResize(null);
@@ -70,13 +73,18 @@ export class CartComponent implements OnInit {
   }
 
   initPay(): void {
+    this.options.prefill['email'] = this.commonService.userData.data.userEmail
+    this.options.prefill['name'] = this.commonService.userData.data.userName
+    this.options['amount'] = 100 * this.getCartTotalPrice()
     this.rzp = new this.winRef.nativeWindow['Razorpay'](this.options);
     this.rzp.open();
   }
 
   paymentHandler(res: any) {
     this.zone.run(() => {
-      // add API call here
+      console.log("Payment detail --->",res)
+      this.router.navigate(['home']);
+      // add API call here  
     });
   }
 
