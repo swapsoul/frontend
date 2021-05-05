@@ -12,8 +12,21 @@ export class MenComponent implements OnInit {
   products: any[];
   moreyoulike: any[] = [];
   toppings = new FormControl();
+  ratings = new FormControl();
+  maxi = new FormControl();
+  mini = new FormControl();
+  disc = new FormControl();
+  filteredProducts: any[];
+  rating:string="";
+  maxp:string="";
+  minp:string="";
+  dis:string="";
 
   toppingList: string[] = ['Discount - High to Low', 'Price- Low to High', 'Price- High to Low', 'Newest First', 'Rating'];
+  ratingList: string[] = ['4* & above','3* & above','2* & above','1* & above'];
+  maxplist: string[] = ['250','500','1000','1500','2000','2500','2500+'];
+  minplist: string[] = ['250', '500', '1000', '1500', '2000', '2500'];
+  disclist: string[] = ['10% or more', '20% or more', '30% or more', '40% or more', '50% or more', '60% or more', '70% or more', '80% or more', '90% or more'];
 
   constructor(private globalservice: GlobalService) {
   }
@@ -42,6 +55,26 @@ export class MenComponent implements OnInit {
     } else if (event.value === this.toppingList[4]) {
       this.products.sort((a, b) => (a.productRating < b.productRating) ? 1 : -1);
     }
+  }
+
+  filter(event){
+    this.rating = event.value;
+  }
+
+  maxprice(event){
+    this.maxp = event.value;
+  }
+
+  minprice(event) {
+    this.minp = event.value;
+  }
+
+  discount(event){
+    this.dis = event.value;
+  }
+
+  updateData(data){
+    console.log(data);
   }
 
 }

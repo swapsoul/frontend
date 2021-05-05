@@ -9,6 +9,46 @@
     </ng-template>
     <div fxLayout="column">
       <div class="sort-select">
+
+        <mat-form-field class="mr-3" aria-label="Filter By Team" appearance="fill">
+          <mat-label>Filter By Discount</mat-label>
+          <mat-select [formControl]="disc" (selectionChange)="discount($event)">
+            <mat-select-trigger>
+              {{disc.value ? disc.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let dis of disclist" [value]="dis">{{dis}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3" aria-label="Filter By Team" appearance="fill">
+          <mat-label>Filter By MinPrice</mat-label>
+          <mat-select [formControl]="mini" (selectionChange)="minprice($event)">
+            <mat-select-trigger>
+              {{mini.value ? mini.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let minp of minplist" [value]="minp">{{minp}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3" aria-label="Filter By Team" appearance="fill">
+          <mat-label>Filter By MaxPrice</mat-label>
+          <mat-select [formControl]="maxi" (selectionChange)="maxprice($event)">
+            <mat-select-trigger>
+              {{maxi.value ? maxi.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let maxp of maxplist" [value]="maxp">{{maxp}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3" aria-label="Filter By Team" appearance="fill">
+          <mat-label>Filter By Ratings</mat-label>
+          <mat-select [formControl]="ratings" (selectionChange)="filter($event)">
+            <mat-select-trigger>
+              {{ratings.value ? ratings.value : ''}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let rating of ratingList"[value]="rating">{{rating}}</mat-option>
+          </mat-select>
+        </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Sort By</mat-label>
           <mat-select [formControl]="toppings" (selectionChange)="sort($event)">
@@ -20,7 +60,7 @@
         </mat-form-field>
       </div>
       <div fxLayout="row wrap" fxLayoutAlign="center center">
-        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products"
+        <app-product class="d-grid" [productData]="productData" *ngFor="let productData of products | filter:rating:maxp:minp:dis"
                      fxFlex.gt-sm="25%"></app-product>
       </div>
     </div>

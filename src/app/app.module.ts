@@ -51,6 +51,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-delivery-policy/shipping-delivery-policy.component';
 import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
 import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
+import { FilterPipe } from './routes/filter.pipe';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return
     LoaderComponent,
     ShippingDeliveryPolicyComponent,
     OrdersPaymentsPolicyComponent,
-    ExchangeReturnPolicyComponent
+    ExchangeReturnPolicyComponent,
+    FilterPipe
   ],
   imports: [
 
