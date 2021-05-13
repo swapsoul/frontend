@@ -8,8 +8,10 @@
       <span class="product-rating right">{{ productData.productRating }}</span>
     </div>
     <div>
-      <span class="product-price"><strong>{{ productData.productSalePrice | currency: 'INR' }}</strong></span>
-      <span class="product-actual-price strikethrough text-center">{{ productData.productRetailPrice | currency: 'INR' }}</span>
+      <span
+        class="product-price"><strong>{{ productData.productSalePrice | currency: 'INR': true:'1.0' }}</strong></span>
+      <span
+        class="product-actual-price strikethrough text-center">{{ productData.productRetailPrice | currency: 'INR': true:'1.0'  }}</span>
       <span class="product-discount text-right">{{ productData.productDiscount + "% OFF" | uppercase }}</span>
     </div>
   </div>
