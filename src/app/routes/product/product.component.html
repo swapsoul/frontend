@@ -1,6 +1,7 @@
 <div class="product-card" [routerLink]="'/products/' + productData.productId" *ngIf="productData; else invalid">
   <div class="img-container">
-    <img [src]="productData.productImgURL">
+    <div class="imgSkeleton" *ngIf="!isImgLoaded"></div>
+    <img [src]="productData.productImgURL" [style.display]="isImgLoaded ? 'block': 'none'" (load)="imgLoaded()">
   </div>
   <div class="product-description">
     <div>

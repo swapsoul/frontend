@@ -8,9 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   @Input() productData;
+  isImgLoaded = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  imgLoaded(): void {
+    this.isImgLoaded = true;
   }
 
 }
