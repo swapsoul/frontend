@@ -20,11 +20,11 @@
         <img src="assets/img/bag.png">
       </div>
       <div class="product-description">
-        <div>Product Name {{i}}</div>
+        <div>Product Name {{i + 1}}</div>
         <div>Order Id: #ALPHA12345BETA</div>
       </div>
       <div class="product-amount" fxLayout="column" fxLayoutAlign="space-between">
-        <div>Total Amount<br>{{800 | currency : 'INR': true : '1.0-0'}}/-</div>
+        <div class="text-center">Total Amount<br>{{800 * (i + 1) | currency : 'INR': true : '1.0-0'}}/-</div>
         <div class="help">Need help?</div>
       </div>
     </div>
