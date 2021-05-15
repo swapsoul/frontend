@@ -1,0 +1,58 @@
+@import "~src/assets/scss/variables";
+
+div {
+  padding: 0 5px;
+}
+
+.orders {
+  max-width: 1000px;
+  min-width: 400px;
+  overflow-x: auto;
+  padding: 15px;
+  margin: 0 auto;
+
+  .heading {
+    font-size: 40px;
+    padding: 10px 0 20px 0;
+  }
+
+  .order-item {
+    padding: 15px 0;
+    .order-top {
+      border: $border-width solid $border-color;
+      padding: 5px 15px;
+      background-color: $border-color;
+
+      span {
+        text-align: center;
+      }
+    }
+    .order-bottom {
+      padding: 5px 15px;
+      border-style: solid;
+      border-color: $border-color;
+      border-width: 0 $border-width $border-width $border-width;
+      .product-image, .product-amount {
+        flex: 0 1 auto;
+
+        .help {
+          text-align: end;
+          color: #aaa;
+        }
+      }
+      .product-description {
+        flex: 1 1 auto;
+        padding: 10px;
+      }
+
+      .product-image {
+        width: 100px;
+        img {
+          max-height: 100px;
+          max-width: 100px;
+        }
+      }
+
+    }
+  }
+}

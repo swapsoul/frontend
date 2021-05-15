@@ -216,10 +216,12 @@ export class CartComponent implements OnInit {
       if (result) {
         const payload = {
           userAddress: {
+            name: result.name,
             addressLine1: result.lineFirst,
             addressLine2: result.lineSecond,
             city: result.city,
-            pincode: result.pinCode
+            pincode: result.pinCode,
+            contactNumber: result.contactNumber
           }
         };
         if (!isNaN(parseInt(result.id, 10))) {

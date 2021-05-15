@@ -18,6 +18,7 @@ import { NotfoundComponent } from './routes/notfound/notfound.component';
 import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
 import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-delivery-policy/shipping-delivery-policy.component';
 import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
+import { OrdersComponent } from './routes/orders/orders.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'email_verified', component: EmailVerifiedComponent },
   { path: 'profile/:username', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   {
     path: 'policy', children: [
       { path: '', redirectTo: 'terms', pathMatch: 'full' },

@@ -2,6 +2,15 @@
 <form [formGroup]="addressForm" fxLayout="column" fxLayoutAlign="center">
   <mat-dialog-content>
     <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div>
+          Name is <strong>Invalid</strong>
+        </div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Line 1</mat-label>
       <input matInput placeholder="Line 1" formControlName="lineFirst" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
       <mat-error *ngIf="lineFirst.invalid && (lineFirst.dirty || lineFirst.touched)">
@@ -37,6 +46,18 @@
         </div>
         <ng-template #invalid>
           Pin Code is <strong>Invalid</strong>
+        </ng-template>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contact Number</mat-label>
+      <input matInput placeholder="Contact Number" formControlName="contactNumber" [errorStateMatcher]="matcher" [autocomplete]="autocomplete" required>
+      <mat-error *ngIf="contactNumber.invalid && (contactNumber.dirty || contactNumber.touched)">
+        <div *ngIf="contactNumber.errors['minlength'] || contactNumber.errors['maxlength']; else invalid">
+          Contact number must be 10 characters long.
+        </div>
+        <ng-template #invalid>
+          Contact number is <strong>Invalid</strong>
         </ng-template>
       </mat-error>
     </mat-form-field>

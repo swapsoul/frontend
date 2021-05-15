@@ -52,6 +52,7 @@ import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-deli
 import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
 import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
 import { FilterPipe } from './routes/filter.pipe';
+import { OrdersComponent } from './routes/orders/orders.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { FilterPipe } from './routes/filter.pipe';
     ShippingDeliveryPolicyComponent,
     OrdersPaymentsPolicyComponent,
     ExchangeReturnPolicyComponent,
-    FilterPipe
+    FilterPipe,
+    OrdersComponent
   ],
   imports: [
 
