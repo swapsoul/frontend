@@ -1,32 +1,41 @@
 <div fxLayout="column" class="orders">
   <div class="heading">My Orders</div>
-  <div class="order-item" *ngFor="let item of [].constructor(10); let i = index">
-    <div class="order-top" fxLayoutAlign="space-between center">
-      <div fxLayout="column">
-        <span>Order Placed</span>
-        <span>15 May 2021</span>
+  <ng-template [ngIf]="true" [ngIfElse]="noOrders">
+    <div class="order-item" *ngFor="let item of [].constructor(10); let i = index">
+      <div class="order-top" fxLayoutAlign="space-between center">
+        <div fxLayout="column">
+          <span>Order Placed</span>
+          <span>15 May 2021</span>
+        </div>
+        <div fxLayout="column">
+          <span>SHIP TO</span>
+          <span>Nitin</span>
+        </div>
+        <div fxLayout="column">
+          <span>DELIVERY STATUS</span>
+          <span>On the way</span>
+        </div>
       </div>
-      <div fxLayout="column">
-        <span>SHIP TO</span>
-        <span>Nitin</span>
-      </div>
-      <div fxLayout="column">
-        <span>DELIVERY STATUS</span>
-        <span>On the way</span>
+      <div class="order-bottom" fxLayout="row">
+        <div class="product-image">
+          <img src="assets/img/bag.png">
+        </div>
+        <div class="product-description">
+          <div>Product Name {{i + 1}}</div>
+          <div>Order Id: #ALPHA12345BETA</div>
+        </div>
+        <div class="product-amount" fxLayout="column" fxLayoutAlign="space-between">
+          <div class="text-center">Total Amount<br>{{800 * (i + 1) | currency : 'INR': true : '1.0-0'}}/-</div>
+          <div class="help">Need help?</div>
+        </div>
       </div>
     </div>
-    <div class="order-bottom" fxLayout="row">
-      <div class="product-image">
-        <img src="assets/img/bag.png">
-      </div>
-      <div class="product-description">
-        <div>Product Name {{i + 1}}</div>
-        <div>Order Id: #ALPHA12345BETA</div>
-      </div>
-      <div class="product-amount" fxLayout="column" fxLayoutAlign="space-between">
-        <div class="text-center">Total Amount<br>{{800 * (i + 1) | currency : 'INR': true : '1.0-0'}}/-</div>
-        <div class="help">Need help?</div>
+  </ng-template>
+  <ng-template #noOrders>
+    <div class="order-item">
+      <div class="no-order">
+        <p>No Orders To Display</p>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>

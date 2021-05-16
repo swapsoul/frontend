@@ -55,4 +55,14 @@ div {
 
     }
   }
+
+  .no-order {
+    text-align: center;
+    font-size: 25px;
+    border-style: solid;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-width: $border-width 0;
+    border-color: $border-color;
+  }
 }
