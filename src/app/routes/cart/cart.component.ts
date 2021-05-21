@@ -6,6 +6,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 import { AddAddressComponent } from '../../components/add-address/add-address.component';
 import {ICustomWindow, WindowRefService} from './window-ref.service';
 import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,7 @@ export class CartComponent implements OnInit {
   private _window: ICustomWindow;
   public rzp: any;
   public options: any = {
-    key: 'rzp_test_PI5sKdi9BRTiJu', // add razorpay key here
+    key: 'rzp_test_KCHkrn5MQJKtES', // add razorpay key here
     name: 'Swapsoul',
     description: 'Shopping',
     // amount: , // razorpay takes amount in paisa
@@ -55,7 +56,8 @@ export class CartComponent implements OnInit {
     private commonService: CommonService,
     private dialog: MatDialog,
     private snackbarService: SnackbarService,
-    private router:Router
+    private router:Router,
+    public globalService: GlobalService
   ) {
     this._window = this.winRef.nativeWindow;
     this.onResize(null);
@@ -83,6 +85,15 @@ export class CartComponent implements OnInit {
   paymentHandler(res: any) {
     this.zone.run(() => {
       console.log("Payment detail --->",res)
+      let jsonData = {
+        "amount": 100 * this.getCartTotalPrice(),
+        "currency": "INR"
+      };
+      if (res){
+        this.globalService.postRazorPayPayment(`${res.razorpay_payment_id}/capture`, jsonData, (re) => {
+          console.log(re);
+        });
+      }
       this.router.navigate(['home']);
       // add API call here  
     });
