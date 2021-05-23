@@ -65,6 +65,10 @@ export class RequestService {
     this.globalService.putServiceCall('user', payload, callback, true);
   }
 
+  capturePayment(payload, callback): void {
+    this.globalService.postServiceCall('payment/capture', payload, callback, true);
+  }
+
   initializeUserFromCookie(): void {
     const username = this.cookie.get('useremail');
     const token = this.cookie.get('token');

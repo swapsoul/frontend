@@ -86,11 +86,12 @@ export class CartComponent implements OnInit {
     this.zone.run(() => {
       console.log("Payment detail --->",res)
       let jsonData = {
+        "paymentId": res.razorpay_payment_id,
         "amount": 100 * this.getCartTotalPrice(),
         "currency": "INR"
       };
       if (res){
-        this.globalService.postRazorPayPayment(`${res.razorpay_payment_id}/capture`, jsonData, (re) => {
+        this.requestService.capturePayment(jsonData, (re) => {
           console.log(re);
         });
       }
