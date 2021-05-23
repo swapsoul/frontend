@@ -150,12 +150,12 @@
 
                 </mat-card-actions>
                 <div fxLayout="row" class="address-clickable-text font-16px">
-                  <span mat-ripple (click)="addOrEditAddress(i, address)">Edit</span> |
-                  <span mat-ripple (click)="deleteAddress(i)">Delete</span>
+                  <span mat-ripple (click)="commonService.addOrEditAddress(i, address)">Edit</span> |
+                  <span mat-ripple (click)="commonService.deleteAddress(i)">Delete</span>
                 </div>
               </div>
             </mat-card>
-            <mat-card mat-ripple class="address-card pointer add-address text-center" (click)="addOrEditAddress()">
+            <mat-card mat-ripple class="address-card pointer add-address text-center" (click)="commonService.addOrEditAddress()">
               <div fxLayout="row">
                 <mat-card-content>
                   <mat-icon class="font-40px color-gray">add</mat-icon>

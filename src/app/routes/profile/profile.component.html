@@ -1,175 +1,56 @@
-<br/>
 <div class="container">
-    <div class=".col-xs-4 .col-md-offset-2">
-        <div class="blue panel panel-default panel-info Profile">
-            <div class="panel-heading">
-                <strong class="blackcol">My Profile</strong>
+    <section class="details">
+        <div class="heading">My Profile</div>
+        <div class="context" fxLayout="column" fxLayoutGap="15px" fxLayoutAlign.xs="center">
+            <div fxLayout="row wrap" class="row-item">
+                <span class="label" ngClass.gt-xs="text-right">Username</span>
+                <span class="field-value" fxFlex="40%" fxFlex.xs="100%">{{userDetails?.userName}}</span>
             </div>
-            <div class="panel-body">
-        
-                <div class="form-horizontal">
-                    <form>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">UserName</label>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="userName" placeholder="{{userName}}"
-                                    ng-model="me.firstName" disabled>
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="email" placeholder="{{useremail}}"
-                                    ng-model="me.email" disabled>
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Phone</label>
-                            <div class="col-sm-4">
-                                <form (submit)="onSubmit()">
-                                    <input [(ngModel)]="mobile" (keyup)="onKey($event)" class="form-control"
-                                        (keypress)="numberOnly($event)" maxlength="10" type="text" name="phone"
-                                        placeholder="{{phone}}" ng-model="me.phone" disabled>
-                                </form>
-        
-                            </div>
-                            <mat-icon class="write ml-3 mt-1" (click)=removedisabled();>create</mat-icon>
-                        </div>
-        
-                        <div *ngIf="error==1 && flag==0">
-                            <p class="ml-3">Please Enter Valid 10 Digit Mobile Number</p>
-                        </div>
-        
-                        <div *ngIf="error==2 && flag==0">
-                            <p class="ml-3">Phone Number Updated Successfully!</p>
-                        </div>
-        
-                        <div class="form-group" *ngIf="flag==1">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-primary" (click)="updateMe()">Update</button>
-                            </div>
-                        </div>
-        
-                    </form>
-                </div> <!-- end form-horizontal -->
-            </div> <!-- end panel-body -->
-        
-        </div> <!-- end panel -->
-        <div class="blue panel panel-default panel-info Profile">
-            <div class="panel-heading">
-                <strong class="blackcol">My Address</strong>
+            <div fxLayout="row wrap" class="row-item">
+                <span class="label" ngClass.gt-xs="text-right">Email</span>
+                <span class="field-value" fxFlex="40%" fxFlex.xs="100%">{{userDetails?.userEmail}}</span>
             </div>
-            <div class="panel-body">
-        
-                <div class="form-horizontal">
-                    <form>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Address Line 1</label>
-                            <div class="col-sm-4">
-                                <input class="form-control" id="line1" (keyup)="onKeyline1($event)" type="text" placeholder="{{useraddress['addressLine1']}}" name="Line1"
-                                    [(ngModel)]="addline1" required="required" disabled>
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Address Line 2</label>
-                            <div class="col-sm-4">
-                                <input class="form-control" id="line2" (keyup)="onKeyline2($event)" type="text"
-                                    placeholder="{{useraddress['addressLine2']}}" name="Line2" [(ngModel)]="addline2" required="required" disabled>
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">City</label>
-                            <div class="col-sm-4">
-                                <form (submit)="onSubmit()">
-                                    <input class="form-control" id="city" (keyup)="onKeycity($event)" type="text"
-                                        placeholder="{{useraddress['city']}}" name="city" [(ngModel)]="city" required="required" disabled>
-                                </form>
-        
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Pincode</label>
-                            <div class="col-sm-4">
-                                <form (submit)="onSubmit()">
-                                    <input class="form-control" #pinc="ngModel" maxlength="6" pattern="[1-9][0-9]{5}" id="pincode" (keyup)="onKeypin($event)" type="text"
-                                        placeholder="{{useraddress['pincode']}}" name="pin" [(ngModel)]="pin" required="required" disabled>
-                                </form>
-                        
-                            </div>
-                        </div>
-                    </form>
-                    
-                </div> <!-- end form-horizontal -->
-            </div> <!-- end panel-body -->
-        </div> <!-- end panel -->
-        <div class="row mr-0">
-        <div class="col-4"></div>
-        <div class="col-6">
-                    <button *ngIf="addressflag==0 && addupsuccess==false" mat-raised-button class="addbutton mb-3"
-                        (click)="removeDisabledAddress()">
-                        <mat-icon class="write">create</mat-icon>
-                    </button>
-                    
-                    <button *ngIf="addressflag==1" mat-raised-button class="addbutton mb-3" (click)="updateAddress()">
-                        <span>Submit</span>
-                    </button>
+            <div fxLayout="row wrap" class="row-item">
+                <span class="label" ngClass.gt-xs="text-right">Phone</span>
+                <span class="field-value" fxFlex="40%" fxFlex.xs="100%" *ngIf="!isEditMode">{{userDetails?.phoneNumber}}</span>
+                <span class="field-value-editable" fxFlex="40%" fxFlex.xs="100%" *ngIf="isEditMode"><input [(ngModel)]="phoneNumber" type="number" (keyup)="restrictPhoneNumber()"></span>
+                <span class="action-item" fxFlex.xs="100%" fxLayoutAlign="center">
+                    <button mat-button (click)="toggleEditMode()">{{ isEditMode ? "Update": "Edit" }}</button>
+                </span>
+            </div>
         </div>
-        <p class="headin mb-3" *ngIf="addupsuccess==true">Address Updated Successfully !</p>
-        </div>
-
-        <!--
-
-            <div class="containerv d-flex">
-                <p class="headin"><strong>My Address</strong></p>
-                <form class="addressBox d-block" method="POST">
-                    <div class="submitBox form-group">
-                        <div class="inputBox">
-                            <div class="formText">Address Line 1</div>
-                            <div class="line1box">
-                                <input [(ngModel)]="addline1" (keyup)="onKeyline1($event)" placeholder="{{useraddress['addressLine1']}}" name="Line1" class="inputEle" required="required" id="line1" type="text" disabled>
+    </section>
+    <section class="address">
+        <div class="heading">My Addresses</div>
+        <div class="context">
+            <div fxLayoutAlign="start">
+                <div fxLayout="row wrap" fxLayoutAlign="space-evenly stretch">
+                    <mat-card class="address-card" *ngFor="let address of userAddress; let i=index">
+                        <div fxLayout="column">
+                            <mat-card-content>
+                                <div>{{address.name}}</div>
+                                <div>{{address.addressLine1}}</div>
+                                <div>{{address.addressLine2}}</div>
+                                <div>{{address.city}}</div>
+                                <div>Pincode: {{address.pincode}}</div>
+                                <div>Contact Number: {{address.contactNumber}}</div>
+                            </mat-card-content>
+                            <div fxLayout="row" class="address-clickable-text font-16px">
+                                <span mat-ripple (click)="commonService.addOrEditAddress(i, address)">Edit</span> |
+                                <span mat-ripple (click)="commonService.deleteAddress(i)">Delete</span>
                             </div>
                         </div>
-
-                        <div class="inputBox">
-                            <div class="formText">Address Line 2</div>
-                            <div class="line1box">
-                                <input [(ngModel)]="addline2" (keyup)="onKeyline2($event)" placeholder="{{useraddress['addressLine2']}}" name="Line2" class="inputEle" required="required" id="line2" type="text" disabled>
-                            </div>
+                    </mat-card>
+                    <mat-card mat-ripple class="address-card pointer add-address text-center" (click)="commonService.addOrEditAddress()">
+                        <div fxLayout="row">
+                            <mat-card-content>
+                                <mat-icon class="font-40px color-gray">add</mat-icon>
+                                <div class="color-gray"><strong>Add address</strong></div>
+                            </mat-card-content>
                         </div>
-
-                        <div class="inputBox">
-                            <div class="formText">City</div>
-                            <div class="line1box">
-                                <div class="errorMessageName d-none">Please enter valid line 1</div>
-                                <input [(ngModel)]="city" (keyup)="onKeycity($event)" placeholder="{{useraddress['city']}}" name="city" class="inputEle" required="required" id="city" type="text" disabled>
-                            </div>
-                        </div>
-
-                        <div class="inputBox">
-                            <div class="formText">Pincode</div>
-                            <div class="line1box">
-                                <input [(ngModel)]="pin" #pinc="ngModel" pattern="[1-9][0-9]{5}" (keyup)="onKeypin($event)" placeholder="{{useraddress['pincode']}}" name="pin" maxlength="6" class="inputEle" required="required" disabled id="pincode" type="text">
-                            </div>
-                        </div>
-
-                    </div>
-                </form>
-                <button *ngIf="addressflag==0 && addupsuccess==false" mat-raised-button class="mt-3 addbutton" (click)="removeDisabledAddress()">
-                    <span>Change</span>
-                </button>
-
-                <button *ngIf="addressflag==1" mat-raised-button class="mt-3 addbutton" (click)="updateAddress()">
-                        <span>Submit</span>
-                </button>
-
-                <p class="mt-3 headin" *ngIf="addupsuccess==true">Address Updated Successfully !</p>
+                    </mat-card>
+                </div>
             </div>
-
-
-    </div>  end size -->
-</div> <!-- end container-fluid -->
+        </div>
+    </section>
+</div>

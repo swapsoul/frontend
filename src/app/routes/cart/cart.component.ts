@@ -53,7 +53,7 @@ export class CartComponent implements OnInit {
     private zone: NgZone,
     private winRef: WindowRefService,
     private requestService: RequestService,
-    private commonService: CommonService,
+    public commonService: CommonService,
     private dialog: MatDialog,
     private snackbarService: SnackbarService,
     private router:Router,
@@ -209,64 +209,5 @@ export class CartComponent implements OnInit {
 
   selectAddressAndProceed(index, address): void {
     console.log(index, address);
-  }
-
-  addOrEditAddress(index = null, address = null): void {
-    if (index != null) {
-      address.id = index;
-    }
-    const dialogRef = this.dialog.open(AddAddressComponent, {
-      width: '90%',
-      maxWidth: '300px',
-      height: '90%',
-      maxHeight: '500px',
-      data: index == null ? null : address,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      if (result) {
-        const payload = {
-          userAddress: {
-            name: result.name,
-            addressLine1: result.lineFirst,
-            addressLine2: result.lineSecond,
-            city: result.city,
-            pincode: result.pinCode,
-            contactNumber: result.contactNumber
-          }
-        };
-        if (!isNaN(parseInt(result.id, 10))) {
-          // @ts-ignore
-          payload.userAddress.id = result.id;
-        }
-        this.requestService.addUpdateDeleteAddress(payload, (res) => {
-          if (res.status === 200) {
-            this.commonService.userData.data.userAddress = res.body.data.userAddress;
-            this.snackbarService.openMessageSnackbar('Address added (or updated) successfully');
-          } else {
-            this.snackbarService.openMessageSnackbar('Failed to add (or update) address');
-          }
-        });
-      }
-      // console.log("after closed",this.globalService.profileFlag)
-      // console.log('The dialog was closed');
-    });
-  }
-
-  deleteAddress(index): void {
-    const payload = {
-      userAddress: {
-        id: index
-      }
-    };
-    this.requestService.addUpdateDeleteAddress(payload, (res) => {
-      if (res.status === 200) {
-        this.commonService.userData.data.userAddress = res.body.data.userAddress;
-        this.snackbarService.openMessageSnackbar('Address deleted successfully');
-      } else {
-        this.snackbarService.openMessageSnackbar('Failed to delete address');
-      }
-    });
   }
 }
