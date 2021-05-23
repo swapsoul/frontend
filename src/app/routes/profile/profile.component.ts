@@ -55,8 +55,8 @@ export class ProfileComponent implements OnInit {
   }
 
   restrictPhoneNumber(): void {
-    if (this.userDetails.phoneNumber.toString().length > 10) {
-      this.userDetails.phoneNumber = Number(this.userDetails.phoneNumber.toString().substring(0, 10));
+    if (this.phoneNumber.toString().length > 10) {
+      this.phoneNumber = Number(this.phoneNumber.toString().substring(0, 10));
     }
   }
 }
