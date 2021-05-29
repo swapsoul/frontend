@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
   private _window: ICustomWindow;
   public rzp: any;
   public options: any = {
-    key: 'rzp_test_KCHkrn5MQJKtES', // add razorpay key here
+    key: 'rzp_test_AFvnJiqPbj1XkI', // add razorpay key here
     name: 'Swapsoul',
     description: 'Shopping',
     // amount: , // razorpay takes amount in paisa
