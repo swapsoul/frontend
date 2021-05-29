@@ -46,6 +46,7 @@ export class CartComponent implements OnInit {
   quantityCallManager: any = {};
   isCartDetailsLoaded = false;
   isAddressSelection = false;
+  isAddressIndex = null;
 
   
 
@@ -88,7 +89,14 @@ export class CartComponent implements OnInit {
       let jsonData = {
         "paymentId": res.razorpay_payment_id,
         "amount": 100 * this.getCartTotalPrice(),
-        "currency": "INR"
+        "currency": "INR",
+        "userEmail": this.commonService.userData.data.userEmail,
+        "userOrders" : {
+          "paymentId": res.razorpay_payment_id,
+          "deliveryStatus": "Order placed",
+          "userAddress" : this.commonService.userData.data.userAddress[this.isAddressIndex]
+        },
+        "userCart" : this.cartDetails
       };
       if (res){
         this.requestService.capturePayment(jsonData, (re) => {
@@ -208,6 +216,7 @@ export class CartComponent implements OnInit {
   }
 
   selectAddressAndProceed(index, address): void {
+    this.isAddressIndex = index
     console.log(index, address);
   }
 }
