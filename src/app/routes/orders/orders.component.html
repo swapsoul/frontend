@@ -1,6 +1,6 @@
 <div fxLayout="column" class="orders">
   <div class="heading">My Orders</div>
-  <ng-template [ngIf]="orderData.length > 0" [ngIfElse]="noOrders">
+  <ng-template [ngIf]="orderData?.length > 0" [ngIfElse]="noOrders">
     <div class="order-item" *ngFor="let order of orderData; let i = index">
       <div class="order-top" fxLayoutAlign="space-between center">
         <div fxLayout="column">
