@@ -53,7 +53,7 @@
           <button mat-menu-item class="button-black" routerLink="profile/{{globalService.UserName}}"
                   (click)="isCollapsed = true">Profile
           </button>
-          <button mat-menu-item class="button-black" routerLink="orders">My Orders</button>
+          <button mat-menu-item class="button-black" (click)="isCollapsed = true" routerLink="orders">My Orders</button>
           <button mat-menu-item class="button-black" (click)="logout()">Logout</button>
         </mat-menu>
       </div>
