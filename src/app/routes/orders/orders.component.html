@@ -38,7 +38,8 @@
   <ng-template #noOrders>
     <div class="order-item">
       <div class="no-order">
-        <p>No Orders To Display</p>
+        <p *ngIf="isLoading">Loading...</p>
+        <p *ngIf="!isLoading">No Orders To Display</p>
       </div>
     </div>
   </ng-template>

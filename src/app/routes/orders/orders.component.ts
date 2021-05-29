@@ -10,6 +10,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 export class OrdersComponent implements OnInit {
 
   orderData;
+  isLoading = true;
   constructor(private requestService: RequestService, private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class OrdersComponent implements OnInit {
       } else {
         this.snackbarService.openMessageSnackbar('Failed to fetch orders');
       }
+      this.isLoading = false;
     });
   }
 
