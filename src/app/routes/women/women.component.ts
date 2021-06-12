@@ -20,7 +20,7 @@ export class WomenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.globalservice.getServiceCall('product', (pdata) => {
+    /*this.globalservice.getServiceCall('product', (pdata) => {
       this.products = pdata.body.data;
       const likeproducts = [];
       for (let i = 0; i < 3; i++) {
@@ -28,7 +28,7 @@ export class WomenComponent implements OnInit {
         likeproducts.push(this.products[randomnum]);
       }
       this.moreyoulike = likeproducts;
-    });
+    });*/
   }
 
   sort(event): void {
