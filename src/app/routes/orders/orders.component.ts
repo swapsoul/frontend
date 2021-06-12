@@ -10,6 +10,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 export class OrdersComponent implements OnInit {
 
   orderData;
+  isLoading = true;
   constructor(private requestService: RequestService, private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
@@ -19,13 +20,21 @@ export class OrdersComponent implements OnInit {
       } else {
         this.snackbarService.openMessageSnackbar('Failed to fetch orders');
       }
+      this.isLoading = false;
     });
   }
 
-  getDateUsingUnixTimestamp(timestamp: number): string {
-    const date = new Date(timestamp * 1000);
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  getDateUsingUnixTimestamp(order: any): string {
+    if (order){
+      if (order.captureData) {
+        if (order.captureData.created_at) {
+          const date = new Date(order.captureData.created_at * 1000);
+          const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+      }
+    }
+    return '';
   }
 
   getTotalOrderValue(order: any): number {

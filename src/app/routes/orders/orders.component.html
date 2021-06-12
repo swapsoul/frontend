@@ -1,11 +1,11 @@
 <div fxLayout="column" class="orders">
   <div class="heading">My Orders</div>
-  <ng-template [ngIf]="true" [ngIfElse]="noOrders">
+  <ng-template [ngIf]="orderData?.length > 0" [ngIfElse]="noOrders">
     <div class="order-item" *ngFor="let order of orderData; let i = index">
       <div class="order-top" fxLayoutAlign="space-between center">
         <div fxLayout="column">
           <span>Order Placed</span>
-          <span>{{getDateUsingUnixTimestamp(order.caputureData?.created_at)}}</span>
+          <span>{{getDateUsingUnixTimestamp(order)}}</span>
         </div>
         <div fxLayout="column">
           <span>SHIP TO</span>
@@ -38,7 +38,8 @@
   <ng-template #noOrders>
     <div class="order-item">
       <div class="no-order">
-        <p>No Orders To Display</p>
+        <p *ngIf="isLoading">Loading...</p>
+        <p *ngIf="!isLoading">No Orders To Display</p>
       </div>
     </div>
   </ng-template>
