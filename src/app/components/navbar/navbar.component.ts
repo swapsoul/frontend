@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 import { ExternalUrlsService } from 'src/app/services/externalUrls/external-urls.service'
 import { CommonService } from '../../services/common/common.service';
+import { FacebookLoginProvider,GoogleLoginProvider, SocialUser , SocialAuthService} from 'angularx-social-login';
 
 @Component({
   selector: 'app-navbar',
@@ -90,6 +91,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 })
 
 export class LoginSignUpDialogComponent implements OnInit {
+  signinForm: FormGroup;
+  user: SocialUser;
+  loggedIn: boolean; 
 
   myStorage = window.localStorage;
   hide = true;
@@ -127,12 +131,33 @@ export class LoginSignUpDialogComponent implements OnInit {
     private requestService: RequestService,
     private formBuilder: FormBuilder,
     private commonService: CommonService,
+    private authService: SocialAuthService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit(): void {
     // console.log(this.globalService.profileFlag)
     this.setPhoneValidation();
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log(this.user);
+      // this.requestService.signup(user.name, null , user.email, '0000000000', (res) => {
+      //   if (!res.error) {
+      //     localStorage.setItem("token", "true");
+      //     this.errorMsg = 'Created Account succesfully!'
+      //     this.submitStatus = true;
+      //     this.globalService.profileFlag = true;
+      //     this.globalService.UserName = user.name;
+      //     this.commonService.userData = res.body;
+      //     this.onNoClick();
+      //   } else {
+      //     console.log('SigUp Error');
+      //     this.errorMsg = 'User already exists';
+      //     this.openSnackBar('Failed to signup', null);
+      //   }
+      // });
+    });
   }
 
   setPhoneValidation(): void {
@@ -148,6 +173,13 @@ export class LoginSignUpDialogComponent implements OnInit {
     setTimeout(() => {
       this.dialogRef.close();
     }, 500);
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   login(): void {
