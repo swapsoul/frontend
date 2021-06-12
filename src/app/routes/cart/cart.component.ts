@@ -6,6 +6,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 import { AddAddressComponent } from '../../components/add-address/add-address.component';
 import {ICustomWindow, WindowRefService} from './window-ref.service';
 import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,7 @@ export class CartComponent implements OnInit {
   private _window: ICustomWindow;
   public rzp: any;
   public options: any = {
-    key: 'rzp_test_PI5sKdi9BRTiJu', // add razorpay key here
+    key: 'rzp_test_AFvnJiqPbj1XkI', // add razorpay key here
     name: 'Swapsoul',
     description: 'Shopping',
     // amount: , // razorpay takes amount in paisa
@@ -45,6 +46,7 @@ export class CartComponent implements OnInit {
   quantityCallManager: any = {};
   isCartDetailsLoaded = false;
   isAddressSelection = false;
+  isAddressIndex = null;
 
   
 
@@ -52,10 +54,11 @@ export class CartComponent implements OnInit {
     private zone: NgZone,
     private winRef: WindowRefService,
     private requestService: RequestService,
-    private commonService: CommonService,
+    public commonService: CommonService,
     private dialog: MatDialog,
     private snackbarService: SnackbarService,
-    private router:Router
+    private router:Router,
+    public globalService: GlobalService
   ) {
     this._window = this.winRef.nativeWindow;
     this.onResize(null);
@@ -83,6 +86,23 @@ export class CartComponent implements OnInit {
   paymentHandler(res: any) {
     this.zone.run(() => {
       console.log("Payment detail --->",res)
+      let jsonData = {
+        "paymentId": res.razorpay_payment_id,
+        "amount": 100 * this.getCartTotalPrice(),
+        "currency": "INR",
+        "userEmail": this.commonService.userData.data.userEmail,
+        "userOrders" : {
+          "paymentId": res.razorpay_payment_id,
+          "deliveryStatus": "Order placed",
+          "userAddress" : this.commonService.userData.data.userAddress[this.isAddressIndex]
+        },
+        "userCart" : this.cartDetails
+      };
+      if (res){
+        this.requestService.capturePayment(jsonData, (re) => {
+          console.log(re);
+        });
+      }
       this.router.navigate(['home']);
       // add API call here  
     });
@@ -196,63 +216,7 @@ export class CartComponent implements OnInit {
   }
 
   selectAddressAndProceed(index, address): void {
+    this.isAddressIndex = index
     console.log(index, address);
-  }
-
-  addOrEditAddress(index = null, address = null): void {
-    if (index != null) {
-      address.id = index;
-    }
-    const dialogRef = this.dialog.open(AddAddressComponent, {
-      width: '90%',
-      maxWidth: '300px',
-      height: '90%',
-      maxHeight: '500px',
-      data: index == null ? null : address,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      if (result) {
-        const payload = {
-          userAddress: {
-            addressLine1: result.lineFirst,
-            addressLine2: result.lineSecond,
-            city: result.city,
-            pincode: result.pinCode
-          }
-        };
-        if (!isNaN(parseInt(result.id, 10))) {
-          // @ts-ignore
-          payload.userAddress.id = result.id;
-        }
-        this.requestService.addUpdateDeleteAddress(payload, (res) => {
-          if (res.status === 200) {
-            this.commonService.userData.data.userAddress = res.body.data.userAddress;
-            this.snackbarService.openMessageSnackbar('Address added (or updated) successfully');
-          } else {
-            this.snackbarService.openMessageSnackbar('Failed to add (or update) address');
-          }
-        });
-      }
-      // console.log("after closed",this.globalService.profileFlag)
-      // console.log('The dialog was closed');
-    });
-  }
-
-  deleteAddress(index): void {
-    const payload = {
-      userAddress: {
-        id: index
-      }
-    };
-    this.requestService.addUpdateDeleteAddress(payload, (res) => {
-      if (res.status === 200) {
-        this.commonService.userData.data.userAddress = res.body.data.userAddress;
-        this.snackbarService.openMessageSnackbar('Address deleted successfully');
-      } else {
-        this.snackbarService.openMessageSnackbar('Failed to delete address');
-      }
-    });
   }
 }

@@ -9,6 +9,25 @@
   .img-container {
     display: inline-block;
 
+    .imgSkeleton {
+      height: 300px;
+      width: 200px;
+
+      animation: animateImg 2s infinite linear;
+      background-color: #ccc;
+      background-image: linear-gradient(90deg, #ccc, #888, #ccc, #888);
+      background-size: 300% 100%;
+
+    }
+    @keyframes animateImg {
+      0% {
+        background-position: 100% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
     img {
       //max-width: 200px;
       //max-height: 300px;

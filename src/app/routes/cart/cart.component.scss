@@ -83,6 +83,10 @@
       color: $primary-color;
     }
 
+    .modifiers {
+      max-width: 200px;
+    }
+
     .quantity-modifier {
       //min-width: fit-content;
       max-width: 130px;
@@ -144,7 +148,7 @@
     .size-modifier {
       min-width: fit-content;
       max-width: 130px;
-      padding: 0;
+      padding: 3px;
 
       select {
         height: 25px;

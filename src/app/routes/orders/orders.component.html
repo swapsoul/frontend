@@ -1,0 +1,46 @@
+<div fxLayout="column" class="orders">
+  <div class="heading">My Orders</div>
+  <ng-template [ngIf]="orderData?.length > 0" [ngIfElse]="noOrders">
+    <div class="order-item" *ngFor="let order of orderData; let i = index">
+      <div class="order-top" fxLayoutAlign="space-between center">
+        <div fxLayout="column">
+          <span>Order Placed</span>
+          <span>{{getDateUsingUnixTimestamp(order)}}</span>
+        </div>
+        <div fxLayout="column">
+          <span>SHIP TO</span>
+          <span>
+            {{order.userOrders?.userAddress?.name}}, {{order.userOrders?.userAddress?.addressLine1}}<br>
+            {{order.userOrders?.userAddress?.addressLine2}}, {{order.userOrders?.userAddress?.city}}<br>
+            {{order.userOrders?.userAddress?.pincode}}, {{order.userOrders?.userAddress?.contactNumber}}
+          </span>
+        </div>
+        <div fxLayout="column">
+          <span>DELIVERY STATUS</span>
+          <span>{{order.userOrders?.deliveryStatus}}</span>
+        </div>
+      </div>
+      <div class="order-bottom" fxLayout="row">
+        <div class="product-image">
+          <img src="assets/img/bag.png">
+        </div>
+        <div class="product-description">
+          <div *ngIf="order.userCart">{{order.userCart[0]?.product?.productName}}{{order.userCart.length > 1 ? " with " + (order.userCart.length - 1) + " more items" : ''}}</div>
+          <div>Order Id: {{order.paymentID.split('_')[1]}}</div>
+        </div>
+        <div class="product-amount" fxLayout="column" fxLayoutAlign="space-between">
+          <div class="text-center">Total Amount<br>{{getTotalOrderValue(order) | currency : 'INR': true : '1.0-0'}}/-</div>
+          <div class="help">Need help?</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #noOrders>
+    <div class="order-item">
+      <div class="no-order">
+        <p *ngIf="isLoading">Loading...</p>
+        <p *ngIf="!isLoading">No Orders To Display</p>
+      </div>
+    </div>
+  </ng-template>
+</div>

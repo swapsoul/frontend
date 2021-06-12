@@ -1,100 +1,83 @@
-.write{
-    cursor: pointer;
-    color:rgb(69, 45, 226); 
-}
-.panel-heading{
-    background: #F5F5F5;
-}
-.blackcol{
-    color: #333333;
-}
-.containerbox{
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-.containerv{
-    height: 100vh;
-    max-width: 762px;
-    padding: 64px 0 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-}
-.addressBox{
-    display: -ms-flexbox;
-    -ms-flex-align: center;
-    background: #f5faff;
-    border-radius: 4px solid;
-}
-.headin{
-    font-size: 20px;
-    text-align: center;
+@import "src/assets/scss/variables";
+
+.container {
+  padding: 20px 15px;
+
+  .address {
+    margin-top: 50px;
+  }
+
+  section {
+    .heading {
+      font-size: 30px;
+      font-weight: bold;
+      border-bottom: $border-width solid $border-color;
+      padding-bottom: 25px;
+    }
+
+    .context {
+      padding: 20px;
+
+      .row-item {
+        line-height: 36px;
+        align-items: center;
+      }
+
+      .label {
+        min-width: 100px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0 10px;
+      }
+
+      .field-value, .field-value-editable {
+        min-width: 230px;
+        padding: 0 15px;
+        background: $border-color;
+        border-radius: $border-radius-px;
+        font-size: 16px;
+
+        input {
+          height: 30px;
+          border: none;
+          padding: 0;
+        }
+      }
+
+      .action-item {
+        button {
+          font-size: 16px;
+          color: $primary-color;
+          font-weight: bold;
+          padding: 0 15px;
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 
-.align-center{
-    align-items: center;
+.address-card {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 200px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 20px;
+
+  .address-clickable-text {
+    span {
+      text-decoration: underline;
+      padding: 0 5px;
+      cursor: pointer;
+    }
+  }
 }
 
-.addbutton{
-    padding:5px 16px;
-    font-size:0.7 rem;
-    min-height: 30px;
-    line-height: 1em;
-}
-
-.formText{
-    height:16px;
-    font-size: 12px;
-    line-height: 1.33;
-    text-align: left;
-    margin-bottom: 8px;
-    margin-left: 8px;
-}
-
-.inputBox{
-    display: flex;
-    flex-direction: column;
-    padding-top: 12px;
-}
-
-.inputEle{
-    height:46px;
-    width:256px;
-    border:none;
-    font-size: 16px;
-    line-height: 1.25;
-    text-align: left;
-    padding-left:16px;
-}
-
-input[type="text" i] {
-    padding: 1px 2px;
-}
-
-.submitBox{
-    display: flex;
-    align-items: center;
-    flex-flow: wrap;
-    justify-content: space-around;
-    margin-top:40px;
-    box-sizing: border-box;
-}
-
-.errorMessageName{
-    position: absolute;
-    height: 10px;
-    font-size: 8px;
-    font-weight: 600;
-    text-align: left;
-    color:#f75f16;
-    padding-left:16px;
-    padding-top:4px;
-}
-
-input:invalid {
-  color: red;
+.add-address {
+  border: $border-width dashed $border-color;
+  box-shadow: none;
 }

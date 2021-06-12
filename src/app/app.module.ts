@@ -52,6 +52,11 @@ import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-deli
 import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments-policy/orders-payments-policy.component';
 import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
 import { FilterPipe } from './routes/filter.pipe';
+import { OrdersComponent } from './routes/orders/orders.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider,GoogleLoginProvider } from 'angularx-social-login';
+
 
 
 @NgModule({
@@ -79,7 +84,8 @@ import { FilterPipe } from './routes/filter.pipe';
     ShippingDeliveryPolicyComponent,
     OrdersPaymentsPolicyComponent,
     ExchangeReturnPolicyComponent,
-    FilterPipe
+    FilterPipe,
+    OrdersComponent
   ],
   imports: [
 
@@ -107,13 +113,34 @@ import { FilterPipe } from './routes/filter.pipe';
     NgbTooltipModule,
     MatButtonToggleModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SocialLoginModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [ GlobalService, RequestService, CookieService, DatasharingService, AuthGuardService, {
     provide: HTTP_INTERCEPTORS,
     useClass: LoaderInterceptor,
     multi: true
-  } ],
+  } ,
+  {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '730340423820-atlng5gto54ktclk5ep1mm6l847elil0.apps.googleusercontent.com'
+          )
+        },
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('clientId')
+        }
+      ]
+    } as SocialAuthServiceConfig,
+  }],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

@@ -42,8 +42,8 @@
                       ngClass.lt-sm="custom-col-12 padding-0">{{ item['product']['productDiscount'] }}% OFF</span>
               </div>
             </div>
-            <div class="col-sm-12 modifiers">
-              <div class="margin-around col-xs-12 col-sm-6 quantity-modifier">
+            <div class="modifiers" fxLayout.xs="column" fxLayout="row">
+              <div class="margin-around quantity-modifier">
                 <form>
                   <div mat-ripple class="value-button decrease" (click)="decreaseProductQuantity(item)"><span><mat-icon
                     class="font-18px">remove</mat-icon></span></div>
@@ -55,13 +55,8 @@
                     class="font-18px">add</mat-icon></span></div>
                 </form>
               </div>
-              <div class="margin-around col-xs-12 col-sm-6 size-modifier">
-                <form>
-                  <select>
-                    <option selected disabled>Size: {{item['productSize']}}</option>
-                  </select>
-                </form>
-
+              <div class="margin-around size-modifier">
+                <span>Size: {{item['productSize']}}</span>
               </div>
             </div>
           </div>
@@ -107,7 +102,7 @@
         <div class="price-total">
           <div>
             <span>Sub Total</span><br>
-            <span class="total-amount font-18px" >{{ getCartTotalPrice() | currency: 'INR' }}</span>
+            <span class="total-amount font-18px">{{ getCartTotalPrice() | currency: 'INR' }}</span>
           </div>
           <div class="right next-step">
             <button mat-ripple (click)="isAddressSelection = !isAddressSelection">Proceed</button>
@@ -140,24 +135,27 @@
             <mat-card class="address-card" *ngFor="let address of userAddress; let i=index">
               <div fxLayout="column">
                 <mat-card-content>
+                  <div>{{address.name}}</div>
                   <div>{{address.addressLine1}}</div>
                   <div>{{address.addressLine2}}</div>
                   <div>{{address.city}}</div>
                   <div>Pincode: {{address.pincode}}</div>
+                  <div>Contact Number: {{address.contactNumber}}</div>
                 </mat-card-content>
                 <mat-card-actions fxLayoutAlign="center">
                   <button mat-button
-                          (click)="selectAddressAndProceed(i, address)" (click)="initPay()">{{ "Deliver Here" | uppercase }}</button>
+                          (click)="selectAddressAndProceed(i, address)"
+                          (click)="initPay()">{{ "Deliver Here" | uppercase }}</button>
 
-                          
+
                 </mat-card-actions>
                 <div fxLayout="row" class="address-clickable-text font-16px">
-                  <span mat-ripple (click)="addOrEditAddress(i, address)">Edit</span> |
-                  <span mat-ripple (click)="deleteAddress(i)">Delete</span>
+                  <span mat-ripple (click)="commonService.addOrEditAddress(i, address)">Edit</span> |
+                  <span mat-ripple (click)="commonService.deleteAddress(i)">Delete</span>
                 </div>
               </div>
             </mat-card>
-            <mat-card mat-ripple class="address-card add-address text-center" (click)="addOrEditAddress()">
+            <mat-card mat-ripple class="address-card pointer add-address text-center" (click)="commonService.addOrEditAddress()">
               <div fxLayout="row">
                 <mat-card-content>
                   <mat-icon class="font-40px color-gray">add</mat-icon>

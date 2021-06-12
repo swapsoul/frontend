@@ -60,9 +60,16 @@ export class RequestService {
     this.globalService.getServiceCall('user/' + username, callback, true);
   }
 
-  addUpdateDeleteAddress(payload, callback): void {
-    payload.usernameOrEmail = this.cookie.get('useremail');
+  updateUserDetails(payload, callback): any {
     this.globalService.putServiceCall('user', payload, callback, true);
+  }
+
+  capturePayment(payload, callback): void {
+    this.globalService.postServiceCall('payment/capture', payload, callback, true);
+  }
+
+  getOrders(callback): void {
+    this.globalService.getServiceCall('order', callback, true);
   }
 
   initializeUserFromCookie(): void {

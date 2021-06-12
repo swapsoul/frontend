@@ -98,6 +98,20 @@ export class GlobalService {
     );
   }
 
+  public postRazorPayPayment(url: string, params: any, callback, withToken = false): any {
+    this.httpClient.post("https://api.razorpay.com/v1/payments/" + url, params, { headers: this.createHeaders(withToken), observe: 'response' }).subscribe(
+      (data) => {
+        console.log(params);
+        let res = data; // Success
+        callback(res);
+      },
+      err => {
+        console.error(err);
+        callback(err);
+      } // Error Response
+    );
+  }
+
   public postServiceCallToSaleBot(url: string, params: any, callback): any {
 
 
