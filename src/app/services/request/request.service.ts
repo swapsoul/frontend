@@ -48,6 +48,16 @@ export class RequestService {
     this.globalService.getServiceCall('cart', callback, true);
   }
 
+  initCartDetails(): any {
+    if (this.globalService.profileFlag) {
+      this.cartDetails((resp) => {
+        if (resp.status === 200) {
+          this.commonService.cartData = resp.body;
+        }
+      });
+    }
+  }
+
   updateCartQuantity(payload, callback): any {
     this.globalService.patchServiceCall('cart', payload, callback, true);
   }
@@ -81,6 +91,7 @@ export class RequestService {
         if (resp.status === 200) {
           this.commonService.userData = resp.body;
           this.globalService.UserName = resp.body.data.userName;
+          this.initCartDetails();
         } else {
           this.globalService.clearCookies();
           this.globalService.profileFlag = false;

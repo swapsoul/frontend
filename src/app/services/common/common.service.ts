@@ -11,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class CommonService {
 
   userData: any;
+  cartData: any = {};
 
   constructor(private globalService: GlobalService,
               private cookie: CookieService,

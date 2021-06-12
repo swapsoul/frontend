@@ -13,21 +13,25 @@
 
 button {
   color: white;
-  font-size:18px;
+  font-size: 18px;
 }
-button:hover{
-  color:#ED3237;
+
+button:hover {
+  color: #ED3237;
 }
 
 #logo {
   height: auto;
   color: grey;
 }
-.text-white{
-  color:white;
+
+.text-white {
+  color: white;
 }
+
 .navbar-brand {
   padding: 0 60px;
+
   img {
     height: 40px;
   }
@@ -37,9 +41,24 @@ svg, a {
   color: white;
 }
 
+.cart-items-count {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  position: relative;
+  left: -18px;
+  font-size: 12px;
+  background: #daae0c;
+  padding: 2px;
+  top: -10px;
+  display: inline-block;
+  text-align: center;
+}
+
 a:hover {
-  color:#ED3237;
-  text-decoration:none;
+  color: #ED3237;
+  text-decoration: none;
 }
 
 .float-left {
@@ -58,14 +77,12 @@ a:hover {
 
 .button-white {
   color: white;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .button-black {
   color: black;
 }
-
-
 
 
 .black-text {
@@ -126,6 +143,7 @@ a:hover {
     margin-top: 10px;
     width: 100%;
   }
+
   button {
     mat-icon {
       color: black;
@@ -147,7 +165,7 @@ a:hover {
 }
 
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .fa-facebook {

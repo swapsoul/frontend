@@ -27,7 +27,11 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   hasValue: boolean;
   placeholdervalue = 'Search';
 
-  constructor(private externalUrl: ExternalUrlsService ,public dialog: MatDialog, public globalService: GlobalService,private _router:Router) {
+  constructor(private externalUrl: ExternalUrlsService,
+              public dialog: MatDialog,
+              public globalService: GlobalService,
+              private _router: Router,
+              public commonService: CommonService) {
   }
 
 

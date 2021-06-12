@@ -66,6 +66,7 @@ export class CartComponent implements OnInit {
       this.isCartDetailsLoaded = true;
       if (resp.status === 200) {
         this.cartDetails = resp.body.cartArray;
+        this.commonService.cartData = resp.body;
         this.cartDetails.forEach((cartItem) => {
           cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
@@ -181,6 +182,7 @@ export class CartComponent implements OnInit {
     this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
       if (resp.status === 200) {
         this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id), 1);
+        this.commonService.cartData.totalQty = this.cartDetails.length;
       } else {
         console.error('Error while deleting product');
       }
