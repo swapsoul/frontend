@@ -19,6 +19,7 @@ export class RequestService {
 
   login(usernameOrEmail: string, password: string, callback = null): any {
     this.globalService.setCookie(usernameOrEmail, password);
+    this.globalService.setAuthMethodCookie();
     if (callback == null) {
       this.globalService.postServiceCall('auth/login', { usernameOrEmail }, (res) => {
         console.log(res);
@@ -35,6 +36,7 @@ export class RequestService {
 
   signup(userName: string, userPassword: string, userEmail: string, phoneNumber: string, callback = null): any {
     this.globalService.setCookie(userEmail, userPassword);
+    this.globalService.setAuthMethodCookie();
     if (callback == null) {
       this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, (res) => {
         console.log(res);
@@ -42,6 +44,18 @@ export class RequestService {
     } else {
       this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, callback, true);
     }
+  }
+
+  socialSignup(user, callback): any {
+    this.globalService.setCookie('', '', user.idToken);
+    this.globalService.setAuthMethodCookie(user.provider);
+    this.globalService.postServiceCall('user/social', user, callback, true);
+  }
+
+  socialLogin(user, callback): any {
+    this.globalService.setCookie('', '', user.idToken);
+    this.globalService.setAuthMethodCookie(user.provider);
+    this.globalService.postServiceCall('auth/login', { usernameOrEmail: user.email }, callback, true);
   }
 
   cartDetails(callback): any {

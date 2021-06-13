@@ -8,6 +8,7 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 import { ExternalUrlsService } from 'src/app/services/externalUrls/external-urls.service'
 import { CommonService } from '../../services/common/common.service';
 import { FacebookLoginProvider,GoogleLoginProvider, SocialUser , SocialAuthService} from 'angularx-social-login';
+import { LoaderService } from '../../services/loader/loader.service';
 
 @Component({
   selector: 'app-navbar',
@@ -31,7 +32,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
               public dialog: MatDialog,
               public globalService: GlobalService,
               private _router: Router,
-              public commonService: CommonService) {
+              public commonService: CommonService,
+              private socialAuthService: SocialAuthService,) {
   }
 
 
@@ -49,6 +51,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     localStorage.clear();
     this.globalService.profileFlag = false;
     this.globalService.clearCookies();
+    this.commonService.cartData = {};
+    this.socialAuthService.signOut();
     this._router.navigate(['home']);
     // console.log("After logged out",this.globalService.profileFlag )
     return false;
@@ -109,6 +113,10 @@ export class LoginSignUpDialogComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(4)])
   });
 
+  isSocialSignup = false;
+  isSocialSignupQueryPending = false;
+  isSocialLoginQueryPending = false;
+
   registerForm: FormGroup = this.formBuilder.group({
     username: [undefined, { validators: [Validators.required], updateOn: 'change' }],
     email: [
@@ -135,17 +143,49 @@ export class LoginSignUpDialogComponent implements OnInit {
     private requestService: RequestService,
     private formBuilder: FormBuilder,
     private commonService: CommonService,
-    private authService: SocialAuthService,
+    private socialAuthService: SocialAuthService,
+    private loaderService: LoaderService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
   ngOnInit(): void {
     // console.log(this.globalService.profileFlag)
     this.setPhoneValidation();
-    this.authService.authState.subscribe((user) => {
+    this.socialAuthService.authState.subscribe((user) => {
+      if (!this.user) {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user);
+      if (this.loggedIn) {
+        if (this.isSocialSignup) {
+          this.socialSignup();
+        } else {
+          if (!this.isSocialLoginQueryPending) {
+            this.isSocialLoginQueryPending = true;
+            this.requestService.socialLogin(this.user, (resp) => {
+              this.isSocialLoginQueryPending = false;
+              if (resp.status === 200) {
+                this.errorMsglogin = 'Successfully Logged In';
+                this.globalService.profileFlag = true;
+                this.loginStatus = true;
+                this.globalService.UserName = resp.body.data.userName;
+                this.commonService.userData = resp.body;
+                this.requestService.initCartDetails();
+                this.onNoClick();
+              } else {
+                if (resp.status === 404 && resp.error.message === 'User Not Found') {
+                  this.socialSignup();
+                } else {
+                  console.log('Login Failed');
+                  this.errorMsglogin = 'Invalid Login';
+                  this.openSnackBar('Invalid Login', null);
+                }
+              }
+            });
+          }
+        }
+      }
+      }
       // this.requestService.signup(user.name, null , user.email, '0000000000', (res) => {
       //   if (!res.error) {
       //     localStorage.setItem("token", "true");
@@ -164,6 +204,30 @@ export class LoginSignUpDialogComponent implements OnInit {
     });
   }
 
+  socialSignup(): void {
+    if (!this.isSocialSignupQueryPending) {
+      this.isSocialSignupQueryPending = true;
+      this.loaderService.show();
+      this.requestService.socialSignup(this.user, (resp) => {
+        console.log(resp);
+        this.loaderService.hide();
+        this.isSocialSignupQueryPending = false;
+        if (resp.status === 200) {
+          this.errorMsg = 'Created Account succesfully!';
+          this.submitStatus = true;
+          this.globalService.profileFlag = true;
+          this.globalService.UserName = this.user.email.split('@')[0];
+          this.commonService.userData = resp.body;
+          this.onNoClick();
+        } else {
+          console.log('SigUp Error');
+          this.errorMsg = 'User already exists';
+          this.openSnackBar('Failed to signup', null);
+        }
+      });
+    }
+  }
+
   setPhoneValidation(): void {
     const phoneControl = this.registerForm.get('phone');
 
@@ -180,10 +244,11 @@ export class LoginSignUpDialogComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  signInWithGoogle(isSignup: boolean): void {
+    this.isSocialSignup = isSignup;
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   login(): void {
@@ -191,11 +256,12 @@ export class LoginSignUpDialogComponent implements OnInit {
       if (!res.error) {
 
         localStorage.setItem('token', 'true');
-        this.errorMsglogin = 'Successfully Logged In'
+        this.errorMsglogin = 'Successfully Logged In';
         this.globalService.profileFlag = true;
         this.loginStatus = true;
-        this.globalService.UserName = res.body.data.userName
+        this.globalService.UserName = res.body.data.userName;
         this.commonService.userData = res.body;
+        this.requestService.initCartDetails();
         this.onNoClick();
         // console.log(this.globalService.profileFlag)
       } else {
