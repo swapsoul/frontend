@@ -243,7 +243,8 @@ export class LoginSignUpDialogComponent implements OnInit {
     }, 500);
   }
 
-  signInWithFB(): void {
+  signInWithFB(isSignup: boolean): void {
+    this.isSocialSignup = isSignup;
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
   signInWithGoogle(isSignup: boolean): void {
