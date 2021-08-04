@@ -19,6 +19,7 @@ export class GlobalService {
   public profileFlag: boolean = false;
   public UserName: string = 'My Account';
   headerKey = 'SwapsoulToken';
+  authMethodKey = 'Provider';
   profiledata: any[];
 
   constructor(private httpClient: HttpClient, private cookie: CookieService) {
@@ -157,8 +158,20 @@ export class GlobalService {
     );
   }
 
-  setCookie(username, secret): void {
-    this.cookie.set('token', btoa(username + ':' + secret), 10, '/');
+  setCookie(username, secret, token = null): void {
+    if (token) {
+      this.cookie.set('token', token, 10, '/');
+    } else {
+      this.cookie.set('token', btoa(username + ':' + secret), 10, '/');
+    }
+  }
+
+  setAuthMethodCookie(method = null): void {
+    if (method) {
+      this.cookie.set('authMethod', method, 10, '/');
+    } else {
+      this.cookie.set('authMethod', 'Email' , 10, '/');
+    }
   }
 
   setProfileData(data) {
@@ -174,6 +187,10 @@ export class GlobalService {
 
   createHeaders(withToken = false): any {
     let token;
+    let authMethod = this.cookie.get('authMethod');
+    if (!authMethod) {
+      authMethod = 'Email';
+    }
     if (withToken) {
       token = this.cookie.get('token');
     }
@@ -181,9 +198,10 @@ export class GlobalService {
     let headers: HttpHeaders;
     if (withToken && token) {
       headers = new HttpHeaders().append('Content-Type', 'application/json').append(this.headerKey, token)
-        .append('Access-Control-Allow-Origin', '*');
+        .append(this.authMethodKey, authMethod).append('Access-Control-Allow-Origin', '*');
     } else {
-      headers = new HttpHeaders().append('Content-Type', 'application/json').append('Access-Control-Allow-Origin', '*');
+      headers = new HttpHeaders().append('Content-Type', 'application/json').append('Access-Control-Allow-Origin', '*')
+        .append(this.authMethodKey, authMethod);
     }
 
     return headers;

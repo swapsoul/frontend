@@ -1,8 +1,8 @@
-<div class="bg-dark img-container">
+<div class="bg-dark img-container" *ngIf="false">
   <img src="assets/img/cover2.png" class="card-img" alt="wardrobe">
 </div>
 
-<mat-tab-group mat-align-tabs="start">
+<mat-tab-group mat-align-tabs="start" *ngIf="false">
   <mat-tab>
     <ng-template mat-tab-label>
       <span>All</span>
@@ -94,10 +94,21 @@
   </mat-tab>
 </mat-tab-group>
 
-<div class="more-you-might-like">
+<div class="more-you-might-like" *ngIf="false">
   <div class="heading">More you might like</div>
   <div fxLayout="row wrap" fxLayoutAlign="center center">
     <app-product class="d-grid" [productData]="productData" *ngFor="let productData of moreyoulike"
                  fxFlex.gt-sm="25%"></app-product>
+  </div>
+</div>
+
+<div class="launching-soon" fxLayoutAlign="center center" fxLayout="column">
+  <div class="logo"><img src="assets/img/swapsoul_logo.png"></div>
+  <div class="subheading">Swapsoul for Women,</div>
+  <div class="heading">Launching soon!</div>
+  <div class="action-item">
+    <span routerLink="/men">
+      Men's Page
+    </span>
   </div>
 </div>

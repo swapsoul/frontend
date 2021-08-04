@@ -19,6 +19,7 @@ export class RequestService {
 
   login(usernameOrEmail: string, password: string, callback = null): any {
     this.globalService.setCookie(usernameOrEmail, password);
+    this.globalService.setAuthMethodCookie();
     if (callback == null) {
       this.globalService.postServiceCall('auth/login', { usernameOrEmail }, (res) => {
         console.log(res);
@@ -35,6 +36,7 @@ export class RequestService {
 
   signup(userName: string, userPassword: string, userEmail: string, phoneNumber: string, callback = null): any {
     this.globalService.setCookie(userEmail, userPassword);
+    this.globalService.setAuthMethodCookie();
     if (callback == null) {
       this.globalService.postServiceCall('user', { userName, userEmail, phoneNumber }, (res) => {
         console.log(res);
@@ -44,8 +46,30 @@ export class RequestService {
     }
   }
 
+  socialSignup(user, callback): any {
+    this.globalService.setCookie('', '', user.idToken);
+    this.globalService.setAuthMethodCookie(user.provider);
+    this.globalService.postServiceCall('user/social', user, callback, true);
+  }
+
+  socialLogin(user, callback): any {
+    this.globalService.setCookie('', '', user.idToken);
+    this.globalService.setAuthMethodCookie(user.provider);
+    this.globalService.postServiceCall('auth/login', { usernameOrEmail: user.email }, callback, true);
+  }
+
   cartDetails(callback): any {
     this.globalService.getServiceCall('cart', callback, true);
+  }
+
+  initCartDetails(): any {
+    if (this.globalService.profileFlag) {
+      this.cartDetails((resp) => {
+        if (resp.status === 200) {
+          this.commonService.cartData = resp.body;
+        }
+      });
+    }
   }
 
   updateCartQuantity(payload, callback): any {
@@ -81,6 +105,7 @@ export class RequestService {
         if (resp.status === 200) {
           this.commonService.userData = resp.body;
           this.globalService.UserName = resp.body.data.userName;
+          this.initCartDetails();
         } else {
           this.globalService.clearCookies();
           this.globalService.profileFlag = false;

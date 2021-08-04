@@ -41,6 +41,7 @@
         <button mat-icon-button aria-label="cart" routerLink="cart" (click)="isCollapsed = true">
           <mat-icon>work_outliner</mat-icon>
         </button>
+        <span *ngIf="commonService.cartData?.totalQty > 0" class="cart-items-count">{{commonService.cartData?.totalQty.toString().padStart(2, '0')}}</span>
       </div>
 
       <div>

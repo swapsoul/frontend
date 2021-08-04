@@ -5,6 +5,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import "src/assets/scss/variables";
 @import './theme.scss';
 @import './assets/scss/policies';
@@ -196,7 +197,7 @@ input[type=number] {
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-  stroke: $primary-color;
+  stroke: #ED3237;
 }
 
 label.mat-checkbox-layout {

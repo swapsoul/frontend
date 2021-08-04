@@ -7,6 +7,7 @@ import { AddAddressComponent } from '../../components/add-address/add-address.co
 import {ICustomWindow, WindowRefService} from './window-ref.service';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit {
   private _window: ICustomWindow;
   public rzp: any;
   public options: any = {
-    key: 'rzp_test_AFvnJiqPbj1XkI', // add razorpay key here
+    key: environment.razorpayKey, // add razorpay key here
     name: 'Swapsoul',
     description: 'Shopping',
     // amount: , // razorpay takes amount in paisa
@@ -66,6 +67,7 @@ export class CartComponent implements OnInit {
       this.isCartDetailsLoaded = true;
       if (resp.status === 200) {
         this.cartDetails = resp.body.cartArray;
+        this.commonService.cartData = resp.body;
         this.cartDetails.forEach((cartItem) => {
           cartItem.couponDiscount = cartItem.product.productRetailPrice - cartItem.product.productSalePrice;
         });
@@ -181,6 +183,7 @@ export class CartComponent implements OnInit {
     this.requestService.deleteCartItem({ _id: item._id }, (resp) => {
       if (resp.status === 200) {
         this.cartDetails.splice(this.cartDetails.findIndex((value) => value._id === item._id), 1);
+        this.commonService.cartData.totalQty = this.cartDetails.length;
       } else {
         console.error('Error while deleting product');
       }

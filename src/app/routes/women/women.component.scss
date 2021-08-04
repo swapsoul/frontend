@@ -15,3 +15,33 @@
     text-align: center;
   }
 }
+
+.launching-soon {
+  min-height: 50vh;
+  margin-bottom: 40px;
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .heading {
+    font-size: 24px;
+    line-height: 3pc;
+    font-weight: bold;
+    transform: scale(1.4, 1.35);
+  }
+
+  .action-item {
+    span {
+      background: #ed3237;
+      color: white;
+      padding: 10px 20px;
+      display: block;
+      margin-top: 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}

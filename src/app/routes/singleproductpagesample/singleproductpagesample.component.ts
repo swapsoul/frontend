@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FlexAlignStyleBuilder } from '@angular/flex-layout';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { RequestService } from '../../services/request/request.service';
 
 @Component({
   selector: 'app-singleproductpagesample',
@@ -40,7 +41,9 @@ export class SingleproductpagesampleComponent implements OnInit {
   searchValue = '';
 
 
-  constructor(private router: Router, private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService ) {
+  constructor(private router: Router, private cookie:CookieService,private route: ActivatedRoute, private datashare: DatasharingService,private _interactionService: InteractionService, private cartService: InteractionService, private globalService: GlobalService,
+              private requestService: RequestService
+  ) {
    }
 
   ngOnInit(): void {
@@ -154,7 +157,8 @@ export class SingleproductpagesampleComponent implements OnInit {
       }, (data) => {
         if(data.status==201)
         {
-          this.router.navigate(['cart'])
+          this.router.navigate(['cart']);
+          // this.requestService.initCartDetails();
         }
         console.log("tttttt");
       });
