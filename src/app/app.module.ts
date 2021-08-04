@@ -55,9 +55,9 @@ import { FilterPipe } from './routes/filter.pipe';
 import { OrdersComponent } from './routes/orders/orders.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider,GoogleLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
 import { CampusAmbassadorComponent } from './routes/campus-ambassador/campus-ambassador.component';
-
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -133,12 +133,12 @@ import { CampusAmbassadorComponent } from './routes/campus-ambassador/campus-amb
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider(
-            '730340423820-atlng5gto54ktclk5ep1mm6l847elil0.apps.googleusercontent.com'
+            environment.providerGoogle
           )
         },
         {
           id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('1197001647431274')
+          provider: new FacebookLoginProvider(environment.providerFacebook)
         }
       ]
     } as SocialAuthServiceConfig,

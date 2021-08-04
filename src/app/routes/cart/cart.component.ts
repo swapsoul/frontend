@@ -7,6 +7,7 @@ import { AddAddressComponent } from '../../components/add-address/add-address.co
 import {ICustomWindow, WindowRefService} from './window-ref.service';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit {
   private _window: ICustomWindow;
   public rzp: any;
   public options: any = {
-    key: 'rzp_live_tPryutICtRzY2Q', // add razorpay key here
+    key: environment.razorpayKey, // add razorpay key here
     name: 'Swapsoul',
     description: 'Shopping',
     // amount: , // razorpay takes amount in paisa
