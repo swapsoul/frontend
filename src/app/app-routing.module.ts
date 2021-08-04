@@ -19,6 +19,7 @@ import { OrdersPaymentsPolicyComponent } from './routes/policies/orders-payments
 import { ShippingDeliveryPolicyComponent } from './routes/policies/shipping-delivery-policy/shipping-delivery-policy.component';
 import { ExchangeReturnPolicyComponent } from './routes/policies/exchange-return-policy/exchange-return-policy.component';
 import { OrdersComponent } from './routes/orders/orders.component';
+import { CampusAmbassadorComponent } from './routes/campus-ambassador/campus-ambassador.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'exchange-return', component: ExchangeReturnPolicyComponent }
     ]
   },
+  { path: 'campus-ambassador', component: CampusAmbassadorComponent },
   { path: '**', component: NotfoundComponent }
 ];
 

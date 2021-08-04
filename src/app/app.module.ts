@@ -56,6 +56,7 @@ import { OrdersComponent } from './routes/orders/orders.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider,GoogleLoginProvider } from 'angularx-social-login';
+import { CampusAmbassadorComponent } from './routes/campus-ambassador/campus-ambassador.component';
 
 
 
@@ -85,7 +86,8 @@ import { SocialLoginModule, SocialAuthServiceConfig, FacebookLoginProvider,Googl
     OrdersPaymentsPolicyComponent,
     ExchangeReturnPolicyComponent,
     FilterPipe,
-    OrdersComponent
+    OrdersComponent,
+    CampusAmbassadorComponent
   ],
   imports: [
 
